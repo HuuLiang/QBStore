@@ -1,0 +1,1691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31294B5AFDA0E45286F5CD27 /* libPods-QBStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */; };
+		BC2C103B1DB4D700000D1D99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C103A1DB4D700000D1D99 /* main.m */; };
+		BC2C10461DB4D700000D1D99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC2C10451DB4D700000D1D99 /* Assets.xcassets */; };
+		BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC2C10471DB4D700000D1D99 /* LaunchScreen.storyboard */; };
+		BC2C10521DB4D787000D1D99 /* QBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10511DB4D787000D1D99 /* QBSAppDelegate.m */; };
+		BC2C10751DB4DD0B000D1D99 /* NSArray+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C105A1DB4DD0B000D1D99 /* NSArray+Utilities.m */; };
+		BC2C10761DB4DD0B000D1D99 /* NSError+QBSError.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C105C1DB4DD0B000D1D99 /* NSError+QBSError.m */; };
+		BC2C10771DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C105E1DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.m */; };
+		BC2C10781DB4DD0B000D1D99 /* NSObject+BaseRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10601DB4DD0B000D1D99 /* NSObject+BaseRepresentation.m */; };
+		BC2C10791DB4DD0B000D1D99 /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10621DB4DD0B000D1D99 /* NSObject+Properties.m */; };
+		BC2C107A1DB4DD0B000D1D99 /* NSString+crypt.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10641DB4DD0B000D1D99 /* NSString+crypt.m */; };
+		BC2C107B1DB4DD0B000D1D99 /* UIColor+FeaturedColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10681DB4DD0B000D1D99 /* UIColor+FeaturedColor.m */; };
+		BC2C107C1DB4DD0B000D1D99 /* UIColor+hexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C106A1DB4DD0B000D1D99 /* UIColor+hexColor.m */; };
+		BC2C107D1DB4DD0B000D1D99 /* UIImage+color.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C106C1DB4DD0B000D1D99 /* UIImage+color.m */; };
+		BC2C107E1DB4DD0B000D1D99 /* UIImage+QBResource.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C106E1DB4DD0B000D1D99 /* UIImage+QBResource.m */; };
+		BC2C107F1DB4DD0B000D1D99 /* UIScrollView+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10701DB4DD0B000D1D99 /* UIScrollView+Refresh.m */; };
+		BC2C10801DB4DD0B000D1D99 /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10721DB4DD0B000D1D99 /* UIView+Loading.m */; };
+		BC2C10811DB4DD0B000D1D99 /* UIView+RoundCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10741DB4DD0B000D1D99 /* UIView+RoundCorner.m */; };
+		BC2C108A1DB4DE35000D1D99 /* DBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10841DB4DE35000D1D99 /* DBHandler.m */; };
+		BC2C108B1DB4DE35000D1D99 /* DBPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10871DB4DE35000D1D99 /* DBPersistence.m */; };
+		BC2C108C1DB4DE35000D1D99 /* DBTableVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10891DB4DE35000D1D99 /* DBTableVersion.m */; };
+		BC2C109C1DB4DED2000D1D99 /* QBSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C108F1DB4DED2000D1D99 /* QBSConfiguration.m */; };
+		BC2C109D1DB4DED2000D1D99 /* QBSErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10911DB4DED2000D1D99 /* QBSErrorHandler.m */; };
+		BC2C109E1DB4DED2000D1D99 /* QBSHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10931DB4DED2000D1D99 /* QBSHttpClient.m */; };
+		BC2C109F1DB4DED2000D1D99 /* QBSHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10951DB4DED2000D1D99 /* QBSHUDManager.m */; };
+		BC2C10A01DB4DED2000D1D99 /* QBSRESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10971DB4DED2000D1D99 /* QBSRESTManager.m */; };
+		BC2C10A11DB4DED2000D1D99 /* QBSUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */; };
+		BC2C10A21DB4DED2000D1D99 /* QBSWeChatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */; };
+		BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */; };
+		BC2C10A91DB4DF20000D1D99 /* QBSPaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */; };
+		BC2C10BE1DB4DFA0000D1D99 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10AD1DB4DFA0000D1D99 /* MZTimerLabel.m */; };
+		BC2C10BF1DB4DFA0000D1D99 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B11DB4DFA0000D1D99 /* TAAbstractDotView.m */; };
+		BC2C10C01DB4DFA0000D1D99 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B31DB4DFA0000D1D99 /* TAAnimatedDotView.m */; };
+		BC2C10C11DB4DFA0000D1D99 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B51DB4DFA0000D1D99 /* TADotView.m */; };
+		BC2C10C21DB4DFA0000D1D99 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B71DB4DFA0000D1D99 /* TAPageControl.m */; };
+		BC2C10C31DB4DFA0000D1D99 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B91DB4DFA0000D1D99 /* SDCollectionViewCell.m */; };
+		BC2C10C41DB4DFA0000D1D99 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10BB1DB4DFA0000D1D99 /* SDCycleScrollView.m */; };
+		BC2C10C51DB4DFA0000D1D99 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10BD1DB4DFA0000D1D99 /* UIView+SDExtension.m */; };
+		BC2C10E01DB4E073000D1D99 /* QBSSMSVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10CD1DB4E073000D1D99 /* QBSSMSVerificationViewController.m */; };
+		BC2C10E11DB4E073000D1D99 /* QBSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10CF1DB4E073000D1D99 /* QBSUserLoginViewController.m */; };
+		BC2C10E21DB4E073000D1D99 /* QBSUserNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10D11DB4E073000D1D99 /* QBSUserNavigationController.m */; };
+		BC2C10E31DB4E073000D1D99 /* QBSUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10D31DB4E073000D1D99 /* QBSUserProfileViewController.m */; };
+		BC2C10E41DB4E073000D1D99 /* QBSUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10D51DB4E073000D1D99 /* QBSUserViewController.m */; };
+		BC2C10E51DB4E073000D1D99 /* QBSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10D81DB4E073000D1D99 /* QBSUser.m */; };
+		BC2C10E61DB4E073000D1D99 /* QBSWeChatUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10DA1DB4E073000D1D99 /* QBSWeChatUser.m */; };
+		BC2C10E71DB4E073000D1D99 /* QBSPhoneTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10DD1DB4E073000D1D99 /* QBSPhoneTextField.m */; };
+		BC2C10E81DB4E073000D1D99 /* QBSWeChatLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10DF1DB4E073000D1D99 /* QBSWeChatLoginButton.m */; };
+		BC2C11171DB4E0D2000D1D99 /* QBSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10EC1DB4E0D2000D1D99 /* QBSBaseViewController.m */; };
+		BC2C11181DB4E0D2000D1D99 /* QBSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10EE1DB4E0D2000D1D99 /* QBSNavigationController.m */; };
+		BC2C11191DB4E0D2000D1D99 /* QBSBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10F11DB4E0D2000D1D99 /* QBSBanner.m */; };
+		BC2C111A1DB4E0D2000D1D99 /* QBSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10F31DB4E0D2000D1D99 /* QBSCategory.m */; };
+		BC2C111B1DB4E0D2000D1D99 /* QBSCategoryTag.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10F51DB4E0D2000D1D99 /* QBSCategoryTag.m */; };
+		BC2C111C1DB4E0D2000D1D99 /* QBSCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10F71DB4E0D2000D1D99 /* QBSCommodity.m */; };
+		BC2C111D1DB4E0D2000D1D99 /* QBSCommodityTag.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10F91DB4E0D2000D1D99 /* QBSCommodityTag.m */; };
+		BC2C111E1DB4E0D2000D1D99 /* QBSFeaturedCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10FB1DB4E0D2000D1D99 /* QBSFeaturedCommodity.m */; };
+		BC2C111F1DB4E0D2000D1D99 /* QBSJSONResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10FD1DB4E0D2000D1D99 /* QBSJSONResponse.m */; };
+		BC2C11201DB4E0D2000D1D99 /* QBSAmountPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11001DB4E0D2000D1D99 /* QBSAmountPicker.m */; };
+		BC2C11211DB4E0D2000D1D99 /* QBSCartButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11021DB4E0D2000D1D99 /* QBSCartButton.m */; };
+		BC2C11221DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11041DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.m */; };
+		BC2C11231DB4E0D2000D1D99 /* QBSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11061DB4E0D2000D1D99 /* QBSCollectionViewCell.m */; };
+		BC2C11241DB4E0D2000D1D99 /* QBSCustomerServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11081DB4E0D2000D1D99 /* QBSCustomerServiceCell.m */; };
+		BC2C11251DB4E0D2000D1D99 /* QBSGridSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C110A1DB4E0D2000D1D99 /* QBSGridSheet.m */; };
+		BC2C11261DB4E0D2000D1D99 /* QBSPagingRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C110C1DB4E0D2000D1D99 /* QBSPagingRefreshView.m */; };
+		BC2C11271DB4E0D2000D1D99 /* QBSPaymentSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C110E1DB4E0D2000D1D99 /* QBSPaymentSheet.m */; };
+		BC2C11281DB4E0D2000D1D99 /* QBSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11101DB4E0D2000D1D99 /* QBSPullToRefreshView.m */; };
+		BC2C11291DB4E0D2000D1D99 /* QBSSubtitledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11121DB4E0D2000D1D99 /* QBSSubtitledTableViewCell.m */; };
+		BC2C112A1DB4E0D2000D1D99 /* QBSTableHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11141DB4E0D2000D1D99 /* QBSTableHeaderFooterView.m */; };
+		BC2C112B1DB4E0D2000D1D99 /* QBSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11161DB4E0D2000D1D99 /* QBSTableViewCell.m */; };
+		BC2C11381DB4E11D000D1D99 /* QBSCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C112F1DB4E11D000D1D99 /* QBSCartViewController.m */; };
+		BC2C11391DB4E11D000D1D99 /* QBSCartCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11321DB4E11D000D1D99 /* QBSCartCommodity.m */; };
+		BC2C113A1DB4E11D000D1D99 /* QBSCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11351DB4E11D000D1D99 /* QBSCartCell.m */; };
+		BC2C113B1DB4E11D000D1D99 /* QBSPaymentFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11371DB4E11D000D1D99 /* QBSPaymentFooterView.m */; };
+		BC2C114F1DB4E9B8000D1D99 /* QBSCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11421DB4E9B8000D1D99 /* QBSCategoryViewController.m */; };
+		BC2C11501DB4E9B8000D1D99 /* QBSCategoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11451DB4E9B8000D1D99 /* QBSCategoryList.m */; };
+		BC2C11511DB4E9B8000D1D99 /* QBSSubCategoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11471DB4E9B8000D1D99 /* QBSSubCategoryList.m */; };
+		BC2C11521DB4E9B8000D1D99 /* QBSCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C114A1DB4E9B8000D1D99 /* QBSCategoryCell.m */; };
+		BC2C11531DB4E9B8000D1D99 /* QBSSubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C114C1DB4E9B8000D1D99 /* QBSSubCategoryCell.m */; };
+		BC2C11541DB4E9B8000D1D99 /* QBSSubCategoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C114E1DB4E9B8000D1D99 /* QBSSubCategoryHeaderView.m */; };
+		BC2C115C1DB4F481000D1D99 /* QBSCustomerServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11581DB4F481000D1D99 /* QBSCustomerServiceController.m */; };
+		BC2C115D1DB4F481000D1D99 /* QBSCustomerService.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C115B1DB4F481000D1D99 /* QBSCustomerService.m */; };
+		BC2C117E1DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11611DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.m */; };
+		BC2C117F1DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11631DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m */; };
+		BC2C11801DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11651DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.m */; };
+		BC2C11811DB4F60D000D1D99 /* QBSCommodityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11671DB4F60D000D1D99 /* QBSCommodityDetailViewController.m */; };
+		BC2C11821DB4F60D000D1D99 /* QBSCommodityComment.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C116A1DB4F60D000D1D99 /* QBSCommodityComment.m */; };
+		BC2C11831DB4F60D000D1D99 /* QBSCommodityDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C116C1DB4F60D000D1D99 /* QBSCommodityDetail.m */; };
+		BC2C11841DB4F60D000D1D99 /* QBSCommentFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C116F1DB4F60D000D1D99 /* QBSCommentFooterView.m */; };
+		BC2C11851DB4F60D000D1D99 /* QBSCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11711DB4F60D000D1D99 /* QBSCommodityCell.m */; };
+		BC2C11861DB4F60D000D1D99 /* QBSCommodityCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11731DB4F60D000D1D99 /* QBSCommodityCommentCell.m */; };
+		BC2C11871DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11751DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m */; };
+		BC2C11881DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11771DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.m */; };
+		BC2C11891DB4F60D000D1D99 /* QBSCommodityDetailTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11791DB4F60D000D1D99 /* QBSCommodityDetailTitleCell.m */; };
+		BC2C118A1DB4F60D000D1D99 /* QBSCustomerServiceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C117B1DB4F60D000D1D99 /* QBSCustomerServiceButton.m */; };
+		BC2C118B1DB4F60D000D1D99 /* QBSServiceMarkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C117D1DB4F60D000D1D99 /* QBSServiceMarkCell.m */; };
+		BC2C11AA1DB4F6A3000D1D99 /* QBSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C118F1DB4F6A3000D1D99 /* QBSHomeViewController.m */; };
+		BC2C11AB1DB4F6A3000D1D99 /* QBSHomeFavourites.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11921DB4F6A3000D1D99 /* QBSHomeFavourites.m */; };
+		BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11941DB4F6A3000D1D99 /* QBSHomeGroup.m */; };
+		BC2C11AD1DB4F6A3000D1D99 /* QBSActivityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11971DB4F6A3000D1D99 /* QBSActivityHeaderView.m */; };
+		BC2C11AE1DB4F6A3000D1D99 /* QBSBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11991DB4F6A3000D1D99 /* QBSBannerCell.m */; };
+		BC2C11AF1DB4F6A3000D1D99 /* QBSFavouritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C119B1DB4F6A3000D1D99 /* QBSFavouritesCell.m */; };
+		BC2C11B01DB4F6A3000D1D99 /* QBSFavouritesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C119D1DB4F6A3000D1D99 /* QBSFavouritesHeaderView.m */; };
+		BC2C11B11DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C119F1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m */; };
+		BC2C11B21DB4F6A3000D1D99 /* QBSFeaturedCommodityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A11DB4F6A3000D1D99 /* QBSFeaturedCommodityHeaderView.m */; };
+		BC2C11B31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m */; };
+		BC2C11B41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A51DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m */; };
+		BC2C11B51DB4F6A3000D1D99 /* QBSHomeActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A71DB4F6A3000D1D99 /* QBSHomeActivityCell.m */; };
+		BC2C11B61DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A91DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m */; };
+		BC2C11BB1DB4F6D9000D1D99 /* QBSDebugOrderInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11BA1DB4F6D9000D1D99 /* QBSDebugOrderInfoViewController.m */; };
+		BC2C11D01DB4F73F000D1D99 /* QBSActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11BF1DB4F73F000D1D99 /* QBSActivityListViewController.m */; };
+		BC2C11D11DB4F73F000D1D99 /* QBSCommodityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11C11DB4F73F000D1D99 /* QBSCommodityListViewController.m */; };
+		BC2C11D21DB4F73F000D1D99 /* QBSCommodityList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11C41DB4F73F000D1D99 /* QBSCommodityList.m */; };
+		BC2C11D31DB4F73F000D1D99 /* QBSActivityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11C71DB4F73F000D1D99 /* QBSActivityListCell.m */; };
+		BC2C11D41DB4F73F000D1D99 /* QBSActivityListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11C91DB4F73F000D1D99 /* QBSActivityListHeaderView.m */; };
+		BC2C11D51DB4F73F000D1D99 /* QBSProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11CB1DB4F73F000D1D99 /* QBSProgressView.m */; };
+		BC2C11D61DB4F73F000D1D99 /* QBSSortBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11CD1DB4F73F000D1D99 /* QBSSortBar.m */; };
+		BC2C11D71DB4F73F000D1D99 /* QBSSortButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11CF1DB4F73F000D1D99 /* QBSSortButton.m */; };
+		BC2C12081DB4F79A000D1D99 /* QBSNewShippingAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11DB1DB4F79A000D1D99 /* QBSNewShippingAddressViewController.m */; };
+		BC2C12091DB4F79A000D1D99 /* QBSOrderCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11DD1DB4F79A000D1D99 /* QBSOrderCommentViewController.m */; };
+		BC2C120A1DB4F79A000D1D99 /* QBSOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11DF1DB4F79A000D1D99 /* QBSOrderListViewController.m */; };
+		BC2C120B1DB4F79A000D1D99 /* QBSOrderManifestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11E11DB4F79A000D1D99 /* QBSOrderManifestViewController.m */; };
+		BC2C120C1DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11E31DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.m */; };
+		BC2C120D1DB4F79A000D1D99 /* QBSOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11E51DB4F79A000D1D99 /* QBSOrderViewController.m */; };
+		BC2C120E1DB4F79A000D1D99 /* QBSShippingAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11E71DB4F79A000D1D99 /* QBSShippingAddressListViewController.m */; };
+		BC2C120F1DB4F79A000D1D99 /* QBSOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11EA1DB4F79A000D1D99 /* QBSOrder.m */; };
+		BC2C12101DB4F79A000D1D99 /* QBSOrderCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11EC1DB4F79A000D1D99 /* QBSOrderCommodity.m */; };
+		BC2C12111DB4F79A000D1D99 /* QBSShippingAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11EE1DB4F79A000D1D99 /* QBSShippingAddress.m */; };
+		BC2C12121DB4F79A000D1D99 /* QBSAddressListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11F11DB4F79A000D1D99 /* QBSAddressListCell.m */; };
+		BC2C12131DB4F79A000D1D99 /* QBSDefaultAddressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11F31DB4F79A000D1D99 /* QBSDefaultAddressButton.m */; };
+		BC2C12141DB4F79A000D1D99 /* QBSNewShippingAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11F51DB4F79A000D1D99 /* QBSNewShippingAddressCell.m */; };
+		BC2C12151DB4F79A000D1D99 /* QBSOrderActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11F71DB4F79A000D1D99 /* QBSOrderActionBar.m */; };
+		BC2C12161DB4F79A000D1D99 /* QBSOrderAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11F91DB4F79A000D1D99 /* QBSOrderAddressCell.m */; };
+		BC2C12171DB4F79A000D1D99 /* QBSOrderCommentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11FB1DB4F79A000D1D99 /* QBSOrderCommentListCell.m */; };
+		BC2C12181DB4F79A000D1D99 /* QBSOrderCommodityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11FD1DB4F79A000D1D99 /* QBSOrderCommodityListCell.m */; };
+		BC2C12191DB4F79A000D1D99 /* QBSOrderListPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11FF1DB4F79A000D1D99 /* QBSOrderListPriceCell.m */; };
+		BC2C121A1DB4F79A000D1D99 /* QBSOrderManifestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12011DB4F79A000D1D99 /* QBSOrderManifestCell.m */; };
+		BC2C121B1DB4F79A000D1D99 /* QBSOrderPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12031DB4F79A000D1D99 /* QBSOrderPaymentCell.m */; };
+		BC2C121C1DB4F79A000D1D99 /* QBSOrderTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */; };
+		BC2C121D1DB4F79A000D1D99 /* QBSRegionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */; };
+		BC2C121F1DB4F8CE000D1D99 /* QBStoreSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C121E1DB4F8CE000D1D99 /* QBStoreSDK.bundle */; };
+		BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */; };
+		BC2C122F1DB4F8DD000D1D99 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */; };
+		BC2C12301DB4F8DD000D1D99 /* IapppayAlphaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */; };
+		BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */; };
+		BC2C12321DB4F8DD000D1D99 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */; };
+		BC2C12331DB4F8DD000D1D99 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */; };
+		BC2C12341DB4F8DD000D1D99 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC2C122A1DB4F8DD000D1D99 /* README.txt */; };
+		BC2C12371DB4FD3C000D1D99 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12361DB4FD3C000D1D99 /* libz.tbd */; };
+		BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12381DB4FD4C000D1D99 /* libc++.tbd */; };
+		BC2C123B1DB4FD5D000D1D99 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */; };
+		BC2C123D1DB4FD67000D1D99 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123C1DB4FD67000D1D99 /* CoreMotion.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7E78B62C576C3A581856D757 /* Pods-QBStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.release.xcconfig"; sourceTree = "<group>"; };
+		BC2C10361DB4D700000D1D99 /* QBStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QBStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC2C103A1DB4D700000D1D99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC2C10451DB4D700000D1D99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC2C10481DB4D700000D1D99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC2C104A1DB4D700000D1D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC2C10501DB4D787000D1D99 /* QBSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSAppDelegate.h; sourceTree = "<group>"; };
+		BC2C10511DB4D787000D1D99 /* QBSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSAppDelegate.m; sourceTree = "<group>"; };
+		BC2C10531DB4D931000D1D99 /* QBSPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPrefixHeader.pch; sourceTree = "<group>"; };
+		BC2C10541DB4DBA4000D1D99 /* QBSCommonTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBSCommonTypes.h; sourceTree = "<group>"; };
+		BC2C10551DB4DBE0000D1D99 /* QBSCommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBSCommonMacros.h; sourceTree = "<group>"; };
+		BC2C10561DB4DC13000D1D99 /* QBSCommonFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBSCommonFunctions.h; sourceTree = "<group>"; };
+		BC2C10591DB4DD0B000D1D99 /* NSArray+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Utilities.h"; sourceTree = "<group>"; };
+		BC2C105A1DB4DD0B000D1D99 /* NSArray+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Utilities.m"; sourceTree = "<group>"; };
+		BC2C105B1DB4DD0B000D1D99 /* NSError+QBSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+QBSError.h"; sourceTree = "<group>"; };
+		BC2C105C1DB4DD0B000D1D99 /* NSError+QBSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+QBSError.m"; sourceTree = "<group>"; };
+		BC2C105D1DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SafeCoding.h"; sourceTree = "<group>"; };
+		BC2C105E1DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SafeCoding.m"; sourceTree = "<group>"; };
+		BC2C105F1DB4DD0B000D1D99 /* NSObject+BaseRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BaseRepresentation.h"; sourceTree = "<group>"; };
+		BC2C10601DB4DD0B000D1D99 /* NSObject+BaseRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BaseRepresentation.m"; sourceTree = "<group>"; };
+		BC2C10611DB4DD0B000D1D99 /* NSObject+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Properties.h"; sourceTree = "<group>"; };
+		BC2C10621DB4DD0B000D1D99 /* NSObject+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Properties.m"; sourceTree = "<group>"; };
+		BC2C10631DB4DD0B000D1D99 /* NSString+crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+crypt.h"; sourceTree = "<group>"; };
+		BC2C10641DB4DD0B000D1D99 /* NSString+crypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+crypt.m"; sourceTree = "<group>"; };
+		BC2C10651DB4DD0B000D1D99 /* RACEXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACEXTScope.h; sourceTree = "<group>"; };
+		BC2C10661DB4DD0B000D1D99 /* RACmetamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACmetamacros.h; sourceTree = "<group>"; };
+		BC2C10671DB4DD0B000D1D99 /* UIColor+FeaturedColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FeaturedColor.h"; sourceTree = "<group>"; };
+		BC2C10681DB4DD0B000D1D99 /* UIColor+FeaturedColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FeaturedColor.m"; sourceTree = "<group>"; };
+		BC2C10691DB4DD0B000D1D99 /* UIColor+hexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hexColor.h"; sourceTree = "<group>"; };
+		BC2C106A1DB4DD0B000D1D99 /* UIColor+hexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hexColor.m"; sourceTree = "<group>"; };
+		BC2C106B1DB4DD0B000D1D99 /* UIImage+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+color.h"; sourceTree = "<group>"; };
+		BC2C106C1DB4DD0B000D1D99 /* UIImage+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+color.m"; sourceTree = "<group>"; };
+		BC2C106D1DB4DD0B000D1D99 /* UIImage+QBResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QBResource.h"; sourceTree = "<group>"; };
+		BC2C106E1DB4DD0B000D1D99 /* UIImage+QBResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QBResource.m"; sourceTree = "<group>"; };
+		BC2C106F1DB4DD0B000D1D99 /* UIScrollView+Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Refresh.h"; sourceTree = "<group>"; };
+		BC2C10701DB4DD0B000D1D99 /* UIScrollView+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Refresh.m"; sourceTree = "<group>"; };
+		BC2C10711DB4DD0B000D1D99 /* UIView+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Loading.h"; sourceTree = "<group>"; };
+		BC2C10721DB4DD0B000D1D99 /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
+		BC2C10731DB4DD0B000D1D99 /* UIView+RoundCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundCorner.h"; sourceTree = "<group>"; };
+		BC2C10741DB4DD0B000D1D99 /* UIView+RoundCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundCorner.m"; sourceTree = "<group>"; };
+		BC2C10831DB4DE35000D1D99 /* DBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandler.h; sourceTree = "<group>"; };
+		BC2C10841DB4DE35000D1D99 /* DBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHandler.m; sourceTree = "<group>"; };
+		BC2C10851DB4DE35000D1D99 /* DBMigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMigration.h; sourceTree = "<group>"; };
+		BC2C10861DB4DE35000D1D99 /* DBPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPersistence.h; sourceTree = "<group>"; };
+		BC2C10871DB4DE35000D1D99 /* DBPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPersistence.m; sourceTree = "<group>"; };
+		BC2C10881DB4DE35000D1D99 /* DBTableVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTableVersion.h; sourceTree = "<group>"; };
+		BC2C10891DB4DE35000D1D99 /* DBTableVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTableVersion.m; sourceTree = "<group>"; };
+		BC2C108E1DB4DED2000D1D99 /* QBSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSConfiguration.h; sourceTree = "<group>"; };
+		BC2C108F1DB4DED2000D1D99 /* QBSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSConfiguration.m; sourceTree = "<group>"; };
+		BC2C10901DB4DED2000D1D99 /* QBSErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSErrorHandler.h; sourceTree = "<group>"; };
+		BC2C10911DB4DED2000D1D99 /* QBSErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSErrorHandler.m; sourceTree = "<group>"; };
+		BC2C10921DB4DED2000D1D99 /* QBSHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHttpClient.h; sourceTree = "<group>"; };
+		BC2C10931DB4DED2000D1D99 /* QBSHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHttpClient.m; sourceTree = "<group>"; };
+		BC2C10941DB4DED2000D1D99 /* QBSHUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHUDManager.h; sourceTree = "<group>"; };
+		BC2C10951DB4DED2000D1D99 /* QBSHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHUDManager.m; sourceTree = "<group>"; };
+		BC2C10961DB4DED2000D1D99 /* QBSRESTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSRESTManager.h; sourceTree = "<group>"; };
+		BC2C10971DB4DED2000D1D99 /* QBSRESTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSRESTManager.m; sourceTree = "<group>"; };
+		BC2C10981DB4DED2000D1D99 /* QBSUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSUIHelper.h; sourceTree = "<group>"; };
+		BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUIHelper.m; sourceTree = "<group>"; };
+		BC2C109A1DB4DED2000D1D99 /* QBSWeChatHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSWeChatHelper.h; sourceTree = "<group>"; };
+		BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSWeChatHelper.m; sourceTree = "<group>"; };
+		BC2C10A41DB4DF20000D1D99 /* IappPayMananger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IappPayMananger.h; sourceTree = "<group>"; };
+		BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IappPayMananger.m; sourceTree = "<group>"; };
+		BC2C10A61DB4DF20000D1D99 /* QBSPaymentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPaymentManager.h; sourceTree = "<group>"; };
+		BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPaymentManager.m; sourceTree = "<group>"; };
+		BC2C10AC1DB4DFA0000D1D99 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		BC2C10AD1DB4DFA0000D1D99 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		BC2C10B01DB4DFA0000D1D99 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		BC2C10B11DB4DFA0000D1D99 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		BC2C10B21DB4DFA0000D1D99 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		BC2C10B31DB4DFA0000D1D99 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		BC2C10B41DB4DFA0000D1D99 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		BC2C10B51DB4DFA0000D1D99 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		BC2C10B61DB4DFA0000D1D99 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		BC2C10B71DB4DFA0000D1D99 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		BC2C10B81DB4DFA0000D1D99 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		BC2C10B91DB4DFA0000D1D99 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		BC2C10BA1DB4DFA0000D1D99 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		BC2C10BB1DB4DFA0000D1D99 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		BC2C10BC1DB4DFA0000D1D99 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		BC2C10BD1DB4DFA0000D1D99 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		BC2C10CC1DB4E073000D1D99 /* QBSSMSVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSMSVerificationViewController.h; sourceTree = "<group>"; };
+		BC2C10CD1DB4E073000D1D99 /* QBSSMSVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSMSVerificationViewController.m; sourceTree = "<group>"; };
+		BC2C10CE1DB4E073000D1D99 /* QBSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSUserLoginViewController.h; sourceTree = "<group>"; };
+		BC2C10CF1DB4E073000D1D99 /* QBSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUserLoginViewController.m; sourceTree = "<group>"; };
+		BC2C10D01DB4E073000D1D99 /* QBSUserNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSUserNavigationController.h; sourceTree = "<group>"; };
+		BC2C10D11DB4E073000D1D99 /* QBSUserNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUserNavigationController.m; sourceTree = "<group>"; };
+		BC2C10D21DB4E073000D1D99 /* QBSUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSUserProfileViewController.h; sourceTree = "<group>"; };
+		BC2C10D31DB4E073000D1D99 /* QBSUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUserProfileViewController.m; sourceTree = "<group>"; };
+		BC2C10D41DB4E073000D1D99 /* QBSUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSUserViewController.h; sourceTree = "<group>"; };
+		BC2C10D51DB4E073000D1D99 /* QBSUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUserViewController.m; sourceTree = "<group>"; };
+		BC2C10D71DB4E073000D1D99 /* QBSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSUser.h; sourceTree = "<group>"; };
+		BC2C10D81DB4E073000D1D99 /* QBSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUser.m; sourceTree = "<group>"; };
+		BC2C10D91DB4E073000D1D99 /* QBSWeChatUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSWeChatUser.h; sourceTree = "<group>"; };
+		BC2C10DA1DB4E073000D1D99 /* QBSWeChatUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSWeChatUser.m; sourceTree = "<group>"; };
+		BC2C10DC1DB4E073000D1D99 /* QBSPhoneTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPhoneTextField.h; sourceTree = "<group>"; };
+		BC2C10DD1DB4E073000D1D99 /* QBSPhoneTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPhoneTextField.m; sourceTree = "<group>"; };
+		BC2C10DE1DB4E073000D1D99 /* QBSWeChatLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSWeChatLoginButton.h; sourceTree = "<group>"; };
+		BC2C10DF1DB4E073000D1D99 /* QBSWeChatLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSWeChatLoginButton.m; sourceTree = "<group>"; };
+		BC2C10EB1DB4E0D2000D1D99 /* QBSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSBaseViewController.h; sourceTree = "<group>"; };
+		BC2C10EC1DB4E0D2000D1D99 /* QBSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSBaseViewController.m; sourceTree = "<group>"; };
+		BC2C10ED1DB4E0D2000D1D99 /* QBSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSNavigationController.h; sourceTree = "<group>"; };
+		BC2C10EE1DB4E0D2000D1D99 /* QBSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSNavigationController.m; sourceTree = "<group>"; };
+		BC2C10F01DB4E0D2000D1D99 /* QBSBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSBanner.h; sourceTree = "<group>"; };
+		BC2C10F11DB4E0D2000D1D99 /* QBSBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSBanner.m; sourceTree = "<group>"; };
+		BC2C10F21DB4E0D2000D1D99 /* QBSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCategory.h; sourceTree = "<group>"; };
+		BC2C10F31DB4E0D2000D1D99 /* QBSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCategory.m; sourceTree = "<group>"; };
+		BC2C10F41DB4E0D2000D1D99 /* QBSCategoryTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCategoryTag.h; sourceTree = "<group>"; };
+		BC2C10F51DB4E0D2000D1D99 /* QBSCategoryTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCategoryTag.m; sourceTree = "<group>"; };
+		BC2C10F61DB4E0D2000D1D99 /* QBSCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodity.h; sourceTree = "<group>"; };
+		BC2C10F71DB4E0D2000D1D99 /* QBSCommodity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodity.m; sourceTree = "<group>"; };
+		BC2C10F81DB4E0D2000D1D99 /* QBSCommodityTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityTag.h; sourceTree = "<group>"; };
+		BC2C10F91DB4E0D2000D1D99 /* QBSCommodityTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityTag.m; sourceTree = "<group>"; };
+		BC2C10FA1DB4E0D2000D1D99 /* QBSFeaturedCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedCommodity.h; sourceTree = "<group>"; };
+		BC2C10FB1DB4E0D2000D1D99 /* QBSFeaturedCommodity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedCommodity.m; sourceTree = "<group>"; };
+		BC2C10FC1DB4E0D2000D1D99 /* QBSJSONResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSJSONResponse.h; sourceTree = "<group>"; };
+		BC2C10FD1DB4E0D2000D1D99 /* QBSJSONResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSJSONResponse.m; sourceTree = "<group>"; };
+		BC2C10FF1DB4E0D2000D1D99 /* QBSAmountPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSAmountPicker.h; sourceTree = "<group>"; };
+		BC2C11001DB4E0D2000D1D99 /* QBSAmountPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSAmountPicker.m; sourceTree = "<group>"; };
+		BC2C11011DB4E0D2000D1D99 /* QBSCartButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCartButton.h; sourceTree = "<group>"; };
+		BC2C11021DB4E0D2000D1D99 /* QBSCartButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCartButton.m; sourceTree = "<group>"; };
+		BC2C11031DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCollectionHeaderFooterView.h; sourceTree = "<group>"; };
+		BC2C11041DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCollectionHeaderFooterView.m; sourceTree = "<group>"; };
+		BC2C11051DB4E0D2000D1D99 /* QBSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCollectionViewCell.h; sourceTree = "<group>"; };
+		BC2C11061DB4E0D2000D1D99 /* QBSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCollectionViewCell.m; sourceTree = "<group>"; };
+		BC2C11071DB4E0D2000D1D99 /* QBSCustomerServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCustomerServiceCell.h; sourceTree = "<group>"; };
+		BC2C11081DB4E0D2000D1D99 /* QBSCustomerServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCustomerServiceCell.m; sourceTree = "<group>"; };
+		BC2C11091DB4E0D2000D1D99 /* QBSGridSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSGridSheet.h; sourceTree = "<group>"; };
+		BC2C110A1DB4E0D2000D1D99 /* QBSGridSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSGridSheet.m; sourceTree = "<group>"; };
+		BC2C110B1DB4E0D2000D1D99 /* QBSPagingRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPagingRefreshView.h; sourceTree = "<group>"; };
+		BC2C110C1DB4E0D2000D1D99 /* QBSPagingRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPagingRefreshView.m; sourceTree = "<group>"; };
+		BC2C110D1DB4E0D2000D1D99 /* QBSPaymentSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPaymentSheet.h; sourceTree = "<group>"; };
+		BC2C110E1DB4E0D2000D1D99 /* QBSPaymentSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPaymentSheet.m; sourceTree = "<group>"; };
+		BC2C110F1DB4E0D2000D1D99 /* QBSPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPullToRefreshView.h; sourceTree = "<group>"; };
+		BC2C11101DB4E0D2000D1D99 /* QBSPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPullToRefreshView.m; sourceTree = "<group>"; };
+		BC2C11111DB4E0D2000D1D99 /* QBSSubtitledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSubtitledTableViewCell.h; sourceTree = "<group>"; };
+		BC2C11121DB4E0D2000D1D99 /* QBSSubtitledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSubtitledTableViewCell.m; sourceTree = "<group>"; };
+		BC2C11131DB4E0D2000D1D99 /* QBSTableHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTableHeaderFooterView.h; sourceTree = "<group>"; };
+		BC2C11141DB4E0D2000D1D99 /* QBSTableHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTableHeaderFooterView.m; sourceTree = "<group>"; };
+		BC2C11151DB4E0D2000D1D99 /* QBSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTableViewCell.h; sourceTree = "<group>"; };
+		BC2C11161DB4E0D2000D1D99 /* QBSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTableViewCell.m; sourceTree = "<group>"; };
+		BC2C112E1DB4E11D000D1D99 /* QBSCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCartViewController.h; sourceTree = "<group>"; };
+		BC2C112F1DB4E11D000D1D99 /* QBSCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCartViewController.m; sourceTree = "<group>"; };
+		BC2C11311DB4E11D000D1D99 /* QBSCartCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCartCommodity.h; sourceTree = "<group>"; };
+		BC2C11321DB4E11D000D1D99 /* QBSCartCommodity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCartCommodity.m; sourceTree = "<group>"; };
+		BC2C11341DB4E11D000D1D99 /* QBSCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCartCell.h; sourceTree = "<group>"; };
+		BC2C11351DB4E11D000D1D99 /* QBSCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCartCell.m; sourceTree = "<group>"; };
+		BC2C11361DB4E11D000D1D99 /* QBSPaymentFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPaymentFooterView.h; sourceTree = "<group>"; };
+		BC2C11371DB4E11D000D1D99 /* QBSPaymentFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPaymentFooterView.m; sourceTree = "<group>"; };
+		BC2C11411DB4E9B8000D1D99 /* QBSCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCategoryViewController.h; sourceTree = "<group>"; };
+		BC2C11421DB4E9B8000D1D99 /* QBSCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCategoryViewController.m; sourceTree = "<group>"; };
+		BC2C11441DB4E9B8000D1D99 /* QBSCategoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCategoryList.h; sourceTree = "<group>"; };
+		BC2C11451DB4E9B8000D1D99 /* QBSCategoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCategoryList.m; sourceTree = "<group>"; };
+		BC2C11461DB4E9B8000D1D99 /* QBSSubCategoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSubCategoryList.h; sourceTree = "<group>"; };
+		BC2C11471DB4E9B8000D1D99 /* QBSSubCategoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSubCategoryList.m; sourceTree = "<group>"; };
+		BC2C11491DB4E9B8000D1D99 /* QBSCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCategoryCell.h; sourceTree = "<group>"; };
+		BC2C114A1DB4E9B8000D1D99 /* QBSCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCategoryCell.m; sourceTree = "<group>"; };
+		BC2C114B1DB4E9B8000D1D99 /* QBSSubCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSubCategoryCell.h; sourceTree = "<group>"; };
+		BC2C114C1DB4E9B8000D1D99 /* QBSSubCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSubCategoryCell.m; sourceTree = "<group>"; };
+		BC2C114D1DB4E9B8000D1D99 /* QBSSubCategoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSubCategoryHeaderView.h; sourceTree = "<group>"; };
+		BC2C114E1DB4E9B8000D1D99 /* QBSSubCategoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSubCategoryHeaderView.m; sourceTree = "<group>"; };
+		BC2C11571DB4F481000D1D99 /* QBSCustomerServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCustomerServiceController.h; sourceTree = "<group>"; };
+		BC2C11581DB4F481000D1D99 /* QBSCustomerServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCustomerServiceController.m; sourceTree = "<group>"; };
+		BC2C115A1DB4F481000D1D99 /* QBSCustomerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCustomerService.h; sourceTree = "<group>"; };
+		BC2C115B1DB4F481000D1D99 /* QBSCustomerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCustomerService.m; sourceTree = "<group>"; };
+		BC2C11601DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailCommentViewController.h; sourceTree = "<group>"; };
+		BC2C11611DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailCommentViewController.m; sourceTree = "<group>"; };
+		BC2C11621DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailDescriptionViewController.h; sourceTree = "<group>"; };
+		BC2C11631DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailDescriptionViewController.m; sourceTree = "<group>"; };
+		BC2C11641DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailSubViewController.h; sourceTree = "<group>"; };
+		BC2C11651DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailSubViewController.m; sourceTree = "<group>"; };
+		BC2C11661DB4F60D000D1D99 /* QBSCommodityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailViewController.h; sourceTree = "<group>"; };
+		BC2C11671DB4F60D000D1D99 /* QBSCommodityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailViewController.m; sourceTree = "<group>"; };
+		BC2C11691DB4F60D000D1D99 /* QBSCommodityComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityComment.h; sourceTree = "<group>"; };
+		BC2C116A1DB4F60D000D1D99 /* QBSCommodityComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityComment.m; sourceTree = "<group>"; };
+		BC2C116B1DB4F60D000D1D99 /* QBSCommodityDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetail.h; sourceTree = "<group>"; };
+		BC2C116C1DB4F60D000D1D99 /* QBSCommodityDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetail.m; sourceTree = "<group>"; };
+		BC2C116E1DB4F60D000D1D99 /* QBSCommentFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommentFooterView.h; sourceTree = "<group>"; };
+		BC2C116F1DB4F60D000D1D99 /* QBSCommentFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommentFooterView.m; sourceTree = "<group>"; };
+		BC2C11701DB4F60D000D1D99 /* QBSCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityCell.h; sourceTree = "<group>"; };
+		BC2C11711DB4F60D000D1D99 /* QBSCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityCell.m; sourceTree = "<group>"; };
+		BC2C11721DB4F60D000D1D99 /* QBSCommodityCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityCommentCell.h; sourceTree = "<group>"; };
+		BC2C11731DB4F60D000D1D99 /* QBSCommodityCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityCommentCell.m; sourceTree = "<group>"; };
+		BC2C11741DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailServiceMarkRowCell.h; sourceTree = "<group>"; };
+		BC2C11751DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailServiceMarkRowCell.m; sourceTree = "<group>"; };
+		BC2C11761DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailShoppingBar.h; sourceTree = "<group>"; };
+		BC2C11771DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailShoppingBar.m; sourceTree = "<group>"; };
+		BC2C11781DB4F60D000D1D99 /* QBSCommodityDetailTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailTitleCell.h; sourceTree = "<group>"; };
+		BC2C11791DB4F60D000D1D99 /* QBSCommodityDetailTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailTitleCell.m; sourceTree = "<group>"; };
+		BC2C117A1DB4F60D000D1D99 /* QBSCustomerServiceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCustomerServiceButton.h; sourceTree = "<group>"; };
+		BC2C117B1DB4F60D000D1D99 /* QBSCustomerServiceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCustomerServiceButton.m; sourceTree = "<group>"; };
+		BC2C117C1DB4F60D000D1D99 /* QBSServiceMarkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSServiceMarkCell.h; sourceTree = "<group>"; };
+		BC2C117D1DB4F60D000D1D99 /* QBSServiceMarkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSServiceMarkCell.m; sourceTree = "<group>"; };
+		BC2C118E1DB4F6A3000D1D99 /* QBSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeViewController.h; sourceTree = "<group>"; };
+		BC2C118F1DB4F6A3000D1D99 /* QBSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHomeViewController.m; sourceTree = "<group>"; };
+		BC2C11911DB4F6A3000D1D99 /* QBSHomeFavourites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeFavourites.h; sourceTree = "<group>"; };
+		BC2C11921DB4F6A3000D1D99 /* QBSHomeFavourites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHomeFavourites.m; sourceTree = "<group>"; };
+		BC2C11931DB4F6A3000D1D99 /* QBSHomeGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeGroup.h; sourceTree = "<group>"; };
+		BC2C11941DB4F6A3000D1D99 /* QBSHomeGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHomeGroup.m; sourceTree = "<group>"; };
+		BC2C11961DB4F6A3000D1D99 /* QBSActivityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSActivityHeaderView.h; sourceTree = "<group>"; };
+		BC2C11971DB4F6A3000D1D99 /* QBSActivityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSActivityHeaderView.m; sourceTree = "<group>"; };
+		BC2C11981DB4F6A3000D1D99 /* QBSBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSBannerCell.h; sourceTree = "<group>"; };
+		BC2C11991DB4F6A3000D1D99 /* QBSBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSBannerCell.m; sourceTree = "<group>"; };
+		BC2C119A1DB4F6A3000D1D99 /* QBSFavouritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFavouritesCell.h; sourceTree = "<group>"; };
+		BC2C119B1DB4F6A3000D1D99 /* QBSFavouritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesCell.m; sourceTree = "<group>"; };
+		BC2C119C1DB4F6A3000D1D99 /* QBSFavouritesHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFavouritesHeaderView.h; sourceTree = "<group>"; };
+		BC2C119D1DB4F6A3000D1D99 /* QBSFavouritesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesHeaderView.m; sourceTree = "<group>"; };
+		BC2C119E1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedCommodityCell.h; sourceTree = "<group>"; };
+		BC2C119F1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedCommodityCell.m; sourceTree = "<group>"; };
+		BC2C11A01DB4F6A3000D1D99 /* QBSFeaturedCommodityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedCommodityHeaderView.h; sourceTree = "<group>"; };
+		BC2C11A11DB4F6A3000D1D99 /* QBSFeaturedCommodityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedCommodityHeaderView.m; sourceTree = "<group>"; };
+		BC2C11A21DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedCommodityRowCell.h; sourceTree = "<group>"; };
+		BC2C11A31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedCommodityRowCell.m; sourceTree = "<group>"; };
+		BC2C11A41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedTypeCell.h; sourceTree = "<group>"; };
+		BC2C11A51DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedTypeCell.m; sourceTree = "<group>"; };
+		BC2C11A61DB4F6A3000D1D99 /* QBSHomeActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeActivityCell.h; sourceTree = "<group>"; };
+		BC2C11A71DB4F6A3000D1D99 /* QBSHomeActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHomeActivityCell.m; sourceTree = "<group>"; };
+		BC2C11A81DB4F6A3000D1D99 /* QBSHomeActivityRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeActivityRowCell.h; sourceTree = "<group>"; };
+		BC2C11A91DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHomeActivityRowCell.m; sourceTree = "<group>"; };
+		BC2C11B91DB4F6D9000D1D99 /* QBSDebugOrderInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSDebugOrderInfoViewController.h; sourceTree = "<group>"; };
+		BC2C11BA1DB4F6D9000D1D99 /* QBSDebugOrderInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSDebugOrderInfoViewController.m; sourceTree = "<group>"; };
+		BC2C11BE1DB4F73F000D1D99 /* QBSActivityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSActivityListViewController.h; sourceTree = "<group>"; };
+		BC2C11BF1DB4F73F000D1D99 /* QBSActivityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSActivityListViewController.m; sourceTree = "<group>"; };
+		BC2C11C01DB4F73F000D1D99 /* QBSCommodityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityListViewController.h; sourceTree = "<group>"; };
+		BC2C11C11DB4F73F000D1D99 /* QBSCommodityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityListViewController.m; sourceTree = "<group>"; };
+		BC2C11C31DB4F73F000D1D99 /* QBSCommodityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityList.h; sourceTree = "<group>"; };
+		BC2C11C41DB4F73F000D1D99 /* QBSCommodityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityList.m; sourceTree = "<group>"; };
+		BC2C11C61DB4F73F000D1D99 /* QBSActivityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSActivityListCell.h; sourceTree = "<group>"; };
+		BC2C11C71DB4F73F000D1D99 /* QBSActivityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSActivityListCell.m; sourceTree = "<group>"; };
+		BC2C11C81DB4F73F000D1D99 /* QBSActivityListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSActivityListHeaderView.h; sourceTree = "<group>"; };
+		BC2C11C91DB4F73F000D1D99 /* QBSActivityListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSActivityListHeaderView.m; sourceTree = "<group>"; };
+		BC2C11CA1DB4F73F000D1D99 /* QBSProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSProgressView.h; sourceTree = "<group>"; };
+		BC2C11CB1DB4F73F000D1D99 /* QBSProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSProgressView.m; sourceTree = "<group>"; };
+		BC2C11CC1DB4F73F000D1D99 /* QBSSortBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSortBar.h; sourceTree = "<group>"; };
+		BC2C11CD1DB4F73F000D1D99 /* QBSSortBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSortBar.m; sourceTree = "<group>"; };
+		BC2C11CE1DB4F73F000D1D99 /* QBSSortButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSortButton.h; sourceTree = "<group>"; };
+		BC2C11CF1DB4F73F000D1D99 /* QBSSortButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSortButton.m; sourceTree = "<group>"; };
+		BC2C11DA1DB4F79A000D1D99 /* QBSNewShippingAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSNewShippingAddressViewController.h; sourceTree = "<group>"; };
+		BC2C11DB1DB4F79A000D1D99 /* QBSNewShippingAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSNewShippingAddressViewController.m; sourceTree = "<group>"; };
+		BC2C11DC1DB4F79A000D1D99 /* QBSOrderCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderCommentViewController.h; sourceTree = "<group>"; };
+		BC2C11DD1DB4F79A000D1D99 /* QBSOrderCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderCommentViewController.m; sourceTree = "<group>"; };
+		BC2C11DE1DB4F79A000D1D99 /* QBSOrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderListViewController.h; sourceTree = "<group>"; };
+		BC2C11DF1DB4F79A000D1D99 /* QBSOrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderListViewController.m; sourceTree = "<group>"; };
+		BC2C11E01DB4F79A000D1D99 /* QBSOrderManifestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderManifestViewController.h; sourceTree = "<group>"; };
+		BC2C11E11DB4F79A000D1D99 /* QBSOrderManifestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderManifestViewController.m; sourceTree = "<group>"; };
+		BC2C11E21DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QBSOrderViewController+TableViewModel.h"; sourceTree = "<group>"; };
+		BC2C11E31DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QBSOrderViewController+TableViewModel.m"; sourceTree = "<group>"; };
+		BC2C11E41DB4F79A000D1D99 /* QBSOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderViewController.h; sourceTree = "<group>"; };
+		BC2C11E51DB4F79A000D1D99 /* QBSOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderViewController.m; sourceTree = "<group>"; };
+		BC2C11E61DB4F79A000D1D99 /* QBSShippingAddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSShippingAddressListViewController.h; sourceTree = "<group>"; };
+		BC2C11E71DB4F79A000D1D99 /* QBSShippingAddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSShippingAddressListViewController.m; sourceTree = "<group>"; };
+		BC2C11E91DB4F79A000D1D99 /* QBSOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrder.h; sourceTree = "<group>"; };
+		BC2C11EA1DB4F79A000D1D99 /* QBSOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrder.m; sourceTree = "<group>"; };
+		BC2C11EB1DB4F79A000D1D99 /* QBSOrderCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderCommodity.h; sourceTree = "<group>"; };
+		BC2C11EC1DB4F79A000D1D99 /* QBSOrderCommodity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderCommodity.m; sourceTree = "<group>"; };
+		BC2C11ED1DB4F79A000D1D99 /* QBSShippingAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSShippingAddress.h; sourceTree = "<group>"; };
+		BC2C11EE1DB4F79A000D1D99 /* QBSShippingAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSShippingAddress.m; sourceTree = "<group>"; };
+		BC2C11F01DB4F79A000D1D99 /* QBSAddressListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSAddressListCell.h; sourceTree = "<group>"; };
+		BC2C11F11DB4F79A000D1D99 /* QBSAddressListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSAddressListCell.m; sourceTree = "<group>"; };
+		BC2C11F21DB4F79A000D1D99 /* QBSDefaultAddressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSDefaultAddressButton.h; sourceTree = "<group>"; };
+		BC2C11F31DB4F79A000D1D99 /* QBSDefaultAddressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSDefaultAddressButton.m; sourceTree = "<group>"; };
+		BC2C11F41DB4F79A000D1D99 /* QBSNewShippingAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSNewShippingAddressCell.h; sourceTree = "<group>"; };
+		BC2C11F51DB4F79A000D1D99 /* QBSNewShippingAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSNewShippingAddressCell.m; sourceTree = "<group>"; };
+		BC2C11F61DB4F79A000D1D99 /* QBSOrderActionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderActionBar.h; sourceTree = "<group>"; };
+		BC2C11F71DB4F79A000D1D99 /* QBSOrderActionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderActionBar.m; sourceTree = "<group>"; };
+		BC2C11F81DB4F79A000D1D99 /* QBSOrderAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderAddressCell.h; sourceTree = "<group>"; };
+		BC2C11F91DB4F79A000D1D99 /* QBSOrderAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderAddressCell.m; sourceTree = "<group>"; };
+		BC2C11FA1DB4F79A000D1D99 /* QBSOrderCommentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderCommentListCell.h; sourceTree = "<group>"; };
+		BC2C11FB1DB4F79A000D1D99 /* QBSOrderCommentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderCommentListCell.m; sourceTree = "<group>"; };
+		BC2C11FC1DB4F79A000D1D99 /* QBSOrderCommodityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderCommodityListCell.h; sourceTree = "<group>"; };
+		BC2C11FD1DB4F79A000D1D99 /* QBSOrderCommodityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderCommodityListCell.m; sourceTree = "<group>"; };
+		BC2C11FE1DB4F79A000D1D99 /* QBSOrderListPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderListPriceCell.h; sourceTree = "<group>"; };
+		BC2C11FF1DB4F79A000D1D99 /* QBSOrderListPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderListPriceCell.m; sourceTree = "<group>"; };
+		BC2C12001DB4F79A000D1D99 /* QBSOrderManifestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderManifestCell.h; sourceTree = "<group>"; };
+		BC2C12011DB4F79A000D1D99 /* QBSOrderManifestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderManifestCell.m; sourceTree = "<group>"; };
+		BC2C12021DB4F79A000D1D99 /* QBSOrderPaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderPaymentCell.h; sourceTree = "<group>"; };
+		BC2C12031DB4F79A000D1D99 /* QBSOrderPaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderPaymentCell.m; sourceTree = "<group>"; };
+		BC2C12041DB4F79A000D1D99 /* QBSOrderTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderTitleCell.h; sourceTree = "<group>"; };
+		BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderTitleCell.m; sourceTree = "<group>"; };
+		BC2C12061DB4F79A000D1D99 /* QBSRegionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSRegionPicker.h; sourceTree = "<group>"; };
+		BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSRegionPicker.m; sourceTree = "<group>"; };
+		BC2C121E1DB4F8CE000D1D99 /* QBStoreSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QBStoreSDK.bundle; sourceTree = "<group>"; };
+		BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IapppayAlphaKit.framework; sourceTree = "<group>"; };
+		BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IapppayAlphaResource.bundle; sourceTree = "<group>"; };
+		BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		BC2C122A1DB4F8DD000D1D99 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		BC2C122B1DB4F8DD000D1D99 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		BC2C122C1DB4F8DD000D1D99 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		BC2C122D1DB4F8DD000D1D99 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		BC2C12351DB4FA5D000D1D99 /* QBSConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBSConfig.h; sourceTree = "<group>"; };
+		BC2C12361DB4FD3C000D1D99 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BC2C12381DB4FD4C000D1D99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BC2C123C1DB4FD67000D1D99 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QBStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC2C10331DB4D700000D1D99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC2C123D1DB4FD67000D1D99 /* CoreMotion.framework in Frameworks */,
+				BC2C123B1DB4FD5D000D1D99 /* CoreTelephony.framework in Frameworks */,
+				BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */,
+				BC2C12371DB4FD3C000D1D99 /* libz.tbd in Frameworks */,
+				31294B5AFDA0E45286F5CD27 /* libPods-QBStore.a in Frameworks */,
+				BC2C12301DB4F8DD000D1D99 /* IapppayAlphaKit.framework in Frameworks */,
+				BC2C12321DB4F8DD000D1D99 /* UMMobClick.framework in Frameworks */,
+				BC2C122F1DB4F8DD000D1D99 /* AlipaySDK.framework in Frameworks */,
+				BC2C12331DB4F8DD000D1D99 /* libWeChatSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A9CC8F0F797106BC76DD9BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C123C1DB4FD67000D1D99 /* CoreMotion.framework */,
+				BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */,
+				BC2C12381DB4FD4C000D1D99 /* libc++.tbd */,
+				BC2C12361DB4FD3C000D1D99 /* libz.tbd */,
+				C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		619AED4CB2F573874985EB1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */,
+				7E78B62C576C3A581856D757 /* Pods-QBStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC2C102D1DB4D700000D1D99 = {
+			isa = PBXGroup;
+			children = (
+				BC2C10381DB4D700000D1D99 /* QBStore */,
+				BC2C10371DB4D700000D1D99 /* Products */,
+				619AED4CB2F573874985EB1B /* Pods */,
+				1A9CC8F0F797106BC76DD9BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BC2C10371DB4D700000D1D99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10361DB4D700000D1D99 /* QBStore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC2C10381DB4D700000D1D99 /* QBStore */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10501DB4D787000D1D99 /* QBSAppDelegate.h */,
+				BC2C10511DB4D787000D1D99 /* QBSAppDelegate.m */,
+				BC2C10451DB4D700000D1D99 /* Assets.xcassets */,
+				BC2C10471DB4D700000D1D99 /* LaunchScreen.storyboard */,
+				BC2C121E1DB4F8CE000D1D99 /* QBStoreSDK.bundle */,
+				BC2C10391DB4D700000D1D99 /* Supporting Files */,
+				BC2C10571DB4DCDC000D1D99 /* Classes */,
+			);
+			path = QBStore;
+			sourceTree = "<group>";
+		};
+		BC2C10391DB4D700000D1D99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C104A1DB4D700000D1D99 /* Info.plist */,
+				BC2C103A1DB4D700000D1D99 /* main.m */,
+				BC2C10531DB4D931000D1D99 /* QBSPrefixHeader.pch */,
+				BC2C10541DB4DBA4000D1D99 /* QBSCommonTypes.h */,
+				BC2C10551DB4DBE0000D1D99 /* QBSCommonMacros.h */,
+				BC2C10561DB4DC13000D1D99 /* QBSCommonFunctions.h */,
+				BC2C12351DB4FA5D000D1D99 /* QBSConfig.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC2C10571DB4DCDC000D1D99 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10AA1DB4DFA0000D1D99 /* Vendor */,
+				BC2C108D1DB4DE56000D1D99 /* Utils */,
+				BC2C10821DB4DE35000D1D99 /* Database */,
+				BC2C10581DB4DCDC000D1D99 /* Extensions */,
+				BC2C10A31DB4DF20000D1D99 /* Payment */,
+				BC2C10C91DB4E073000D1D99 /* MVCs */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BC2C10581DB4DCDC000D1D99 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10591DB4DD0B000D1D99 /* NSArray+Utilities.h */,
+				BC2C105A1DB4DD0B000D1D99 /* NSArray+Utilities.m */,
+				BC2C105B1DB4DD0B000D1D99 /* NSError+QBSError.h */,
+				BC2C105C1DB4DD0B000D1D99 /* NSError+QBSError.m */,
+				BC2C105D1DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.h */,
+				BC2C105E1DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.m */,
+				BC2C105F1DB4DD0B000D1D99 /* NSObject+BaseRepresentation.h */,
+				BC2C10601DB4DD0B000D1D99 /* NSObject+BaseRepresentation.m */,
+				BC2C10611DB4DD0B000D1D99 /* NSObject+Properties.h */,
+				BC2C10621DB4DD0B000D1D99 /* NSObject+Properties.m */,
+				BC2C10631DB4DD0B000D1D99 /* NSString+crypt.h */,
+				BC2C10641DB4DD0B000D1D99 /* NSString+crypt.m */,
+				BC2C10651DB4DD0B000D1D99 /* RACEXTScope.h */,
+				BC2C10661DB4DD0B000D1D99 /* RACmetamacros.h */,
+				BC2C10671DB4DD0B000D1D99 /* UIColor+FeaturedColor.h */,
+				BC2C10681DB4DD0B000D1D99 /* UIColor+FeaturedColor.m */,
+				BC2C10691DB4DD0B000D1D99 /* UIColor+hexColor.h */,
+				BC2C106A1DB4DD0B000D1D99 /* UIColor+hexColor.m */,
+				BC2C106B1DB4DD0B000D1D99 /* UIImage+color.h */,
+				BC2C106C1DB4DD0B000D1D99 /* UIImage+color.m */,
+				BC2C106D1DB4DD0B000D1D99 /* UIImage+QBResource.h */,
+				BC2C106E1DB4DD0B000D1D99 /* UIImage+QBResource.m */,
+				BC2C106F1DB4DD0B000D1D99 /* UIScrollView+Refresh.h */,
+				BC2C10701DB4DD0B000D1D99 /* UIScrollView+Refresh.m */,
+				BC2C10711DB4DD0B000D1D99 /* UIView+Loading.h */,
+				BC2C10721DB4DD0B000D1D99 /* UIView+Loading.m */,
+				BC2C10731DB4DD0B000D1D99 /* UIView+RoundCorner.h */,
+				BC2C10741DB4DD0B000D1D99 /* UIView+RoundCorner.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BC2C10821DB4DE35000D1D99 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10831DB4DE35000D1D99 /* DBHandler.h */,
+				BC2C10841DB4DE35000D1D99 /* DBHandler.m */,
+				BC2C10851DB4DE35000D1D99 /* DBMigration.h */,
+				BC2C10861DB4DE35000D1D99 /* DBPersistence.h */,
+				BC2C10871DB4DE35000D1D99 /* DBPersistence.m */,
+				BC2C10881DB4DE35000D1D99 /* DBTableVersion.h */,
+				BC2C10891DB4DE35000D1D99 /* DBTableVersion.m */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		BC2C108D1DB4DE56000D1D99 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C108E1DB4DED2000D1D99 /* QBSConfiguration.h */,
+				BC2C108F1DB4DED2000D1D99 /* QBSConfiguration.m */,
+				BC2C10901DB4DED2000D1D99 /* QBSErrorHandler.h */,
+				BC2C10911DB4DED2000D1D99 /* QBSErrorHandler.m */,
+				BC2C10921DB4DED2000D1D99 /* QBSHttpClient.h */,
+				BC2C10931DB4DED2000D1D99 /* QBSHttpClient.m */,
+				BC2C10941DB4DED2000D1D99 /* QBSHUDManager.h */,
+				BC2C10951DB4DED2000D1D99 /* QBSHUDManager.m */,
+				BC2C10961DB4DED2000D1D99 /* QBSRESTManager.h */,
+				BC2C10971DB4DED2000D1D99 /* QBSRESTManager.m */,
+				BC2C10981DB4DED2000D1D99 /* QBSUIHelper.h */,
+				BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */,
+				BC2C109A1DB4DED2000D1D99 /* QBSWeChatHelper.h */,
+				BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BC2C10A31DB4DF20000D1D99 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10A41DB4DF20000D1D99 /* IappPayMananger.h */,
+				BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */,
+				BC2C10A61DB4DF20000D1D99 /* QBSPaymentManager.h */,
+				BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		BC2C10AA1DB4DFA0000D1D99 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C12201DB4F8DD000D1D99 /* AlipaySDK */,
+				BC2C12231DB4F8DD000D1D99 /* IapppaySDK */,
+				BC2C12261DB4F8DD000D1D99 /* UMMobClick */,
+				BC2C12281DB4F8DD000D1D99 /* WeChatSDK */,
+				BC2C10AB1DB4DFA0000D1D99 /* MZTimerLabel */,
+				BC2C10AE1DB4DFA0000D1D99 /* SDCycleScrollView */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		BC2C10AB1DB4DFA0000D1D99 /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10AC1DB4DFA0000D1D99 /* MZTimerLabel.h */,
+				BC2C10AD1DB4DFA0000D1D99 /* MZTimerLabel.m */,
+			);
+			path = MZTimerLabel;
+			sourceTree = "<group>";
+		};
+		BC2C10AE1DB4DFA0000D1D99 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10AF1DB4DFA0000D1D99 /* PageControl */,
+				BC2C10B81DB4DFA0000D1D99 /* SDCollectionViewCell.h */,
+				BC2C10B91DB4DFA0000D1D99 /* SDCollectionViewCell.m */,
+				BC2C10BA1DB4DFA0000D1D99 /* SDCycleScrollView.h */,
+				BC2C10BB1DB4DFA0000D1D99 /* SDCycleScrollView.m */,
+				BC2C10BC1DB4DFA0000D1D99 /* UIView+SDExtension.h */,
+				BC2C10BD1DB4DFA0000D1D99 /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		BC2C10AF1DB4DFA0000D1D99 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10B01DB4DFA0000D1D99 /* TAAbstractDotView.h */,
+				BC2C10B11DB4DFA0000D1D99 /* TAAbstractDotView.m */,
+				BC2C10B21DB4DFA0000D1D99 /* TAAnimatedDotView.h */,
+				BC2C10B31DB4DFA0000D1D99 /* TAAnimatedDotView.m */,
+				BC2C10B41DB4DFA0000D1D99 /* TADotView.h */,
+				BC2C10B51DB4DFA0000D1D99 /* TADotView.m */,
+				BC2C10B61DB4DFA0000D1D99 /* TAPageControl.h */,
+				BC2C10B71DB4DFA0000D1D99 /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		BC2C10C91DB4E073000D1D99 /* MVCs */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10E91DB4E0D2000D1D99 /* Base */,
+				BC2C118C1DB4F6A3000D1D99 /* Home */,
+				BC2C11551DB4F481000D1D99 /* CustomerService */,
+				BC2C10CA1DB4E073000D1D99 /* Account */,
+				BC2C112C1DB4E11D000D1D99 /* Cart */,
+				BC2C113F1DB4E9B8000D1D99 /* Category */,
+				BC2C115E1DB4F60D000D1D99 /* Commodity */,
+				BC2C11BC1DB4F73F000D1D99 /* List */,
+				BC2C11D81DB4F79A000D1D99 /* Order */,
+				BC2C11B71DB4F6D9000D1D99 /* Debug */,
+			);
+			path = MVCs;
+			sourceTree = "<group>";
+		};
+		BC2C10CA1DB4E073000D1D99 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10CB1DB4E073000D1D99 /* Controller */,
+				BC2C10D61DB4E073000D1D99 /* Model */,
+				BC2C10DB1DB4E073000D1D99 /* View */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		BC2C10CB1DB4E073000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10CC1DB4E073000D1D99 /* QBSSMSVerificationViewController.h */,
+				BC2C10CD1DB4E073000D1D99 /* QBSSMSVerificationViewController.m */,
+				BC2C10CE1DB4E073000D1D99 /* QBSUserLoginViewController.h */,
+				BC2C10CF1DB4E073000D1D99 /* QBSUserLoginViewController.m */,
+				BC2C10D01DB4E073000D1D99 /* QBSUserNavigationController.h */,
+				BC2C10D11DB4E073000D1D99 /* QBSUserNavigationController.m */,
+				BC2C10D21DB4E073000D1D99 /* QBSUserProfileViewController.h */,
+				BC2C10D31DB4E073000D1D99 /* QBSUserProfileViewController.m */,
+				BC2C10D41DB4E073000D1D99 /* QBSUserViewController.h */,
+				BC2C10D51DB4E073000D1D99 /* QBSUserViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C10D61DB4E073000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10D71DB4E073000D1D99 /* QBSUser.h */,
+				BC2C10D81DB4E073000D1D99 /* QBSUser.m */,
+				BC2C10D91DB4E073000D1D99 /* QBSWeChatUser.h */,
+				BC2C10DA1DB4E073000D1D99 /* QBSWeChatUser.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C10DB1DB4E073000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10DC1DB4E073000D1D99 /* QBSPhoneTextField.h */,
+				BC2C10DD1DB4E073000D1D99 /* QBSPhoneTextField.m */,
+				BC2C10DE1DB4E073000D1D99 /* QBSWeChatLoginButton.h */,
+				BC2C10DF1DB4E073000D1D99 /* QBSWeChatLoginButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C10E91DB4E0D2000D1D99 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10EA1DB4E0D2000D1D99 /* Controller */,
+				BC2C10EF1DB4E0D2000D1D99 /* Model */,
+				BC2C10FE1DB4E0D2000D1D99 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BC2C10EA1DB4E0D2000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10EB1DB4E0D2000D1D99 /* QBSBaseViewController.h */,
+				BC2C10EC1DB4E0D2000D1D99 /* QBSBaseViewController.m */,
+				BC2C10ED1DB4E0D2000D1D99 /* QBSNavigationController.h */,
+				BC2C10EE1DB4E0D2000D1D99 /* QBSNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C10EF1DB4E0D2000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10F01DB4E0D2000D1D99 /* QBSBanner.h */,
+				BC2C10F11DB4E0D2000D1D99 /* QBSBanner.m */,
+				BC2C10F21DB4E0D2000D1D99 /* QBSCategory.h */,
+				BC2C10F31DB4E0D2000D1D99 /* QBSCategory.m */,
+				BC2C10F41DB4E0D2000D1D99 /* QBSCategoryTag.h */,
+				BC2C10F51DB4E0D2000D1D99 /* QBSCategoryTag.m */,
+				BC2C10F61DB4E0D2000D1D99 /* QBSCommodity.h */,
+				BC2C10F71DB4E0D2000D1D99 /* QBSCommodity.m */,
+				BC2C10F81DB4E0D2000D1D99 /* QBSCommodityTag.h */,
+				BC2C10F91DB4E0D2000D1D99 /* QBSCommodityTag.m */,
+				BC2C10FA1DB4E0D2000D1D99 /* QBSFeaturedCommodity.h */,
+				BC2C10FB1DB4E0D2000D1D99 /* QBSFeaturedCommodity.m */,
+				BC2C10FC1DB4E0D2000D1D99 /* QBSJSONResponse.h */,
+				BC2C10FD1DB4E0D2000D1D99 /* QBSJSONResponse.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C10FE1DB4E0D2000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C10FF1DB4E0D2000D1D99 /* QBSAmountPicker.h */,
+				BC2C11001DB4E0D2000D1D99 /* QBSAmountPicker.m */,
+				BC2C11011DB4E0D2000D1D99 /* QBSCartButton.h */,
+				BC2C11021DB4E0D2000D1D99 /* QBSCartButton.m */,
+				BC2C11031DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.h */,
+				BC2C11041DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.m */,
+				BC2C11051DB4E0D2000D1D99 /* QBSCollectionViewCell.h */,
+				BC2C11061DB4E0D2000D1D99 /* QBSCollectionViewCell.m */,
+				BC2C11071DB4E0D2000D1D99 /* QBSCustomerServiceCell.h */,
+				BC2C11081DB4E0D2000D1D99 /* QBSCustomerServiceCell.m */,
+				BC2C11091DB4E0D2000D1D99 /* QBSGridSheet.h */,
+				BC2C110A1DB4E0D2000D1D99 /* QBSGridSheet.m */,
+				BC2C110B1DB4E0D2000D1D99 /* QBSPagingRefreshView.h */,
+				BC2C110C1DB4E0D2000D1D99 /* QBSPagingRefreshView.m */,
+				BC2C110D1DB4E0D2000D1D99 /* QBSPaymentSheet.h */,
+				BC2C110E1DB4E0D2000D1D99 /* QBSPaymentSheet.m */,
+				BC2C110F1DB4E0D2000D1D99 /* QBSPullToRefreshView.h */,
+				BC2C11101DB4E0D2000D1D99 /* QBSPullToRefreshView.m */,
+				BC2C11111DB4E0D2000D1D99 /* QBSSubtitledTableViewCell.h */,
+				BC2C11121DB4E0D2000D1D99 /* QBSSubtitledTableViewCell.m */,
+				BC2C11131DB4E0D2000D1D99 /* QBSTableHeaderFooterView.h */,
+				BC2C11141DB4E0D2000D1D99 /* QBSTableHeaderFooterView.m */,
+				BC2C11151DB4E0D2000D1D99 /* QBSTableViewCell.h */,
+				BC2C11161DB4E0D2000D1D99 /* QBSTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C112C1DB4E11D000D1D99 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C112D1DB4E11D000D1D99 /* Controller */,
+				BC2C11301DB4E11D000D1D99 /* Model */,
+				BC2C11331DB4E11D000D1D99 /* View */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		BC2C112D1DB4E11D000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C112E1DB4E11D000D1D99 /* QBSCartViewController.h */,
+				BC2C112F1DB4E11D000D1D99 /* QBSCartViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11301DB4E11D000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11311DB4E11D000D1D99 /* QBSCartCommodity.h */,
+				BC2C11321DB4E11D000D1D99 /* QBSCartCommodity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C11331DB4E11D000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11341DB4E11D000D1D99 /* QBSCartCell.h */,
+				BC2C11351DB4E11D000D1D99 /* QBSCartCell.m */,
+				BC2C11361DB4E11D000D1D99 /* QBSPaymentFooterView.h */,
+				BC2C11371DB4E11D000D1D99 /* QBSPaymentFooterView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C113F1DB4E9B8000D1D99 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11401DB4E9B8000D1D99 /* Controller */,
+				BC2C11431DB4E9B8000D1D99 /* Model */,
+				BC2C11481DB4E9B8000D1D99 /* View */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BC2C11401DB4E9B8000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11411DB4E9B8000D1D99 /* QBSCategoryViewController.h */,
+				BC2C11421DB4E9B8000D1D99 /* QBSCategoryViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11431DB4E9B8000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11441DB4E9B8000D1D99 /* QBSCategoryList.h */,
+				BC2C11451DB4E9B8000D1D99 /* QBSCategoryList.m */,
+				BC2C11461DB4E9B8000D1D99 /* QBSSubCategoryList.h */,
+				BC2C11471DB4E9B8000D1D99 /* QBSSubCategoryList.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C11481DB4E9B8000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11491DB4E9B8000D1D99 /* QBSCategoryCell.h */,
+				BC2C114A1DB4E9B8000D1D99 /* QBSCategoryCell.m */,
+				BC2C114B1DB4E9B8000D1D99 /* QBSSubCategoryCell.h */,
+				BC2C114C1DB4E9B8000D1D99 /* QBSSubCategoryCell.m */,
+				BC2C114D1DB4E9B8000D1D99 /* QBSSubCategoryHeaderView.h */,
+				BC2C114E1DB4E9B8000D1D99 /* QBSSubCategoryHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C11551DB4F481000D1D99 /* CustomerService */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11561DB4F481000D1D99 /* Controller */,
+				BC2C11591DB4F481000D1D99 /* Model */,
+			);
+			path = CustomerService;
+			sourceTree = "<group>";
+		};
+		BC2C11561DB4F481000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11571DB4F481000D1D99 /* QBSCustomerServiceController.h */,
+				BC2C11581DB4F481000D1D99 /* QBSCustomerServiceController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11591DB4F481000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C115A1DB4F481000D1D99 /* QBSCustomerService.h */,
+				BC2C115B1DB4F481000D1D99 /* QBSCustomerService.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C115E1DB4F60D000D1D99 /* Commodity */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C115F1DB4F60D000D1D99 /* Controller */,
+				BC2C11681DB4F60D000D1D99 /* Model */,
+				BC2C116D1DB4F60D000D1D99 /* View */,
+			);
+			path = Commodity;
+			sourceTree = "<group>";
+		};
+		BC2C115F1DB4F60D000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11601DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.h */,
+				BC2C11611DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.m */,
+				BC2C11621DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.h */,
+				BC2C11631DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m */,
+				BC2C11641DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.h */,
+				BC2C11651DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.m */,
+				BC2C11661DB4F60D000D1D99 /* QBSCommodityDetailViewController.h */,
+				BC2C11671DB4F60D000D1D99 /* QBSCommodityDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11681DB4F60D000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11691DB4F60D000D1D99 /* QBSCommodityComment.h */,
+				BC2C116A1DB4F60D000D1D99 /* QBSCommodityComment.m */,
+				BC2C116B1DB4F60D000D1D99 /* QBSCommodityDetail.h */,
+				BC2C116C1DB4F60D000D1D99 /* QBSCommodityDetail.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C116D1DB4F60D000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C116E1DB4F60D000D1D99 /* QBSCommentFooterView.h */,
+				BC2C116F1DB4F60D000D1D99 /* QBSCommentFooterView.m */,
+				BC2C11701DB4F60D000D1D99 /* QBSCommodityCell.h */,
+				BC2C11711DB4F60D000D1D99 /* QBSCommodityCell.m */,
+				BC2C11721DB4F60D000D1D99 /* QBSCommodityCommentCell.h */,
+				BC2C11731DB4F60D000D1D99 /* QBSCommodityCommentCell.m */,
+				BC2C11741DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.h */,
+				BC2C11751DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m */,
+				BC2C11761DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.h */,
+				BC2C11771DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.m */,
+				BC2C11781DB4F60D000D1D99 /* QBSCommodityDetailTitleCell.h */,
+				BC2C11791DB4F60D000D1D99 /* QBSCommodityDetailTitleCell.m */,
+				BC2C117A1DB4F60D000D1D99 /* QBSCustomerServiceButton.h */,
+				BC2C117B1DB4F60D000D1D99 /* QBSCustomerServiceButton.m */,
+				BC2C117C1DB4F60D000D1D99 /* QBSServiceMarkCell.h */,
+				BC2C117D1DB4F60D000D1D99 /* QBSServiceMarkCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C118C1DB4F6A3000D1D99 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C118D1DB4F6A3000D1D99 /* Controller */,
+				BC2C11901DB4F6A3000D1D99 /* Model */,
+				BC2C11951DB4F6A3000D1D99 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BC2C118D1DB4F6A3000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C118E1DB4F6A3000D1D99 /* QBSHomeViewController.h */,
+				BC2C118F1DB4F6A3000D1D99 /* QBSHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11901DB4F6A3000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11911DB4F6A3000D1D99 /* QBSHomeFavourites.h */,
+				BC2C11921DB4F6A3000D1D99 /* QBSHomeFavourites.m */,
+				BC2C11931DB4F6A3000D1D99 /* QBSHomeGroup.h */,
+				BC2C11941DB4F6A3000D1D99 /* QBSHomeGroup.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C11951DB4F6A3000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11961DB4F6A3000D1D99 /* QBSActivityHeaderView.h */,
+				BC2C11971DB4F6A3000D1D99 /* QBSActivityHeaderView.m */,
+				BC2C11981DB4F6A3000D1D99 /* QBSBannerCell.h */,
+				BC2C11991DB4F6A3000D1D99 /* QBSBannerCell.m */,
+				BC2C119A1DB4F6A3000D1D99 /* QBSFavouritesCell.h */,
+				BC2C119B1DB4F6A3000D1D99 /* QBSFavouritesCell.m */,
+				BC2C119C1DB4F6A3000D1D99 /* QBSFavouritesHeaderView.h */,
+				BC2C119D1DB4F6A3000D1D99 /* QBSFavouritesHeaderView.m */,
+				BC2C119E1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.h */,
+				BC2C119F1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m */,
+				BC2C11A01DB4F6A3000D1D99 /* QBSFeaturedCommodityHeaderView.h */,
+				BC2C11A11DB4F6A3000D1D99 /* QBSFeaturedCommodityHeaderView.m */,
+				BC2C11A21DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.h */,
+				BC2C11A31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m */,
+				BC2C11A41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.h */,
+				BC2C11A51DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m */,
+				BC2C11A61DB4F6A3000D1D99 /* QBSHomeActivityCell.h */,
+				BC2C11A71DB4F6A3000D1D99 /* QBSHomeActivityCell.m */,
+				BC2C11A81DB4F6A3000D1D99 /* QBSHomeActivityRowCell.h */,
+				BC2C11A91DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C11B71DB4F6D9000D1D99 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11B81DB4F6D9000D1D99 /* Controller */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		BC2C11B81DB4F6D9000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11B91DB4F6D9000D1D99 /* QBSDebugOrderInfoViewController.h */,
+				BC2C11BA1DB4F6D9000D1D99 /* QBSDebugOrderInfoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11BC1DB4F73F000D1D99 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11BD1DB4F73F000D1D99 /* Controller */,
+				BC2C11C21DB4F73F000D1D99 /* Model */,
+				BC2C11C51DB4F73F000D1D99 /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		BC2C11BD1DB4F73F000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11BE1DB4F73F000D1D99 /* QBSActivityListViewController.h */,
+				BC2C11BF1DB4F73F000D1D99 /* QBSActivityListViewController.m */,
+				BC2C11C01DB4F73F000D1D99 /* QBSCommodityListViewController.h */,
+				BC2C11C11DB4F73F000D1D99 /* QBSCommodityListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11C21DB4F73F000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11C31DB4F73F000D1D99 /* QBSCommodityList.h */,
+				BC2C11C41DB4F73F000D1D99 /* QBSCommodityList.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C11C51DB4F73F000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11C61DB4F73F000D1D99 /* QBSActivityListCell.h */,
+				BC2C11C71DB4F73F000D1D99 /* QBSActivityListCell.m */,
+				BC2C11C81DB4F73F000D1D99 /* QBSActivityListHeaderView.h */,
+				BC2C11C91DB4F73F000D1D99 /* QBSActivityListHeaderView.m */,
+				BC2C11CA1DB4F73F000D1D99 /* QBSProgressView.h */,
+				BC2C11CB1DB4F73F000D1D99 /* QBSProgressView.m */,
+				BC2C11CC1DB4F73F000D1D99 /* QBSSortBar.h */,
+				BC2C11CD1DB4F73F000D1D99 /* QBSSortBar.m */,
+				BC2C11CE1DB4F73F000D1D99 /* QBSSortButton.h */,
+				BC2C11CF1DB4F73F000D1D99 /* QBSSortButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C11D81DB4F79A000D1D99 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11D91DB4F79A000D1D99 /* Controller */,
+				BC2C11E81DB4F79A000D1D99 /* Model */,
+				BC2C11EF1DB4F79A000D1D99 /* View */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		BC2C11D91DB4F79A000D1D99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11DA1DB4F79A000D1D99 /* QBSNewShippingAddressViewController.h */,
+				BC2C11DB1DB4F79A000D1D99 /* QBSNewShippingAddressViewController.m */,
+				BC2C11DC1DB4F79A000D1D99 /* QBSOrderCommentViewController.h */,
+				BC2C11DD1DB4F79A000D1D99 /* QBSOrderCommentViewController.m */,
+				BC2C11DE1DB4F79A000D1D99 /* QBSOrderListViewController.h */,
+				BC2C11DF1DB4F79A000D1D99 /* QBSOrderListViewController.m */,
+				BC2C11E01DB4F79A000D1D99 /* QBSOrderManifestViewController.h */,
+				BC2C11E11DB4F79A000D1D99 /* QBSOrderManifestViewController.m */,
+				BC2C11E21DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.h */,
+				BC2C11E31DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.m */,
+				BC2C11E41DB4F79A000D1D99 /* QBSOrderViewController.h */,
+				BC2C11E51DB4F79A000D1D99 /* QBSOrderViewController.m */,
+				BC2C11E61DB4F79A000D1D99 /* QBSShippingAddressListViewController.h */,
+				BC2C11E71DB4F79A000D1D99 /* QBSShippingAddressListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC2C11E81DB4F79A000D1D99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11E91DB4F79A000D1D99 /* QBSOrder.h */,
+				BC2C11EA1DB4F79A000D1D99 /* QBSOrder.m */,
+				BC2C11EB1DB4F79A000D1D99 /* QBSOrderCommodity.h */,
+				BC2C11EC1DB4F79A000D1D99 /* QBSOrderCommodity.m */,
+				BC2C11ED1DB4F79A000D1D99 /* QBSShippingAddress.h */,
+				BC2C11EE1DB4F79A000D1D99 /* QBSShippingAddress.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC2C11EF1DB4F79A000D1D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C11F01DB4F79A000D1D99 /* QBSAddressListCell.h */,
+				BC2C11F11DB4F79A000D1D99 /* QBSAddressListCell.m */,
+				BC2C11F21DB4F79A000D1D99 /* QBSDefaultAddressButton.h */,
+				BC2C11F31DB4F79A000D1D99 /* QBSDefaultAddressButton.m */,
+				BC2C11F41DB4F79A000D1D99 /* QBSNewShippingAddressCell.h */,
+				BC2C11F51DB4F79A000D1D99 /* QBSNewShippingAddressCell.m */,
+				BC2C11F61DB4F79A000D1D99 /* QBSOrderActionBar.h */,
+				BC2C11F71DB4F79A000D1D99 /* QBSOrderActionBar.m */,
+				BC2C11F81DB4F79A000D1D99 /* QBSOrderAddressCell.h */,
+				BC2C11F91DB4F79A000D1D99 /* QBSOrderAddressCell.m */,
+				BC2C11FA1DB4F79A000D1D99 /* QBSOrderCommentListCell.h */,
+				BC2C11FB1DB4F79A000D1D99 /* QBSOrderCommentListCell.m */,
+				BC2C11FC1DB4F79A000D1D99 /* QBSOrderCommodityListCell.h */,
+				BC2C11FD1DB4F79A000D1D99 /* QBSOrderCommodityListCell.m */,
+				BC2C11FE1DB4F79A000D1D99 /* QBSOrderListPriceCell.h */,
+				BC2C11FF1DB4F79A000D1D99 /* QBSOrderListPriceCell.m */,
+				BC2C12001DB4F79A000D1D99 /* QBSOrderManifestCell.h */,
+				BC2C12011DB4F79A000D1D99 /* QBSOrderManifestCell.m */,
+				BC2C12021DB4F79A000D1D99 /* QBSOrderPaymentCell.h */,
+				BC2C12031DB4F79A000D1D99 /* QBSOrderPaymentCell.m */,
+				BC2C12041DB4F79A000D1D99 /* QBSOrderTitleCell.h */,
+				BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */,
+				BC2C12061DB4F79A000D1D99 /* QBSRegionPicker.h */,
+				BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC2C12201DB4F8DD000D1D99 /* AlipaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */,
+				BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */,
+			);
+			path = AlipaySDK;
+			sourceTree = "<group>";
+		};
+		BC2C12231DB4F8DD000D1D99 /* IapppaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */,
+				BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */,
+			);
+			path = IapppaySDK;
+			sourceTree = "<group>";
+		};
+		BC2C12261DB4F8DD000D1D99 /* UMMobClick */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */,
+			);
+			path = UMMobClick;
+			sourceTree = "<group>";
+		};
+		BC2C12281DB4F8DD000D1D99 /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */,
+				BC2C122A1DB4F8DD000D1D99 /* README.txt */,
+				BC2C122B1DB4F8DD000D1D99 /* WechatAuthSDK.h */,
+				BC2C122C1DB4F8DD000D1D99 /* WXApi.h */,
+				BC2C122D1DB4F8DD000D1D99 /* WXApiObject.h */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC2C10351DB4D700000D1D99 /* QBStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC2C104D1DB4D700000D1D99 /* Build configuration list for PBXNativeTarget "QBStore" */;
+			buildPhases = (
+				8B07D7084881CE9B49D966A7 /* [CP] Check Pods Manifest.lock */,
+				BC2C10321DB4D700000D1D99 /* Sources */,
+				BC2C10331DB4D700000D1D99 /* Frameworks */,
+				BC2C10341DB4D700000D1D99 /* Resources */,
+				F0965207A59F43B9374B47D7 /* [CP] Embed Pods Frameworks */,
+				969E589317CFE3B5DC8BB40A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QBStore;
+			productName = QBStore;
+			productReference = BC2C10361DB4D700000D1D99 /* QBStore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC2C102E1DB4D700000D1D99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = iqu8;
+				TargetAttributes = {
+					BC2C10351DB4D700000D1D99 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7VHT3KAS56;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = BC2C10311DB4D700000D1D99 /* Build configuration list for PBXProject "QBStore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC2C102D1DB4D700000D1D99;
+			productRefGroup = BC2C10371DB4D700000D1D99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC2C10351DB4D700000D1D99 /* QBStore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC2C10341DB4D700000D1D99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */,
+				BC2C121F1DB4F8CE000D1D99 /* QBStoreSDK.bundle in Resources */,
+				BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */,
+				BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */,
+				BC2C12341DB4F8DD000D1D99 /* README.txt in Resources */,
+				BC2C10461DB4D700000D1D99 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B07D7084881CE9B49D966A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		969E589317CFE3B5DC8BB40A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QBStore/Pods-QBStore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0965207A59F43B9374B47D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QBStore/Pods-QBStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC2C10321DB4D700000D1D99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC2C11501DB4E9B8000D1D99 /* QBSCategoryList.m in Sources */,
+				BC2C107A1DB4DD0B000D1D99 /* NSString+crypt.m in Sources */,
+				BC2C111C1DB4E0D2000D1D99 /* QBSCommodity.m in Sources */,
+				BC2C12151DB4F79A000D1D99 /* QBSOrderActionBar.m in Sources */,
+				BC2C103B1DB4D700000D1D99 /* main.m in Sources */,
+				BC2C11171DB4E0D2000D1D99 /* QBSBaseViewController.m in Sources */,
+				BC2C10E11DB4E073000D1D99 /* QBSUserLoginViewController.m in Sources */,
+				BC2C11AA1DB4F6A3000D1D99 /* QBSHomeViewController.m in Sources */,
+				BC2C115D1DB4F481000D1D99 /* QBSCustomerService.m in Sources */,
+				BC2C12171DB4F79A000D1D99 /* QBSOrderCommentListCell.m in Sources */,
+				BC2C120C1DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.m in Sources */,
+				BC2C11B11DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m in Sources */,
+				BC2C10E21DB4E073000D1D99 /* QBSUserNavigationController.m in Sources */,
+				BC2C109F1DB4DED2000D1D99 /* QBSHUDManager.m in Sources */,
+				BC2C11541DB4E9B8000D1D99 /* QBSSubCategoryHeaderView.m in Sources */,
+				BC2C11821DB4F60D000D1D99 /* QBSCommodityComment.m in Sources */,
+				BC2C109E1DB4DED2000D1D99 /* QBSHttpClient.m in Sources */,
+				BC2C118A1DB4F60D000D1D99 /* QBSCustomerServiceButton.m in Sources */,
+				BC2C11861DB4F60D000D1D99 /* QBSCommodityCommentCell.m in Sources */,
+				BC2C11221DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.m in Sources */,
+				BC2C109D1DB4DED2000D1D99 /* QBSErrorHandler.m in Sources */,
+				BC2C10BE1DB4DFA0000D1D99 /* MZTimerLabel.m in Sources */,
+				BC2C11B31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m in Sources */,
+				BC2C10A91DB4DF20000D1D99 /* QBSPaymentManager.m in Sources */,
+				BC2C10C11DB4DFA0000D1D99 /* TADotView.m in Sources */,
+				BC2C11261DB4E0D2000D1D99 /* QBSPagingRefreshView.m in Sources */,
+				BC2C11281DB4E0D2000D1D99 /* QBSPullToRefreshView.m in Sources */,
+				BC2C11891DB4F60D000D1D99 /* QBSCommodityDetailTitleCell.m in Sources */,
+				BC2C12121DB4F79A000D1D99 /* QBSAddressListCell.m in Sources */,
+				BC2C11291DB4E0D2000D1D99 /* QBSSubtitledTableViewCell.m in Sources */,
+				BC2C11851DB4F60D000D1D99 /* QBSCommodityCell.m in Sources */,
+				BC2C11B21DB4F6A3000D1D99 /* QBSFeaturedCommodityHeaderView.m in Sources */,
+				BC2C121A1DB4F79A000D1D99 /* QBSOrderManifestCell.m in Sources */,
+				BC2C10751DB4DD0B000D1D99 /* NSArray+Utilities.m in Sources */,
+				BC2C11831DB4F60D000D1D99 /* QBSCommodityDetail.m in Sources */,
+				BC2C11801DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.m in Sources */,
+				BC2C11251DB4E0D2000D1D99 /* QBSGridSheet.m in Sources */,
+				BC2C120F1DB4F79A000D1D99 /* QBSOrder.m in Sources */,
+				BC2C10C01DB4DFA0000D1D99 /* TAAnimatedDotView.m in Sources */,
+				BC2C11D61DB4F73F000D1D99 /* QBSSortBar.m in Sources */,
+				BC2C112A1DB4E0D2000D1D99 /* QBSTableHeaderFooterView.m in Sources */,
+				BC2C11271DB4E0D2000D1D99 /* QBSPaymentSheet.m in Sources */,
+				BC2C11881DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.m in Sources */,
+				BC2C11511DB4E9B8000D1D99 /* QBSSubCategoryList.m in Sources */,
+				BC2C10A01DB4DED2000D1D99 /* QBSRESTManager.m in Sources */,
+				BC2C111F1DB4E0D2000D1D99 /* QBSJSONResponse.m in Sources */,
+				BC2C12131DB4F79A000D1D99 /* QBSDefaultAddressButton.m in Sources */,
+				BC2C11381DB4E11D000D1D99 /* QBSCartViewController.m in Sources */,
+				BC2C11AE1DB4F6A3000D1D99 /* QBSBannerCell.m in Sources */,
+				BC2C12091DB4F79A000D1D99 /* QBSOrderCommentViewController.m in Sources */,
+				BC2C10C31DB4DFA0000D1D99 /* SDCollectionViewCell.m in Sources */,
+				BC2C108C1DB4DE35000D1D99 /* DBTableVersion.m in Sources */,
+				BC2C121D1DB4F79A000D1D99 /* QBSRegionPicker.m in Sources */,
+				BC2C11841DB4F60D000D1D99 /* QBSCommentFooterView.m in Sources */,
+				BC2C120E1DB4F79A000D1D99 /* QBSShippingAddressListViewController.m in Sources */,
+				BC2C12111DB4F79A000D1D99 /* QBSShippingAddress.m in Sources */,
+				BC2C11201DB4E0D2000D1D99 /* QBSAmountPicker.m in Sources */,
+				BC2C11AD1DB4F6A3000D1D99 /* QBSActivityHeaderView.m in Sources */,
+				BC2C107C1DB4DD0B000D1D99 /* UIColor+hexColor.m in Sources */,
+				BC2C107B1DB4DD0B000D1D99 /* UIColor+FeaturedColor.m in Sources */,
+				BC2C107D1DB4DD0B000D1D99 /* UIImage+color.m in Sources */,
+				BC2C108B1DB4DE35000D1D99 /* DBPersistence.m in Sources */,
+				BC2C11D21DB4F73F000D1D99 /* QBSCommodityList.m in Sources */,
+				BC2C107E1DB4DD0B000D1D99 /* UIImage+QBResource.m in Sources */,
+				BC2C11D41DB4F73F000D1D99 /* QBSActivityListHeaderView.m in Sources */,
+				BC2C118B1DB4F60D000D1D99 /* QBSServiceMarkCell.m in Sources */,
+				BC2C120B1DB4F79A000D1D99 /* QBSOrderManifestViewController.m in Sources */,
+				BC2C11AB1DB4F6A3000D1D99 /* QBSHomeFavourites.m in Sources */,
+				BC2C120A1DB4F79A000D1D99 /* QBSOrderListViewController.m in Sources */,
+				BC2C11241DB4E0D2000D1D99 /* QBSCustomerServiceCell.m in Sources */,
+				BC2C11BB1DB4F6D9000D1D99 /* QBSDebugOrderInfoViewController.m in Sources */,
+				BC2C111B1DB4E0D2000D1D99 /* QBSCategoryTag.m in Sources */,
+				BC2C11B01DB4F6A3000D1D99 /* QBSFavouritesHeaderView.m in Sources */,
+				BC2C10771DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.m in Sources */,
+				BC2C10E01DB4E073000D1D99 /* QBSSMSVerificationViewController.m in Sources */,
+				BC2C117E1DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.m in Sources */,
+				BC2C10521DB4D787000D1D99 /* QBSAppDelegate.m in Sources */,
+				BC2C11B51DB4F6A3000D1D99 /* QBSHomeActivityCell.m in Sources */,
+				BC2C10E51DB4E073000D1D99 /* QBSUser.m in Sources */,
+				BC2C115C1DB4F481000D1D99 /* QBSCustomerServiceController.m in Sources */,
+				BC2C11D51DB4F73F000D1D99 /* QBSProgressView.m in Sources */,
+				BC2C10761DB4DD0B000D1D99 /* NSError+QBSError.m in Sources */,
+				BC2C11871DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m in Sources */,
+				BC2C11D71DB4F73F000D1D99 /* QBSSortButton.m in Sources */,
+				BC2C11B41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m in Sources */,
+				BC2C10A21DB4DED2000D1D99 /* QBSWeChatHelper.m in Sources */,
+				BC2C109C1DB4DED2000D1D99 /* QBSConfiguration.m in Sources */,
+				BC2C10E81DB4E073000D1D99 /* QBSWeChatLoginButton.m in Sources */,
+				BC2C10BF1DB4DFA0000D1D99 /* TAAbstractDotView.m in Sources */,
+				BC2C11D01DB4F73F000D1D99 /* QBSActivityListViewController.m in Sources */,
+				BC2C108A1DB4DE35000D1D99 /* DBHandler.m in Sources */,
+				BC2C121B1DB4F79A000D1D99 /* QBSOrderPaymentCell.m in Sources */,
+				BC2C10E61DB4E073000D1D99 /* QBSWeChatUser.m in Sources */,
+				BC2C10781DB4DD0B000D1D99 /* NSObject+BaseRepresentation.m in Sources */,
+				BC2C10E71DB4E073000D1D99 /* QBSPhoneTextField.m in Sources */,
+				BC2C11811DB4F60D000D1D99 /* QBSCommodityDetailViewController.m in Sources */,
+				BC2C11211DB4E0D2000D1D99 /* QBSCartButton.m in Sources */,
+				BC2C11191DB4E0D2000D1D99 /* QBSBanner.m in Sources */,
+				BC2C113B1DB4E11D000D1D99 /* QBSPaymentFooterView.m in Sources */,
+				BC2C11531DB4E9B8000D1D99 /* QBSSubCategoryCell.m in Sources */,
+				BC2C12141DB4F79A000D1D99 /* QBSNewShippingAddressCell.m in Sources */,
+				BC2C117F1DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m in Sources */,
+				BC2C11AF1DB4F6A3000D1D99 /* QBSFavouritesCell.m in Sources */,
+				BC2C10791DB4DD0B000D1D99 /* NSObject+Properties.m in Sources */,
+				BC2C111D1DB4E0D2000D1D99 /* QBSCommodityTag.m in Sources */,
+				BC2C11181DB4E0D2000D1D99 /* QBSNavigationController.m in Sources */,
+				BC2C11521DB4E9B8000D1D99 /* QBSCategoryCell.m in Sources */,
+				BC2C10A11DB4DED2000D1D99 /* QBSUIHelper.m in Sources */,
+				BC2C12161DB4F79A000D1D99 /* QBSOrderAddressCell.m in Sources */,
+				BC2C10C51DB4DFA0000D1D99 /* UIView+SDExtension.m in Sources */,
+				BC2C11D11DB4F73F000D1D99 /* QBSCommodityListViewController.m in Sources */,
+				BC2C114F1DB4E9B8000D1D99 /* QBSCategoryViewController.m in Sources */,
+				BC2C107F1DB4DD0B000D1D99 /* UIScrollView+Refresh.m in Sources */,
+				BC2C10801DB4DD0B000D1D99 /* UIView+Loading.m in Sources */,
+				BC2C11D31DB4F73F000D1D99 /* QBSActivityListCell.m in Sources */,
+				BC2C12081DB4F79A000D1D99 /* QBSNewShippingAddressViewController.m in Sources */,
+				BC2C113A1DB4E11D000D1D99 /* QBSCartCell.m in Sources */,
+				BC2C12191DB4F79A000D1D99 /* QBSOrderListPriceCell.m in Sources */,
+				BC2C10C21DB4DFA0000D1D99 /* TAPageControl.m in Sources */,
+				BC2C10E41DB4E073000D1D99 /* QBSUserViewController.m in Sources */,
+				BC2C11231DB4E0D2000D1D99 /* QBSCollectionViewCell.m in Sources */,
+				BC2C111A1DB4E0D2000D1D99 /* QBSCategory.m in Sources */,
+				BC2C10811DB4DD0B000D1D99 /* UIView+RoundCorner.m in Sources */,
+				BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */,
+				BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */,
+				BC2C112B1DB4E0D2000D1D99 /* QBSTableViewCell.m in Sources */,
+				BC2C10E31DB4E073000D1D99 /* QBSUserProfileViewController.m in Sources */,
+				BC2C12101DB4F79A000D1D99 /* QBSOrderCommodity.m in Sources */,
+				BC2C111E1DB4E0D2000D1D99 /* QBSFeaturedCommodity.m in Sources */,
+				BC2C120D1DB4F79A000D1D99 /* QBSOrderViewController.m in Sources */,
+				BC2C11391DB4E11D000D1D99 /* QBSCartCommodity.m in Sources */,
+				BC2C11B61DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m in Sources */,
+				BC2C10C41DB4DFA0000D1D99 /* SDCycleScrollView.m in Sources */,
+				BC2C12181DB4F79A000D1D99 /* QBSOrderCommodityListCell.m in Sources */,
+				BC2C121C1DB4F79A000D1D99 /* QBSOrderTitleCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BC2C10471DB4D700000D1D99 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC2C10481DB4D700000D1D99 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC2C104B1DB4D700000D1D99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/QBSPrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC2C104C1DB4D700000D1D99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/QBSPrefixHeader.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC2C104E1DB4D700000D1D99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 7VHT3KAS56;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/IapppaySDK",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/UMMobClick",
+				);
+				INFOPLIST_FILE = QBStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qbstore.sdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "636e1c8a-7c72-469c-a6e0-c5fbe6c1eb47";
+				PROVISIONING_PROFILE_SPECIFIER = QBStoreSDKDevProvisioningProfile;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BC2C104F1DB4D700000D1D99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E78B62C576C3A581856D757 /* Pods-QBStore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 7VHT3KAS56;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/IapppaySDK",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/UMMobClick",
+				);
+				INFOPLIST_FILE = QBStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qbstore.sdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9316fed7-ab07-42d8-b05b-de03b6b2f9e5";
+				PROVISIONING_PROFILE_SPECIFIER = QBStoreSDKProvisioningProfile;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC2C10311DB4D700000D1D99 /* Build configuration list for PBXProject "QBStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC2C104B1DB4D700000D1D99 /* Debug */,
+				BC2C104C1DB4D700000D1D99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC2C104D1DB4D700000D1D99 /* Build configuration list for PBXNativeTarget "QBStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC2C104E1DB4D700000D1D99 /* Debug */,
+				BC2C104F1DB4D700000D1D99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC2C102E1DB4D700000D1D99 /* Project object */;
+}
