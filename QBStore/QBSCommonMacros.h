@@ -9,8 +9,6 @@
 #ifndef QBSCommonMacros_h
 #define QBSCommonMacros_h
 
-//#define DEBUG_TOOL_ENABLED
-
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 

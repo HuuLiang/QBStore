@@ -9,8 +9,6 @@
 #ifndef QBSCommonTypes_h
 #define QBSCommonTypes_h
 
-//#define DEBUG_TOOL_ENABLED
-
 typedef void (^QBSAction)(id obj);
 typedef void (^QBSSelectionAction)(NSUInteger index, id obj);
 typedef void (^QBSCompletionHandler)(id obj, NSError *error);

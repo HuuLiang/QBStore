@@ -9,6 +9,8 @@
 #ifndef QBSPrefixHeader_pch
 #define QBSPrefixHeader_pch
 
+//#define DEBUG_TOOL_ENABLED
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import <objc/runtime.h>
