@@ -78,7 +78,11 @@ static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
     [QBSConfiguration defaultConfiguration].paymentRESTVersion = @(kQBSPaymentPv.integerValue);
     
     [[QBSWeChatHelper sharedHelper] registerAppId:kQBSWeChatAppId secrect:kQBSWeChatSecret];
-    [[QBSRESTManager sharedManager] request_queryCustomerServiceWithCompletionHandler:nil];
+    [[QBSRESTManager sharedManager] request_queryCustomerServiceWithCompletionHandler:^(id obj, NSError *error) {
+        if (obj) {
+            [obj saveAsSharedList];
+        }
+    }];
     
     [[QBSPaymentManager sharedManager] setup];
     

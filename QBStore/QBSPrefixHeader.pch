@@ -46,5 +46,6 @@
 #import "QBSRESTManager.h"
 #import "QBSUIHelper.h"
 #import "QBSPaymentManager.h"
+#import "QBSCustomerService.h"
 
 #endif /* QBSPrefixHeader_pch */
