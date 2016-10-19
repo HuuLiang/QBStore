@@ -24,7 +24,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _titleImageView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"Home/sale_activity_text"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _titleImageView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"sale_activity_text"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         _titleImageView.tintColor = [UIColor colorWithHexString:@"#FF206F"];
         [self addSubview:_titleImageView];
         {
@@ -50,7 +50,7 @@
             }];
         }
         
-        _accessoryImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Home/accessory"]];
+        _accessoryImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"accessory"]];
         [self addSubview:_accessoryImageView];
         {
             [_accessoryImageView mas_makeConstraints:^(MASConstraintMaker *make) {

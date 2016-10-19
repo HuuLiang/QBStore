@@ -29,7 +29,7 @@
         _minusButton.layer.borderColor = [UIColor colorWithHexString:@"#CCCCCC"].CGColor;
         _minusButton.layer.borderWidth = 1;
         _minusButton.backgroundColor = [UIColor colorWithHexString:@"#F4F4F4"];
-        [_minusButton setImage:[[UIImage QBS_imageWithResourcePath:@"Shopping/cart_item_amount_minus"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [_minusButton setImage:[[UIImage QBS_imageWithResourcePath:@"cart_item_amount_minus"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         _minusButton.tintColor = [UIColor colorWithHexString:@"#666666"];
         [self addSubview:_minusButton];
         {
@@ -42,7 +42,7 @@
         _plusButton = [[UIButton alloc] init];
         _plusButton.layer.borderWidth = _minusButton.layer.borderWidth;
         _plusButton.layer.borderColor = _minusButton.layer.borderColor;
-        [_plusButton setImage:[[UIImage QBS_imageWithResourcePath:@"Shopping/cart_item_amount_plus"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [_plusButton setImage:[[UIImage QBS_imageWithResourcePath:@"cart_item_amount_plus"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         _plusButton.tintColor = [UIColor colorWithHexString:@"#666666"];
         [self addSubview:_plusButton];
         {

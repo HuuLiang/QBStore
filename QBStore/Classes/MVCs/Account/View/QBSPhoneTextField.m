@@ -19,7 +19,7 @@
         self.keyboardType = UIKeyboardTypePhonePad;
         self.clearButtonMode = UITextFieldViewModeAlways;
         self.tintColor = [UIColor whiteColor];
-        self.leftView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Account/login_phone"]];
+        self.leftView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"login_phone"]];
         self.leftViewMode = UITextFieldViewModeAlways;
     }
     return self;

@@ -602,6 +602,31 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
 //    }];
 //}
 
+- (void)request_modifyPaymentTypeByCODForOrder:(NSString *)orderId withCompletionHandler:(QBSCompletionHandler)completionHandler {
+    if (!QBSCurrentUserIsLogin) {
+        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTUserNotLoginErrorCode errorMessage:@"用户未登录"];
+        SafelyCallBlock(completionHandler, nil, error);
+        return ;
+    }
+    
+    if (orderId.length == 0) {
+        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTParameterErrorCode errorMessage:@"订单号不能为空"];
+        SafelyCallBlock(completionHandler, nil, error);
+        return ;
+    }
+    
+    NSDictionary *params = @{@"orderNo":orderId,
+                             @"userId":[QBSUser currentUser].userId,
+                             @"accessToken":[QBSUser currentUser].accessToken};
+    [[QBSHttpClient sharedClient] requestURL:@"order/modiOrdStsOnCash.service"
+                                  withParams:params
+                                  methodType:kDefaultHttpMethod
+                           completionHandler:^(id obj, NSError *error)
+    {
+        [self onResponseWithObject:obj error:error modelClass:[QBSJSONResponse class] completionHandler:completionHandler];
+    }];
+}
+
 - (void)onResponseWithObject:(id)object
                        error:(NSError *)error
                   modelClass:(Class)modelClass

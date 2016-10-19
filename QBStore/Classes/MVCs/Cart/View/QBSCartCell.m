@@ -27,8 +27,8 @@
     if (self) {
         _selectionButton = [[UIButton alloc] init];
         _selectionButton.contentMode = UIViewContentModeCenter;
-        [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"Common/unselected_icon"] forState:UIControlStateNormal];
-        [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"Common/selected_icon"] forState:UIControlStateSelected];
+        [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"unselected_icon"] forState:UIControlStateNormal];
+        [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"selected_icon"] forState:UIControlStateSelected];
         [self addSubview:_selectionButton];
         {
             [_selectionButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -84,7 +84,7 @@
         }
         
         _deleteButton = [[UIButton alloc] init];
-        [_deleteButton setImage:[UIImage QBS_imageWithResourcePath:@"Shopping/cart_item_delete"] forState:UIControlStateNormal];
+        [_deleteButton setImage:[UIImage QBS_imageWithResourcePath:@"cart_item_delete"] forState:UIControlStateNormal];
         [self addSubview:_deleteButton];
         {
             [_deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {

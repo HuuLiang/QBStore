@@ -140,7 +140,9 @@ DefineLazyPropertyInitialization(NSMutableArray, orders)
          }];
     } else if ([payType isEqualToString:kQBSOrderPayTypeCOD]) {
         [[QBSHUDManager sharedManager] showLoading];
-        [[QBSRESTManager sharedManager] request_modifyPayTypeOfOrder:order.orderNo toPayType:kQBSOrderPayTypeCOD withCompletionHandler:^(id obj, NSError *error) {
+        [[QBSRESTManager sharedManager] request_modifyPaymentTypeByCODForOrder:order.orderNo
+                                                         withCompletionHandler:^(id obj, NSError *error)
+        {
             QBSHandleError(error);
             
             if (obj) {

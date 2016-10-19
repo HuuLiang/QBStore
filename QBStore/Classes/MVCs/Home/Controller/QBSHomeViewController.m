@@ -116,7 +116,7 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     
     @weakify(self);
     if (self.showCategoryButton) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"Home/category"]
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"category"]
                                                                                     style:UIBarButtonItemStylePlain
                                                                                   handler:^(id sender)
                                                  {

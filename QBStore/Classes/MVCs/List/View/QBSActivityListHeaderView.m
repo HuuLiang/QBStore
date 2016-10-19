@@ -24,7 +24,7 @@
     if (self) {
         self.backgroundView = [[UIView alloc] init];
         
-        _nextTimeBackgroundView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"Activity/ladder_shape"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _nextTimeBackgroundView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"ladder_shape"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [self.backgroundView addSubview:_nextTimeBackgroundView];
         {
             [_nextTimeBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {

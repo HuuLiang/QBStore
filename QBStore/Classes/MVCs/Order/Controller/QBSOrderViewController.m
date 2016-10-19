@@ -298,7 +298,21 @@ DefineLazyPropertyInitialization(QBSCustomerServiceController, csController)
     if ([self.order isPlaced]) {
         self.order.payType = self.selectedPayType;
         if ([self.order.payType isEqualToString:kQBSOrderPayTypeCOD]) {
-            [self updateOrderToStatus:kQBSOrderStatusWaitDelivery];
+            @weakify(self);
+            [[QBSRESTManager sharedManager] request_modifyPaymentTypeByCODForOrder:self.order.orderNo withCompletionHandler:^(id obj, NSError *error) {
+                QBSHandleError(error);
+                
+                @strongify(self);
+                if (!self) {
+                    return ;
+                }
+                
+                if (obj) {
+                    self.order.status = kQBSOrderStatusWaitDelivery;
+                    [self->_layoutTV reloadData];
+                    [self updateFooterView];
+                }
+            }];
         } else {
             [self payForOrder:self.order];
         }
@@ -517,9 +531,9 @@ DefineLazyPropertyInitialization(QBSCustomerServiceController, csController)
 
 - (UIImage *)actionBar:(QBSOrderActionBar *)actionBar imageAtIndex:(NSUInteger)index {
     if (index == 0) {
-        return [UIImage QBS_imageWithResourcePath:@"Common/customer_service"];
+        return [UIImage QBS_imageWithResourcePath:@"customer_service"];
     } else if (index == 1) {
-        NSString *imagePath = [NSString stringWithFormat:@"Common/%@", [self.order.status isEqualToString:kQBSOrderStatusDelivered] ? @"confirm_delivery" : @"order_comment"];
+        NSString *imagePath = [self.order.status isEqualToString:kQBSOrderStatusDelivered] ? @"confirm_delivery" : @"order_comment";
         return [UIImage QBS_imageWithResourcePath:imagePath];
     } else {
         return nil;

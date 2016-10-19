@@ -37,7 +37,7 @@
     [_avatarButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#efefef"]] forState:UIControlStateNormal];
     [_avatarButton sd_setImageWithURL:[NSURL URLWithString:[QBSUser currentUser].logoUrl]
                              forState:UIControlStateNormal
-                     placeholderImage:[UIImage QBS_imageWithResourcePath:@"Account/avatar_placeholder"]];
+                     placeholderImage:[UIImage QBS_imageWithResourcePath:@"avatar_placeholder"]];
     [self.view addSubview:_avatarButton];
     {
         [_avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -86,7 +86,7 @@
 }
 
 - (UIImage *)backgroundImage {
-    return [UIImage QBS_imageWithResourcePath:@"Account/profile_background" ofType:@"jpg"];
+    return [UIImage QBS_imageWithResourcePath:@"profile_background" ofType:@"jpg"];
 }
 
 - (void)onLogout {

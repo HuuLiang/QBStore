@@ -14,8 +14,8 @@
     self = [super init];
     if (self) {
         self.titleLabel.font = kSmallFont;
-        [self setImage:[UIImage QBS_imageWithResourcePath:@"Common/selected_icon"] forState:UIControlStateSelected];
-        [self setImage:[UIImage QBS_imageWithResourcePath:@"Common/unselected_icon"] forState:UIControlStateNormal];
+        [self setImage:[UIImage QBS_imageWithResourcePath:@"selected_icon"] forState:UIControlStateSelected];
+        [self setImage:[UIImage QBS_imageWithResourcePath:@"unselected_icon"] forState:UIControlStateNormal];
         [self setTitle:@"设为默认地址" forState:UIControlStateNormal];
         [self setTitleColor:[UIColor colorWithHexString:@"#666666"] forState:UIControlStateNormal];
     }

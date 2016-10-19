@@ -29,7 +29,7 @@
             }];
         }
         
-        UIImageView *triangleImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Common/triangle"]];
+        UIImageView *triangleImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"triangle"]];
         [self addSubview:triangleImageView];
         {
             [triangleImageView mas_makeConstraints:^(MASConstraintMaker *make) {

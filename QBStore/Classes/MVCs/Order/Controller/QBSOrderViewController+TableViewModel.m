@@ -301,13 +301,13 @@ static NSString *const kPaymentCellReusableIdentifier = @"PaymentCellReusableIde
         }
         
         if (indexPath.row == QBSPaymentTypeWeChat) {
-            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"Order/wechat"];
+            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"wechat"];
             cell.textLabel.text = [QBSOrder paymentTypeStringWithPaymentType:kQBSOrderPayTypeWeChat];
         } else if (indexPath.row == QBSPaymentTypeAlipay) {
-            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"Order/alipay"];
+            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"alipay"];
             cell.textLabel.text = [QBSOrder paymentTypeStringWithPaymentType:kQBSOrderPayTypeAlipay];
         } else if (indexPath.row == QBSPaymentTypeCash) {
-            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"Order/cash"];
+            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"cash"];
             cell.textLabel.text = [QBSOrder paymentTypeStringWithPaymentType:kQBSOrderPayTypeCOD];
         }
         return cell;

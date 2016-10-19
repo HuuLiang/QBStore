@@ -82,7 +82,7 @@ static const void *kQBSShowStateAssociatedKey = &kQBSShowStateAssociatedKey;
     } else {
         if (!self.mj_header) {
             QBSPullToRefreshView *refreshHeader = [QBSPullToRefreshView headerWithRefreshingBlock:handler];
-            refreshHeader.gifImage = [UIImage QBS_imageWithResourcePath:@"Common/pull_refresh" ofType:@"gif"];
+            refreshHeader.gifImage = [UIImage QBS_imageWithResourcePath:@"pull_refresh" ofType:@"gif"];
 
 //            
 //            MJRefreshNormalHeader *refreshHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:handler];
@@ -123,7 +123,7 @@ static const void *kQBSShowStateAssociatedKey = &kQBSShowStateAssociatedKey;
 - (void)QBS_addPagingRefreshWithHandler:(void (^)(void))handler {
     if (!self.mj_footer) {
         QBSPagingRefreshView *refreshFooter = [QBSPagingRefreshView footerWithRefreshingBlock:handler];
-        UIImage *gifImage = [UIImage QBS_imageWithResourcePath:@"Common/paging_refresh" ofType:@"gif"];
+        UIImage *gifImage = [UIImage QBS_imageWithResourcePath:@"paging_refresh" ofType:@"gif"];
         refreshFooter.gifImage = gifImage;
 //        MJRefreshAutoNormalFooter *refreshFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:handler];
 //        refreshFooter.automaticallyHidden = YES;

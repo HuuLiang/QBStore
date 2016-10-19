@@ -29,7 +29,7 @@
     
     @weakify(self);
     if ([self isViewControllerDependsOnUserLogin]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"Account/account_icon"]
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"account_icon"]
                                                                                      style:UIBarButtonItemStylePlain
                                                                                    handler:^(id sender)
         {

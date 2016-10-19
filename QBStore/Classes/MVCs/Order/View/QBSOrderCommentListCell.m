@@ -110,8 +110,8 @@
     for (NSUInteger i = 0; i < 5; ++i) {
         UIButton *starButton = [[UIButton alloc] init];
         starButton.contentEdgeInsets = UIEdgeInsetsMake(kLeftRightContentMarginSpacing/2, kLeftRightContentMarginSpacing/2, kLeftRightContentMarginSpacing/2, kLeftRightContentMarginSpacing/2);
-        [starButton setImage:[UIImage QBS_imageWithResourcePath:@"Order/comment_unstar"] forState:UIControlStateNormal];
-        [starButton setImage:[UIImage QBS_imageWithResourcePath:@"Order/comment_star"] forState:UIControlStateSelected];
+        [starButton setImage:[UIImage QBS_imageWithResourcePath:@"comment_unstar"] forState:UIControlStateNormal];
+        [starButton setImage:[UIImage QBS_imageWithResourcePath:@"comment_star"] forState:UIControlStateSelected];
         [self addSubview:starButton];
         
         UIButton *prevButton = stars.lastObject;

@@ -126,4 +126,8 @@ DefineLazyPropertyInitialization(NSMutableDictionary, cellHeights)
     NSNumber *cellHeight = self.cellHeights[cellIndexPath];
     return cellHeight.floatValue;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return kDefaultCellHeight;
+}
 @end

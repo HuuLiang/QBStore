@@ -13,7 +13,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self setImage:[UIImage QBS_imageWithResourcePath:@"Account/login_wechat"] forState:UIControlStateNormal];
+        [self setImage:[UIImage QBS_imageWithResourcePath:@"login_wechat"] forState:UIControlStateNormal];
         [self setTitle:@"微信一键登录" forState:UIControlStateNormal];
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self setTitleColor:[UIColor lightTextColor] forState:UIControlStateHighlighted];

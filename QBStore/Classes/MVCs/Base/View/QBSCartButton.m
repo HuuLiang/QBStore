@@ -25,7 +25,7 @@
         self.imageView.badgeFont = kExExSmallFont;
         self.imageView.badgeTextColor = [UIColor whiteColor];
         self.imageView.tintColor = [UIColor colorWithHexString:@"#666666"];
-        [self setImage:[[UIImage QBS_imageWithResourcePath:@"Shopping/cart"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [self setImage:[[UIImage QBS_imageWithResourcePath:@"cart"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         self.badgeBackgroundColor = [UIColor colorWithHexString:@"#FF206F"];
     }
     return self;

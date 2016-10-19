@@ -75,6 +75,7 @@ DeclareSingletonMethod(sharedManager)
 - (void)request_modifyStatusOfOrder:(NSString *)orderId toStatus:(NSString *)status withCompletionHandler:(QBSCompletionHandler)completionHandler;
 - (void)request_modifyPayTypeOfOrder:(NSString *)orderId toPayType:(NSString *)payType withCompletionHandler:(QBSCompletionHandler)completionHandler;
 - (void)request_submitCommentsOfCommodities:(NSArray<QBSOrderCommodity *> *)commodities forOrder:(NSString *)orderId withCompletionHandler:(QBSCompletionHandler)completionHandler;
+- (void)request_modifyPaymentTypeByCODForOrder:(NSString *)orderId withCompletionHandler:(QBSCompletionHandler)completionHandler;
 
 // Payment
 //- (void)request_queryPaymentConfigWithCompletionHandler:(QBSCompletionHandler)completionHandler;

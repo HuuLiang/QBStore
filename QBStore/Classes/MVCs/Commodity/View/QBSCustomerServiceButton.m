@@ -16,7 +16,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self setImage:[UIImage QBS_imageWithResourcePath:@"Common/customer_service"] forState:UIControlStateNormal];
+        [self setImage:[UIImage QBS_imageWithResourcePath:@"customer_service"] forState:UIControlStateNormal];
         [self setTitle:@"客服" forState:UIControlStateNormal];
         [self setTitleColor:[UIColor colorWithHexString:@"#999999"] forState:UIControlStateNormal];
         

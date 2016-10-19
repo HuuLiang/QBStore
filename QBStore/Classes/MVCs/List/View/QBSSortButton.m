@@ -37,7 +37,7 @@
         [self setTitle:title forState:UIControlStateNormal];
         
         if (hasSortMode) {
-            _upperImageView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"Common/triangle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+            _upperImageView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"triangle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
             _upperImageView.tintColor = kNormalSortIconColor;
             _upperImageView.contentMode = UIViewContentModeScaleAspectFit;
             [self addSubview:_upperImageView];
@@ -49,7 +49,7 @@
                 }];
             }
             
-            _lowerImageView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"Common/triangle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+            _lowerImageView = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"triangle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
             _lowerImageView.tintColor = kNormalSortIconColor;
             _lowerImageView.contentMode = UIViewContentModeScaleAspectFit;
             _lowerImageView.transform = CGAffineTransformMakeRotation(M_PI);

@@ -53,7 +53,7 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     newAddressButton.layer.cornerRadius = 5;
     newAddressButton.layer.masksToBounds = YES;
     [newAddressButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#FF206F"]] forState:UIControlStateNormal];
-    [newAddressButton setImage:[UIImage QBS_imageWithResourcePath:@"Order/new_address"] forState:UIControlStateNormal];
+    [newAddressButton setImage:[UIImage QBS_imageWithResourcePath:@"new_address"] forState:UIControlStateNormal];
     [newAddressButton setTitle:@"新增收获地址" forState:UIControlStateNormal];
     [newAddressButton aspect_hookSelector:@selector(titleRectForContentRect:)
                               withOptions:AspectPositionInstead

@@ -24,7 +24,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _locImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Order/location_icon"]];
+        _locImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"location_icon"]];
         _locImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView addSubview:_locImageView];
         {
@@ -35,7 +35,7 @@
             }];
         }
         
-        _stripeImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Order/address_stripe"]];
+        _stripeImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"address_stripe"]];
         [self addSubview:_stripeImageView];
         {
             [_stripeImageView mas_makeConstraints:^(MASConstraintMaker *make) {

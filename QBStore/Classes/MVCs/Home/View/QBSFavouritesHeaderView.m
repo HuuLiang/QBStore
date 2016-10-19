@@ -19,7 +19,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *heartImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Home/heart"]];
+        UIImageView *heartImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"heart"]];
         [self addSubview:heartImageView];
         {
             [heartImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -40,7 +40,7 @@
             }];
         }
         
-        UIImageView *separatorLeft = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Home/fav_separator"]];
+        UIImageView *separatorLeft = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"fav_separator"]];
         separatorLeft.transform = CGAffineTransformMakeRotation(M_PI);
         [self addSubview:separatorLeft];
         {
@@ -50,7 +50,7 @@
             }];
         }
         
-        UIImageView *separatorRight = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"Home/fav_separator"]];
+        UIImageView *separatorRight = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"fav_separator"]];
         [self addSubview:separatorRight];
         {
             [separatorRight mas_makeConstraints:^(MASConstraintMaker *make) {

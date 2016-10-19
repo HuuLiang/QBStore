@@ -55,8 +55,8 @@
         if (allowsSelection) {
             _selectionButton = [[UIButton alloc] init];
             _selectionButton.titleLabel.font = kMediumFont;
-            [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"Common/unselected_icon"] forState:UIControlStateNormal];
-            [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"Common/selected_icon"] forState:UIControlStateSelected];
+            [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"unselected_icon"] forState:UIControlStateNormal];
+            [_selectionButton setImage:[UIImage QBS_imageWithResourcePath:@"selected_icon"] forState:UIControlStateSelected];
             [_selectionButton setTitle:@" 全选 " forState:UIControlStateNormal];
             [_selectionButton setTitleColor:[UIColor colorWithHexString:@"#666666"] forState:UIControlStateNormal];
             [self addSubview:_selectionButton];

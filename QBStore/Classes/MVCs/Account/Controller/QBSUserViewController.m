@@ -43,7 +43,7 @@
     }
     
     @weakify(self);
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"Account/close"]
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"close"]
                                                                                  style:UIBarButtonItemStylePlain
                                                                                handler:^(id sender)
     {

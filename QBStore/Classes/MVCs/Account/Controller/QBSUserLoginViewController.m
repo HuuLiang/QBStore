@@ -127,7 +127,7 @@ static const CGFloat kNumberOfPhoneText = 11;
 }
 
 - (UIImage *)backgroundImage {
-    return [UIImage QBS_imageWithResourcePath:@"Account/login_background" ofType:@"jpg"];
+    return [UIImage QBS_imageWithResourcePath:@"login_background" ofType:@"jpg"];
 }
 
 - (BOOL)shouldUseBackgroundMask {

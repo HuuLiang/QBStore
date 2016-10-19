@@ -55,7 +55,7 @@ static const void *kImageViewAssociatedKey = &kImageViewAssociatedKey;
             SafelyCallBlock(self.commodityAction, self);
         }];
         
-        _leftPagingIndicator = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"Common/paging_indicator"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _leftPagingIndicator = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"paging_indicator"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         _leftPagingIndicator.tintColor = [UIColor colorWithHexString:@"#FF206F"];
         _leftPagingIndicator.contentMode = UIViewContentModeScaleAspectFit;
         _leftPagingIndicator.transform = CGAffineTransformMakeRotation(M_PI);
@@ -69,7 +69,7 @@ static const void *kImageViewAssociatedKey = &kImageViewAssociatedKey;
             }];
         }
         
-        _rightPagingIndicator = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"Common/paging_indicator"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _rightPagingIndicator = [[UIImageView alloc] initWithImage:[[UIImage QBS_imageWithResourcePath:@"paging_indicator"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         _rightPagingIndicator.tintColor = _leftPagingIndicator.tintColor;
         _rightPagingIndicator.contentMode = UIViewContentModeScaleAspectFit;
         _rightPagingIndicator.hidden = YES;

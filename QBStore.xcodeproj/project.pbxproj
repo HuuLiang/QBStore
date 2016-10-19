@@ -145,7 +145,6 @@
 		BC2C121B1DB4F79A000D1D99 /* QBSOrderPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12031DB4F79A000D1D99 /* QBSOrderPaymentCell.m */; };
 		BC2C121C1DB4F79A000D1D99 /* QBSOrderTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */; };
 		BC2C121D1DB4F79A000D1D99 /* QBSRegionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */; };
-		BC2C121F1DB4F8CE000D1D99 /* QBStoreSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C121E1DB4F8CE000D1D99 /* QBStoreSDK.bundle */; };
 		BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */; };
 		BC2C122F1DB4F8DD000D1D99 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */; };
 		BC2C12301DB4F8DD000D1D99 /* IapppayAlphaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */; };
@@ -157,6 +156,10 @@
 		BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12381DB4FD4C000D1D99 /* libc++.tbd */; };
 		BC2C123B1DB4FD5D000D1D99 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */; };
 		BC2C123D1DB4FD67000D1D99 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123C1DB4FD67000D1D99 /* CoreMotion.framework */; };
+		BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CA1DB77FB500793E44 /* login_background.jpg */; };
+		BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */; };
+		BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CC1DB77FB500793E44 /* profile_background.jpg */; };
+		BC4E55D11DB77FB500793E44 /* pull_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CD1DB77FB500793E44 /* pull_refresh.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -441,7 +444,6 @@
 		BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderTitleCell.m; sourceTree = "<group>"; };
 		BC2C12061DB4F79A000D1D99 /* QBSRegionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSRegionPicker.h; sourceTree = "<group>"; };
 		BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSRegionPicker.m; sourceTree = "<group>"; };
-		BC2C121E1DB4F8CE000D1D99 /* QBStoreSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QBStoreSDK.bundle; sourceTree = "<group>"; };
 		BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IapppayAlphaKit.framework; sourceTree = "<group>"; };
@@ -457,6 +459,10 @@
 		BC2C12381DB4FD4C000D1D99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BC2C123C1DB4FD67000D1D99 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BC4E55CA1DB77FB500793E44 /* login_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_background.jpg; sourceTree = "<group>"; };
+		BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = paging_refresh.gif; sourceTree = "<group>"; };
+		BC4E55CC1DB77FB500793E44 /* profile_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_background.jpg; sourceTree = "<group>"; };
+		BC4E55CD1DB77FB500793E44 /* pull_refresh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pull_refresh.gif; sourceTree = "<group>"; };
 		C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QBStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -527,7 +533,7 @@
 				BC2C10511DB4D787000D1D99 /* QBSAppDelegate.m */,
 				BC2C10451DB4D700000D1D99 /* Assets.xcassets */,
 				BC2C10471DB4D700000D1D99 /* LaunchScreen.storyboard */,
-				BC2C121E1DB4F8CE000D1D99 /* QBStoreSDK.bundle */,
+				BC4E55C91DB77FB500793E44 /* Resources */,
 				BC2C10391DB4D700000D1D99 /* Supporting Files */,
 				BC2C10571DB4DCDC000D1D99 /* Classes */,
 			);
@@ -1234,6 +1240,17 @@
 			path = WeChatSDK;
 			sourceTree = "<group>";
 		};
+		BC4E55C91DB77FB500793E44 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BC4E55CA1DB77FB500793E44 /* login_background.jpg */,
+				BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */,
+				BC4E55CC1DB77FB500793E44 /* profile_background.jpg */,
+				BC4E55CD1DB77FB500793E44 /* pull_refresh.gif */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1297,9 +1314,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */,
-				BC2C121F1DB4F8CE000D1D99 /* QBStoreSDK.bundle in Resources */,
+				BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */,
 				BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */,
+				BC4E55D11DB77FB500793E44 /* pull_refresh.gif in Resources */,
 				BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */,
+				BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */,
+				BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */,
 				BC2C12341DB4F8DD000D1D99 /* README.txt in Resources */,
 				BC2C10461DB4D700000D1D99 /* Assets.xcassets in Resources */,
 			);
