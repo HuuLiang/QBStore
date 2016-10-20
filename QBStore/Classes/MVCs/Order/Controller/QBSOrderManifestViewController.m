@@ -91,7 +91,7 @@ static NSString *const kManifestCellReusableIdentifier = @"ManifestCellReusableI
         _amountLabel.textColor = [UIColor colorWithHexString:@"#666666"];
         _amountLabel.font = kMediumFont;
         _amountLabel.textAlignment = NSTextAlignmentRight;
-        _amountLabel.text = [NSString stringWithFormat:@"共%ld件", (unsigned long)amount];
+        _amountLabel.text = amountString;
         [self.navigationController.navigationBar addSubview:_amountLabel];
     }
 }
