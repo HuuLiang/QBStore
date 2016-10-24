@@ -38,6 +38,20 @@ PODS:
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
   - ODRefreshControl (1.2)
+  - OpenSSL (1.0.208)
+  - QBExtensions (0.0.7)
+  - QBNetworking (0.0.8):
+    - AFNetworking (~> 3.1.0)
+    - QBExtensions (~> 0.0.3)
+  - QBPayment/Core (0.0.29):
+    - Aspects (~> 1.4.1)
+    - QBExtensions (~> 0.0.6)
+    - QBNetworking (~> 0.0.4)
+  - QBPayment/CorePay (0.0.29):
+    - OpenSSL (~> 1.0.208)
+  - QBPayment/VIAPay (0.0.29):
+    - QBPayment/Core
+    - QBPayment/CorePay
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
@@ -56,6 +70,7 @@ DEPENDENCIES:
   - Masonry (~> 1.0.1)
   - MJRefresh (~> 3.1.12)
   - ODRefreshControl (~> 1.2)
+  - QBPayment/VIAPay
   - SDWebImage (~> 3.7.6)
   - SVProgressHUD (~> 2.0.3)
   - TPKeyboardAvoiding (~> 1.3)
@@ -72,12 +87,16 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ODRefreshControl: 907e6149d72dde488d5917ccfabee5bd8d711a20
+  OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
+  QBExtensions: a32e8ae6e371c208e2efe2b2eec7251c36187b90
+  QBNetworking: 8fa657e142a09c06056ee34bb9e9084b51e4b8a0
+  QBPayment: a9e88a32eaa51a91c73683a57f5b85ab81da8d77
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
   WZLBadge: 16c08aa0a645e2591690f21cbcb410a3d878c7ac
 
-PODFILE CHECKSUM: 8a2e5686c2f3bf2733012f748a63f51d756b183b
+PODFILE CHECKSUM: 7f073df8571b6890bf3060f2b39b2104f82b908c
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.1.1

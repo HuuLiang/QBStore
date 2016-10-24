@@ -35,8 +35,6 @@
 		BC2C10A01DB4DED2000D1D99 /* QBSRESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10971DB4DED2000D1D99 /* QBSRESTManager.m */; };
 		BC2C10A11DB4DED2000D1D99 /* QBSUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */; };
 		BC2C10A21DB4DED2000D1D99 /* QBSWeChatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */; };
-		BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */; };
-		BC2C10A91DB4DF20000D1D99 /* QBSPaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */; };
 		BC2C10BE1DB4DFA0000D1D99 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10AD1DB4DFA0000D1D99 /* MZTimerLabel.m */; };
 		BC2C10BF1DB4DFA0000D1D99 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B11DB4DFA0000D1D99 /* TAAbstractDotView.m */; };
 		BC2C10C01DB4DFA0000D1D99 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B31DB4DFA0000D1D99 /* TAAnimatedDotView.m */; };
@@ -145,13 +143,7 @@
 		BC2C121B1DB4F79A000D1D99 /* QBSOrderPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12031DB4F79A000D1D99 /* QBSOrderPaymentCell.m */; };
 		BC2C121C1DB4F79A000D1D99 /* QBSOrderTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */; };
 		BC2C121D1DB4F79A000D1D99 /* QBSRegionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */; };
-		BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */; };
-		BC2C122F1DB4F8DD000D1D99 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */; };
-		BC2C12301DB4F8DD000D1D99 /* IapppayAlphaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */; };
-		BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */; };
 		BC2C12321DB4F8DD000D1D99 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */; };
-		BC2C12331DB4F8DD000D1D99 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */; };
-		BC2C12341DB4F8DD000D1D99 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC2C122A1DB4F8DD000D1D99 /* README.txt */; };
 		BC2C12371DB4FD3C000D1D99 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12361DB4FD3C000D1D99 /* libz.tbd */; };
 		BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12381DB4FD4C000D1D99 /* libc++.tbd */; };
 		BC2C123B1DB4FD5D000D1D99 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */; };
@@ -160,6 +152,7 @@
 		BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */; };
 		BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CC1DB77FB500793E44 /* profile_background.jpg */; };
 		BC4E55D11DB77FB500793E44 /* pull_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CD1DB77FB500793E44 /* pull_refresh.gif */; };
+		BC5A87121DBE34E3005597E3 /* QBSPaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5A87111DBE34E3005597E3 /* QBSPaymentManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -224,10 +217,6 @@
 		BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUIHelper.m; sourceTree = "<group>"; };
 		BC2C109A1DB4DED2000D1D99 /* QBSWeChatHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSWeChatHelper.h; sourceTree = "<group>"; };
 		BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSWeChatHelper.m; sourceTree = "<group>"; };
-		BC2C10A41DB4DF20000D1D99 /* IappPayMananger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IappPayMananger.h; sourceTree = "<group>"; };
-		BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IappPayMananger.m; sourceTree = "<group>"; };
-		BC2C10A61DB4DF20000D1D99 /* QBSPaymentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPaymentManager.h; sourceTree = "<group>"; };
-		BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPaymentManager.m; sourceTree = "<group>"; };
 		BC2C10AC1DB4DFA0000D1D99 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		BC2C10AD1DB4DFA0000D1D99 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		BC2C10B01DB4DFA0000D1D99 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -444,16 +433,7 @@
 		BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderTitleCell.m; sourceTree = "<group>"; };
 		BC2C12061DB4F79A000D1D99 /* QBSRegionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSRegionPicker.h; sourceTree = "<group>"; };
 		BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSRegionPicker.m; sourceTree = "<group>"; };
-		BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IapppayAlphaKit.framework; sourceTree = "<group>"; };
-		BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IapppayAlphaResource.bundle; sourceTree = "<group>"; };
 		BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
-		BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		BC2C122A1DB4F8DD000D1D99 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		BC2C122B1DB4F8DD000D1D99 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		BC2C122C1DB4F8DD000D1D99 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		BC2C122D1DB4F8DD000D1D99 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		BC2C12351DB4FA5D000D1D99 /* QBSConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBSConfig.h; sourceTree = "<group>"; };
 		BC2C12361DB4FD3C000D1D99 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BC2C12381DB4FD4C000D1D99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -463,6 +443,8 @@
 		BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = paging_refresh.gif; sourceTree = "<group>"; };
 		BC4E55CC1DB77FB500793E44 /* profile_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_background.jpg; sourceTree = "<group>"; };
 		BC4E55CD1DB77FB500793E44 /* pull_refresh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pull_refresh.gif; sourceTree = "<group>"; };
+		BC5A87101DBE34E3005597E3 /* QBSPaymentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPaymentManager.h; sourceTree = "<group>"; };
+		BC5A87111DBE34E3005597E3 /* QBSPaymentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPaymentManager.m; sourceTree = "<group>"; };
 		C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QBStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -477,10 +459,7 @@
 				BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */,
 				BC2C12371DB4FD3C000D1D99 /* libz.tbd in Frameworks */,
 				31294B5AFDA0E45286F5CD27 /* libPods-QBStore.a in Frameworks */,
-				BC2C12301DB4F8DD000D1D99 /* IapppayAlphaKit.framework in Frameworks */,
 				BC2C12321DB4F8DD000D1D99 /* UMMobClick.framework in Frameworks */,
-				BC2C122F1DB4F8DD000D1D99 /* AlipaySDK.framework in Frameworks */,
-				BC2C12331DB4F8DD000D1D99 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +540,6 @@
 				BC2C108D1DB4DE56000D1D99 /* Utils */,
 				BC2C10821DB4DE35000D1D99 /* Database */,
 				BC2C10581DB4DCDC000D1D99 /* Extensions */,
-				BC2C10A31DB4DF20000D1D99 /* Payment */,
 				BC2C10C91DB4E073000D1D99 /* MVCs */,
 			);
 			path = Classes;
@@ -633,28 +611,16 @@
 				BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */,
 				BC2C109A1DB4DED2000D1D99 /* QBSWeChatHelper.h */,
 				BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */,
+				BC5A87101DBE34E3005597E3 /* QBSPaymentManager.h */,
+				BC5A87111DBE34E3005597E3 /* QBSPaymentManager.m */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		BC2C10A31DB4DF20000D1D99 /* Payment */ = {
-			isa = PBXGroup;
-			children = (
-				BC2C10A41DB4DF20000D1D99 /* IappPayMananger.h */,
-				BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */,
-				BC2C10A61DB4DF20000D1D99 /* QBSPaymentManager.h */,
-				BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */,
-			);
-			path = Payment;
 			sourceTree = "<group>";
 		};
 		BC2C10AA1DB4DFA0000D1D99 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				BC2C12201DB4F8DD000D1D99 /* AlipaySDK */,
-				BC2C12231DB4F8DD000D1D99 /* IapppaySDK */,
 				BC2C12261DB4F8DD000D1D99 /* UMMobClick */,
-				BC2C12281DB4F8DD000D1D99 /* WeChatSDK */,
 				BC2C10AB1DB4DFA0000D1D99 /* MZTimerLabel */,
 				BC2C10AE1DB4DFA0000D1D99 /* SDCycleScrollView */,
 			);
@@ -1202,42 +1168,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		BC2C12201DB4F8DD000D1D99 /* AlipaySDK */ = {
-			isa = PBXGroup;
-			children = (
-				BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */,
-				BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */,
-			);
-			path = AlipaySDK;
-			sourceTree = "<group>";
-		};
-		BC2C12231DB4F8DD000D1D99 /* IapppaySDK */ = {
-			isa = PBXGroup;
-			children = (
-				BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */,
-				BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */,
-			);
-			path = IapppaySDK;
-			sourceTree = "<group>";
-		};
 		BC2C12261DB4F8DD000D1D99 /* UMMobClick */ = {
 			isa = PBXGroup;
 			children = (
 				BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */,
 			);
 			path = UMMobClick;
-			sourceTree = "<group>";
-		};
-		BC2C12281DB4F8DD000D1D99 /* WeChatSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */,
-				BC2C122A1DB4F8DD000D1D99 /* README.txt */,
-				BC2C122B1DB4F8DD000D1D99 /* WechatAuthSDK.h */,
-				BC2C122C1DB4F8DD000D1D99 /* WXApi.h */,
-				BC2C122D1DB4F8DD000D1D99 /* WXApiObject.h */,
-			);
-			path = WeChatSDK;
 			sourceTree = "<group>";
 		};
 		BC4E55C91DB77FB500793E44 /* Resources */ = {
@@ -1313,14 +1249,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */,
 				BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */,
 				BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */,
 				BC4E55D11DB77FB500793E44 /* pull_refresh.gif in Resources */,
-				BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */,
 				BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */,
 				BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */,
-				BC2C12341DB4F8DD000D1D99 /* README.txt in Resources */,
 				BC2C10461DB4D700000D1D99 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1403,7 +1336,6 @@
 				BC2C109D1DB4DED2000D1D99 /* QBSErrorHandler.m in Sources */,
 				BC2C10BE1DB4DFA0000D1D99 /* MZTimerLabel.m in Sources */,
 				BC2C11B31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m in Sources */,
-				BC2C10A91DB4DF20000D1D99 /* QBSPaymentManager.m in Sources */,
 				BC2C10C11DB4DFA0000D1D99 /* TADotView.m in Sources */,
 				BC2C11261DB4E0D2000D1D99 /* QBSPagingRefreshView.m in Sources */,
 				BC2C11281DB4E0D2000D1D99 /* QBSPullToRefreshView.m in Sources */,
@@ -1432,6 +1364,7 @@
 				BC2C12091DB4F79A000D1D99 /* QBSOrderCommentViewController.m in Sources */,
 				BC2C10C31DB4DFA0000D1D99 /* SDCollectionViewCell.m in Sources */,
 				BC2C108C1DB4DE35000D1D99 /* DBTableVersion.m in Sources */,
+				BC5A87121DBE34E3005597E3 /* QBSPaymentManager.m in Sources */,
 				BC2C121D1DB4F79A000D1D99 /* QBSRegionPicker.m in Sources */,
 				BC2C11841DB4F60D000D1D99 /* QBSCommentFooterView.m in Sources */,
 				BC2C120E1DB4F79A000D1D99 /* QBSShippingAddressListViewController.m in Sources */,
@@ -1503,7 +1436,6 @@
 				BC2C11231DB4E0D2000D1D99 /* QBSCollectionViewCell.m in Sources */,
 				BC2C111A1DB4E0D2000D1D99 /* QBSCategory.m in Sources */,
 				BC2C10811DB4DD0B000D1D99 /* UIView+RoundCorner.m in Sources */,
-				BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */,
 				BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */,
 				BC2C112B1DB4E0D2000D1D99 /* QBSTableViewCell.m in Sources */,
 				BC2C10E31DB4E073000D1D99 /* QBSUserProfileViewController.m in Sources */,
