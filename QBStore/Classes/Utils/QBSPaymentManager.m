@@ -47,7 +47,6 @@ SynthesizeSingletonMethod(sharedManager, QBSPaymentManager)
     }
     
     QBPaymentInfo *paymentInfo = [[QBPaymentInfo alloc] init];
-    paymentInfo.orderId = order.orderNo;
     paymentInfo.orderPrice = order.totalPrice.unsignedIntegerValue;
     paymentInfo.paymentType = QBPayTypeVIAPay;
     paymentInfo.paymentSubType = [order.payType isEqualToString:kQBSOrderPayTypeWeChat] ? QBPaySubTypeWeChat : QBPaySubTypeAlipay;
@@ -59,6 +58,12 @@ SynthesizeSingletonMethod(sharedManager, QBSPaymentManager)
     NSDateFormatter *fomatter =[[NSDateFormatter alloc] init];
     [fomatter setDateFormat:@"yyyyMMddHHmmss"];
     paymentInfo.paymentTime = [fomatter stringFromDate:[NSDate date]];
+    
+    if (paymentInfo.paymentType == QBPayTypeVIAPay) {
+        paymentInfo.orderId = [NSString stringWithFormat:@"%@$%@", order.orderNo, kQBSChannelNo];
+    } else {
+        paymentInfo.orderId = order.orderNo;
+    }
     
     NSString *appName = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
     paymentInfo.orderDescription = [NSString stringWithFormat:@"%@-订单号：%@", appName, order.orderNo];
