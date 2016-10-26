@@ -16,10 +16,10 @@ SynthesizeSingletonMethod(sharedManager, QBSPaymentManager)
 
 - (void)setup {
     IappPayConfig *payConfig = [[IappPayConfig alloc] init];
-    payConfig.appId = @"3006339410";
-    payConfig.privateKey = @"MIICWwIBAAKBgQCHEQCLCZujWicF6ClEgHx4L/OdSHZ1LdKi/mzPOIa4IRfMOS09qDNV3+uK/zEEPu1DgO5Cl1lsm4xpwIiOqdXNRxLE9PUfgRy4syiiqRfofAO7w4VLSG4S0VU5F+jqQzKM7Zgp3blbc5BJ5PtKXf6zP3aCAYjz13HHH34angjg0wIDAQABAoGASOJm3aBoqSSL7EcUhc+j2yNdHaGtspvwj14mD0hcgl3xPpYYEK6ETTHRJCeDJtxiIkwfxjVv3witI5/u0LVbFmd4b+2jZQ848BHGFtZFOOPJFVCylTy5j5O79mEx0nJN0EJ/qadwezXr4UZLDIaJdWxhhvS+yDe0e0foz5AxWmkCQQDhd9U1uUasiMmH4WvHqMfq5l4y4U+V5SGb+IK+8Vi03Zfw1YDvKrgv1Xm1mdzYHFLkC47dhTm7/Ko8k5Kncf89AkEAmVtEtycnSYciSqDVXxWtH1tzsDeIMz/ZlDGXCAdUfRR2ZJ2u2jrLFunoS9dXhSGuERU7laasK0bDT4p0UwlhTwJAVF+wtPsRnI1PxX6xA7WAosH0rFuumax2SFTWMLhGduCZ9HEhX97/sD7V3gSnJWRsDJTasMEjWtrxpdufvPOnDQJAdsYPVGMItJPq5S3n0/rv2Kd11HdOD5NWKsa1mMxEjZN5lrfhoreCb7694W9pI31QWX6+ZUtvcR0fS82KBn3vVQJAa0fESiiDDrovKHBm/aYXjMV5anpbuAa5RJwCqnbjCWleZMwHV+8uUq9+YMnINZQnvi+C62It4BD+KrJn5q4pwg==";
-    payConfig.publicKey = @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCbNQyxdpLeMwE0QMv/dB3Jn1SRqYE/u3QT3ig2uXu4yeaZo4f7qJomudLKKOgpa8+4a2JAPRBSueDpiytR0zN5hRZKImeZAu2foSYkpBqnjb5CRAH7roO7+ervoizg6bhAEx2zlltV9wZKQZ0Di5wCCV+bMSEXkYqfASRplYUvHwIDAQAB";
-    payConfig.waresid = @"3";
+    payConfig.appId = @"3007001516";
+    payConfig.privateKey = @"MIICXAIBAAKBgQDDcwpdnKCxBOLEsxtOeoecH/lbzOFDuqhF0MhLctnqLXrWqii2rsDT7Sfa/QjHNpYNgEfB057JG2tbBOJPp0S5c1w7MzIYTLGG1mcsMbtGRzhph0Exnuv6i8TRZiB6gndBnkxBKKYV5kmasDzUDJet2PFRPEsNWlX3sAI8nu/nMQIDAQABAoGANJw92Q71LlE7XWk823YeFMeCjtRqepm++/QERlLnF6MgYrIw/WOy4hj/VnIwL7eg0oeKSUFWh5nK3xhEdt52n9+iWuO6XEl3cpABySqiXyntuqyDRrpJZ/YXatZNVqJoVQPyyzXFdpkVk6Gu3Y54QwVR63mmlIZIDoh9KB5AKUECQQD6E0xvRhAQpH5Zmo87gWriJqaJy5fVXVaE9P2cTIyahnO0YNgLEkRDYHbJ2JRqMd0woknG2G5C/dNVIy8OHA7JAkEAyBRvuqjx0Qu9vvPsNC7UwjTqJ0wUVH1h/ctqsvguKtNIEZjhbGUZvJ9wj61iQRmI44+FmasC3FxLh0vD9OzBKQJBAJqcqeo2MCKKARBXLe1Fc5bE/Lw/Iu2o2qAzdEVZUqkLLag9I/WcYpYhou/itsf9clrqS6DkGS/UDQAbU7FuiXkCQH+2k88ZUin3Dapa9xYkIojI0AI/jOaVljwzYStWQdnyPZmF9baEHlaJi4cazJHzY66mCUiaoVvZyhhVo4KusWkCQHSn6+hImgRymP2ZcUfPnw0cvjmAi8DaKJLaQOq0GuyJLEP4O0+Y7EBN+XepWSWuktvEO4VZ/Cyx/KXQZxJ1o/s=";
+    payConfig.publicKey = @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY/IWre5+nPB670I06c392eH6q5VxZMwnBClUFSndKZxGAj/mRViex73/aosKwFJ8yyxhhH8Ga3FoAsy1LRZ4DA9Hs9M8Zhl1Kp0hBV3A53a1fucAZQ8cST2dDXnWWi9zYBMG/dD8DoUm4sCP8RBEjNKj7B/n2HgOehOOvFcD7ZwIDAQAB";
+    payConfig.waresid = @"1";
     payConfig.privateInfo = [NSString stringWithFormat:@"%@$%@", [QBSConfiguration defaultConfiguration].RESTAppId, [QBSConfiguration defaultConfiguration].channelNo];
     payConfig.alipayURLScheme = @"comqbstoresdkiapppayurlscheme";
     [IappPayMananger sharedMananger].payConfig = payConfig;
