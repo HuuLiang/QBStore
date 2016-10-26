@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:20.]};
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserShouldReLogin:) name:kQBSUserShouldReLoginNotification object:nil];
 }
 

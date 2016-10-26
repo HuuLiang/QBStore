@@ -9,6 +9,10 @@
 #import "QBSAppDelegate.h"
 #import "QBSNavigationController.h"
 #import "QBSHomeViewController.h"
+#import "QBSCategoryViewController.h"
+#import "QBSCartViewController.h"
+#import "QBSMineViewController.h"
+
 #import "QBSWeChatHelper.h"
 #import <UMMobClick/MobClick.h>
 
@@ -16,7 +20,6 @@ static NSString *const kOrderShortcutItemType = @"com.qbstoresdk.app.orders";
 static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
 
 @interface QBSAppDelegate ()
-@property (nonatomic,retain) QBSHomeViewController *homeViewController;
 @end
 
 @implementation QBSAppDelegate
@@ -26,27 +29,41 @@ static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
         return _window;
     }
     
+    QBSHomeViewController *homeVC = [[QBSHomeViewController alloc] init];
+    homeVC.title = @"首页";
+    homeVC.showCartButton = NO;
+    homeVC.showOrderListButton = NO;
+    homeVC.showCategoryButton = NO;
+    
+    QBSNavigationController *homeNav = [[QBSNavigationController alloc] initWithRootViewController:homeVC];
+    homeNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:homeVC.title image:[UIImage imageNamed:@"tabbar_home_normal"] selectedImage:[UIImage imageNamed:@"tabbar_home_selected"]];
+    
+    QBSCategoryViewController *categoryVC = [[QBSCategoryViewController alloc] init];
+    categoryVC.title = @"分类";
+    
+    QBSNavigationController *categoryNav = [[QBSNavigationController alloc] initWithRootViewController:categoryVC];
+    categoryNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:categoryVC.title image:[UIImage imageNamed:@"tabbar_category_normal"] selectedImage:[UIImage imageNamed:@"tabbar_category_selected"]];
+    
+    QBSCartViewController *cartVC = [[QBSCartViewController alloc] init];
+    cartVC.title = @"购物车";
+    
+    QBSNavigationController *cartNav = [[QBSNavigationController alloc] initWithRootViewController:cartVC];
+    cartNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:cartVC.title image:[UIImage imageNamed:@"tabbar_cart_normal"] selectedImage:[UIImage imageNamed:@"tabbar_cart_selected"]];
+    
+    QBSMineViewController *mineVC = [[QBSMineViewController alloc] init];
+    mineVC.title = @"我的";
+    
+    QBSNavigationController *mineNav = [[QBSNavigationController alloc] initWithRootViewController:mineVC];
+    mineNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:mineVC.title image:[UIImage imageNamed:@"tabbar_mine_normal"] selectedImage:[UIImage imageNamed:@"tabbar_mine_selected"]];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[homeNav,categoryNav,cartNav,mineNav];
+    tabBarController.tabBar.tintColor = [UIColor blackColor];
+    
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
-    
-    QBSNavigationController *homeNav = [[QBSNavigationController alloc] initWithRootViewController:self.homeViewController];
-    _window.rootViewController = homeNav;
+    _window.rootViewController = tabBarController;
     return _window;
-}
-
-- (QBSHomeViewController *)homeViewController {
-    if (_homeViewController) {
-        return _homeViewController;
-    }
-    
-    _homeViewController = [[QBSHomeViewController alloc] init];
-    _homeViewController.showCartButton = YES;
-    _homeViewController.showOrderListButton = YES;
-    _homeViewController.showCategoryButton = YES;
-    
-    NSString *appName = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
-    _homeViewController.title = appName ?: @"首页";
-    return _homeViewController;
 }
 
 - (void)setupMobStatisticsWithChannelNo:(NSString *)channelNo {
@@ -63,6 +80,18 @@ static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
     UMConfigInstance.secret = nil;
     UMConfigInstance.channelId = channelNo;
     [MobClick startWithConfigure:UMConfigInstance];
+    
+}
+
+- (void)setupCommonStyles {
+    
+//    [[UITabBar appearance] setBarTintColor:kQBSThemeColor];
+//    [[UITabBar appearance] setTintColor:[UIColor blackColor]];
+    
+//    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+//    [[UINavigationBar appearance] setBarTintColor:kQBSThemeColor];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:18.]}];
+    
     
 }
 
@@ -86,6 +115,7 @@ static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
     
     [[QBSPaymentManager sharedManager] setup];
     
+    [self setupCommonStyles];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -144,9 +174,9 @@ static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
 
 - (BOOL)processShortcutItemWithType:(NSString *)shortcutItemType {
     if ([shortcutItemType isEqualToString:kCartShortcutItemType]) {
-        [self.homeViewController showCartViewController];
+//        [self.homeViewController showCartViewController];
     } else if ([shortcutItemType isEqualToString:kOrderShortcutItemType]) {
-        [self.homeViewController showOrderViewController];
+//        [self.homeViewController showOrderViewController];
     } else {
         return NO;
     }

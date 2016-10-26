@@ -90,4 +90,5 @@ SafelyCallBlock(view##StrongSelf.action, self); \
 #define kLeftRightContentMarginSpacing kExtraBigHorizontalSpacing
 #define kTopBottomContentMarginSpacing kExtraBigVerticalSpacing
 
+#define kQBSThemeColor [UIColor colorWithHexString:@"#FF206F"]
 #endif /* QBSCommonMacros_h */

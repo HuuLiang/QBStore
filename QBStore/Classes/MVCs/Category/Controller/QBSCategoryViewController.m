@@ -46,7 +46,6 @@ DefineLazyPropertyInitialization(NSMutableDictionary, subCatLists)
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"商品分类";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _catTableView = [[UITableView alloc] init];

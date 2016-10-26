@@ -148,6 +148,7 @@
 		BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12381DB4FD4C000D1D99 /* libc++.tbd */; };
 		BC2C123B1DB4FD5D000D1D99 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */; };
 		BC2C123D1DB4FD67000D1D99 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123C1DB4FD67000D1D99 /* CoreMotion.framework */; };
+		BC4000B01DC0A02F00019EA5 /* QBSMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */; };
 		BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CA1DB77FB500793E44 /* login_background.jpg */; };
 		BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */; };
 		BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CC1DB77FB500793E44 /* profile_background.jpg */; };
@@ -439,6 +440,8 @@
 		BC2C12381DB4FD4C000D1D99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BC2C123C1DB4FD67000D1D99 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BC4000AE1DC0A02F00019EA5 /* QBSMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSMineViewController.h; sourceTree = "<group>"; };
+		BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSMineViewController.m; sourceTree = "<group>"; };
 		BC4E55CA1DB77FB500793E44 /* login_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_background.jpg; sourceTree = "<group>"; };
 		BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = paging_refresh.gif; sourceTree = "<group>"; };
 		BC4E55CC1DB77FB500793E44 /* profile_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_background.jpg; sourceTree = "<group>"; };
@@ -677,6 +680,7 @@
 				BC2C115E1DB4F60D000D1D99 /* Commodity */,
 				BC2C11BC1DB4F73F000D1D99 /* List */,
 				BC2C11D81DB4F79A000D1D99 /* Order */,
+				BC4000AC1DC0A00A00019EA5 /* Mine */,
 				BC2C11B71DB4F6D9000D1D99 /* Debug */,
 			);
 			path = MVCs;
@@ -1176,6 +1180,23 @@
 			path = UMMobClick;
 			sourceTree = "<group>";
 		};
+		BC4000AC1DC0A00A00019EA5 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				BC4000AD1DC0A01E00019EA5 /* Controller */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		BC4000AD1DC0A01E00019EA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC4000AE1DC0A02F00019EA5 /* QBSMineViewController.h */,
+				BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BC4E55C91DB77FB500793E44 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1358,6 +1379,7 @@
 				BC2C11511DB4E9B8000D1D99 /* QBSSubCategoryList.m in Sources */,
 				BC2C10A01DB4DED2000D1D99 /* QBSRESTManager.m in Sources */,
 				BC2C111F1DB4E0D2000D1D99 /* QBSJSONResponse.m in Sources */,
+				BC4000B01DC0A02F00019EA5 /* QBSMineViewController.m in Sources */,
 				BC2C12131DB4F79A000D1D99 /* QBSDefaultAddressButton.m in Sources */,
 				BC2C11381DB4E11D000D1D99 /* QBSCartViewController.m in Sources */,
 				BC2C11AE1DB4F6A3000D1D99 /* QBSBannerCell.m in Sources */,

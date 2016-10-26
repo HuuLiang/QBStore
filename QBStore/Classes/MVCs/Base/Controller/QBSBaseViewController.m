@@ -24,7 +24,7 @@
     self.view.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1];
     if (self.navigationController) {
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"返回" style:UIBarButtonItemStylePlain handler:nil];
-        self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     }
     
     @weakify(self);
