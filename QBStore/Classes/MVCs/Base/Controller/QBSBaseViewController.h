@@ -10,6 +10,8 @@
 
 @interface QBSBaseViewController : UIViewController
 
+@property (nonatomic) BOOL alwaysHideNavigationBar;
+
 - (void)pushViewControllerWithRecommendType:(QBSRecommendType)recmType
                                  columnType:(QBSColumnType)columnType
                                      isLeaf:(BOOL)isLeaf

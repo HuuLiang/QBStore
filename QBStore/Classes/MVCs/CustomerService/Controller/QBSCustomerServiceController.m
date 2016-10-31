@@ -12,6 +12,7 @@
 
 static NSString *const kCSCellReusableIdentifier = @"CSCellReusableIdentifier";
 static const CGFloat kItemsPerRow = 4;
+static const void *kQBSCSAssociatedKey = &kQBSCSAssociatedKey;
 
 typedef NS_ENUM(NSUInteger, QBSCustomerServiceType) {
     QBSCustomerServiceTypeQQ,
@@ -79,6 +80,10 @@ typedef NS_ENUM(NSUInteger, QBSCustomerServiceType) {
     self.view.alpha = 0;
     [superView addSubview:self.view];
     
+    if (!objc_getAssociatedObject(superView, kQBSCSAssociatedKey)) {
+        objc_setAssociatedObject(superView, kQBSCSAssociatedKey, self, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    
     [UIView animateWithDuration:0.25 animations:^{
         self.view.alpha = 1;
     }];
@@ -97,12 +102,46 @@ typedef NS_ENUM(NSUInteger, QBSCustomerServiceType) {
     }
 }
 
+//- (void)showInViewController:(UIViewController *)viewController {
+//    if (![viewController.childViewControllers containsObject:self]) {
+//        [viewController addChildViewController:self];
+//    }
+//    
+//    self.view.frame = viewController.view.bounds;
+//    self.view.alpha = 0;
+//    if (![viewController.view.subviews containsObject:self.view]) {
+//        [viewController.view addSubview:self.view];
+//        [self didMoveToParentViewController:viewController];
+//    }
+//    
+//    [UIView animateWithDuration:0.25 animations:^{
+//        self.view.alpha = 1;
+//    }];
+//    
+//    
+//    const CGFloat collectionViewHeight = self.collectionViewHeight;
+//    _gridCollectionView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds),
+//                                           CGRectGetWidth(self.view.bounds), collectionViewHeight);
+//    
+//    [UIView animateWithDuration:0.25 animations:^{
+//        _gridCollectionView.frame = CGRectOffset(_gridCollectionView.frame, 0, -collectionViewHeight);
+//    }];
+//    
+//    if ([QBSCustomerServiceList sharedList].cscidList.count == 0) {
+//        [self reloadCustomerServices];
+//    }
+//}
+
 - (void)hide {
     if (self.view.superview) {
+        UIView *superView = self.view.superview;
+        
         [UIView animateWithDuration:0.25 animations:^{
             self.view.alpha = 0;
         } completion:^(BOOL finished) {
+            
             [self.view removeFromSuperview];
+            objc_setAssociatedObject(superView, kQBSCSAssociatedKey, nil, OBJC_ASSOCIATION_ASSIGN);
         }];
         
         [UIView animateWithDuration:0.25 animations:^{

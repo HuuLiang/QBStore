@@ -11,10 +11,7 @@
 #import "QBSFeaturedTypeCell.h"
 #import "QBSActivityHeaderView.h"
 #import "QBSHomeActivityRowCell.h"
-#import "QBSFeaturedCommodityHeaderView.h"
 #import "QBSFeaturedCommodityRowCell.h"
-#import "QBSFavouritesHeaderView.h"
-#import "QBSFavouritesCell.h"
 #import "QBSCategoryViewController.h"
 #import "QBSCommodityDetailViewController.h"
 #import "QBSCommodityListViewController.h"
@@ -37,8 +34,7 @@ typedef NS_ENUM(NSUInteger, QBSHomeSection) {
     QBSFeaturedTypeSection,
     QBSActivitySection,
     QBSFeaturedCommoditySection,
-    QBSFavouritesSection,
-    QBSLastSection = QBSFavouritesSection,
+    QBSLastSection = QBSFeaturedCommoditySection,
     
     QBSUnknownSection = NSUIntegerMax
 };
@@ -47,10 +43,7 @@ static NSString *const kBannerCellReusableIdentifier = @"BannerCellReusableIdent
 static NSString *const kFeaturedTypeCellReusableIdentifier = @"FeaturedTypeCellReusableIdentifier";
 static NSString *const kActivityHeaderReusableIdentifier = @"ActivityHeaderReusableIdentifier";
 static NSString *const kActivityCellReusableIdentifier = @"ActivityCellReusableIdentifier";
-static NSString *const kFeaturedCommodityHeaderReusableIdentifier = @"FeaturedCommodityHeaderReusableIdentifier";
 static NSString *const kFeaturedCommodityCellReusableIdentifier = @"FeaturedCommodityCellReusableIdentifier";
-static NSString *const kFavouritesHeaderReusableIdentifier = @"FavouritesHeaderReusableIdentifier";
-static NSString *const kFavouritesCellReusableIdentifier = @"FavouritesCellReusableIdentifier";
 
 static CGFloat kBannerImageScale = 7./3.;
 static CGFloat kFeaturedCommodityHeaderScale = 5./2.;
@@ -89,6 +82,8 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
 
     _layoutCV = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
@@ -99,10 +94,7 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     [_layoutCV registerClass:[QBSFeaturedTypeCell class] forCellWithReuseIdentifier:kFeaturedTypeCellReusableIdentifier];
     [_layoutCV registerClass:[QBSActivityHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kActivityHeaderReusableIdentifier];
     [_layoutCV registerClass:[QBSHomeActivityRowCell class] forCellWithReuseIdentifier:kActivityCellReusableIdentifier];
-    [_layoutCV registerClass:[QBSFeaturedCommodityHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kFeaturedCommodityHeaderReusableIdentifier];
     [_layoutCV registerClass:[QBSFeaturedCommodityRowCell class] forCellWithReuseIdentifier:kFeaturedCommodityCellReusableIdentifier];
-    [_layoutCV registerClass:[QBSFavouritesHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kFavouritesHeaderReusableIdentifier];
-    [_layoutCV registerClass:[QBSFavouritesCell class] forCellWithReuseIdentifier:kFavouritesCellReusableIdentifier];
     [self.view addSubview:_layoutCV];
     {
         [_layoutCV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -139,6 +131,8 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
         [self reloadData];
     }];
     [_layoutCV QBS_triggerPullToRefresh];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -217,63 +211,63 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     }];
 }
 
-- (void)loadFavouritesForRefresh:(BOOL)isRefresh {
-    @weakify(self);
-    [[QBSRESTManager sharedManager] request_queryFavouritesInPage:isRefresh ? 1 : self.currentFavouritesPage+1
-                                            withCompletionHandler:^(id obj, NSError *error)
-    {
-        QBSHandleError(error);
-        
-        @strongify(self);
-        if (!self) {
-            return ;
-        }
-        
-        if (!isRefresh) {
-            [self->_layoutCV QBS_endPullToRefresh];
-        }
-        
-        if (obj) {
-            [self->_layoutCV QBS_addPagingRefreshWithHandler:^{
-                @strongify(self);
-                [self loadFavouritesForRefresh:NO];
-            }];
-            
-            self.dataChanged = YES;
-            if (isRefresh) {
-                [self.favourites removeAllObjects];
-            }
-            
-            QBSHomeFavourites *fav = obj;
-            self.currentFavouritesPage = fav.guessYouLikeInfo.pageNum.unsignedIntegerValue;
-            self.totalFavouritesPages = fav.guessYouLikeInfo.pageCount.unsignedIntegerValue;
-            self.favouritesColumnId = fav.guessYouLikeInfo.columnId;
-            
-            if (fav.guessYouLikeInfo.commodityList.count > 0) {
-                const NSUInteger previousNum = self.favourites.count;
-                [self.favourites addObjectsFromArray:fav.guessYouLikeInfo.commodityList];
-                
-                const NSUInteger numberOfSections = [self->_layoutCV numberOfSections];
-                if (!isRefresh && numberOfSections > 0) {
-                    NSMutableArray *indexPaths = [NSMutableArray array];
-                    for (NSUInteger item = previousNum; item < self.favourites.count; ++item) {
-                        [indexPaths addObject:[NSIndexPath indexPathForItem:item inSection:numberOfSections-1]];
-                    }
-                    
-                    [self->_layoutCV insertItemsAtIndexPaths:indexPaths];
-                }
-            }
-
-            if (!isRefresh && (fav.guessYouLikeInfo.pageNum.unsignedIntegerValue == fav.guessYouLikeInfo.pageCount.unsignedIntegerValue)) {
-                [self->_layoutCV QBS_pagingRefreshNoMoreData];
-            }
-        }
-        
-        if (isRefresh) {
-            dispatch_group_leave(self.dataDispatchGroup);
-        }
-    }];
-}
+//- (void)loadFavouritesForRefresh:(BOOL)isRefresh {
+//    @weakify(self);
+//    [[QBSRESTManager sharedManager] request_queryFavouritesInPage:isRefresh ? 1 : self.currentFavouritesPage+1
+//                                            withCompletionHandler:^(id obj, NSError *error)
+//    {
+//        QBSHandleError(error);
+//        
+//        @strongify(self);
+//        if (!self) {
+//            return ;
+//        }
+//        
+//        if (!isRefresh) {
+//            [self->_layoutCV QBS_endPullToRefresh];
+//        }
+//        
+//        if (obj) {
+//            [self->_layoutCV QBS_addPagingRefreshWithHandler:^{
+//                @strongify(self);
+//                [self loadFavouritesForRefresh:NO];
+//            }];
+//            
+//            self.dataChanged = YES;
+//            if (isRefresh) {
+//                [self.favourites removeAllObjects];
+//            }
+//            
+//            QBSHomeFavourites *fav = obj;
+//            self.currentFavouritesPage = fav.guessYouLikeInfo.pageNum.unsignedIntegerValue;
+//            self.totalFavouritesPages = fav.guessYouLikeInfo.pageCount.unsignedIntegerValue;
+//            self.favouritesColumnId = fav.guessYouLikeInfo.columnId;
+//            
+//            if (fav.guessYouLikeInfo.commodityList.count > 0) {
+//                const NSUInteger previousNum = self.favourites.count;
+//                [self.favourites addObjectsFromArray:fav.guessYouLikeInfo.commodityList];
+//                
+//                const NSUInteger numberOfSections = [self->_layoutCV numberOfSections];
+//                if (!isRefresh && numberOfSections > 0) {
+//                    NSMutableArray *indexPaths = [NSMutableArray array];
+//                    for (NSUInteger item = previousNum; item < self.favourites.count; ++item) {
+//                        [indexPaths addObject:[NSIndexPath indexPathForItem:item inSection:numberOfSections-1]];
+//                    }
+//                    
+//                    [self->_layoutCV insertItemsAtIndexPaths:indexPaths];
+//                }
+//            }
+//
+//            if (!isRefresh && (fav.guessYouLikeInfo.pageNum.unsignedIntegerValue == fav.guessYouLikeInfo.pageCount.unsignedIntegerValue)) {
+//                [self->_layoutCV QBS_pagingRefreshNoMoreData];
+//            }
+//        }
+//        
+//        if (isRefresh) {
+//            dispatch_group_leave(self.dataDispatchGroup);
+//        }
+//    }];
+//}
 
 - (void)loadFeaturedCommodities {
     @weakify(self);
@@ -318,7 +312,7 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
         self.dataDispatchGroup = dispatch_group_create();
     }
 
-    const NSUInteger dataRequestCount = 3;
+    const NSUInteger dataRequestCount = 2;
     for (NSUInteger i = 0; i < dataRequestCount ; ++i) {
         dispatch_group_enter(self.dataDispatchGroup);
     }
@@ -326,7 +320,7 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     self.dataChanged = NO;
     [self loadBanners];
     [self loadFeaturedCommodities];
-    [self loadFavouritesForRefresh:YES];
+//    [self loadFavouritesForRefresh:YES];
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         dispatch_group_wait(self.dataDispatchGroup, DISPATCH_TIME_FOREVER);
@@ -364,10 +358,6 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
 
     for (NSUInteger i = 0; i < self.featuredCommodity.count; ++i) {
         [self.sections addObject:@(QBSFeaturedCommoditySection)];
-    }
-    
-    if (self.favourites.count > 0) {
-        [self.sections addObject:@(QBSFavouritesSection)];
     }
 }
 
@@ -459,8 +449,6 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
         return 1;
     } else if (IsHomeSectionIndexEqualsToSectionType(section, QBSFeaturedCommoditySection)) {
         return 1;
-    } else if (IsHomeSectionIndexEqualsToSectionType(section, QBSFavouritesSection)) {
-        return self.favourites.count;
     } else {
         return 0;
     }
@@ -560,19 +548,6 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
             [self showDetailOfCommodity:commodity withColumnId:commodityList.data.columnId];
         };
         return cell;
-    } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFavouritesSection)) {
-        QBSFavouritesCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFavouritesCellReusableIdentifier forIndexPath:indexPath];
-        cell.backgroundColor = [UIColor whiteColor];
-        
-        if (indexPath.item < self.favourites.count) {
-            QBSCommodity *commodity = self.favourites[indexPath.item];
-            
-            cell.title = commodity.commodityName;
-            cell.imageURL = [NSURL URLWithString:commodity.imgUrl];
-            cell.sold = commodity.numSold.unsignedIntegerValue;
-            [cell setPrice:commodity.currentPrice.floatValue/100 withOriginalPrice:commodity.originalPrice.floatValue/100];
-        }
-        return cell;
     } else {
         return nil;
     }
@@ -597,25 +572,6 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
             [self.navigationController pushViewController:listVC animated:YES];
         };
         return headerView;
-    } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFeaturedCommoditySection)) {
-        QBSFeaturedCommodityHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kFeaturedCommodityHeaderReusableIdentifier forIndexPath:indexPath];
-        headerView.backgroundColor = [UIColor whiteColor];
-        
-        QBSFeaturedCommodityList *list = [self featuredCommodityCommodityListWithSectionIndex:indexPath.section];
-        headerView.imageURL = [NSURL URLWithString:list.data.columnRmdImgUrl];
-        
-        @weakify(self);
-        headerView.tapAction = ^(id obj) {
-            @strongify(self);
-            QBSCommodityListViewController *listVC = [[QBSCommodityListViewController alloc] initWithColumnId:list.data.columnId
-                                                                                           columnType:list.data.columnType.unsignedIntegerValue
-                                                                                           columnName:nil];
-            [self.navigationController pushViewController:listVC animated:YES];
-        };
-        return headerView;
-    } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFavouritesSection)) {
-        QBSFavouritesHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kFavouritesHeaderReusableIdentifier forIndexPath:indexPath];
-        return headerView;
     } else {
         return nil;
     }
@@ -636,10 +592,6 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
         return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds) / 3);
     } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFeaturedCommoditySection)) {
         return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds) / 2);
-    } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFavouritesSection)) {
-        const CGFloat itemWidth = (CGRectGetWidth(collectionView.bounds) - sectionInsets.left - sectionInsets.right - interItemSpacing)/2;
-        const CGFloat itemHeight = MAX(225,itemWidth / [QBSFavouritesCell cellAspects]);
-        return CGSizeMake(itemWidth, itemHeight);
     } else {
         return CGSizeZero;
     }
@@ -650,29 +602,20 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    if (IsHomeSectionIndexEqualsToSectionType(section, QBSFavouritesSection)) {
-        return 10;
-    } else {
-        return 0;
-    }
+    return 0;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     if (IsHomeSectionIndexEqualsToSectionType(section, QBSBannerSection)) {
         return UIEdgeInsetsZero;
-    } else if (IsHomeSectionIndexEqualsToSectionType(section, QBSFavouritesSection)) {
-        return UIEdgeInsetsMake(0, 10, 10, 10);
     } else {
         return UIEdgeInsetsMake(0, 0, 10, 0);
     }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    if (IsHomeSectionIndexEqualsToSectionType(section, QBSActivitySection)
-        || IsHomeSectionIndexEqualsToSectionType(section, QBSFavouritesSection)) {
+    if (IsHomeSectionIndexEqualsToSectionType(section, QBSActivitySection)) {
         return CGSizeMake(0, 40);
-    } else if (IsHomeSectionIndexEqualsToSectionType(section, QBSFeaturedCommoditySection)) {
-        return CGSizeMake(0, CGRectGetWidth(collectionView.bounds) / kFeaturedCommodityHeaderScale);
     } else {
         return CGSizeZero;
     }
@@ -686,11 +629,6 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
                                            columnType:group.columnType.unsignedIntegerValue
                                                isLeaf:group.isLeaf.boolValue
                                                 relId:group.relId];
-        }
-    } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFavouritesSection)) {
-        if (indexPath.item < self.favourites.count) {
-            QBSCommodity *commodity = self.favourites[indexPath.item];
-            [self showDetailOfCommodity:commodity withColumnId:self.favouritesColumnId];
         }
     }
 }

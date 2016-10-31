@@ -23,9 +23,12 @@
 
 + (void)showPaymentSheetWithAction:(QBSAction)action;
 
++ (UIViewController *)webViewControllerWithURL:(NSURL *)url title:(NSString *)title;
+
 #ifdef DEBUG_TOOL_ENABLED
 + (void)showOrderDebugPanelInViewController:(UIViewController *)viewController
                                   withOrder:(QBSOrder *)order
                                updateAction:(QBSAction)updateAction;
 #endif
+
 @end

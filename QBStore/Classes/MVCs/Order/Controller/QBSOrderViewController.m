@@ -34,12 +34,9 @@ static NSString *const kConfirmDeliveryButtonTitle = @"确认收货";
     QBSOrderActionBar *_actionBar;
 }
 @property (nonatomic,retain,readonly) NSArray<QBSCartCommodity *> *cartCommodities;
-@property (nonatomic,retain) QBSCustomerServiceController *csController;
 @end
 
 @implementation QBSOrderViewController
-
-DefineLazyPropertyInitialization(QBSCustomerServiceController, csController)
 
 - (instancetype)initWithCartCommodities:(NSArray<QBSCartCommodity *> *)cartCommodities {
     self = [super init];
@@ -543,7 +540,8 @@ DefineLazyPropertyInitialization(QBSCustomerServiceController, csController)
 - (void)actionBar:(QBSOrderActionBar *)actionBar didClickButtonAtIndex:(NSUInteger)index {
     NSString *title = [actionBar buttonTitleAtIndex:index];
     if ([title isEqualToString:kContactCustomerServiceButtonTitle]) {
-        [self.csController showInView:self.view.window];
+        QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];
+        [csController showInView:self.view.window];
     } else if ([title isEqualToString:kConfirmDeliveryButtonTitle]) {
         [self onConfirmDelivery];
     } else if ([title isEqualToString:kCommentButtonTitle]) {

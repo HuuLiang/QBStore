@@ -43,6 +43,8 @@
 #import "NSMutableDictionary+SafeCoding.h"
 #import "NSError+QBSError.h"
 
+#import "QBSUser.h"
+
 #import "QBSHUDManager.h"
 #import "QBSConfiguration.h"
 #import "QBSRESTManager.h"

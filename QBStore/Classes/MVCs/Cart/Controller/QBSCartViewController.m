@@ -11,6 +11,7 @@
 #import "QBSPaymentFooterView.h"
 #import "QBSCommodityDetailViewController.h"
 #import "QBSOrderViewController.h"
+#import "QBSPlaceholderView.h"
 
 #import "QBSCartCommodity.h"
 #import "QBSUser.h"
@@ -48,17 +49,42 @@ static NSString *const kCartCellReusableIdentifier = @"CartCellReusableIdentifie
         }];
     }
     
+    @weakify(self);
+    [_layoutTV aspect_hookSelector:@selector(reloadData)
+                       withOptions:AspectPositionAfter
+                        usingBlock:^(id<AspectInfo> aspectInfo)
+    {
+        @strongify(self);
+        [self onTableViewDataChanged];
+    } error:nil];
+    
+    [_layoutTV aspect_hookSelector:@selector(deleteRowsAtIndexPaths:withRowAnimation:)
+                       withOptions:AspectPositionAfter
+                        usingBlock:^(id<AspectInfo> aspectInfo,
+                                     NSIndexPath *indexPath,
+                                     UITableViewRowAnimation animation)
+    {
+        @strongify(self);
+        [self onTableViewDataChanged];
+    } error:nil];
+    
     _footerView = [[QBSPaymentFooterView alloc] initWithPaymentTitle:@"结算" allowsSelection:YES];
     _footerView.backgroundColor = [UIColor whiteColor];
+    _footerView.hidden = YES;
     [self.view addSubview:_footerView];
     {
         [_footerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.left.right.equalTo(self.view);
+            make.left.right.equalTo(self.view);
             make.height.mas_equalTo(kFooterViewHeight);
+            
+            if (self.tabBarController.tabBar.hidden || !self.tabBarController.tabBar.translucent) {
+                make.bottom.equalTo(self.view);
+            } else {
+                make.bottom.equalTo(self.view).offset(-self.tabBarController.tabBar.frame.size.height);
+            }
         }];
     }
     
-    @weakify(self);
     _footerView.selectionChangedAction = ^(id obj){
         @strongify(self);
         [self onSelectAll:[obj selected]];
@@ -77,23 +103,48 @@ static NSString *const kCartCellReusableIdentifier = @"CartCellReusableIdentifie
         }]];
         [self.navigationController pushViewController:orderVC animated:YES];
     };
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"编辑" style:UIBarButtonItemStylePlain handler:^(id sender) {
-        @strongify(self);
-        if (!self) {
-            return ;
+}
+
+- (void)onTableViewDataChanged {
+    NSUInteger numberOfRows = [_layoutTV numberOfRowsInSection:0];
+    if (numberOfRows == 0) {
+        @weakify(self);
+        if (self.navigationItem.rightBarButtonItem) {
+            self.navigationItem.rightBarButtonItem = nil;
+            _footerView.editingSelection = NO;
         }
         
-        UIBarButtonItem *thisItem = sender;
-        
-        if ([thisItem.title isEqualToString:@"编辑"]) {
-            thisItem.title = @"退出编辑";
-            self->_footerView.editingSelection = YES;
-        } else if ([thisItem.title isEqualToString:@"退出编辑"]) {
-            thisItem.title = @"编辑";
-            self->_footerView.editingSelection = NO;
+        [QBSPlaceholderView showPlaceholderForView:self.view withImage:[UIImage imageNamed:@"cart_empty"] title:@"您的购物车空空如也~~~" buttonTitle:@"去秒杀几件" buttonAction:^(id obj)
+         {
+             @strongify(self);
+             if (self.navigationController.viewControllers.firstObject == self) {
+                 self.tabBarController.selectedIndex = 0;
+             } else {
+                 [self.navigationController popViewControllerAnimated:YES];
+             }
+         }];
+    } else {
+        if (!self.navigationItem.rightBarButtonItem) {
+            @weakify(self);
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"编辑" style:UIBarButtonItemStylePlain handler:^(id sender) {
+                @strongify(self);
+                if (!self) {
+                    return ;
+                }
+                
+                UIBarButtonItem *thisItem = sender;
+                
+                if ([thisItem.title isEqualToString:@"编辑"]) {
+                    thisItem.title = @"退出编辑";
+                    self->_footerView.editingSelection = YES;
+                } else if ([thisItem.title isEqualToString:@"退出编辑"]) {
+                    thisItem.title = @"编辑";
+                    self->_footerView.editingSelection = NO;
+                }
+            }];
         }
-    }];
+        [[QBSPlaceholderView placeholderForView:self.view] hide];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -146,7 +197,8 @@ static NSString *const kCartCellReusableIdentifier = @"CartCellReusableIdentifie
     }];
     
     _footerView.selected = self.commodities.count > 0 ? selectedAll : NO;
-    
+    _footerView.hidden = self.commodities.count == 0;
+
     [self footerViewRecountPrice];
 }
 

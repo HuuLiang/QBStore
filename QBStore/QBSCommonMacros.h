@@ -69,6 +69,7 @@ SafelyCallBlock(view##StrongSelf.action, self); \
 #define SIGN(f) f == 0 ? 0 : f < 0 ? -1 : 1
 
 #define kHugeFont     [UIFont systemFontOfSize:MIN(26,roundf(kScreenWidth*0.075))]
+#define kHugeBoldFont [UIFont boldSystemFontOfSize:MIN(26,roundf(kScreenWidth*0.075))]
 #define kExtraBigFont [UIFont systemFontOfSize:MIN(20,roundf(kScreenWidth*0.055))]
 #define kBigFont  [UIFont systemFontOfSize:MIN(18,roundf(kScreenWidth*0.05))]
 #define kMediumFont [UIFont systemFontOfSize:MIN(16, roundf(kScreenWidth*0.045))]

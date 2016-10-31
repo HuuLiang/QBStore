@@ -1,13 +1,16 @@
 //
 //  QBSCategoryCell.h
-//  Pods
+//  QBStore
 //
-//  Created by Sean Yue on 16/7/6.
-//
+//  Created by Sean Yue on 2016/10/28.
+//  Copyright © 2016年 iqu8. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface QBSCategoryCell : UITableViewCell
+@interface QBSCategoryCell : UICollectionViewCell
+
+@property (nonatomic) NSURL *imageURL;
+@property (nonatomic) NSString *title;
 
 @end

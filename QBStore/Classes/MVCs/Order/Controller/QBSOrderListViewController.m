@@ -19,6 +19,7 @@
 
 #import "QBSOrderViewController.h"
 #import "QBSOrderCommentViewController.h"
+#import "QBSPlaceholderView.h"
 
 static NSString *const kOrderHeaderReusableIdentifier = @"OrderHeaderReusableIdentifier";
 static NSString *const kNormalCellReusableIdentifier = @"NormalCellReusableIdentifier";
@@ -110,6 +111,16 @@ DefineLazyPropertyInitialization(NSMutableArray, orders)
             }
         } else {
             QBSHandleError(error);
+        }
+        
+        if (self.orders.count == 0) {
+            if (obj) {
+                [QBSPlaceholderView showPlaceholderForView:self.view withImage:[UIImage imageNamed:@""] title:@"亲，您还未下过单哦~~~" buttonTitle:nil buttonAction:nil];
+            } else {
+                
+            }
+        } else {
+            [[QBSPlaceholderView placeholderForView:self.view] hide];
         }
     }];
 }

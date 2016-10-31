@@ -102,6 +102,17 @@
     [paymentSheet showInWindow];
 }
 
++ (UIViewController *)webViewControllerWithURL:(NSURL *)url title:(NSString *)title {
+    UIViewController *webVC = [[UIViewController alloc] init];
+    webVC.title = title;
+    webVC.hidesBottomBarWhenPushed = YES;
+    
+    UIWebView *webView = [[UIWebView alloc] init];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kQBSRESTBaseURL stringByAppendingString:kQBSAboutURL]]]];
+    webVC.view = webView;
+    return webVC;
+}
+
 #ifdef DEBUG_TOOL_ENABLED
 + (void)showOrderDebugPanelInViewController:(UIViewController *)viewController
                                   withOrder:(QBSOrder *)order

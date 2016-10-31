@@ -8,8 +8,10 @@
 
 #import "QBSNavigationController.h"
 #import "QBSUser.h"
+#import "QBSBaseViewController.h"
+#import "QBSTabBarController.h"
 
-@interface QBSNavigationController ()
+@interface QBSNavigationController () <UINavigationControllerDelegate>
 
 @end
 
@@ -20,6 +22,7 @@
     // Do any additional setup after loading the view.
     self.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:20.]};
+    self.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserShouldReLogin:) name:kQBSUserShouldReLoginNotification object:nil];
 }
@@ -27,16 +30,22 @@
 - (void)onUserShouldReLogin:(NSNotification *)notification {
     @weakify(self);
     NSError *error = notification.object;
-    [UIAlertView bk_showAlertViewWithTitle:error.qbsErrorMessage//@"登录异常或登录过期，您需要重新登录！"
-                                   message:nil
-                         cancelButtonTitle:@"确定"
-                         otherButtonTitles:nil
-                                   handler:^(UIAlertView *alertView,
-                                             NSInteger buttonIndex)
-     {
-         @strongify(self);
-         [QBSUIHelper logoutInNavigationController:self];
-     }];
+    
+    if ([QBSTabBarController sharedTabBarController].selectedViewController == self) {
+        [UIAlertView bk_showAlertViewWithTitle:error.qbsErrorMessage//@"登录异常或登录过期，您需要重新登录！"
+                                       message:nil
+                             cancelButtonTitle:@"确定"
+                             otherButtonTitles:nil
+                                       handler:^(UIAlertView *alertView,
+                                                 NSInteger buttonIndex)
+         {
+             @strongify(self);
+             [QBSUIHelper logoutInNavigationController:self];
+         }];
+    } else {
+        [QBSUIHelper logoutInNavigationController:self];
+    }
+    
 }
 
 - (void)dealloc {
@@ -49,10 +58,11 @@
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
     if ([QBSUIHelper viewControllerIsDependsOnUserLogin:viewController] && !QBSCurrentUserIsLogin) {
         [QBSUIHelper presentLoginViewControllerIfNotLoginInViewController:self withCompletionHandler:^(BOOL success) {
             if (success) {
-                [super pushViewController:viewController animated:YES];
+                [super pushViewController:viewController animated:animated];
             }
         }];
     } else {
@@ -67,14 +77,16 @@
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    BOOL alwaysHideNavigationBar = NO;
+    if ([viewController isKindOfClass:[QBSBaseViewController class]]) {
+        alwaysHideNavigationBar = ((QBSBaseViewController *)viewController).alwaysHideNavigationBar;
+    }
+    if (self.navigationBarHidden != alwaysHideNavigationBar) {
+        [self setNavigationBarHidden:alwaysHideNavigationBar animated:animated];
+    }
 }
-*/
-
 @end

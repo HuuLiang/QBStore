@@ -7,9 +7,40 @@
 //
 
 #import "QBSMineViewController.h"
+#import "QBSMineCell.h"
+#import "QBSTableHeaderFooterView.h"
+#import "QBSMineAvatarView.h"
 
-@interface QBSMineViewController ()
+#import "QBSShippingAddressListViewController.h"
+#import "QBSOrderListViewController.h"
+#import "QBSCustomerServiceController.h"
 
+typedef NS_ENUM(NSUInteger, QBSMineSection) {
+    QBSMineOrderSection,
+    QBSMineOtherSection,
+    QBSMineSectionCount
+};
+
+typedef NS_ENUM(NSUInteger, QBSOrderSectionRow) {
+    QBSOrderRow,
+    QBSShippingAddressRow,
+    QBSOrderSectionRowCount
+};
+
+typedef NS_ENUM(NSUInteger, QBSOtherSectionRow) {
+    QBSContactRow,
+    QBSAboutRow,
+    QBSOtherSectionRowCount
+};
+
+static NSString *const kMineCellReusableIdentifier = @"MineCellReusableIdentifier";
+static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdentifier";
+
+@interface QBSMineViewController () <UITableViewDelegate,UITableViewDataSource>
+{
+    UITableView *_layoutTV;
+    QBSMineAvatarView *_avatarView;
+}
 @end
 
 @implementation QBSMineViewController
@@ -17,6 +48,76 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    _layoutTV = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    _layoutTV.backgroundColor = self.view.backgroundColor;
+    _layoutTV.delegate = self;
+    _layoutTV.dataSource = self;
+    _layoutTV.rowHeight = 60;
+    _layoutTV.sectionFooterHeight = 0;
+    _layoutTV.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    [_layoutTV registerClass:[QBSMineCell class] forCellReuseIdentifier:kMineCellReusableIdentifier];
+    [_layoutTV registerClass:[QBSTableHeaderFooterView class] forHeaderFooterViewReuseIdentifier:kHeaderViewReusableIdentifier];
+    [self.view addSubview:_layoutTV];
+    {
+        [_layoutTV mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    }
+    
+    _avatarView = [[QBSMineAvatarView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*0.4)];
+    _avatarView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.66];
+    _layoutTV.tableHeaderView = _avatarView;
+    
+    @weakify(self);
+    _avatarView.avatarAction = ^(id obj) {
+        @strongify(self);
+        if (!QBSCurrentUserIsLogin) {
+            [QBSUIHelper presentLoginViewControllerIfNotLoginInViewController:self withCompletionHandler:^(BOOL success) {
+                if (success) {
+                    [self updateAvatarView];
+                }
+            }];
+        } else {
+            [UIAlertView bk_showAlertViewWithTitle:@"您是否确认退出当前账号？"
+                                           message:nil
+                                 cancelButtonTitle:@"取消"
+                                 otherButtonTitles:@[@"确认"]
+                                           handler:^(UIAlertView *alertView, NSInteger buttonIndex)
+            {
+                if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"确认"]) {
+                    [[QBSUser currentUser] logout];
+//                    [self updateAvatarView];
+                }
+            }];
+        }
+    };
+    
+    [self updateAvatarView];
+    self.navigationItem.title = nil;
+//    self.navigationController.navigationBarHidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLogout) name:kQBSUserLogoutNotification object:nil];
+}
+
+- (void)onLogout {
+    [self updateAvatarView];
+}
+
+- (BOOL)alwaysHideNavigationBar {
+    return YES;
+}
+
+- (void)updateAvatarView {
+    if (QBSCurrentUserIsLogin) {
+        _avatarView.title = [QBSUser currentUser].nickName;
+        _avatarView.imageURL = [NSURL URLWithString:[QBSUser currentUser].logoUrl];
+    } else {
+        _avatarView.placeholderImage = [UIImage imageNamed:@"mine_avatar_placeholder"];
+        _avatarView.title = @"点击登录";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +125,75 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UITableViewDelegate,UITableViewDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return QBSMineSectionCount;
 }
-*/
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == QBSMineOrderSection) {
+        return QBSOrderSectionRowCount;
+    } else if (section == QBSMineOtherSection) {
+        return QBSOtherSectionRowCount;
+    }
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    QBSMineCell *cell = [tableView dequeueReusableCellWithIdentifier:kMineCellReusableIdentifier forIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    if (indexPath.section == QBSMineOrderSection) {
+        if (indexPath.row == QBSOrderRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_order_icon"];
+            cell.title = @"我的订单";
+        } else if (indexPath.row == QBSShippingAddressRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_address_icon"];
+            cell.title = @"收货地址";
+        }
+    } else if (indexPath.section == QBSMineOtherSection) {
+        if (indexPath.row == QBSContactRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_contact_icon"];
+            cell.title = @"联系客服";
+        } else if (indexPath.row == QBSAboutRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_about_icon"];
+            cell.title = @"关于我们";
+        }
+    }
+    return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    QBSTableHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kHeaderViewReusableIdentifier];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 10;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == QBSMineOrderSection) {
+        if (indexPath.row == QBSOrderRow) {
+            QBSOrderListViewController *orderListVC = [[QBSOrderListViewController alloc] init];
+            [self.navigationController pushViewController:orderListVC animated:YES];
+        } else if (indexPath.row == QBSShippingAddressRow) {
+            QBSShippingAddressListViewController *addressListVC = [[QBSShippingAddressListViewController alloc] init];
+            [self.navigationController pushViewController:addressListVC animated:YES];
+        }
+    } else if (indexPath.section == QBSMineOtherSection) {
+        if (indexPath.row == QBSContactRow) {
+            QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];
+            [csController showInView:self.view.window];
+        } else if (indexPath.row == QBSAboutRow) {
+            QBSMineCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            
+            NSURL *url = [NSURL URLWithString:[kQBSRESTBaseURL stringByAppendingString:kQBSAboutURL]];
+            [self.navigationController pushViewController:[QBSUIHelper webViewControllerWithURL:url title:cell.title] animated:YES];
+        }
+    }
+}
 @end

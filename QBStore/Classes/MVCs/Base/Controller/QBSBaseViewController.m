@@ -27,16 +27,16 @@
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     }
     
-    @weakify(self);
-    if ([self isViewControllerDependsOnUserLogin]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"account_icon"]
-                                                                                     style:UIBarButtonItemStylePlain
-                                                                                   handler:^(id sender)
-        {
-            @strongify(self);
-            [QBSUIHelper presentUserProfileViewControllerInViewController:self];
-        }];
-    }
+//    @weakify(self);
+//    if ([self isViewControllerDependsOnUserLogin]) {
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"account_icon"]
+//                                                                                     style:UIBarButtonItemStylePlain
+//                                                                                   handler:^(id sender)
+//        {
+//            @strongify(self);
+//            [QBSUIHelper presentUserProfileViewControllerInViewController:self];
+//        }];
+//    }
 }
 
 - (BOOL)isViewControllerDependsOnUserLogin {
@@ -61,7 +61,7 @@
             QBSCommodityListViewController *listVC = [[QBSCommodityListViewController alloc] initWithColumnId:relId columnType:columnType columnName:nil];
             [self.navigationController pushViewController:listVC animated:YES];
         } else {
-            QBSCategoryViewController *catVC = [[QBSCategoryViewController alloc] initWithPresetColumnId:relId];
+            QBSCategoryViewController *catVC = [[QBSCategoryViewController alloc] init];
             [self.navigationController pushViewController:catVC animated:YES];
         }
     }
@@ -69,6 +69,10 @@
 
 - (BOOL)hidesBottomBarWhenPushed {
     return self.navigationController.viewControllers.firstObject != self;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {

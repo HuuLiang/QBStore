@@ -31,6 +31,7 @@
 - (BOOL)isLogin;
 - (void)login;
 - (void)logout;
+- (NSString *)nickName;
 
 @end
 
@@ -50,3 +51,4 @@ extern NSString *const kQBSUserTypeWeChat;
 @end
 
 extern NSString *const kQBSUserShouldReLoginNotification;
+extern NSString *const kQBSUserLogoutNotification;

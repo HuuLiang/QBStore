@@ -11,5 +11,6 @@
 @interface QBSCustomerServiceController : QBSBaseViewController
 
 - (void)showInView:(UIView *)superView;
+//- (void)showInViewController:(UIViewController *)viewController;
 
 @end

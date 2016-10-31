@@ -71,13 +71,10 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
 }
 @property (nonatomic,retain) QBSCommodityDetail *commodityDetail;
 @property (nonatomic,retain) QBSCommodityDetailSubViewController *subViewController;
-@property (nonatomic,retain) QBSCustomerServiceController *customerServiceController;
 @property (nonatomic) CGFloat titleCellHeight;
 @end
 
 @implementation QBSCommodityDetailViewController
-
-DefineLazyPropertyInitialization(QBSCustomerServiceController, customerServiceController)
 
 - (instancetype)initWithCommodityId:(NSNumber *)commodityId columnId:(NSNumber *)columnId {
     self = [super init];
@@ -385,7 +382,8 @@ DefineLazyPropertyInitialization(QBSCustomerServiceController, customerServiceCo
             @weakify(self);
             cell.customerServiceAction = ^(id obj) {
                 @strongify(self);
-                [self.customerServiceController showInView:self.view.window];
+                QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];
+                [csController showInView:self.view.window];
             };
             return cell;
         } else if (indexPath.section == QBSSummaryServiceMarkItem) {
