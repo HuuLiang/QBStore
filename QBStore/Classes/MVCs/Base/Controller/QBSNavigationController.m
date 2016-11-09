@@ -22,8 +22,9 @@
     // Do any additional setup after loading the view.
     self.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:20.]};
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_background"] forBarMetrics:UIBarMetricsDefault];
     self.delegate = self;
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserShouldReLogin:) name:kQBSUserShouldReLoginNotification object:nil];
 }
 

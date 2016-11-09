@@ -14,7 +14,6 @@ SynthesizeContainerPropertyElementClassMethod(serviceList, QBSCommodityServiceMa
 SynthesizeContainerPropertyElementClassMethod(detailList, QBSCommodityImageInfo)
 SynthesizeContainerPropertyElementClassMethod(displayList, QBSCommodityImageInfo)
 SynthesizeContainerPropertyElementClassMethod(guessCommodityList, QBSCommodity)
-SynthesizeContainerPropertyElementClassMethod(tagsInfo, QBSCommodityTag)
 
 @end
 

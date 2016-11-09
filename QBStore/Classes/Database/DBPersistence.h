@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, DBPersistenceOperation) {
+    DBPersistenceOperationNone,
+    DBPersistenceOperationSave,
+    DBPersistenceOperationRemove
+};
+
 @protocol DBPersistentDelegate <NSObject>
 
 @required
@@ -15,6 +21,13 @@
 @optional
 + (NSArray *)DBPersistenceExcludedProperties;
 + (NSDictionary *)DBPersistenceCustomObjectMapping;
+@end
+
+@protocol DBPersistentObserver <NSObject>
+
+@optional
+- (void)DBPersistentClass:(Class)class didFinishOperation:(DBPersistenceOperation)operation;
+
 @end
 
 @interface DBPersistence : NSObject <DBPersistentDelegate>
@@ -37,5 +50,12 @@
 @interface DBPersistence (SubclassingHooks)
 
 + (NSString *)primaryKey; // Subclass should override this method to provide customed primary key
+
+@end
+
+@interface DBPersistence (Observation)
+
++ (void)registerObserver:(__weak id<DBPersistentObserver>)observer;
++ (void)removeObserver:(__weak id<DBPersistentObserver>)observer;
 
 @end

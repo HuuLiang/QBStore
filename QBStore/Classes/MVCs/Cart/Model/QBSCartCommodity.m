@@ -44,4 +44,12 @@
         }]);
     }];
 }
+
++ (void)totalAmountAsync:(void (^)(NSUInteger amount))asyncBlock {
+    [QBSCartCommodity objectsFromPersistenceAsync:^(NSArray *objects) {
+        asyncBlock([objects QBS_sumInteger:^NSInteger(QBSCartCommodity *obj) {
+            return obj.amount.unsignedIntegerValue;
+        }]);
+    }];
+}
 @end

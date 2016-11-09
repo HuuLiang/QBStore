@@ -172,7 +172,7 @@ static const void *kImageViewAssociatedKey = &kImageViewAssociatedKey;
     }
     
     if (indexPath.item < self.imageURLStrings.count) {
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageURLStrings[indexPath.item]]];
+        [imageView QB_setImageWithURL:[NSURL URLWithString:self.imageURLStrings[indexPath.item]]];
     }
     return cell;
 }

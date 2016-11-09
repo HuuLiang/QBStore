@@ -22,3 +22,15 @@ SynthesizePropertyClassMethod(data, QBSFeaturedCommodityListData)
 SynthesizeContainerPropertyElementClassMethod(commodityList, QBSCommodity)
 SynthesizeContainerPropertyElementClassMethod(groupItemList, QBSHomeGroup)
 @end
+
+@implementation QBSFeaturedCommodityPage
+
+SynthesizeContainerPropertyElementClassMethod(channelRecommendationList, QBSFeaturedCommodityList)
+
+@end
+
+@implementation QBSFeaturedCommodityResponse
+
+SynthesizePropertyClassMethod(homeColumnCommodityRmdDto, QBSFeaturedCommodityPage)
+
+@end

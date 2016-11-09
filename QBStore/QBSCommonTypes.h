@@ -30,7 +30,9 @@ typedef NS_ENUM(NSUInteger, QBSSortMode) {
 typedef NS_ENUM(NSUInteger, QBSRecommendType) {
     QBSBannerTypeUnknown,
     QBSRecommendTypeColumn,
-    QBSRecommendTypeCommodity
+    QBSRecommendTypeCommodity,
+    QBSRecommendTypeTag,
+    QBSRecommendTypeTicket
 };
 
 typedef NS_ENUM(NSUInteger, QBSColumnType) {

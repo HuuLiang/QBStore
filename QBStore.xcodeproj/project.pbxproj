@@ -102,8 +102,6 @@
 		BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11941DB4F6A3000D1D99 /* QBSHomeGroup.m */; };
 		BC2C11AD1DB4F6A3000D1D99 /* QBSActivityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11971DB4F6A3000D1D99 /* QBSActivityHeaderView.m */; };
 		BC2C11AE1DB4F6A3000D1D99 /* QBSBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11991DB4F6A3000D1D99 /* QBSBannerCell.m */; };
-		BC2C11B11DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C119F1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m */; };
-		BC2C11B31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m */; };
 		BC2C11B41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A51DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m */; };
 		BC2C11B51DB4F6A3000D1D99 /* QBSHomeActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A71DB4F6A3000D1D99 /* QBSHomeActivityCell.m */; };
 		BC2C11B61DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C11A91DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m */; };
@@ -154,6 +152,7 @@
 		BC4000B01DC0A02F00019EA5 /* QBSMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */; };
 		BC4000B41DC0B33400019EA5 /* QBSMineAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000B31DC0B33400019EA5 /* QBSMineAvatarView.m */; };
 		BC4000B71DC0B59900019EA5 /* QBSMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000B61DC0B59900019EA5 /* QBSMineCell.m */; };
+		BC4E30091DCA0034001CD8D6 /* QBSTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E30081DCA0034001CD8D6 /* QBSTicket.m */; };
 		BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CA1DB77FB500793E44 /* login_background.jpg */; };
 		BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */; };
 		BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CC1DB77FB500793E44 /* profile_background.jpg */; };
@@ -162,6 +161,13 @@
 		BC504CD81DC34CAA009D57C8 /* QBSCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC504CD71DC34CAA009D57C8 /* QBSCategoryCell.m */; };
 		BC504CDB1DC35821009D57C8 /* QBSPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC504CDA1DC35821009D57C8 /* QBSPlaceholderView.m */; };
 		BC69AF0A1DC7305000BA49F3 /* QBSHomeCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF091DC7305000BA49F3 /* QBSHomeCommodityCell.m */; };
+		BC69AF0F1DC740C100BA49F3 /* QBSFavouritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */; };
+		BC69AF101DC740C100BA49F3 /* QBSFavouritesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */; };
+		BC72DA621DCED11100FC2A60 /* QBSTicketAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */; };
+		BCF712FD1DC864B700A906AF /* UIImageView+QBWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF712FC1DC864B700A906AF /* UIImageView+QBWebCache.m */; };
+		BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */; };
+		BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF713021DC86FB100A906AF /* QBSTicketCell.m */; };
+		BCF713061DC8823800A906AF /* QBSTicketCard.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF713051DC8823800A906AF /* QBSTicketCard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -360,10 +366,6 @@
 		BC2C11971DB4F6A3000D1D99 /* QBSActivityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSActivityHeaderView.m; sourceTree = "<group>"; };
 		BC2C11981DB4F6A3000D1D99 /* QBSBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSBannerCell.h; sourceTree = "<group>"; };
 		BC2C11991DB4F6A3000D1D99 /* QBSBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSBannerCell.m; sourceTree = "<group>"; };
-		BC2C119E1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedCommodityCell.h; sourceTree = "<group>"; };
-		BC2C119F1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedCommodityCell.m; sourceTree = "<group>"; };
-		BC2C11A21DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedCommodityRowCell.h; sourceTree = "<group>"; };
-		BC2C11A31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedCommodityRowCell.m; sourceTree = "<group>"; };
 		BC2C11A41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFeaturedTypeCell.h; sourceTree = "<group>"; };
 		BC2C11A51DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFeaturedTypeCell.m; sourceTree = "<group>"; };
 		BC2C11A61DB4F6A3000D1D99 /* QBSHomeActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeActivityCell.h; sourceTree = "<group>"; };
@@ -457,6 +459,8 @@
 		BC4000B31DC0B33400019EA5 /* QBSMineAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSMineAvatarView.m; sourceTree = "<group>"; };
 		BC4000B51DC0B59900019EA5 /* QBSMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSMineCell.h; sourceTree = "<group>"; };
 		BC4000B61DC0B59900019EA5 /* QBSMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSMineCell.m; sourceTree = "<group>"; };
+		BC4E30071DCA0034001CD8D6 /* QBSTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicket.h; sourceTree = "<group>"; };
+		BC4E30081DCA0034001CD8D6 /* QBSTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicket.m; sourceTree = "<group>"; };
 		BC4E55CA1DB77FB500793E44 /* login_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_background.jpg; sourceTree = "<group>"; };
 		BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = paging_refresh.gif; sourceTree = "<group>"; };
 		BC4E55CC1DB77FB500793E44 /* profile_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_background.jpg; sourceTree = "<group>"; };
@@ -469,6 +473,20 @@
 		BC504CDA1DC35821009D57C8 /* QBSPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPlaceholderView.m; sourceTree = "<group>"; };
 		BC69AF081DC7305000BA49F3 /* QBSHomeCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeCommodityCell.h; sourceTree = "<group>"; };
 		BC69AF091DC7305000BA49F3 /* QBSHomeCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHomeCommodityCell.m; sourceTree = "<group>"; };
+		BC69AF0B1DC740C100BA49F3 /* QBSFavouritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFavouritesCell.h; sourceTree = "<group>"; };
+		BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesCell.m; sourceTree = "<group>"; };
+		BC69AF0D1DC740C100BA49F3 /* QBSFavouritesHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFavouritesHeaderView.h; sourceTree = "<group>"; };
+		BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesHeaderView.m; sourceTree = "<group>"; };
+		BC72DA601DCED11100FC2A60 /* QBSTicketAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketAppCell.h; sourceTree = "<group>"; };
+		BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketAppCell.m; sourceTree = "<group>"; };
+		BCF712FB1DC864B700A906AF /* UIImageView+QBWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+QBWebCache.h"; sourceTree = "<group>"; };
+		BCF712FC1DC864B700A906AF /* UIImageView+QBWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+QBWebCache.m"; sourceTree = "<group>"; };
+		BCF712FE1DC86B7100A906AF /* QBSTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketsViewController.h; sourceTree = "<group>"; };
+		BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketsViewController.m; sourceTree = "<group>"; };
+		BCF713011DC86FB100A906AF /* QBSTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketCell.h; sourceTree = "<group>"; };
+		BCF713021DC86FB100A906AF /* QBSTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketCell.m; sourceTree = "<group>"; };
+		BCF713041DC8823800A906AF /* QBSTicketCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketCard.h; sourceTree = "<group>"; };
+		BCF713051DC8823800A906AF /* QBSTicketCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketCard.m; sourceTree = "<group>"; };
 		C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QBStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -604,6 +622,8 @@
 				BC2C10721DB4DD0B000D1D99 /* UIView+Loading.m */,
 				BC2C10731DB4DD0B000D1D99 /* UIView+RoundCorner.h */,
 				BC2C10741DB4DD0B000D1D99 /* UIView+RoundCorner.m */,
+				BCF712FB1DC864B700A906AF /* UIImageView+QBWebCache.h */,
+				BCF712FC1DC864B700A906AF /* UIImageView+QBWebCache.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1046,16 +1066,16 @@
 		BC2C11951DB4F6A3000D1D99 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BC2C11961DB4F6A3000D1D99 /* QBSActivityHeaderView.h */,
-				BC2C11971DB4F6A3000D1D99 /* QBSActivityHeaderView.m */,
 				BC2C11981DB4F6A3000D1D99 /* QBSBannerCell.h */,
 				BC2C11991DB4F6A3000D1D99 /* QBSBannerCell.m */,
-				BC2C119E1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.h */,
-				BC2C119F1DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m */,
-				BC2C11A21DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.h */,
-				BC2C11A31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m */,
 				BC2C11A41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.h */,
 				BC2C11A51DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m */,
+				BC69AF0B1DC740C100BA49F3 /* QBSFavouritesCell.h */,
+				BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */,
+				BC69AF0D1DC740C100BA49F3 /* QBSFavouritesHeaderView.h */,
+				BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */,
+				BC2C11961DB4F6A3000D1D99 /* QBSActivityHeaderView.h */,
+				BC2C11971DB4F6A3000D1D99 /* QBSActivityHeaderView.m */,
 				BC2C11A61DB4F6A3000D1D99 /* QBSHomeActivityCell.h */,
 				BC2C11A71DB4F6A3000D1D99 /* QBSHomeActivityCell.m */,
 				BC2C11A81DB4F6A3000D1D99 /* QBSHomeActivityRowCell.h */,
@@ -1248,6 +1268,7 @@
 			children = (
 				BC4000B11DC0B31C00019EA5 /* View */,
 				BC4000AD1DC0A01E00019EA5 /* Controller */,
+				BC4E30061DCA0015001CD8D6 /* Model */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1257,6 +1278,8 @@
 			children = (
 				BC4000AE1DC0A02F00019EA5 /* QBSMineViewController.h */,
 				BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */,
+				BCF712FE1DC86B7100A906AF /* QBSTicketsViewController.h */,
+				BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1270,8 +1293,23 @@
 				BC4000B61DC0B59900019EA5 /* QBSMineCell.m */,
 				BC34E3791DC0C8E500CB1189 /* QBSAvatarButton.h */,
 				BC34E37A1DC0C8E500CB1189 /* QBSAvatarButton.m */,
+				BCF713011DC86FB100A906AF /* QBSTicketCell.h */,
+				BCF713021DC86FB100A906AF /* QBSTicketCell.m */,
+				BCF713041DC8823800A906AF /* QBSTicketCard.h */,
+				BCF713051DC8823800A906AF /* QBSTicketCard.m */,
+				BC72DA601DCED11100FC2A60 /* QBSTicketAppCell.h */,
+				BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BC4E30061DCA0015001CD8D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC4E30071DCA0034001CD8D6 /* QBSTicket.h */,
+				BC4E30081DCA0034001CD8D6 /* QBSTicket.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BC4E55C91DB77FB500793E44 /* Resources */ = {
@@ -1425,19 +1463,19 @@
 				BC2C115D1DB4F481000D1D99 /* QBSCustomerService.m in Sources */,
 				BC2C12171DB4F79A000D1D99 /* QBSOrderCommentListCell.m in Sources */,
 				BC2C120C1DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.m in Sources */,
-				BC2C11B11DB4F6A3000D1D99 /* QBSFeaturedCommodityCell.m in Sources */,
 				BC2C10E21DB4E073000D1D99 /* QBSUserNavigationController.m in Sources */,
 				BC2C109F1DB4DED2000D1D99 /* QBSHUDManager.m in Sources */,
 				BC2C11821DB4F60D000D1D99 /* QBSCommodityComment.m in Sources */,
+				BC4E30091DCA0034001CD8D6 /* QBSTicket.m in Sources */,
 				BC2C109E1DB4DED2000D1D99 /* QBSHttpClient.m in Sources */,
 				BC504CD51DC34B93009D57C8 /* QBSCategoryViewController.m in Sources */,
 				BC2C118A1DB4F60D000D1D99 /* QBSCustomerServiceButton.m in Sources */,
 				BC2C11861DB4F60D000D1D99 /* QBSCommodityCommentCell.m in Sources */,
 				BC2C11221DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.m in Sources */,
 				BC2C109D1DB4DED2000D1D99 /* QBSErrorHandler.m in Sources */,
+				BCF713061DC8823800A906AF /* QBSTicketCard.m in Sources */,
 				BC4000B71DC0B59900019EA5 /* QBSMineCell.m in Sources */,
 				BC2C10BE1DB4DFA0000D1D99 /* MZTimerLabel.m in Sources */,
-				BC2C11B31DB4F6A3000D1D99 /* QBSFeaturedCommodityRowCell.m in Sources */,
 				BC2C10A91DB4DF20000D1D99 /* QBSPaymentManager.m in Sources */,
 				BC2C10C11DB4DFA0000D1D99 /* TADotView.m in Sources */,
 				BC2C11261DB4E0D2000D1D99 /* QBSPagingRefreshView.m in Sources */,
@@ -1474,6 +1512,7 @@
 				BC2C120E1DB4F79A000D1D99 /* QBSShippingAddressListViewController.m in Sources */,
 				BC2C12111DB4F79A000D1D99 /* QBSShippingAddress.m in Sources */,
 				BC2C11201DB4E0D2000D1D99 /* QBSAmountPicker.m in Sources */,
+				BC69AF0F1DC740C100BA49F3 /* QBSFavouritesCell.m in Sources */,
 				BC2C11AD1DB4F6A3000D1D99 /* QBSActivityHeaderView.m in Sources */,
 				BC2C107C1DB4DD0B000D1D99 /* UIColor+hexColor.m in Sources */,
 				BC2C107B1DB4DD0B000D1D99 /* UIColor+FeaturedColor.m in Sources */,
@@ -1494,6 +1533,7 @@
 				BC2C10771DB4DD0B000D1D99 /* NSMutableDictionary+SafeCoding.m in Sources */,
 				BC2C10E01DB4E073000D1D99 /* QBSSMSVerificationViewController.m in Sources */,
 				BC2C117E1DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.m in Sources */,
+				BC69AF101DC740C100BA49F3 /* QBSFavouritesHeaderView.m in Sources */,
 				BC2C10521DB4D787000D1D99 /* QBSAppDelegate.m in Sources */,
 				BC2C11B51DB4F6A3000D1D99 /* QBSHomeActivityCell.m in Sources */,
 				BC2C10E51DB4E073000D1D99 /* QBSUser.m in Sources */,
@@ -1502,6 +1542,7 @@
 				BC2C10761DB4DD0B000D1D99 /* NSError+QBSError.m in Sources */,
 				BC2C11871DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m in Sources */,
 				BC2C11D71DB4F73F000D1D99 /* QBSSortButton.m in Sources */,
+				BC72DA621DCED11100FC2A60 /* QBSTicketAppCell.m in Sources */,
 				BC2C11B41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m in Sources */,
 				BC2C10A21DB4DED2000D1D99 /* QBSWeChatHelper.m in Sources */,
 				BC2C109C1DB4DED2000D1D99 /* QBSConfiguration.m in Sources */,
@@ -1521,6 +1562,7 @@
 				BC2C12141DB4F79A000D1D99 /* QBSNewShippingAddressCell.m in Sources */,
 				BC2C117F1DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m in Sources */,
 				BC2C10791DB4DD0B000D1D99 /* NSObject+Properties.m in Sources */,
+				BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */,
 				BC2C111D1DB4E0D2000D1D99 /* QBSCommodityTag.m in Sources */,
 				BC2C11181DB4E0D2000D1D99 /* QBSNavigationController.m in Sources */,
 				BC2C10A11DB4DED2000D1D99 /* QBSUIHelper.m in Sources */,
@@ -1537,6 +1579,7 @@
 				BC2C10E41DB4E073000D1D99 /* QBSUserViewController.m in Sources */,
 				BC2C11231DB4E0D2000D1D99 /* QBSCollectionViewCell.m in Sources */,
 				BC2C111A1DB4E0D2000D1D99 /* QBSCategory.m in Sources */,
+				BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */,
 				BC2C10811DB4DD0B000D1D99 /* UIView+RoundCorner.m in Sources */,
 				BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */,
 				BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */,
@@ -1547,6 +1590,7 @@
 				BC2C120D1DB4F79A000D1D99 /* QBSOrderViewController.m in Sources */,
 				BC34E3781DC0C0A200CB1189 /* QBSTabBarController.m in Sources */,
 				BC2C11391DB4E11D000D1D99 /* QBSCartCommodity.m in Sources */,
+				BCF712FD1DC864B700A906AF /* UIImageView+QBWebCache.m in Sources */,
 				BC2C11B61DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m in Sources */,
 				BC2C10C41DB4DFA0000D1D99 /* SDCycleScrollView.m in Sources */,
 				BC2C12181DB4F79A000D1D99 /* QBSOrderCommodityListCell.m in Sources */,

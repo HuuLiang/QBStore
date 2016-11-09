@@ -10,6 +10,7 @@
 #import "QBSCategoryViewController.h"
 #import "QBSCommodityDetailViewController.h"
 #import "QBSCommodityListViewController.h"
+#import "QBSTicketsViewController.h"
 #import "QBSUser.h"
 
 @interface QBSBaseViewController ()
@@ -64,6 +65,9 @@
             QBSCategoryViewController *catVC = [[QBSCategoryViewController alloc] init];
             [self.navigationController pushViewController:catVC animated:YES];
         }
+    } else if (recmType == QBSRecommendTypeTicket) {
+        QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
+        [self.navigationController pushViewController:ticketsVC animated:YES];
     }
 }
 

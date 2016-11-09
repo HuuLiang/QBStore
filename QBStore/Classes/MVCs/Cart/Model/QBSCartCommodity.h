@@ -24,6 +24,7 @@
 @property (nonatomic) NSNumber *isSelected;
 
 + (void)totalSelectedAmountAsync:(void (^)(NSUInteger amount))asyncBlock;
++ (void)totalAmountAsync:(void (^)(NSUInteger amount))asyncBlock;
 
 - (instancetype)initFromCommodity:(QBSCommodity *)commodity withAmount:(NSUInteger)amount columnId:(NSNumber *)columnId;
 

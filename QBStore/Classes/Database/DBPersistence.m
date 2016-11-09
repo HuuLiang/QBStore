@@ -9,6 +9,60 @@
 #import "DBPersistence.h"
 #import "DBHandler.h"
 
+
+@implementation DBPersistence (Observation)
+
++ (NSMutableDictionary<NSString *, NSMutableArray *> *)sharedObersers {
+    static NSMutableDictionary *_sharedObersers;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedObersers = [NSMutableDictionary dictionary];
+    });
+    return _sharedObersers;
+}
+
++ (void)registerObserver:(__weak id<DBPersistentObserver>)observer {
+    if (observer == nil) {
+        return ;
+    }
+    
+    NSMutableDictionary<NSString *, NSMutableArray *> *observerDic = [self sharedObersers];
+    NSMutableArray *observers = observerDic[NSStringFromClass([self class])];
+    if (!observers) {
+        observers = [NSMutableArray array];
+        [observerDic setObject:observers forKey:NSStringFromClass([self class])];
+    }
+    
+    [observers addObject:observer];
+}
+
++ (void)removeObserver:(__weak id<DBPersistentObserver>)observer {
+    if (observer == nil) {
+        return ;
+    }
+    
+    NSMutableDictionary<NSString *, NSMutableArray *> *observerDic = [self sharedObersers];
+    NSMutableArray *observers = observerDic[NSStringFromClass([self class])];
+    [observers removeObject:observer];
+}
+
++ (void)notifyObserversWithOperation:(DBPersistenceOperation)operation {
+    NSMutableDictionary<NSString *, NSMutableArray *> *observerDic = [self sharedObersers];
+    NSMutableArray *observers = observerDic[NSStringFromClass([self class])];
+    [observers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj conformsToProtocol:@protocol(DBPersistentObserver)]) {
+            id<DBPersistentObserver> observer = obj;
+            if ([observer respondsToSelector:@selector(DBPersistentClass:didFinishOperation:)]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [observer DBPersistentClass:[self class] didFinishOperation:operation];
+                });
+            }
+        }
+    }];
+}
+
+@end
+
 @implementation DBPersistence
 
 + (dispatch_queue_t)persistenceQueue {
@@ -76,12 +130,14 @@
     
     dispatch_async(self.persistenceQueue, ^{
         [[DBHandler sharedInstance] insertOrUpdateWithModelArr:objects byPrimaryKey:[[self class] primaryKey]];
+        [self notifyObserversWithOperation:DBPersistenceOperationSave];
     });
 }
 
 + (void)removeAllObjectsFromPersistence {
     dispatch_async(self.persistenceQueue, ^{
         [[DBHandler sharedInstance] dropModels:[self class]];
+        [self notifyObserversWithOperation:DBPersistenceOperationRemove];
     });
 }
 
@@ -96,6 +152,7 @@
     
     dispatch_async(self.persistenceQueue, ^{
         [[DBHandler sharedInstance] deleteModels:objects withPrimaryKey:[[self class] primaryKey]];
+        [self notifyObserversWithOperation:DBPersistenceOperationRemove];
     });
 }
 
@@ -106,6 +163,8 @@
 - (void)saveWithCompletion:(void (^)(BOOL success))completionBlock {
     dispatch_async([self class].persistenceQueue, ^{
         BOOL ret = [[DBHandler sharedInstance] insertOrUpdateWithModelArr:@[self] byPrimaryKey:[[self class] primaryKey]];
+        [[self class] notifyObserversWithOperation:DBPersistenceOperationSave];
+        
         if (completionBlock) {
             completionBlock(ret);
         }
@@ -119,11 +178,14 @@
 - (void)removeFromPersistenceWithCompletion:(void (^)(BOOL success))completionBlock {
     dispatch_async([self class].persistenceQueue, ^{
         BOOL ret = [[DBHandler sharedInstance] deleteModels:@[self] withPrimaryKey:[[self class] primaryKey]];
+        [[self class] notifyObserversWithOperation:DBPersistenceOperationRemove];
+        
         if (completionBlock) {
             completionBlock(ret);
         }
     });
 }
+
 @end
 
 @implementation DBPersistence (SubclassingHooks)

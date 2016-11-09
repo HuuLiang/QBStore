@@ -16,14 +16,11 @@
 
 @interface QBSCommodityDetail : QBSCommodity
 
-@property (nonatomic) NSNumber *praisePercent;
 @property (nonatomic) NSArray<QBSCommodityServiceMark *> *serviceList;
 
 @property (nonatomic,retain) NSArray<QBSCommodityImageInfo *> *detailList;
 @property (nonatomic,retain) NSArray<QBSCommodityImageInfo *> *displayList;
 @property (nonatomic,retain) NSArray<QBSCommodity *> *guessCommodityList;
-
-@property (nonatomic,retain) NSArray<QBSCommodityTag *> *tagsInfo;
 
 @end
 

@@ -35,6 +35,7 @@
 #import "UIColor+FeaturedColor.h"
 #import "UIImage+color.h"
 #import "UIImage+QBResource.h"
+#import "UIImageView+QBWebCache.h"
 #import "UIScrollView+Refresh.h"
 #import "UIView+Loading.h"
 #import "UIView+RoundCorner.h"

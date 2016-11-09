@@ -26,7 +26,7 @@
 typedef NS_ENUM(NSUInteger, QBSPaymentType) {
     QBSPaymentTypeWeChat,
     QBSPaymentTypeAlipay,
-    QBSPaymentTypeCash,
+//    QBSPaymentTypeCash,
     QBSPaymentTypeCount
 };
 
@@ -58,7 +58,8 @@ static NSString *const kPaymentCellReusableIdentifier = @"PaymentCellReusableIde
 - (NSUInteger)paymentRowForPayType:(NSString *)payType {
     NSDictionary *payTypeMapping = @{kQBSOrderPayTypeWeChat:@(QBSPaymentTypeWeChat),
                                      kQBSOrderPayTypeAlipay:@(QBSPaymentTypeAlipay),
-                                     kQBSOrderPayTypeCOD:@(QBSPaymentTypeCash)};
+//                                     kQBSOrderPayTypeCOD:@(QBSPaymentTypeCash)
+                                     };
     NSNumber *paymentType = payTypeMapping[payType];
     if (!paymentType) {
         return NSNotFound;
@@ -69,7 +70,8 @@ static NSString *const kPaymentCellReusableIdentifier = @"PaymentCellReusableIde
 - (NSString *)payTypeForPaymentRow:(NSUInteger)row {
     NSDictionary *payTypeMapping = @{@(QBSPaymentTypeWeChat):kQBSOrderPayTypeWeChat,
                                      @(QBSPaymentTypeAlipay):kQBSOrderPayTypeAlipay,
-                                     @(QBSPaymentTypeCash):kQBSOrderPayTypeCOD};
+//                                     @(QBSPaymentTypeCash):kQBSOrderPayTypeCOD
+                                     };
     return payTypeMapping[@(row)];
 }
 
@@ -306,10 +308,11 @@ static NSString *const kPaymentCellReusableIdentifier = @"PaymentCellReusableIde
         } else if (indexPath.row == QBSPaymentTypeAlipay) {
             cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"alipay"];
             cell.textLabel.text = [QBSOrder paymentTypeStringWithPaymentType:kQBSOrderPayTypeAlipay];
-        } else if (indexPath.row == QBSPaymentTypeCash) {
-            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"cash"];
-            cell.textLabel.text = [QBSOrder paymentTypeStringWithPaymentType:kQBSOrderPayTypeCOD];
         }
+//        else if (indexPath.row == QBSPaymentTypeCash) {
+//            cell.imageView.image = [UIImage QBS_imageWithResourcePath:@"cash"];
+//            cell.textLabel.text = [QBSOrder paymentTypeStringWithPaymentType:kQBSOrderPayTypeCOD];
+//        }
         return cell;
     } else if (indexPath.section == QBSDeliverySection) {
         QBSSubtitledTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSubtitledCellReusableIdentifier forIndexPath:indexPath];

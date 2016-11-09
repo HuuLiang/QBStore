@@ -22,6 +22,7 @@
 #import "QBSShippingAddress.h"
 #import "QBSOrder.h"
 #import "QBSOrderCommodity.h"
+#import "QBSTicket.h"
 
 #define QBS_CHANNEL_NO [QBSConfiguration defaultConfiguration].channelNo
 #define kDefaultHttpMethod QBSHttpMethodPOST
@@ -61,13 +62,24 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
     }];
 }
 
-- (void)request_queryHomeFeaturedCommoditiesWithCompletionHandler:(QBSCompletionHandler)completionHandler {
-    [[QBSHttpClient sharedClient] requestURL:@"chnlRmd.service"
+- (void)request_queryHomeFeaturedTypesAndActivitiesWithCompletionHandler:(QBSCompletionHandler)completionHandler {
+    [[QBSHttpClient sharedClient] requestURL:@"comProRmd.service"
                                   withParams:@{@"channelNo":QBS_CHANNEL_NO}
                                   methodType:kDefaultHttpMethod
                            completionHandler:^(id obj, NSError *error)
+     {
+         [self onResponseWithObject:obj error:error modelClass:[QBSFeaturedCommodityListResponse class] completionHandler:completionHandler];
+     }];
+}
+
+- (void)request_queryHomeFeaturedCommoditiesInPage:(NSUInteger)page withCompletionHandler:(QBSCompletionHandler)completionHandler {
+    [[QBSHttpClient sharedClient] requestURL:@"colComRmd.service"
+                                  withParams:@{@"channelNo":QBS_CHANNEL_NO,
+                                               @"pageNum":@(page)}
+                                  methodType:kDefaultHttpMethod
+                           completionHandler:^(id obj, NSError *error)
     {
-        [self onResponseWithObject:obj error:error modelClass:[QBSFeaturedCommodityListResponse class] completionHandler:completionHandler];
+        [self onResponseWithObject:obj error:error modelClass:[QBSFeaturedCommodityResponse class] completionHandler:completionHandler];
     }];
 }
 
@@ -438,7 +450,7 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTOrderInvalidErrorCode errorMessage:@"订单没有指定用户"];
         SafelyCallBlock(completionHandler, nil, error);
         return ;
-    }
+    } 
     
     if (![order isValid]) {
         NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTOrderInvalidErrorCode errorMessage:@"无效的订单"];
@@ -624,6 +636,54 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
                            completionHandler:^(id obj, NSError *error)
     {
         [self onResponseWithObject:obj error:error modelClass:[QBSJSONResponse class] completionHandler:completionHandler];
+    }];
+}
+
+- (void)request_queryActivityTicketsWithCompletionHandler:(QBSCompletionHandler)completionHandler {
+    if (!QBSCurrentUserIsLogin) {
+        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTUserNotLoginErrorCode errorMessage:@"用户未登录"];
+        SafelyCallBlock(completionHandler, nil, error);
+        return ;
+    }
+    
+    NSDictionary *params = @{@"channelNo":QBS_CHANNEL_NO,
+                             @"osType":@"iv",
+                             @"accessToken":[QBSUser currentUser].accessToken,
+                             @"userId":[QBSUser currentUser].userId};
+    [[QBSHttpClient sharedClient] requestURL:@"exchange.service" withParams:params methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
+        [self onResponseWithObject:obj error:error modelClass:[QBSTicketList class] completionHandler:completionHandler];
+    }];
+}
+
+- (void)request_fetchActivityTicketNoWithTicket:(QBSTicket *)ticket
+                              completionHandler:(QBSCompletionHandler)completionHandler
+{
+    if (!QBSCurrentUserIsLogin) {
+        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTUserNotLoginErrorCode errorMessage:@"用户未登录"];
+        SafelyCallBlock(completionHandler, nil, error);
+        return ;
+    }
+    
+    if (!ticket.appStoreInfo.appId || !ticket.payPointType) {
+        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTParameterErrorCode errorMessage:@"非法的请求参数"];
+        SafelyCallBlock(completionHandler, nil, error);
+        return ;
+    }
+    
+    NSDictionary *params = @{@"channelNo":QBS_CHANNEL_NO,
+                             @"userId":[QBSUser currentUser].userId,
+                             @"accessToken":[QBSUser currentUser].accessToken,
+                             @"appId":ticket.appStoreInfo.appId,
+                             @"payPointType":ticket.payPointType
+                             };
+    [[QBSHttpClient sharedClient] requestURL:@"excode.service" withParams:params methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
+        [self onResponseWithObject:obj error:error modelClass:[QBSTicketFetchResponse class] completionHandler:^(id obj, NSError *error) {
+            if (error.logicCode == 2002) {
+                error.qbsErrorMessage = @"亲，您还未达到领取礼券的条件，再接再厉哦~~~";
+            }
+            
+            SafelyCallBlock(completionHandler, obj, error);
+        }];
     }];
 }
 

@@ -252,7 +252,7 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
     UIImageView *imageView = [[UIImageView alloc] init];
 //    imageView.backgroundColor = [UIColor whiteColor];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [imageView sd_setImageWithURL:[NSURL URLWithString:imageInfo.imgUrl]];
+    [imageView QB_setImageWithURL:[NSURL URLWithString:imageInfo.imgUrl]];
     imageView.frame = [bannerCell convertRect:bannerCell.bounds toView:self.view.window];
     [self.view.window addSubview:imageView];
     
@@ -264,7 +264,7 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
     fullScreenBanner.currentIndex = bannerCell.currentIndex;
     fullScreenBanner.pageControlYAspect = 0.8;
     fullScreenBanner.selectionAction = ^(NSUInteger index, QBSBannerCell *obj) {
-        [imageView sd_setImageWithURL:[NSURL URLWithString:obj.imageURLStrings[index]]];
+        [imageView QB_setImageWithURL:[NSURL URLWithString:obj.imageURLStrings[index]]];
         imageView.hidden = NO;
         bannerCell.currentIndex = obj.currentIndex;
         

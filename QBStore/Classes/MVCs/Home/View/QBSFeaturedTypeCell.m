@@ -52,7 +52,7 @@
 
 - (void)setImageURL:(NSURL *)imageURL {
     _imageURL = imageURL;
-    [_thumbImageView sd_setImageWithURL:imageURL];
+    [_thumbImageView QB_setImageWithURL:imageURL];
 }
 
 - (void)setTitleColor:(UIColor *)titleColor {

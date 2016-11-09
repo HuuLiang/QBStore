@@ -12,5 +12,6 @@
 
 @property (nonatomic) NSNumber *tagsId;
 @property (nonatomic) NSString *tagsName;
+@property (nonatomic) NSString *imgUrl;
 
 @end

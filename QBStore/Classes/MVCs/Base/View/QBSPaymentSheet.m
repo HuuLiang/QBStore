@@ -35,15 +35,15 @@
             SafelyCallBlock(self.paymentAction, kQBSOrderPayTypeAlipay);
         }];
         
-        QBSGridSheetItem *itemCOD = [QBSGridSheetItem itemWithTitle:@"货到付款" iconImage:[UIImage QBS_imageWithResourcePath:@"cash"] action:^(id obj)
-        {
-            @strongify(self);
-            SafelyCallBlock(self.paymentAction, kQBSOrderPayTypeCOD);
-        }];
+//        QBSGridSheetItem *itemCOD = [QBSGridSheetItem itemWithTitle:@"货到付款" iconImage:[UIImage QBS_imageWithResourcePath:@"cash"] action:^(id obj)
+//        {
+//            @strongify(self);
+//            SafelyCallBlock(self.paymentAction, kQBSOrderPayTypeCOD);
+//        }];
         
         [items addObject:itemWeChat];
         [items addObject:itemAlipay];
-        [items addObject:itemCOD];
+//        [items addObject:itemCOD];
         
         self.items = items;
     }

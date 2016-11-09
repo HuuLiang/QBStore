@@ -32,6 +32,7 @@
         _bannerView.pageDotColor = [UIColor colorWithHexString:@"#D8D8D8"];
         _bannerView.currentPageDotColor = [UIColor colorWithHexString:@"#FF206F"];
         _bannerView.delegate = self;
+        _bannerView.placeholderImage = [UIImage imageNamed:@"commodity_placeholder"];
         [self addSubview:_bannerView];
     }
     return self;

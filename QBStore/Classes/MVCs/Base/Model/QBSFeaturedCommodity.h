@@ -8,21 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "QBSJSONResponse.h"
+#import "QBSCommodity.h"
 
 typedef NS_ENUM(NSUInteger, QBSFeaturedType) {
     QBSFeaturedTypeUnspecified,
     QBSFeaturedTypeGroup,
     QBSFeaturedTypePromotion,
-    QBSFeaturedTypeRecommendation
+    QBSFeaturedTypeRecommendationColumn,
+    QBSFeaturedTypeRecommendationCommodity
 };
 
-@class QBSCommodity;
 @class QBSHomeGroup;
 
-@interface QBSFeaturedCommodityListData : NSObject
+@interface QBSFeaturedCommodityListData : QBSCommodity
 
 @property (nonatomic) NSNumber *columnId;
 @property (nonatomic) NSNumber *columnType;
+@property (nonatomic) NSNumber *isLeaf;
 
 // rmdType = QBSFeaturedTypeRecommendation
 @property (nonatomic) NSNumber *columnRecommendationId;
@@ -51,5 +53,18 @@ typedef NS_ENUM(NSUInteger, QBSFeaturedType) {
 @interface QBSFeaturedCommodityListResponse : QBSJSONResponse
 
 @property (nonatomic,retain) NSArray<QBSFeaturedCommodityList *> *channelRecommendationList;
+
+@end
+
+@interface QBSFeaturedCommodityPage : NSObject
+
+@property (nonatomic,retain) NSArray<QBSFeaturedCommodityList *> *channelRecommendationList;
+@property (nonatomic) NSNumber *pageCount;
+
+@end
+
+@interface QBSFeaturedCommodityResponse : QBSJSONResponse
+
+@property (nonatomic,retain) QBSFeaturedCommodityPage *homeColumnCommodityRmdDto;
 
 @end

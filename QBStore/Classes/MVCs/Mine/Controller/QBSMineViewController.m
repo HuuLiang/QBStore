@@ -13,10 +13,12 @@
 
 #import "QBSShippingAddressListViewController.h"
 #import "QBSOrderListViewController.h"
+#import "QBSTicketsViewController.h"
 #import "QBSCustomerServiceController.h"
 
 typedef NS_ENUM(NSUInteger, QBSMineSection) {
     QBSMineOrderSection,
+    QBSMineActivitySection,
     QBSMineOtherSection,
     QBSMineSectionCount
 };
@@ -113,6 +115,7 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
 - (void)updateAvatarView {
     if (QBSCurrentUserIsLogin) {
         _avatarView.title = [QBSUser currentUser].nickName;
+        _avatarView.placeholderImage = [UIImage imageNamed:@"mine_avatar_placeholder"];
         _avatarView.imageURL = [NSURL URLWithString:[QBSUser currentUser].logoUrl];
     } else {
         _avatarView.placeholderImage = [UIImage imageNamed:@"mine_avatar_placeholder"];
@@ -136,6 +139,8 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
         return QBSOrderSectionRowCount;
     } else if (section == QBSMineOtherSection) {
         return QBSOtherSectionRowCount;
+    } else if (section == QBSMineActivitySection) {
+        return 1;
     }
     return 0;
 }
@@ -152,6 +157,9 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
             cell.iconImage = [UIImage imageNamed:@"mine_address_icon"];
             cell.title = @"收货地址";
         }
+    } else if (indexPath.section == QBSMineActivitySection) {
+        cell.iconImage = [UIImage imageNamed:@"mine_activity_icon"];
+        cell.title = @"活动专区";
     } else if (indexPath.section == QBSMineOtherSection) {
         if (indexPath.row == QBSContactRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_contact_icon"];
@@ -184,6 +192,9 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
             QBSShippingAddressListViewController *addressListVC = [[QBSShippingAddressListViewController alloc] init];
             [self.navigationController pushViewController:addressListVC animated:YES];
         }
+    } else if (indexPath.section == QBSMineActivitySection) {
+        QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
+        [self.navigationController pushViewController:ticketsVC animated:YES];
     } else if (indexPath.section == QBSMineOtherSection) {
         if (indexPath.row == QBSContactRow) {
             QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];

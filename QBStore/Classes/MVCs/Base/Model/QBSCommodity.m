@@ -8,8 +8,11 @@
 
 #import "QBSCommodity.h"
 #import "QBSCartCommodity.h"
+#import "QBSCommodityTag.h"
 
 @implementation QBSCommodity
+
+SynthesizeContainerPropertyElementClassMethod(tagsInfo, QBSCommodityTag)
 
 - (void)addToCartWithColumnId:(NSNumber *)columnId completion:(void (^)(BOOL success))completionBlock {
     

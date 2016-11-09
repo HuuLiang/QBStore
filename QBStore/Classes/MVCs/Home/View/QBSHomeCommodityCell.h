@@ -10,7 +10,13 @@
 
 @interface QBSHomeCommodityCell : UICollectionViewCell
 
-@property (nonatomic) NSURL *backgroundImageURL;
 @property (nonatomic) NSURL *thumbImageURL;
+@property (nonatomic) NSString *title;
+@property (nonatomic,retain) NSArray<NSString *> *tags;
+@property (nonatomic,retain) NSArray<NSString *> *details;
+@property (nonatomic) NSUInteger sold;
+
+- (void)setPrice:(CGFloat)price withOriginalPrice:(CGFloat)originalPrice;
+- (void)setCountDownTime:(NSTimeInterval)countDownTime withFinishedBlock:(QBSAction)finishedBlock;
 
 @end

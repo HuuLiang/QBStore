@@ -12,6 +12,7 @@
 @class QBSShippingAddress;
 @class QBSOrder;
 @class QBSOrderCommodity;
+@class QBSTicket;
 
 @interface QBSRESTManager : NSObject
 
@@ -20,7 +21,8 @@ DeclareSingletonMethod(sharedManager)
 // Home
 - (void)request_queryHomeBannerWithCompletionHandler:(QBSCompletionHandler)completionHandler;
 - (void)request_queryFavouritesInPage:(NSUInteger)page withCompletionHandler:(QBSCompletionHandler)completionHandler;
-- (void)request_queryHomeFeaturedCommoditiesWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+- (void)request_queryHomeFeaturedTypesAndActivitiesWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+- (void)request_queryHomeFeaturedCommoditiesInPage:(NSUInteger)page withCompletionHandler:(QBSCompletionHandler)completionHandler;
 
 // Category
 - (void)request_queryCategoriesWithCompletionHandler:(QBSCompletionHandler)completionHandler;
@@ -79,6 +81,10 @@ DeclareSingletonMethod(sharedManager)
 
 // Payment
 //- (void)request_queryPaymentConfigWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+
+// Tickets
+- (void)request_queryActivityTicketsWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+- (void)request_fetchActivityTicketNoWithTicket:(QBSTicket *)ticket completionHandler:(QBSCompletionHandler)completionHandler;
 
 @end
 
