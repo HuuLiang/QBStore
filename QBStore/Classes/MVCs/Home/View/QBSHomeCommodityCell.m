@@ -19,7 +19,7 @@ static const CGFloat kThumbImageScale = 3./4.;
 @property (nonatomic,retain) UILabel *soldLabel;
 @property (nonatomic,retain) UILabel *priceLabel;
 @property (nonatomic,retain) UIButton *buyButton;
-@property (nonatomic,retain) UIImageView *footerImageView;
+@property (nonatomic,retain) UIView *footerView;
 
 @property (nonatomic,retain) UIImageView *countingIconImageView;
 @property (nonatomic,retain) MZTimerLabel *timerLabel;
@@ -85,7 +85,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     
     const CGFloat buyWidth = 60;
     const CGFloat buyHeight = 28;
-    const CGFloat buyX = fullWidth - kLeftRightContentMarginSpacing - buyWidth - (_style==QBSHomeCommodityCellActivityStyle?10:0);
+    const CGFloat buyX = fullWidth - kSmallHorizontalSpacing - buyWidth;
     const CGFloat buyY = fullHeight - kTopBottomContentMarginSpacing - buyHeight;
     _buyButton.frame = CGRectMake(buyX, buyY, buyWidth, buyHeight);
     
@@ -100,8 +100,8 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     const CGFloat soldY = buyY - soldSize.height - kMediumVerticalSpacing;
     _soldLabel.frame = CGRectMake(soldX, soldY, soldSize.width+5, soldSize.height);
     
-    if (!_footerImageView.hidden) {
-        _footerImageView.frame = CGRectMake(titleX, buyY-kSmallVerticalSpacing, fullWidth-titleX, buyHeight + kSmallVerticalSpacing *2);
+    if (!_footerView.hidden) {
+        _footerView.frame = CGRectMake(titleX, buyY-kSmallVerticalSpacing, fullWidth-titleX, buyHeight + kSmallVerticalSpacing *2);
     }
     
     if (!_countingIconImageView.hidden) {
@@ -119,7 +119,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     }
     
     const CGFloat detailX = titleX;
-    const CGFloat detailY = self.tagLabels.lastObject ? CGRectGetMaxY(self.tagLabels.lastObject.frame) + kMediumVerticalSpacing : titleY+kMediumVerticalSpacing;
+    const CGFloat detailY = self.tagLabels.lastObject ? CGRectGetMaxY(self.tagLabels.lastObject.frame) + kMediumVerticalSpacing : CGRectGetMaxY(_titleLabel.frame)+kMediumVerticalSpacing;
     const CGFloat detailWidth = titleWidth;
     const CGFloat detailHeight = soldY - detailY;
     _detailTextView.frame = CGRectMake(detailX, detailY, detailWidth, detailHeight);
@@ -195,6 +195,8 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
 - (void)setTitle:(NSString *)title {
     _title = title;
     self.titleLabel.text = title;
+    
+    [self setNeedsLayout];
 }
 
 - (void)setTags:(NSArray<NSString *> *)tags {
@@ -229,16 +231,22 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
             [self.tagLabels addObject:label];
         }
     } else if (numberOfAddedTagLabels < 0) {
+        
+        NSMutableArray *removedTagLabels = [NSMutableArray array];
         for (NSUInteger i = self.tagLabels.count+numberOfAddedTagLabels; i < self.tagLabels.count; ++i) {
             UILabel *label = self.tagLabels[i];
             [label removeFromSuperview];
-            [self.tagLabels removeObject:label];
+            [removedTagLabels addObject:label];
         }
+        
+        [self.tagLabels removeObjectsInArray:removedTagLabels];
     }
     
     [self.tagLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.text = tags[idx];
     }];
+    
+    [self setNeedsLayout];
 }
 
 - (void)setSold:(NSUInteger)sold {
@@ -249,6 +257,8 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
 - (void)setDetails:(NSString *)details {
     _details = details;
     self.detailTextView.text = details;
+    
+    [self setNeedsLayout];
 }
 
 - (void)setPrice:(CGFloat)price withOriginalPrice:(CGFloat)originalPrice {
@@ -271,6 +281,8 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     }
     
     self.priceLabel.attributedText = attrString;
+    
+    [self setNeedsLayout];
 }
 
 - (void)setCountDownTime:(NSTimeInterval)countDownTime withFinishedBlock:(QBSAction)finishedBlock {
@@ -311,12 +323,12 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         
         _timerLabel.hidden = NO;
         
-        if (!_footerImageView) {
-            _footerImageView = [[UIImageView alloc] init];
-            _footerImageView.image = [UIImage imageNamed:@"buy_footer"];
-            [self insertSubview:_footerImageView atIndex:0];
+        if (!_footerView) {
+            _footerView = [[UIView alloc] init];
+            _footerView.backgroundColor = [UIColor blackColor];
+            [self insertSubview:_footerView atIndex:0];
         }
-        _footerImageView.hidden = NO;
+        _footerView.hidden = NO;
         
         if (!_countingIconImageView) {
             _countingIconImageView = [[UIImageView alloc] init];
@@ -336,9 +348,10 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         
         [_timerLabel reset];
         _timerLabel.hidden = YES;
-        _footerImageView.hidden = YES;
+        _footerView.hidden = YES;
         _countingIconImageView.hidden = YES;
     }
     
+    [self setNeedsLayout];
 }
 @end

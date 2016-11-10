@@ -753,6 +753,8 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
         return UIEdgeInsetsZero;
 //    } else if (IsHomeSectionIndexEqualsToSectionType(section, QBSFeaturedTypeSection)) {
 //        return UIEdgeInsetsMake(0, 30, 0, 30);
+    } else if (IsHomeSectionIndexEqualsToSectionType(section, QBSLastSection)) {
+        return UIEdgeInsetsZero;
     } else {
         return UIEdgeInsetsMake(0, 0, 10, 0);
     }
