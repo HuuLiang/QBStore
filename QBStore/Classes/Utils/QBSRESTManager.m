@@ -23,6 +23,7 @@
 #import "QBSOrder.h"
 #import "QBSOrderCommodity.h"
 #import "QBSTicket.h"
+#import "QBSTicketInstruction.h"
 
 #define QBS_CHANNEL_NO [QBSConfiguration defaultConfiguration].channelNo
 #define kDefaultHttpMethod QBSHttpMethodPOST
@@ -684,6 +685,13 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
             
             SafelyCallBlock(completionHandler, obj, error);
         }];
+    }];
+}
+
+- (void)request_queryActivityInstructionWithCompletionHandler:(QBSCompletionHandler)completionHandler {
+    NSDictionary *params = @{@"channelNo":QBS_CHANNEL_NO};
+    [[QBSHttpClient sharedClient] requestURL:@"exUsageSpec.service" withParams:params methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
+        [self onResponseWithObject:obj error:error modelClass:[QBSTicketInstruction class] completionHandler:completionHandler];
     }];
 }
 

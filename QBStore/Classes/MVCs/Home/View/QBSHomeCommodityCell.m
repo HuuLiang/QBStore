@@ -9,6 +9,8 @@
 #import "QBSHomeCommodityCell.h"
 #import "MZTimerLabel.h"
 
+static const CGFloat kThumbImageScale = 3./4.;
+
 @interface QBSHomeCommodityCell ()
 @property (nonatomic,retain) UIImageView *thumbImageView;
 @property (nonatomic,retain) UILabel *titleLabel;
@@ -41,8 +43,8 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     const CGFloat fullWidth = CGRectGetWidth(self.bounds);
     const CGFloat fullHeight = CGRectGetHeight(self.bounds);
     
-    const CGFloat imageHeight = fullHeight * 0.7;
-    const CGFloat imageWidth = imageHeight;
+    const CGFloat imageHeight = fullHeight * 0.9;
+    const CGFloat imageWidth = imageHeight * kThumbImageScale;
     const CGFloat imageX = kMediumHorizontalSpacing;
     const CGFloat imageY = (fullHeight - imageHeight)/2;
     _thumbImageView.frame = CGRectMake(imageX, imageY, imageWidth, imageHeight);
@@ -81,8 +83,8 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         obj.frame = CGRectMake(tagX, tagY, tagWidth, tagHeight);
     }];
     
-    const CGFloat buyWidth = 68;
-    const CGFloat buyHeight = 30;
+    const CGFloat buyWidth = 60;
+    const CGFloat buyHeight = 28;
     const CGFloat buyX = fullWidth - kLeftRightContentMarginSpacing - buyWidth - (_style==QBSHomeCommodityCellActivityStyle?10:0);
     const CGFloat buyY = fullHeight - kTopBottomContentMarginSpacing - buyHeight;
     _buyButton.frame = CGRectMake(buyX, buyY, buyWidth, buyHeight);
@@ -241,7 +243,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
 
 - (void)setSold:(NSUInteger)sold {
     _sold = sold;
-    self.soldLabel.text = [NSString stringWithFormat:@"%@件已付款", sold < 10000 ? @(sold).stringValue:@"9999+"];
+    self.soldLabel.text = [NSString stringWithFormat:@"已售%@件", sold < 10000 ? @(sold).stringValue:@"9999+"];
 }
 
 - (void)setDetails:(NSString *)details {
@@ -295,7 +297,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         _buyButton.titleLabel.font = kMediumFont;
         _buyButton.titleLabel.textAlignment = NSTextAlignmentCenter;
         _buyButton.userInteractionEnabled = YES;
-//        AssociatedButtonWithAction(_buyButton, buyAction);
+        AssociatedButtonWithAction(_buyButton, buyAction);
         [self addSubview:_buyButton];
     }
     

@@ -57,7 +57,7 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     _layoutTV.backgroundColor = self.view.backgroundColor;
     _layoutTV.delegate = self;
     _layoutTV.dataSource = self;
-    _layoutTV.rowHeight = 60;
+    _layoutTV.rowHeight = MAX(kScreenHeight*0.09, 44);
     _layoutTV.sectionFooterHeight = 0;
     _layoutTV.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [_layoutTV registerClass:[QBSMineCell class] forCellReuseIdentifier:kMineCellReusableIdentifier];

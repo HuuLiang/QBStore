@@ -22,7 +22,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = kSmallFont;
+        _titleLabel.font = kMediumFont;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_titleLabel];
         
@@ -66,14 +66,17 @@
     const CGFloat fullHeight = CGRectGetHeight(self.bounds);
     const CGFloat fullWidth = CGRectGetWidth(self.bounds);
     
-    _titleLabel.frame = CGRectMake(5, 15, fullWidth-10, _subtitleLabel.font.pointSize);
-    _subtitleLabel.frame = CGRectMake(_titleLabel.frame.origin.x,
-                                      CGRectGetMaxY(_titleLabel.frame)+10,
-                                      CGRectGetWidth(_titleLabel.frame),
-                                      _subtitleLabel.font.pointSize);
-    const CGFloat imageY = CGRectGetMaxY(_subtitleLabel.frame) + 10;
-    const CGFloat imageHeight = fullHeight - imageY - 10;
+    _titleLabel.frame = CGRectMake(5, fullHeight-15-_titleLabel.font.pointSize, fullWidth-10, _titleLabel.font.pointSize);
+//    _subtitleLabel.frame = CGRectMake(_titleLabel.frame.origin.x,
+//                                      CGRectGetMaxY(_titleLabel.frame)+10,
+//                                      CGRectGetWidth(_titleLabel.frame),
+//                                      _subtitleLabel.font.pointSize);
+    
+    const CGFloat remainHeight = _titleLabel.frame.origin.y;
+
+    const CGFloat imageHeight = remainHeight * 0.6;
     const CGFloat imageWidth = imageHeight;
+    const CGFloat imageY = (remainHeight-imageHeight)/2;
     const CGFloat imageX = (fullWidth - imageWidth)/2;
     _thumbImageView.frame = CGRectMake(imageX, imageY, imageWidth, imageHeight);
     

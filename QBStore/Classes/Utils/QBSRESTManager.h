@@ -85,6 +85,7 @@ DeclareSingletonMethod(sharedManager)
 // Tickets
 - (void)request_queryActivityTicketsWithCompletionHandler:(QBSCompletionHandler)completionHandler;
 - (void)request_fetchActivityTicketNoWithTicket:(QBSTicket *)ticket completionHandler:(QBSCompletionHandler)completionHandler;
+- (void)request_queryActivityInstructionWithCompletionHandler:(QBSCompletionHandler)completionHandler;
 
 @end
 

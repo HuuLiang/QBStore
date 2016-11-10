@@ -16,7 +16,6 @@ static NSString *const kTagCellReusableIdentifier = @"TagCellReusableIdentifier"
 {
     UILabel *_titleLabel;
     UILabel *_priceLabel;
-    UILabel *_tagLabel;
     UILabel *_soldLabel;
     UIButton *_customerServiceButton;
     UIView *_separatorView;
@@ -29,6 +28,8 @@ static NSString *const kTagCellReusableIdentifier = @"TagCellReusableIdentifier"
 @property (nonatomic,retain) NSMutableArray<NSNumber *> *tagWidths;
 @property (nonatomic,readonly) CGFloat tagHeight;
 @property (nonatomic,retain,readonly) UIFont *tagFont;
+@property (nonatomic) CGSize titleSize;
+@property (nonatomic,readonly) CGFloat csButtonWidth;
 @end
 
 @implementation QBSCommodityDetailTitleCell
@@ -43,6 +44,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagWidths)
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.textColor = [UIColor colorWithHexString:@"#333333"];
         _titleLabel.font = kBigFont;
+        _titleLabel.numberOfLines = 2;
         [self addSubview:_titleLabel];
         
         _priceLabel = [[UILabel alloc] init];
@@ -85,9 +87,9 @@ DefineLazyPropertyInitialization(NSMutableArray, tagWidths)
     [super layoutSubviews];
     
     const CGFloat fullWidth = CGRectGetWidth(self.bounds);
-    const CGFloat csButtonWidth = fullWidth * 0.15;
+    const CGFloat csButtonWidth = self.csButtonWidth;
     
-    _titleLabel.frame = CGRectMake(10, kScreenHeight * 0.01, fullWidth - 20 - csButtonWidth, _titleLabel.font.pointSize);
+    _titleLabel.frame = CGRectMake(10, kScreenHeight * 0.01, self.titleSize.width, self.titleSize.height);
     _priceLabel.frame = CGRectMake(_titleLabel.frame.origin.x, CGRectGetMaxY(_titleLabel.frame) + kScreenHeight * 0.01, _priceSize.width, _priceSize.height);
     
     const CGSize soldSize = [_soldLabel.text sizeWithAttributes:@{NSFontAttributeName:_soldLabel.font}];
@@ -103,14 +105,22 @@ DefineLazyPropertyInitialization(NSMutableArray, tagWidths)
     _tagCV.frame = CGRectMake(_titleLabel.frame.origin.x, CGRectGetMaxY(_priceLabel.frame)+kScreenHeight * 0.01, fullWidth-20, tagCollectionViewHeight);
 }
 
+- (CGFloat)csButtonWidth {
+    return CGRectGetWidth(self.bounds) * 0.15;
+}
+
 - (CGFloat)cellHeight {
     const CGFloat tagCollectionViewHeight = [self calculateTagCollectionViewHeight];
-    return _titleLabel.font.pointSize + _priceLabel.font.pointSize + tagCollectionViewHeight + (tagCollectionViewHeight == 0 ? kScreenHeight *0.04 : kScreenHeight * 0.05);
+    return self.titleSize.height + (_priceLabel.hidden ? 0 : _priceLabel.font.pointSize) + tagCollectionViewHeight + (tagCollectionViewHeight == 0 ? kScreenHeight *0.04 : kScreenHeight * 0.05);
 }
 
 - (void)setTitle:(NSString *)title {
     _title = title;
     _titleLabel.text = title;
+    
+    const CGFloat titleWidth = CGRectGetWidth(self.bounds) - 20 - self.csButtonWidth;
+    const CGRect titleRect = [title boundingRectWithSize:CGSizeMake(titleWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:_titleLabel.font} context:nil];
+    self.titleSize = CGSizeMake(titleWidth, titleRect.size.height);
 }
 
 - (void)setPrice:(CGFloat)price withOriginalPrice:(CGFloat)originalPrice {
@@ -170,6 +180,10 @@ DefineLazyPropertyInitialization(NSMutableArray, tagWidths)
 }
 
 - (CGFloat)calculateTagCollectionViewHeight {
+    if (_tagCV.hidden) {
+        return 0;
+    }
+    
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)_tagCV.collectionViewLayout;
     const CGFloat interItemSpacing = layout.minimumInteritemSpacing;
     const CGFloat lineSpacing = layout.minimumLineSpacing;
@@ -187,6 +201,16 @@ DefineLazyPropertyInitialization(NSMutableArray, tagWidths)
     }];
     
     return rows == 0 ? 0 : rows * self.tagHeight + (rows - 1) * lineSpacing;
+}
+
+- (void)setOnlyShowTitle:(BOOL)onlyShowTitle {
+    _onlyShowTitle = onlyShowTitle;
+    
+    _priceLabel.hidden = onlyShowTitle;
+    _soldLabel.hidden = onlyShowTitle;
+    _tagCV.hidden = onlyShowTitle;
+    
+    [self setNeedsLayout];
 }
 
 #pragma mark - UICollectionViewDataSource,UICollectionViewDelegateFlowLayout

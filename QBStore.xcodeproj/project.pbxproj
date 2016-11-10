@@ -164,6 +164,9 @@
 		BC69AF0F1DC740C100BA49F3 /* QBSFavouritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */; };
 		BC69AF101DC740C100BA49F3 /* QBSFavouritesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */; };
 		BC72DA621DCED11100FC2A60 /* QBSTicketAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */; };
+		BCDC0D981DD478C600BC8024 /* QBSCommodityDetailActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */; };
+		BCDC0D9B1DD48EAC00BC8024 /* QBSTicketInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */; };
+		BCDC0D9E1DD48F3000BC8024 /* QBSTicketInstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */; };
 		BCF712FD1DC864B700A906AF /* UIImageView+QBWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF712FC1DC864B700A906AF /* UIImageView+QBWebCache.m */; };
 		BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */; };
 		BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF713021DC86FB100A906AF /* QBSTicketCell.m */; };
@@ -479,6 +482,12 @@
 		BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesHeaderView.m; sourceTree = "<group>"; };
 		BC72DA601DCED11100FC2A60 /* QBSTicketAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketAppCell.h; sourceTree = "<group>"; };
 		BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketAppCell.m; sourceTree = "<group>"; };
+		BCDC0D961DD478C600BC8024 /* QBSCommodityDetailActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailActivityCell.h; sourceTree = "<group>"; };
+		BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailActivityCell.m; sourceTree = "<group>"; };
+		BCDC0D991DD48EAC00BC8024 /* QBSTicketInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketInstruction.h; sourceTree = "<group>"; };
+		BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketInstruction.m; sourceTree = "<group>"; };
+		BCDC0D9C1DD48F3000BC8024 /* QBSTicketInstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketInstructionViewController.h; sourceTree = "<group>"; };
+		BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketInstructionViewController.m; sourceTree = "<group>"; };
 		BCF712FB1DC864B700A906AF /* UIImageView+QBWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+QBWebCache.h"; sourceTree = "<group>"; };
 		BCF712FC1DC864B700A906AF /* UIImageView+QBWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+QBWebCache.m"; sourceTree = "<group>"; };
 		BCF712FE1DC86B7100A906AF /* QBSTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketsViewController.h; sourceTree = "<group>"; };
@@ -977,9 +986,9 @@
 		BC2C115E1DB4F60D000D1D99 /* Commodity */ = {
 			isa = PBXGroup;
 			children = (
+				BC2C116D1DB4F60D000D1D99 /* View */,
 				BC2C115F1DB4F60D000D1D99 /* Controller */,
 				BC2C11681DB4F60D000D1D99 /* Model */,
-				BC2C116D1DB4F60D000D1D99 /* View */,
 			);
 			path = Commodity;
 			sourceTree = "<group>";
@@ -1029,6 +1038,8 @@
 				BC2C117B1DB4F60D000D1D99 /* QBSCustomerServiceButton.m */,
 				BC2C117C1DB4F60D000D1D99 /* QBSServiceMarkCell.h */,
 				BC2C117D1DB4F60D000D1D99 /* QBSServiceMarkCell.m */,
+				BCDC0D961DD478C600BC8024 /* QBSCommodityDetailActivityCell.h */,
+				BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1280,6 +1291,8 @@
 				BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */,
 				BCF712FE1DC86B7100A906AF /* QBSTicketsViewController.h */,
 				BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */,
+				BCDC0D9C1DD48F3000BC8024 /* QBSTicketInstructionViewController.h */,
+				BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1308,6 +1321,8 @@
 			children = (
 				BC4E30071DCA0034001CD8D6 /* QBSTicket.h */,
 				BC4E30081DCA0034001CD8D6 /* QBSTicket.m */,
+				BCDC0D991DD48EAC00BC8024 /* QBSTicketInstruction.h */,
+				BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1464,6 +1479,7 @@
 				BC2C12171DB4F79A000D1D99 /* QBSOrderCommentListCell.m in Sources */,
 				BC2C120C1DB4F79A000D1D99 /* QBSOrderViewController+TableViewModel.m in Sources */,
 				BC2C10E21DB4E073000D1D99 /* QBSUserNavigationController.m in Sources */,
+				BCDC0D981DD478C600BC8024 /* QBSCommodityDetailActivityCell.m in Sources */,
 				BC2C109F1DB4DED2000D1D99 /* QBSHUDManager.m in Sources */,
 				BC2C11821DB4F60D000D1D99 /* QBSCommodityComment.m in Sources */,
 				BC4E30091DCA0034001CD8D6 /* QBSTicket.m in Sources */,
@@ -1535,6 +1551,7 @@
 				BC2C117E1DB4F60D000D1D99 /* QBSCommodityDetailCommentViewController.m in Sources */,
 				BC69AF101DC740C100BA49F3 /* QBSFavouritesHeaderView.m in Sources */,
 				BC2C10521DB4D787000D1D99 /* QBSAppDelegate.m in Sources */,
+				BCDC0D9B1DD48EAC00BC8024 /* QBSTicketInstruction.m in Sources */,
 				BC2C11B51DB4F6A3000D1D99 /* QBSHomeActivityCell.m in Sources */,
 				BC2C10E51DB4E073000D1D99 /* QBSUser.m in Sources */,
 				BC2C115C1DB4F481000D1D99 /* QBSCustomerServiceController.m in Sources */,
@@ -1582,6 +1599,7 @@
 				BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */,
 				BC2C10811DB4DD0B000D1D99 /* UIView+RoundCorner.m in Sources */,
 				BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */,
+				BCDC0D9E1DD48F3000BC8024 /* QBSTicketInstructionViewController.m in Sources */,
 				BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */,
 				BC2C112B1DB4E0D2000D1D99 /* QBSTableViewCell.m in Sources */,
 				BC2C10E31DB4E073000D1D99 /* QBSUserProfileViewController.m in Sources */,

@@ -25,6 +25,7 @@
 @property (nonatomic) NSString *tagsImgUrl;
 @property (nonatomic) NSNumber *activityPrice;
 @property (nonatomic) NSNumber *praisePercent;
+@property (nonatomic) NSNumber *leftTime;
 
 @property (nonatomic,retain) NSArray<QBSCommodityTag *> *tagsInfo;
 

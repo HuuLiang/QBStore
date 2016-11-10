@@ -20,6 +20,7 @@
 #import "QBSCartViewController.h"
 #import "QBSCartButton.h"
 #import "QBSOrderListViewController.h"
+#import "QBSOrderViewController.h"
 
 // Models
 #import "QBSCommodity.h"
@@ -591,7 +592,13 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
                 cell.title = commodity.data.commodityName;
                 cell.thumbImageURL = [NSURL URLWithString:commodity.data.imgUrl];
                 cell.sold = commodity.data.numSold.unsignedIntegerValue;
-                cell.details = commodity.data.commodityViceName;
+                
+                NSArray *strLines = [commodity.data.commodityViceName componentsSeparatedByString:@"|"];
+                NSMutableString *details = [NSMutableString string];
+                [strLines enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [details appendFormat:@"%@\n", obj];
+                }];
+                cell.details = details;
                 
                 BOOL isActivityStyle = commodity.data.activityPrice != nil;
                 NSTimeInterval countingTimeInterval = 0;
@@ -629,6 +636,13 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
                     
                 }
                 
+                @weakify(self);
+                cell.buyAction = ^(id obj) {
+                    @strongify(self);
+                    QBSCartCommodity *cartCommodity = [[QBSCartCommodity alloc] initFromCommodity:commodity.data withAmount:1 columnId:commodity.data.columnId];
+                    QBSOrderViewController *confirmVC = [[QBSOrderViewController alloc] initWithCartCommodities:@[cartCommodity]];
+                    [self.navigationController pushViewController:confirmVC animated:YES];
+                };
                 return cell;
             } else {
                 UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFeaturedCategoryCellReusableIdentifier forIndexPath:indexPath];
@@ -712,12 +726,12 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
     } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFeaturedTypeSection)) {
 
         const CGFloat itemWidth = (CGRectGetWidth(collectionView.bounds) - interItemSpacing * 2 - sectionInsets.left - sectionInsets.right)/3;
-        const CGFloat itemHeight = itemWidth * 1.1;
+        const CGFloat itemHeight = itemWidth *0.8;
         return CGSizeMake(itemWidth, itemHeight);
     } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSActivitySection)) {
         return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds) / 3);
     } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFeaturedCommoditySection)) {
-        return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds) / 2);
+        return CGSizeMake(CGRectGetWidth(collectionView.bounds), 180);
     } else {
         return CGSizeZero;
     }
@@ -737,6 +751,8 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     if (IsHomeSectionIndexEqualsToSectionType(section, QBSBannerSection)) {
         return UIEdgeInsetsZero;
+//    } else if (IsHomeSectionIndexEqualsToSectionType(section, QBSFeaturedTypeSection)) {
+//        return UIEdgeInsetsMake(0, 30, 0, 30);
     } else {
         return UIEdgeInsetsMake(0, 0, 10, 0);
     }
@@ -765,12 +781,12 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
             if (commodity.rmdType.unsignedIntegerValue == QBSFeaturedTypeRecommendationColumn) {
                 [self pushViewControllerWithRecommendType:QBSRecommendTypeColumn
                                                columnType:commodity.data.columnType.unsignedIntegerValue
-                                                   isLeaf:commodity.data.isLeaf
+                                                   isLeaf:commodity.data.isLeaf.boolValue
                                                     relId:commodity.data.columnId];
             } else if (commodity.rmdType.unsignedIntegerValue == QBSFeaturedTypeRecommendationCommodity) {
                 [self pushViewControllerWithRecommendType:QBSRecommendTypeCommodity
                                                columnType:commodity.data.columnType.unsignedIntegerValue
-                                                   isLeaf:commodity.data.isLeaf
+                                                   isLeaf:commodity.data.isLeaf.boolValue
                                                     relId:commodity.data.commodityId];
             }
         }

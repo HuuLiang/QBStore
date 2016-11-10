@@ -43,7 +43,6 @@ typedef NS_ENUM(NSUInteger, QBSFeaturedType) {
 @property (nonatomic) NSNumber *groupId;
 @property (nonatomic,retain) NSArray<QBSHomeGroup *> *groupItemList;
 
-@property (nonatomic) NSNumber *leftTime;
 @end
 
 @interface QBSFeaturedCommodityList : NSObject

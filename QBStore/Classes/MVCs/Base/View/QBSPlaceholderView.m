@@ -94,7 +94,7 @@
         [self mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(view);
             make.width.equalTo(view);
-            make.height.equalTo(view).dividedBy(2);
+            make.height.equalTo(view).multipliedBy(0.75);
         }];
     }
 }
@@ -108,13 +108,13 @@
     const CGFloat imageX = (fullWidth - imageSize.width)/2;
     _imageView.frame = CGRectMake(imageX, 0, imageSize.width, imageSize.height);
     
-    const CGFloat titleY = CGRectGetMaxY(_imageView.frame)+30;
+    const CGFloat titleY = CGRectGetMaxY(_imageView.frame)+kScreenHeight*0.045;
     _titleLabel.frame = CGRectMake(0, titleY, fullWidth, _titleLabel.font.pointSize);
     
     const CGFloat buttonHeight = 44;
     const CGFloat buttonWidth = [[_actionButton titleForState:UIControlStateNormal] sizeWithAttributes:@{NSFontAttributeName:_actionButton.titleLabel.font}].width+20;
     const CGFloat buttonX = (fullWidth-buttonWidth)/2;
-    const CGFloat buttonY = CGRectGetMaxY(_titleLabel.frame)+50;
+    const CGFloat buttonY = CGRectGetMaxY(_titleLabel.frame)+kScreenHeight*0.075;
     _actionButton.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
     _actionButton.hidden = [_actionButton titleForState:UIControlStateNormal] == nil;
 }

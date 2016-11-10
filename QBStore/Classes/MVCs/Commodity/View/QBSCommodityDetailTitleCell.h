@@ -15,6 +15,8 @@
 @property (nonatomic) NSArray<NSString *> *tags;
 @property (nonatomic) QBSAction customerServiceAction;
 
+@property (nonatomic) BOOL onlyShowTitle;
+
 - (void)setPrice:(CGFloat)price withOriginalPrice:(CGFloat)originalPrice;
 - (CGFloat)cellHeight;
 

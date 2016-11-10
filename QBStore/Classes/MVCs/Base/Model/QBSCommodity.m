@@ -32,4 +32,12 @@ SynthesizeContainerPropertyElementClassMethod(tagsInfo, QBSCommodityTag)
 - (BOOL)isAvailable {
     return self.commoditySts.unsignedIntegerValue == 1;
 }
+
+- (NSNumber *)currentPrice {
+    if (_activityPrice) {
+        return _activityPrice;
+    }
+    
+    return _currentPrice;
+}
 @end

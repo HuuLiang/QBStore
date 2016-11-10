@@ -183,6 +183,11 @@ static NSString *const kElementClassSuffix = @"ElementClass";
                 return;
             }
             
+            if (subclass == [NSString class] || subclass == [NSNumber class]) {
+                [instance setValue:value forKey:propertyName];
+                return ;
+            }
+            
             NSArray *arr = [self parseDataWithArray:value elementClass:subclass];
             if (arr) {
                 [instance setValue:arr forKey:propertyName];

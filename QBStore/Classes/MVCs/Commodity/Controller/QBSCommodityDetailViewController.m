@@ -8,6 +8,7 @@
 
 #import "QBSCommodityDetailViewController.h"
 #import "QBSBannerCell.h"
+#import "QBSCommodityDetailActivityCell.h"
 #import "QBSCommodityDetailTitleCell.h"
 #import "QBSCommodityDetailServiceMarkRowCell.h"
 #import "QBSFavouritesHeaderView.h"
@@ -32,11 +33,14 @@ typedef NS_ENUM(NSUInteger, QBSCommodityDetailSection) {
 };
 
 typedef NS_ENUM(NSUInteger, QBSCommodityDetailSummarySectionItem) {
+    QBSSummaryActivityItem,
     QBSSummaryTitleItem,
-    QBSSummaryServiceMarkItem
+    QBSSummaryServiceMarkItem,
+    QBSSummaryItemCount
 };
 
 static NSString *const kBannerCellReusableIdentifier = @"BannerCellReusableIdentifier";
+static NSString *const kActivityCellReusableIdentifier = @"ActivityCellReusableIdentifier";
 static NSString *const kTitleCellReusableIdentifier = @"TitleCellReusableIdentifier";
 static NSString *const kServiceMarkRowCellReusableIdentifier = @"ServiceMarkRowCellReusableIdentifier";
 static NSString *const kDetailHeaderReusableIdentifier = @"DetailHeaderReusableIdentifier";
@@ -72,6 +76,7 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
 @property (nonatomic,retain) QBSCommodityDetail *commodityDetail;
 @property (nonatomic,retain) QBSCommodityDetailSubViewController *subViewController;
 @property (nonatomic) CGFloat titleCellHeight;
+@property (nonatomic,retain) NSDate *activityEndDate;
 @end
 
 @implementation QBSCommodityDetailViewController
@@ -100,6 +105,7 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
     _layoutCV.delegate = self;
     _layoutCV.dataSource = self;
     [_layoutCV registerClass:[QBSBannerCell class] forCellWithReuseIdentifier:kBannerCellReusableIdentifier];
+    [_layoutCV registerClass:[QBSCommodityDetailActivityCell class] forCellWithReuseIdentifier:kActivityCellReusableIdentifier];
     [_layoutCV registerClass:[QBSCommodityDetailTitleCell class] forCellWithReuseIdentifier:kTitleCellReusableIdentifier];
     [_layoutCV registerClass:[QBSCommodityDetailServiceMarkRowCell class] forCellWithReuseIdentifier:kServiceMarkRowCellReusableIdentifier];
     [_layoutCV registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kDetailHeaderReusableIdentifier];
@@ -204,6 +210,11 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
             
             self.commodityDetail = commodityDetail;
             self.title = self.commodityDetail.commodityName;
+            
+            if (self.commodityDetail.activityPrice && self.commodityDetail.leftTime) {
+                self.activityEndDate = [NSDate dateWithTimeIntervalSinceNow:self.commodityDetail.leftTime.unsignedIntegerValue];
+            }
+            
             self.subViewController.commodityDetail = self.commodityDetail;
             [self->_layoutCV reloadData];
         } else {
@@ -312,6 +323,27 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
 //    }];
 }
 
+- (BOOL)isActivityCommodity {
+    if (!self.activityEndDate) {
+        return NO;
+    }
+    
+    NSTimeInterval timeInterval = [self.activityEndDate timeIntervalSinceNow];
+    if (timeInterval <= 0) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (QBSCommodityDetailSummarySectionItem)summarySectionItemAtIndex:(NSUInteger)itemIndex {
+    if ([self isActivityCommodity]) {
+        return itemIndex;
+    } else {
+        return itemIndex+1;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -325,7 +357,15 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (section == QBSSummarySection) {
-        return self.commodityDetail.serviceList.count == 0 ? 1 : 2;
+        NSInteger numberOfItems = QBSSummaryItemCount;
+        if (![self isActivityCommodity]) {
+            --numberOfItems;
+        }
+        
+        if (self.commodityDetail.serviceList.count == 0) {
+            --numberOfItems;
+        }
+        return numberOfItems;
     } else if (section == QBSFavouritesSection) {
         return self.commodityDetail.guessCommodityList.count;
     } else {
@@ -354,14 +394,15 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
         };
         return cell;
     } else if (indexPath.section == QBSSummarySection) {
-        if (indexPath.item == QBSSummaryTitleItem) {
+        UICollectionViewCell *summaryCell;
+        if ([self summarySectionItemAtIndex:indexPath.item] == QBSSummaryTitleItem) {
             QBSCommodityDetailTitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTitleCellReusableIdentifier forIndexPath:indexPath];
             cell.backgroundColor = [UIColor whiteColor];
-            cell.layer.shadowOpacity = 0.3;
-            cell.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+            summaryCell = cell;
             
             cell.title = self.commodityDetail.commodityName;
             cell.sold = self.commodityDetail.numSold.unsignedIntegerValue;
+            cell.onlyShowTitle = [self isActivityCommodity];
             [cell setPrice:self.commodityDetail.currentPrice.floatValue/100 withOriginalPrice:self.commodityDetail.originalPrice.floatValue/100];
             
             NSMutableArray *tags = [NSMutableArray array];
@@ -374,10 +415,10 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
             //tags = @[@"限时秒杀",@"优惠特价",@"XXXX",@"OOOO",@"限时秒杀",@"优惠特价",@"XXXX",@"OOOO",@"限时秒杀",@"优惠特价",@"XXXX",@"OOOO",@"限时秒杀",@"优惠特价",@"XXXX",@"OOOO"].mutableCopy;
             if (cell.tags != tags && ![cell.tags isEqualToArray:tags]) {
                 cell.tags = tags;
-                
-                self.titleCellHeight = cell.cellHeight;
-                [collectionView.collectionViewLayout invalidateLayout];
             }
+            
+            self.titleCellHeight = cell.cellHeight;
+            [collectionView.collectionViewLayout invalidateLayout];
             
             @weakify(self);
             cell.customerServiceAction = ^(id obj) {
@@ -385,14 +426,35 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
                 QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];
                 [csController showInView:self.view.window];
             };
-            return cell;
-        } else if (indexPath.section == QBSSummaryServiceMarkItem) {
+        } else if ([self summarySectionItemAtIndex:indexPath.item] == QBSSummaryServiceMarkItem) {
             QBSCommodityDetailServiceMarkRowCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kServiceMarkRowCellReusableIdentifier forIndexPath:indexPath];
             cell.backgroundColor = [UIColor whiteColor];
+            summaryCell = cell;
             
             cell.marks = self.commodityDetail.serviceList;
-            return cell;
+        } else if ([self summarySectionItemAtIndex:indexPath.item] == QBSSummaryActivityItem) {
+            QBSCommodityDetailActivityCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kActivityCellReusableIdentifier forIndexPath:indexPath];
+            summaryCell = cell;
+            
+            cell.backgroundColor = [UIColor colorWithHexString:@"#F8E71C"];
+            cell.currentPrice = self.commodityDetail.currentPrice.floatValue/100.;
+            cell.originalPrice = self.commodityDetail.originalPrice.floatValue/100.;
+            cell.sold = self.commodityDetail.numSold.unsignedIntegerValue;
+            
+            if ([self isActivityCommodity]) {
+                [cell setCountDownTime:[self.activityEndDate timeIntervalSinceNow] withFinishedBlock:^(id obj) {
+                    [collectionView reloadSections:[NSIndexSet indexSetWithIndex:QBSSummarySection]];
+                }];
+            }
         }
+        
+        if (indexPath.item == 0) {
+            summaryCell.layer.shadowOpacity = 0.3;
+            summaryCell.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        } else {
+            summaryCell.layer.shadowOpacity = 0;
+        }
+        return summaryCell;
     } else if (indexPath.section == QBSDetailSection) {
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kDetailCellReusableIdentifier forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
@@ -442,10 +504,12 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
     if (indexPath.section == QBSBannerSection) {
         return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds)/1.5);
     } else if (indexPath.section == QBSSummarySection) {
-        if (indexPath.item == QBSSummaryTitleItem) {
+        if ([self summarySectionItemAtIndex:indexPath.item] == QBSSummaryTitleItem) {
             return CGSizeMake(CGRectGetWidth(collectionView.bounds), self.titleCellHeight);
-        } else if (indexPath.item == QBSSummaryServiceMarkItem) {
+        } else if ([self summarySectionItemAtIndex:indexPath.item] == QBSSummaryServiceMarkItem) {
             return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds)*0.16);
+        } else if ([self summarySectionItemAtIndex:indexPath.item] == QBSSummaryActivityItem) {
+            return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds)*0.173);
         }
         
     } else if (indexPath.section == QBSDetailSection) {

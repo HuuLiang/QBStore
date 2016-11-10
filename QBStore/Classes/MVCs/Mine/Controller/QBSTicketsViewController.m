@@ -10,6 +10,7 @@
 #import "QBSTicketCell.h"
 #import "QBSTicketAppCell.h"
 #import "QBSTicket.h"
+#import "QBSTicketInstructionViewController.h"
 
 static NSString *const kTicketCellReusableIdentifier = @"TicketCellReusableIdentifier";
 static NSString *const kTicketAppReusableIdentifier = @"TicketAppReusableIdentifier";
@@ -124,7 +125,8 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
 }
 
 - (void)onInstruction {
-    
+    QBSTicketInstructionViewController *ticketIns = [[QBSTicketInstructionViewController alloc] init];
+    [self.navigationController pushViewController:ticketIns animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -168,17 +170,16 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
             cell.header = ticket.appStoreInfo.title;
             cell.footer = [NSString stringWithFormat:@"券码(长按复制)：%@", ticket.exchangeCode];
             cell.backgroundImageURL = [NSURL URLWithString:ticket.imgUrlAfterReceive];
-            
-            if (ticket.exchangeStatus.unsignedIntegerValue == QBSTicketStatusFetched) {
-                
-                cell.longPressAction = ^(id obj) {
-                    UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
-                    pasteBoard.string = ticket.exchangeCode;
-                    
-                    [UIAlertView bk_showAlertViewWithTitle:@"兑换券码已经复制到剪贴板" message:nil cancelButtonTitle:@"确定" otherButtonTitles:nil handler:nil];
-                };
-            }
         }
+        
+        cell.longPressAction = ^(id obj) {
+            if (ticket.exchangeStatus.unsignedIntegerValue == QBSTicketStatusFetched) {
+                UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
+                pasteBoard.string = ticket.exchangeCode;
+                
+                [UIAlertView bk_showAlertViewWithTitle:@"兑换券码已经复制到剪贴板" message:nil cancelButtonTitle:@"确定" otherButtonTitles:nil handler:nil];
+            }
+        };
         
         return cell;
     } else if (sectionType == QBSTicketAppSection) {

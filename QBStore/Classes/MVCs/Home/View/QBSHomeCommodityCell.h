@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, QBSHomeCommodityCellStyle) {
 @property (nonatomic) NSUInteger sold;
 
 @property (nonatomic) QBSHomeCommodityCellStyle style;
-//@property (nonatomic,copy) QBSAction buyAction;
+@property (nonatomic,copy) QBSAction buyAction;
 
 - (void)setPrice:(CGFloat)price withOriginalPrice:(CGFloat)originalPrice;
 - (void)setCountDownTime:(NSTimeInterval)countDownTime withFinishedBlock:(QBSAction)finishedBlock;
