@@ -51,6 +51,8 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
         }];
     }
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"使用说明" style:UIBarButtonItemStylePlain target:self action:@selector(onInstruction)];
+    
     @weakify(self);
     [_layoutTV QBS_addPullToRefreshWithHandler:^{
         @strongify(self);
@@ -121,6 +123,10 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     [ticketCell switchCardSide:YES withBackgroundImageURL:[NSURL URLWithString:ticket.imgUrlAfterReceive] animated:YES];
 }
 
+- (void)onInstruction {
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -146,6 +152,7 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     if (sectionType == QBSTicketCardSection) {
         QBSTicketCell *cell = [tableView dequeueReusableCellWithIdentifier:kTicketCellReusableIdentifier forIndexPath:indexPath];
         cell.backgroundColor = tableView.backgroundColor;
+        cell.longPressAction = nil;
         
         const NSUInteger ticketIndex = [self ticketIndexInSection:indexPath.section];
         QBSTicket *ticket = ticketIndex == NSNotFound ? nil : self.tickets[ticketIndex];
@@ -161,7 +168,18 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
             cell.header = ticket.appStoreInfo.title;
             cell.footer = [NSString stringWithFormat:@"券码(长按复制)：%@", ticket.exchangeCode];
             cell.backgroundImageURL = [NSURL URLWithString:ticket.imgUrlAfterReceive];
+            
+            if (ticket.exchangeStatus.unsignedIntegerValue == QBSTicketStatusFetched) {
+                
+                cell.longPressAction = ^(id obj) {
+                    UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
+                    pasteBoard.string = ticket.exchangeCode;
+                    
+                    [UIAlertView bk_showAlertViewWithTitle:@"兑换券码已经复制到剪贴板" message:nil cancelButtonTitle:@"确定" otherButtonTitles:nil handler:nil];
+                };
+            }
         }
+        
         return cell;
     } else if (sectionType == QBSTicketAppSection) {
         QBSTicketAppCell *cell = [tableView dequeueReusableCellWithIdentifier:kTicketAppReusableIdentifier forIndexPath:indexPath];

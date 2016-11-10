@@ -23,8 +23,17 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setIsFront:NO];
+        
+        UILongPressGestureRecognizer *longPressGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onLongPress:)];
+        [self addGestureRecognizer:longPressGes];
     }
     return self;
+}
+
+- (void)onLongPress:(UILongPressGestureRecognizer *)ges {
+    if (ges.state == UIGestureRecognizerStateBegan) {
+        SafelyCallBlock(self.longPressAction, self);
+    }
 }
 
 - (QBSTicketCard *)frontCard {

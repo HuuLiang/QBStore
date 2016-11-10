@@ -58,6 +58,7 @@ static CGFloat kBannerImageScale = 7./3.;
 @property (nonatomic,retain) QBSCartButton *cartButton;
 
 @property (nonatomic,retain) NSArray<QBSBanner *> *banners;
+
 //@property (nonatomic,retain) NSMutableArray<QBSCommodity *> *favourites;
 //@property (nonatomic) NSNumber *favouritesColumnId;
 
@@ -72,6 +73,8 @@ static CGFloat kBannerImageScale = 7./3.;
 @property (nonatomic) BOOL dataChanged;
 @property (nonatomic,retain) NSMutableArray *sections;
 @property (nonatomic,retain) QBSFeaturedCommodityList *currentActivity;
+
+@property (nonatomic,retain) NSMutableDictionary<NSNumber *,NSDate *> *featuredCommodityEndDates;
 @end
 
 @implementation QBSHomeViewController
@@ -80,6 +83,7 @@ DefineLazyPropertyInitialization(NSMutableArray, featuredTypes)
 DefineLazyPropertyInitialization(NSMutableArray, activities)
 DefineLazyPropertyInitialization(NSMutableArray, featuredCommodity)
 DefineLazyPropertyInitialization(NSMutableArray, sections)
+DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -327,6 +331,7 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
             self.dataChanged = YES;
             if (isRefresh) {
                 [self.featuredCommodity removeAllObjects];
+                [self.featuredCommodityEndDates removeAllObjects];
             }
             
             QBSFeaturedCommodityResponse *resp = obj;
@@ -339,6 +344,12 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
             
             if (resp.homeColumnCommodityRmdDto.channelRecommendationList.count > 0) {
                 [self.featuredCommodity addObjectsFromArray:resp.homeColumnCommodityRmdDto.channelRecommendationList];
+                
+                [resp.homeColumnCommodityRmdDto.channelRecommendationList enumerateObjectsUsingBlock:^(QBSFeaturedCommodityList * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if (obj.rmdType.unsignedIntegerValue == QBSFeaturedTypeRecommendationCommodity && obj.data.leftTime) {
+                        [self.featuredCommodityEndDates setObject:[NSDate dateWithTimeIntervalSinceNow:obj.data.leftTime.unsignedIntegerValue] forKey:obj.data.commodityId];
+                    }
+                }];
                 
                 if (!isRefresh) {
                     NSUInteger featuredSection = [self.sections indexOfObject:@(QBSFeaturedCommoditySection)];
@@ -579,6 +590,24 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
                 cell.backgroundColor = [UIColor whiteColor];
                 cell.title = commodity.data.commodityName;
                 cell.thumbImageURL = [NSURL URLWithString:commodity.data.imgUrl];
+                cell.sold = commodity.data.numSold.unsignedIntegerValue;
+                cell.details = commodity.data.commodityViceName;
+                
+                BOOL isActivityStyle = commodity.data.activityPrice != nil;
+                NSTimeInterval countingTimeInterval = 0;
+                if (isActivityStyle) {
+                    NSDate *endDate = self.featuredCommodityEndDates[commodity.data.commodityId];
+                    if (!endDate) {
+                        isActivityStyle = NO;
+                    } else {
+                        countingTimeInterval = [endDate timeIntervalSinceNow];
+                        
+                        if (countingTimeInterval <= 0) {
+                            isActivityStyle = NO;
+                        }
+                    }
+                }
+                cell.style = isActivityStyle ? QBSHomeCommodityCellActivityStyle : QBSHomeCommodityCellNormalStyle;
                 
                 NSMutableArray<NSString *> *tags = [NSMutableArray array];
                 [commodity.data.tagsInfo enumerateObjectsUsingBlock:^(QBSCommodityTag * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -587,6 +616,19 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
                     }
                 }];
                 cell.tags = tags;
+                
+                const CGFloat price = isActivityStyle ? commodity.data.activityPrice.floatValue/100. : commodity.data.currentPrice.floatValue/100.;
+                [cell setPrice:price withOriginalPrice:commodity.data.originalPrice.floatValue/100.];
+                
+                if (isActivityStyle) {
+                    [cell setCountDownTime:countingTimeInterval withFinishedBlock:^(id obj) {
+                        QBSHomeCommodityCell *thisCell = obj;
+                        [thisCell setPrice:commodity.data.currentPrice.floatValue/100. withOriginalPrice:commodity.data.originalPrice.floatValue/100.];
+                        thisCell.style = QBSHomeCommodityCellNormalStyle;
+                    }];
+                    
+                }
+                
                 return cell;
             } else {
                 UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFeaturedCategoryCellReusableIdentifier forIndexPath:indexPath];
