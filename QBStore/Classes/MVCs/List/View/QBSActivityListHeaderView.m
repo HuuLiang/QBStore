@@ -46,6 +46,7 @@
         }
         
         _clockLabel = [[MZTimerLabel alloc] initWithTimerType:MZTimerLabelTypeTimer];
+        _clockLabel.shouldCountBeyondHHLimit = YES;
         [self addSubview:_clockLabel];
         {
             [_clockLabel mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -18,7 +18,11 @@ NSString *const kQBSUserShouldReLoginNotification = @"com.qbstore.notification.u
 NSString *const kQBSUserLoginNotification = @"com.qbstore.notification.userlogin";
 NSString *const kQBSUserLogoutNotification = @"com.qbstore.notification.userlogout";
 
-static NSString *kUserDefaultsCurrentUserKey = @"com.qbstore.userdefaults.currentuser";
+static NSString *const kUserDefaultsCurrentUserKey = @"com.qbstore.userdefaults.currentuser";
+
+static NSString *const kUserDefaultsUserRecords = @"com.qbstore.userdefaults.userrecords";
+static NSString *const kUserRecordsActivityTicketPromptionReviewedKey = @"activityTicketPromptionReviewed";
+
 static QBSUser *_currentUser;
 
 @implementation QBSUser
@@ -79,6 +83,41 @@ static QBSUser *_currentUser;
     } else {
         return nil;
     }
+}
+
+- (void)didReviewActivityTicketPromption {
+    if (!self.isLogin) {
+        return ;
+    }
+    
+    NSDictionary *userRecords = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsUserRecords];
+    
+    NSMutableDictionary *userRecordsM = userRecords.mutableCopy;
+    if (!userRecordsM) {
+        userRecordsM = [NSMutableDictionary dictionary];
+    }
+    
+    NSArray *promptionReviewedUsers = [userRecords objectForKey:kUserRecordsActivityTicketPromptionReviewedKey];
+    
+    NSMutableArray *promptionReviewedUsersM = promptionReviewedUsers.mutableCopy;
+    if (!promptionReviewedUsersM) {
+        promptionReviewedUsersM = [NSMutableArray array];
+        [userRecordsM setObject:promptionReviewedUsersM forKey:kUserRecordsActivityTicketPromptionReviewedKey];
+    }
+    
+    [promptionReviewedUsersM addObject:self.userId];
+    [[NSUserDefaults standardUserDefaults] setObject:userRecordsM forKey:kUserDefaultsUserRecords];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)shouldPromptActivityTicket {
+    if (!self.isLogin) {
+        return YES;
+    }
+    
+    NSDictionary *userRecords = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsUserRecords];
+    NSArray *promptionReviewedUsers = [userRecords objectForKey:kUserRecordsActivityTicketPromptionReviewedKey];
+    return ![promptionReviewedUsers containsObject:self.userId];
 }
 @end
 

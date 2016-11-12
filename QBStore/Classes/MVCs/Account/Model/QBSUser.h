@@ -33,6 +33,9 @@
 - (void)logout;
 - (NSString *)nickName;
 
+- (void)didReviewActivityTicketPromption;
+- (BOOL)shouldPromptActivityTicket;
+
 @end
 
 // QBSUser.sex

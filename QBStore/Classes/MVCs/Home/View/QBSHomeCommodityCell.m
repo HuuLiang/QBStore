@@ -301,6 +301,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         _timerLabel.delegate = self;
         _timerLabel.timeLabel.textColor = [UIColor colorWithHexString:@"#666666"];
         _timerLabel.timeLabel.font = kSmallFont;
+        _timerLabel.shouldCountBeyondHHLimit = YES;
         [self addSubview:_timerLabel];
     }
     
@@ -387,15 +388,22 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
 }
 
 -(NSString*)timerLabel:(MZTimerLabel*)timerLabel customTextToDisplayAtTime:(NSTimeInterval)time {
-    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:time];
-    
-    NSMutableString *str = [NSMutableString string];
-    if (date.hour > 0) {
-        [str appendFormat:@"%ld小时",(unsigned long)date.hour];
+    if (isnan(time)) {
+        return nil;
     }
     
-    if (date.minute > 0) {
-        [str appendFormat:@"%ld分钟",(unsigned long)date.minute];
+    long totalMinites = (time+59) / 60;
+    
+    long hour = totalMinites / 60;
+    long minute = totalMinites - hour * 60;
+
+    NSMutableString *str = [NSMutableString string];
+    if (hour > 0) {
+        [str appendFormat:@"%ld小时",hour];
+    }
+    
+    if (minute > 0) {
+        [str appendFormat:@"%ld分钟",minute];
     }
     
     return str;

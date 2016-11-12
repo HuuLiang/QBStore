@@ -56,6 +56,7 @@
         
         _timerLabel = [[MZTimerLabel alloc] initWithTimerType:MZTimerLabelTypeTimer];
         _timerLabel.textAlignment = NSTextAlignmentCenter;
+        _timerLabel.shouldCountBeyondHHLimit = YES;
         [self addSubview:_timerLabel];
         
     }

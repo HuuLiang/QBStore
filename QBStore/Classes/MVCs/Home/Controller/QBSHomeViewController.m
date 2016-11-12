@@ -635,8 +635,12 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
         return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds)/kBannerImageScale);
     } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFeaturedTypeSection)) {
 
-        const CGFloat itemWidth = (CGRectGetWidth(collectionView.bounds) - interItemSpacing * 2 - sectionInsets.left - sectionInsets.right)/3;
-        const CGFloat itemHeight = itemWidth *0.8;
+        const NSUInteger remainWidth = CGRectGetWidth(collectionView.bounds) - interItemSpacing * 2 - sectionInsets.left - sectionInsets.right;
+        NSUInteger itemWidth = remainWidth/3;
+        if (remainWidth % 3 != 0 && indexPath.item % 3 == 2) {
+            itemWidth = remainWidth - itemWidth * 2;
+        }
+        const CGFloat itemHeight = itemWidth *0.7;
         return CGSizeMake(itemWidth, itemHeight);
     } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSActivitySection)) {
         return CGSizeMake(CGRectGetWidth(collectionView.bounds), CGRectGetWidth(collectionView.bounds) / 3);

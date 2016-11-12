@@ -152,6 +152,8 @@
 		BC4000B01DC0A02F00019EA5 /* QBSMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */; };
 		BC4000B41DC0B33400019EA5 /* QBSMineAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000B31DC0B33400019EA5 /* QBSMineAvatarView.m */; };
 		BC4000B71DC0B59900019EA5 /* QBSMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000B61DC0B59900019EA5 /* QBSMineCell.m */; };
+		BC4135B91DD712E00020C6E1 /* ticket_promption.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4135B81DD712E00020C6E1 /* ticket_promption.jpg */; };
+		BC4135BC1DD713FA0020C6E1 /* QBSTicketsPromptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */; };
 		BC4E30091DCA0034001CD8D6 /* QBSTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E30081DCA0034001CD8D6 /* QBSTicket.m */; };
 		BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CA1DB77FB500793E44 /* login_background.jpg */; };
 		BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */; };
@@ -463,6 +465,9 @@
 		BC4000B31DC0B33400019EA5 /* QBSMineAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSMineAvatarView.m; sourceTree = "<group>"; };
 		BC4000B51DC0B59900019EA5 /* QBSMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSMineCell.h; sourceTree = "<group>"; };
 		BC4000B61DC0B59900019EA5 /* QBSMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSMineCell.m; sourceTree = "<group>"; };
+		BC4135B81DD712E00020C6E1 /* ticket_promption.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ticket_promption.jpg; sourceTree = "<group>"; };
+		BC4135BA1DD713FA0020C6E1 /* QBSTicketsPromptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketsPromptionView.h; sourceTree = "<group>"; };
+		BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketsPromptionView.m; sourceTree = "<group>"; };
 		BC4E30071DCA0034001CD8D6 /* QBSTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicket.h; sourceTree = "<group>"; };
 		BC4E30081DCA0034001CD8D6 /* QBSTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicket.m; sourceTree = "<group>"; };
 		BC4E55CA1DB77FB500793E44 /* login_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_background.jpg; sourceTree = "<group>"; };
@@ -1317,6 +1322,8 @@
 				BCF713051DC8823800A906AF /* QBSTicketCard.m */,
 				BC72DA601DCED11100FC2A60 /* QBSTicketAppCell.h */,
 				BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */,
+				BC4135BA1DD713FA0020C6E1 /* QBSTicketsPromptionView.h */,
+				BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1335,6 +1342,7 @@
 		BC4E55C91DB77FB500793E44 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC4135B81DD712E00020C6E1 /* ticket_promption.jpg */,
 				BC4E55CA1DB77FB500793E44 /* login_background.jpg */,
 				BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */,
 				BC4E55CC1DB77FB500793E44 /* profile_background.jpg */,
@@ -1409,6 +1417,7 @@
 				BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */,
 				BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */,
 				BC4E55D11DB77FB500793E44 /* pull_refresh.gif in Resources */,
+				BC4135B91DD712E00020C6E1 /* ticket_promption.jpg in Resources */,
 				BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */,
 				BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */,
 				BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */,
@@ -1584,6 +1593,7 @@
 				BC2C113B1DB4E11D000D1D99 /* QBSPaymentFooterView.m in Sources */,
 				BC2C12141DB4F79A000D1D99 /* QBSNewShippingAddressCell.m in Sources */,
 				BC2C117F1DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m in Sources */,
+				BC4135BC1DD713FA0020C6E1 /* QBSTicketsPromptionView.m in Sources */,
 				BC2C10791DB4DD0B000D1D99 /* NSObject+Properties.m in Sources */,
 				BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */,
 				BC2C111D1DB4E0D2000D1D99 /* QBSCommodityTag.m in Sources */,

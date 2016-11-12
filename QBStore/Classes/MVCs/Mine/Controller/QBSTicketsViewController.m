@@ -11,6 +11,7 @@
 #import "QBSTicketAppCell.h"
 #import "QBSTicket.h"
 #import "QBSTicketInstructionViewController.h"
+#import "QBSTicketsPromptionView.h"
 
 static NSString *const kTicketCellReusableIdentifier = @"TicketCellReusableIdentifier";
 static NSString *const kTicketAppReusableIdentifier = @"TicketAppReusableIdentifier";
@@ -61,6 +62,17 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     }];
     [_layoutTV QBS_triggerPullToRefresh];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.isMovingToParentViewController) {
+        if (!QBSCurrentUserIsLogin || [[QBSUser currentUser] shouldPromptActivityTicket]) {
+            [QBSTicketsPromptionView showPromptionInView:self.view.window];
+            [[QBSUser currentUser] didReviewActivityTicketPromption];
+        }
+    }
 }
 
 - (void)loadTickets {
