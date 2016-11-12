@@ -56,7 +56,6 @@ static CGFloat kBannerImageScale = 7./3.;
 {
     UICollectionView *_layoutCV;
 }
-@property (nonatomic,retain) QBSCartButton *cartButton;
 
 @property (nonatomic,retain) NSArray<QBSBanner *> *banners;
 
@@ -109,31 +108,7 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
             make.edges.equalTo(self.view);
         }];
     }
-    
-    if (self.showCartButton) {
-        self.cartButton.hidden = NO;
-    }
-    
     @weakify(self);
-    if (self.showCategoryButton) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage QBS_imageWithResourcePath:@"category"]
-                                                                                    style:UIBarButtonItemStylePlain
-                                                                                  handler:^(id sender)
-                                                 {
-                                                     @strongify(self);
-                                                     QBSCategoryViewController *catVC = [[QBSCategoryViewController alloc] init];
-                                                     [self.navigationController pushViewController:catVC animated:YES];
-                                                 }];
-    }
-    
-    if (self.showOrderListButton) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"订单" style:UIBarButtonItemStylePlain handler:^(id sender) {
-            @strongify(self);
-            QBSOrderListViewController *orderVC = [[QBSOrderListViewController alloc] init];
-            [self.navigationController pushViewController:orderVC animated:YES];
-        }];
-    }
-    
     [_layoutCV QBS_addPullToRefreshWithHandler:^{
         @strongify(self);
         [self reloadData];
@@ -143,61 +118,6 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if (self.showCartButton) {
-        [QBSCartCommodity totalSelectedAmountAsync:^(NSUInteger amount) {
-            _cartButton.numberOfCommodities = amount;
-        }];
-    }
-}
-
-#pragma mark - Cart Button
-
-- (QBSCartButton *)cartButton {
-    if (_cartButton) {
-        return _cartButton;
-    }
-    
-    const CGSize buttonSize = CGSizeMake(MIN(kScreenWidth*0.3, 106), 44);
-    _cartButton = [[QBSCartButton alloc] init];
-    [_cartButton setBackgroundImage:[UIImage imageWithColor:[[UIColor colorWithHexString:@"#fa563c"] colorWithAlphaComponent:0.95]] forState:UIControlStateNormal];
-    _cartButton.badgeBackgroundColor = [UIColor blackColor];
-    _cartButton.imageView.tintColor = [UIColor whiteColor];
-    _cartButton.forceRoundCorner = YES;
-    _cartButton.imageOffset = UIOffsetMake(buttonSize.height/4, 0);
-    [self.view addSubview:_cartButton];
-    {
-        [_cartButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.view).offset(-buttonSize.height/2);
-            make.bottom.equalTo(self.view).multipliedBy(0.9);
-            make.size.mas_equalTo(buttonSize);
-        }];
-    }
-    
-    @weakify(self);
-    [_cartButton bk_addEventHandler:^(id sender) {
-        @strongify(self);
-        QBSCartViewController *cartVC = [[QBSCartViewController alloc] init];
-        [self.navigationController pushViewController:cartVC animated:YES];
-    } forControlEvents:UIControlEventTouchUpInside];
-    return _cartButton;
-}
-
-- (void)setShowCartButton:(BOOL)showCartButton {
-    _showCartButton = showCartButton;
-    
-    if (!self.isViewLoaded) {
-        return ;
-    }
-    
-    if (showCartButton) {
-        self.cartButton.hidden = NO;
-    } else {
-        _cartButton.hidden = YES;
-    }
-}
 #pragma mark - Data Loading
 
 - (void)loadBanners {
@@ -481,16 +401,6 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
     }
 }
 
-- (void)showOrderViewController {
-    QBSOrderListViewController *orderVC = [[QBSOrderListViewController alloc] init];
-    [self.navigationController pushViewController:orderVC animated:YES];
-}
-
-- (void)showCartViewController {
-    QBSCartViewController *cartVC = [[QBSCartViewController alloc] init];
-    [self.navigationController pushViewController:cartVC animated:YES];
-}
-
 #pragma mark - Memory Warning
 
 - (void)didReceiveMemoryWarning {
@@ -596,7 +506,7 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
                 NSArray *strLines = [commodity.data.commodityViceName componentsSeparatedByString:@"|"];
                 NSMutableString *details = [NSMutableString string];
                 [strLines enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    [details appendFormat:@"%@\n", obj];
+                    [details appendFormat:@"☞ %@\n", obj];
                 }];
                 cell.details = details;
                 

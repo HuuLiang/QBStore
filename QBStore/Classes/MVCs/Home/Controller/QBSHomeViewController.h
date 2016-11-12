@@ -10,11 +10,4 @@
 
 @interface QBSHomeViewController : QBSBaseViewController
 
-@property (nonatomic) BOOL showCartButton;
-@property (nonatomic) BOOL showCategoryButton;
-@property (nonatomic) BOOL showOrderListButton;
-
-- (void)showOrderViewController;
-- (void)showCartViewController;
-
 @end

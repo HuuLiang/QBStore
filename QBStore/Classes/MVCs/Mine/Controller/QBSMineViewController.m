@@ -77,11 +77,7 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     _avatarView.avatarAction = ^(id obj) {
         @strongify(self);
         if (!QBSCurrentUserIsLogin) {
-            [QBSUIHelper presentLoginViewControllerIfNotLoginInViewController:self withCompletionHandler:^(BOOL success) {
-                if (success) {
-                    [self updateAvatarView];
-                }
-            }];
+            [QBSUIHelper presentLoginViewControllerIfNotLoginInViewController:self withCompletionHandler:nil];
         } else {
             [UIAlertView bk_showAlertViewWithTitle:@"您是否确认退出当前账号？"
                                            message:nil
@@ -101,11 +97,8 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     self.navigationItem.title = nil;
 //    self.navigationController.navigationBarHidden = YES;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onLogout) name:kQBSUserLogoutNotification object:nil];
-}
-
-- (void)onLogout {
-    [self updateAvatarView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAvatarView) name:kQBSUserLoginNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAvatarView) name:kQBSUserLogoutNotification object:nil];
 }
 
 - (BOOL)alwaysHideNavigationBar {
@@ -115,12 +108,26 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
 - (void)updateAvatarView {
     if (QBSCurrentUserIsLogin) {
         _avatarView.title = [QBSUser currentUser].nickName;
-        _avatarView.placeholderImage = [UIImage imageNamed:@"mine_avatar_placeholder"];
+        _avatarView.placeholderImage = [UIImage imageNamed:@"avatar_placeholder"];
         _avatarView.imageURL = [NSURL URLWithString:[QBSUser currentUser].logoUrl];
     } else {
-        _avatarView.placeholderImage = [UIImage imageNamed:@"mine_avatar_placeholder"];
+        _avatarView.placeholderImage = [UIImage imageNamed:@"avatar_placeholder"];
         _avatarView.title = @"点击登录";
     }
+}
+
+- (void)showOrderListViewController {
+    self.tabBarController.selectedViewController = self.navigationController;
+    
+    QBSOrderListViewController *orderListVC = [[QBSOrderListViewController alloc] init];
+    [self.navigationController pushViewController:orderListVC animated:YES];
+}
+
+- (void)showTicketViewController {
+    self.tabBarController.selectedViewController = self.navigationController;
+    
+    QBSTicketsViewController *ticketVC = [[QBSTicketsViewController alloc] init];
+    [self.navigationController pushViewController:ticketVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

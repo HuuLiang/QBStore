@@ -13,9 +13,15 @@
 #import "QBSCartViewController.h"
 #import "QBSMineViewController.h"
 #import "QBSCartCommodity.h"
+#import "QBSOrderListViewController.h"
+
+static NSString *const kOrderShortcutItemType = @"com.qbstoresdk.app.orders";
+static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
+static NSString *const kTicketShortcutItemType = @"com.qbstoresdk.app.ticket";
 
 @interface QBSTabBarController () <DBPersistentObserver>
 @property (nonatomic,retain) UITabBarItem *cartTabBarItem;
+@property (nonatomic,retain) QBSMineViewController *mineViewController;
 @end
 
 @implementation QBSTabBarController
@@ -26,9 +32,6 @@
     dispatch_once(&onceToken, ^{
         QBSHomeViewController *homeVC = [[QBSHomeViewController alloc] init];
         homeVC.title = @"首页";
-        homeVC.showCartButton = NO;
-        homeVC.showOrderListButton = NO;
-        homeVC.showCategoryButton = NO;
         
         QBSNavigationController *homeNav = [[QBSNavigationController alloc] initWithRootViewController:homeVC];
         homeNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:homeVC.title
@@ -65,7 +68,8 @@
 //        _sharedTabBarController.tabBar.barTintColor = [UIColor colorWithHexString:@"#970669"];
         _sharedTabBarController.tabBar.translucent = NO;
         _sharedTabBarController.cartTabBarItem = cartNav.tabBarItem;
-
+        _sharedTabBarController.mineViewController = mineVC;
+        
         [_sharedTabBarController updateBadgeValue];
         
         [QBSCartCommodity registerObserver:_sharedTabBarController];
@@ -89,6 +93,19 @@
     }];
 }
 
+- (BOOL)processShortcutItemWithType:(NSString *)shortcutItemType {
+    if ([shortcutItemType isEqualToString:kCartShortcutItemType]) {
+        self.selectedIndex = 2;
+    } else if ([shortcutItemType isEqualToString:kOrderShortcutItemType]) {
+        [_mineViewController showOrderListViewController];
+    } else if ([shortcutItemType isEqualToString:kTicketShortcutItemType]) {
+        [_mineViewController showTicketViewController];
+    } else {
+        return NO;
+    }
+    
+    return YES;
+}
 #pragma mark - DBPersistentObserver
 
 - (void)DBPersistentClass:(Class)class didFinishOperation:(DBPersistenceOperation)operation {

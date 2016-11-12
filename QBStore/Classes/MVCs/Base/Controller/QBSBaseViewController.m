@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#efefef"];
     if (self.navigationController) {
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"返回" style:UIBarButtonItemStylePlain handler:nil];
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];

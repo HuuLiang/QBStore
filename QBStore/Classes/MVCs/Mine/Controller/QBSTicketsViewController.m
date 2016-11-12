@@ -60,6 +60,7 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
         [self loadTickets];
     }];
     [_layoutTV QBS_triggerPullToRefresh];
+    
 }
 
 - (void)loadTickets {
@@ -93,9 +94,9 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     }];
 }
 
-- (BOOL)isViewControllerDependsOnUserLogin {
-    return YES;
-}
+//- (BOOL)isViewControllerDependsOnUserLogin {
+//    return YES;
+//}
 
 - (NSUInteger)ticketIndexInSection:(NSUInteger)section {
     __block NSUInteger ticketIndex = NSNotFound;
@@ -238,6 +239,19 @@ DefineLazyPropertyInitialization(NSMutableArray, sections)
     QBSTicket *ticket = ticketIndex == NSNotFound ? nil : self.tickets[ticketIndex];
     if (sectionType == QBSTicketCardSection) {
         QBSTicketCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        if (!QBSCurrentUserIsLogin) {
+            @weakify(self);
+            [QBSUIHelper presentLoginViewControllerIfNotLoginInViewController:self withCompletionHandler:^(BOOL success) {
+                @strongify(self);
+                if (success) {
+                    [self.sections removeAllObjects];
+                    [self->_layoutTV reloadData];
+                    [self->_layoutTV QBS_triggerPullToRefresh];
+                }
+            }];
+            return ;
+        }
+        
         if (ticket.exchangeStatus.unsignedIntegerValue == QBSTicketStatusNotFetched) {
             @weakify(self);
             [[QBSHUDManager sharedManager] showLoading];

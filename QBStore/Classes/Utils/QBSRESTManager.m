@@ -641,16 +641,16 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
 }
 
 - (void)request_queryActivityTicketsWithCompletionHandler:(QBSCompletionHandler)completionHandler {
-    if (!QBSCurrentUserIsLogin) {
-        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTUserNotLoginErrorCode errorMessage:@"用户未登录"];
-        SafelyCallBlock(completionHandler, nil, error);
-        return ;
-    }
-    
+//    if (!QBSCurrentUserIsLogin) {
+//        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTUserNotLoginErrorCode errorMessage:@"用户未登录"];
+//        SafelyCallBlock(completionHandler, nil, error);
+//        return ;
+//    }
+//    
     NSDictionary *params = @{@"channelNo":QBS_CHANNEL_NO,
                              @"osType":@"iv",
-                             @"accessToken":[QBSUser currentUser].accessToken,
-                             @"userId":[QBSUser currentUser].userId};
+                             @"accessToken":[QBSUser currentUser].accessToken ?: @"",
+                             @"userId":[QBSUser currentUser].userId ?: @""};
     [[QBSHttpClient sharedClient] requestURL:@"exchange.service" withParams:params methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
         [self onResponseWithObject:obj error:error modelClass:[QBSTicketList class] completionHandler:completionHandler];
     }];

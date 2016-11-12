@@ -15,6 +15,7 @@ NSString *const kQBSUserTypeNormal = @"NORMAL";
 NSString *const kQBSUserTypeWeChat = @"WEIXIN";
 
 NSString *const kQBSUserShouldReLoginNotification = @"com.qbstore.notification.usershouldrelogin";
+NSString *const kQBSUserLoginNotification = @"com.qbstore.notification.userlogin";
 NSString *const kQBSUserLogoutNotification = @"com.qbstore.notification.userlogout";
 
 static NSString *kUserDefaultsCurrentUserKey = @"com.qbstore.userdefaults.currentuser";
@@ -53,6 +54,8 @@ static QBSUser *_currentUser;
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     _currentUser = self;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kQBSUserLoginNotification object:self];
 }
 
 - (void)logout {

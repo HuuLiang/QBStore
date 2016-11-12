@@ -11,5 +11,6 @@
 @interface QBSTabBarController : UITabBarController
 
 + (instancetype)sharedTabBarController;
+- (BOOL)processShortcutItemWithType:(NSString *)shortcutItemType;
 
 @end

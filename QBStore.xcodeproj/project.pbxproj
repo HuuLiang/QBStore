@@ -164,6 +164,7 @@
 		BC69AF0F1DC740C100BA49F3 /* QBSFavouritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */; };
 		BC69AF101DC740C100BA49F3 /* QBSFavouritesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */; };
 		BC72DA621DCED11100FC2A60 /* QBSTicketAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */; };
+		BC9C5D951DD5DFA700BBD823 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9C5D941DD5DFA700BBD823 /* NSDate+Utilities.m */; };
 		BCDC0D981DD478C600BC8024 /* QBSCommodityDetailActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */; };
 		BCDC0D9B1DD48EAC00BC8024 /* QBSTicketInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */; };
 		BCDC0D9E1DD48F3000BC8024 /* QBSTicketInstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */; };
@@ -482,6 +483,8 @@
 		BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesHeaderView.m; sourceTree = "<group>"; };
 		BC72DA601DCED11100FC2A60 /* QBSTicketAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketAppCell.h; sourceTree = "<group>"; };
 		BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketAppCell.m; sourceTree = "<group>"; };
+		BC9C5D931DD5DFA700BBD823 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		BC9C5D941DD5DFA700BBD823 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		BCDC0D961DD478C600BC8024 /* QBSCommodityDetailActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailActivityCell.h; sourceTree = "<group>"; };
 		BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailActivityCell.m; sourceTree = "<group>"; };
 		BCDC0D991DD48EAC00BC8024 /* QBSTicketInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketInstruction.h; sourceTree = "<group>"; };
@@ -603,6 +606,8 @@
 		BC2C10581DB4DCDC000D1D99 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BC9C5D931DD5DFA700BBD823 /* NSDate+Utilities.h */,
+				BC9C5D941DD5DFA700BBD823 /* NSDate+Utilities.m */,
 				BC2C10591DB4DD0B000D1D99 /* NSArray+Utilities.h */,
 				BC2C105A1DB4DD0B000D1D99 /* NSArray+Utilities.m */,
 				BC2C105B1DB4DD0B000D1D99 /* NSError+QBSError.h */,
@@ -1564,6 +1569,7 @@
 				BC2C10A21DB4DED2000D1D99 /* QBSWeChatHelper.m in Sources */,
 				BC2C109C1DB4DED2000D1D99 /* QBSConfiguration.m in Sources */,
 				BC2C10E81DB4E073000D1D99 /* QBSWeChatLoginButton.m in Sources */,
+				BC9C5D951DD5DFA700BBD823 /* NSDate+Utilities.m in Sources */,
 				BC2C10BF1DB4DFA0000D1D99 /* TAAbstractDotView.m in Sources */,
 				BC2C11D01DB4F73F000D1D99 /* QBSActivityListViewController.m in Sources */,
 				BC2C108A1DB4DE35000D1D99 /* DBHandler.m in Sources */,

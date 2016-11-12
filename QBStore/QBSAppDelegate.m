@@ -11,9 +11,6 @@
 #import "QBSWeChatHelper.h"
 #import <UMMobClick/MobClick.h>
 
-static NSString *const kOrderShortcutItemType = @"com.qbstoresdk.app.orders";
-static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
-
 @interface QBSAppDelegate ()
 @end
 
@@ -72,7 +69,7 @@ static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
 }
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
-    if ([self processShortcutItemWithType:shortcutItem.type]) {
+    if ([[QBSTabBarController sharedTabBarController] processShortcutItemWithType:shortcutItem.type]) {
         completionHandler(YES);
     } else {
         completionHandler(NO);
@@ -121,18 +118,5 @@ static NSString *const kCartShortcutItemType = @"com.qbstoresdk.app.cart";
     [[QBSWeChatHelper sharedHelper] handleOpenURL:url];
     [[QBSPaymentManager sharedManager] handleOpenURL:url];
     return YES;
-}
-
-- (BOOL)processShortcutItemWithType:(NSString *)shortcutItemType {
-    if ([shortcutItemType isEqualToString:kCartShortcutItemType]) {
-//        [self.homeViewController showCartViewController];
-    } else if ([shortcutItemType isEqualToString:kOrderShortcutItemType]) {
-//        [self.homeViewController showOrderViewController];
-    } else {
-        return NO;
-    }
-    
-    return YES;
-    
 }
 @end

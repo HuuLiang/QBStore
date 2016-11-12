@@ -51,4 +51,5 @@ extern NSString *const kQBSUserTypeWeChat;
 @end
 
 extern NSString *const kQBSUserShouldReLoginNotification;
+extern NSString *const kQBSUserLoginNotification;
 extern NSString *const kQBSUserLogoutNotification;

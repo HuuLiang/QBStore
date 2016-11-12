@@ -8,10 +8,11 @@
 
 #import "QBSHomeCommodityCell.h"
 #import "MZTimerLabel.h"
+#import "NSDate+Utilities.h"
 
 static const CGFloat kThumbImageScale = 3./4.;
 
-@interface QBSHomeCommodityCell ()
+@interface QBSHomeCommodityCell () <MZTimerLabelDelegate>
 @property (nonatomic,retain) UIImageView *thumbImageView;
 @property (nonatomic,retain) UILabel *titleLabel;
 @property (nonatomic,retain) NSMutableArray<UILabel *> *tagLabels;
@@ -43,14 +44,14 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     const CGFloat fullWidth = CGRectGetWidth(self.bounds);
     const CGFloat fullHeight = CGRectGetHeight(self.bounds);
     
-    const CGFloat imageHeight = fullHeight * 0.9;
+    const CGFloat imageHeight = fullHeight;
     const CGFloat imageWidth = imageHeight * kThumbImageScale;
-    const CGFloat imageX = kMediumHorizontalSpacing;
+//    const CGFloat imageX = kMediumHorizontalSpacing;
     const CGFloat imageY = (fullHeight - imageHeight)/2;
-    _thumbImageView.frame = CGRectMake(imageX, imageY, imageWidth, imageHeight);
+    _thumbImageView.frame = CGRectMake(0, imageY, imageWidth, imageHeight);
     
     const CGFloat titleX = CGRectGetMaxX(_thumbImageView.frame) + kMediumHorizontalSpacing;
-    const CGFloat titleY = kTopBottomContentMarginSpacing;
+    const CGFloat titleY = kMediumVerticalSpacing;
     const CGFloat titleWidth = fullWidth - kMediumHorizontalSpacing - titleX;
     const CGFloat titleHeight =  _titleLabel ? [_titleLabel.text boundingRectWithSize:CGSizeMake(titleWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:_titleLabel.font} context:nil].size.height : 0;
     _titleLabel.frame = CGRectMake(titleX, titleY, titleWidth, titleHeight);
@@ -83,10 +84,11 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         obj.frame = CGRectMake(tagX, tagY, tagWidth, tagHeight);
     }];
     
-    const CGFloat buyWidth = 60;
-    const CGFloat buyHeight = 28;
+    const CGSize buttonSize = _buyButton ? [[_buyButton titleForState:UIControlStateNormal] sizeWithAttributes:@{NSFontAttributeName:_buyButton.titleLabel.font}]:CGSizeZero;
+    const CGFloat buyWidth = buttonSize.width+10;
+    const CGFloat buyHeight = buttonSize.height+8;
     const CGFloat buyX = fullWidth - kSmallHorizontalSpacing - buyWidth;
-    const CGFloat buyY = fullHeight - kTopBottomContentMarginSpacing - buyHeight;
+    const CGFloat buyY = fullHeight - kSmallVerticalSpacing - buyHeight;
     _buyButton.frame = CGRectMake(buyX, buyY, buyWidth, buyHeight);
     
     const CGSize priceSize = [_priceLabel.attributedText size];
@@ -96,12 +98,15 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     _priceLabel.frame = CGRectMake(priceX, priceY, priceWidth, priceSize.height);
     
     const CGSize soldSize = _soldLabel ? [_soldLabel.text sizeWithAttributes:@{NSFontAttributeName:_soldLabel.font}] : CGSizeZero;
-    const CGFloat soldX = fullWidth - soldSize.width - kLeftRightContentMarginSpacing;
+    const CGFloat soldWidth = soldSize.width+5;
+    const CGFloat soldX = fullWidth - soldWidth;
     const CGFloat soldY = buyY - soldSize.height - kMediumVerticalSpacing;
     _soldLabel.frame = CGRectMake(soldX, soldY, soldSize.width+5, soldSize.height);
     
     if (!_footerView.hidden) {
-        _footerView.frame = CGRectMake(titleX, buyY-kSmallVerticalSpacing, fullWidth-titleX, buyHeight + kSmallVerticalSpacing *2);
+        const CGFloat footerHeight = buyHeight + kSmallVerticalSpacing*2;
+        const CGFloat footerWidth = fullWidth-titleX;
+        _footerView.frame = CGRectMake(titleX, fullHeight-footerHeight, footerWidth, footerHeight);
     }
     
     if (!_countingIconImageView.hidden) {
@@ -143,7 +148,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.textColor = [UIColor colorWithHexString:@"#333333"];
-    _titleLabel.font = kBigFont;
+    _titleLabel.font = kMediumFont;
     _titleLabel.numberOfLines = 2;
     [self addSubview:_titleLabel];
     return _titleLabel;
@@ -155,7 +160,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     }
     
     _detailTextView = [[UITextView alloc] init];
-    _detailTextView.font = kSmallFont;
+    _detailTextView.font = kExtraSmallFont;
     _detailTextView.textColor = [UIColor colorWithHexString:@"#666666"];
     _detailTextView.editable = NO;
     _detailTextView.scrollEnabled = NO;
@@ -181,7 +186,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     
     _soldLabel = [[UILabel alloc] init];
     _soldLabel.textColor = [UIColor colorWithHexString:@"#666666"];
-    _soldLabel.font = kSmallFont;
+    _soldLabel.font = kExtraSmallFont;
     [self addSubview:_soldLabel];
     return _soldLabel;
 }
@@ -225,7 +230,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
             label.textAlignment = NSTextAlignmentCenter;
             label.layer.borderWidth = 1;
             label.layer.borderColor = label.textColor.CGColor;
-//            label.forceRoundCorner = YES;
+            label.forceRoundCorner = YES;
             [self addSubview:label];
 
             [self.tagLabels addObject:label];
@@ -256,7 +261,11 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
 
 - (void)setDetails:(NSString *)details {
     _details = details;
-    self.detailTextView.text = details;
+//    self.detailTextView.text = details;
+    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
+    paraStyle.lineSpacing = 5;
+    self.detailTextView.attributedText = [[NSAttributedString alloc] initWithString:details attributes:@{NSParagraphStyleAttributeName:paraStyle,
+                                                                                                         NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#666666"]}];
     
     [self setNeedsLayout];
 }
@@ -271,11 +280,11 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     }
     
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:str];
-    [attrString addAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#FD472B"],
+    [attrString addAttributes:@{NSForegroundColorAttributeName:_style == QBSHomeCommodityCellActivityStyle ? [UIColor whiteColor] : [UIColor colorWithHexString:@"#D0021B"],
                                 NSFontAttributeName:kBigFont} range:NSMakeRange(0, priceString.length)];
     
     if (originalPrice > 0) {
-        [attrString addAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#888888"],
+        [attrString addAttributes:@{NSForegroundColorAttributeName:_style == QBSHomeCommodityCellActivityStyle ? [UIColor colorWithWhite:1 alpha:0.57] : [UIColor colorWithWhite:0.375 alpha:0.57],
                                     NSFontAttributeName:kMediumFont,
                                     NSStrikethroughStyleAttributeName:@1} range:NSMakeRange(priceString.length+1, attrString.length-priceString.length-1)];
     }
@@ -289,6 +298,9 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     
     if (!_timerLabel) {
         _timerLabel = [[MZTimerLabel alloc] initWithTimerType:MZTimerLabelTypeTimer];
+        _timerLabel.delegate = self;
+        _timerLabel.timeLabel.textColor = [UIColor colorWithHexString:@"#666666"];
+        _timerLabel.timeLabel.font = kSmallFont;
         [self addSubview:_timerLabel];
     }
     
@@ -306,9 +318,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     
     if (!_buyButton) {
         _buyButton = [[UIButton alloc] init];
-        _buyButton.titleLabel.font = kMediumFont;
-        _buyButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        _buyButton.userInteractionEnabled = YES;
+        _buyButton.titleLabel.font = kSmallFont;
         AssociatedButtonWithAction(_buyButton, buyAction);
         [self addSubview:_buyButton];
     }
@@ -318,14 +328,15 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         
         _buyButton.layer.cornerRadius = 4;
         _buyButton.backgroundColor = [UIColor colorWithHexString:@"#F8F51C"];
-        [_buyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _buyButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_buyButton setTitleColor:[UIColor colorWithHexString:@"#333333"] forState:UIControlStateNormal];
         [_buyButton setBackgroundImage:nil forState:UIControlStateNormal];
         
         _timerLabel.hidden = NO;
         
         if (!_footerView) {
             _footerView = [[UIView alloc] init];
-            _footerView.backgroundColor = [UIColor blackColor];
+            _footerView.backgroundColor = [UIColor colorWithHexString:@"#DD2B41"];
             [self insertSubview:_footerView atIndex:0];
         }
         _footerView.hidden = NO;
@@ -343,6 +354,7 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
         
         _buyButton.layer.cornerRadius = 0;
         _buyButton.backgroundColor = [UIColor clearColor];
+        _buyButton.titleLabel.textAlignment = NSTextAlignmentLeft;
         [_buyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_buyButton setBackgroundImage:[UIImage imageNamed:@"buy_background"] forState:UIControlStateNormal];
         
@@ -353,5 +365,39 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     }
     
     [self setNeedsLayout];
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *view = [super hitTest:point withEvent:event];
+    
+    if (!view) {
+        return view;
+    }
+    
+    CGRect buttonFrame = _buyButton.frame;
+    if (CGRectIsEmpty(buttonFrame)) {
+        return view;
+    }
+    
+    CGRect expandedFrame = CGRectInset(buttonFrame, -10, -10);
+    if (CGRectContainsPoint(expandedFrame, point)) {
+        return _buyButton;
+    }
+    return view;
+}
+
+-(NSString*)timerLabel:(MZTimerLabel*)timerLabel customTextToDisplayAtTime:(NSTimeInterval)time {
+    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:time];
+    
+    NSMutableString *str = [NSMutableString string];
+    if (date.hour > 0) {
+        [str appendFormat:@"%ld小时",(unsigned long)date.hour];
+    }
+    
+    if (date.minute > 0) {
+        [str appendFormat:@"%ld分钟",(unsigned long)date.minute];
+    }
+    
+    return str;
 }
 @end
