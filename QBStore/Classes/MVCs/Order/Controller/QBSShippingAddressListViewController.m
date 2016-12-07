@@ -25,6 +25,8 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
 
 @implementation QBSShippingAddressListViewController
 
+DefineLazyPropertyInitialization(NSMutableArray, addresses);
+
 - (instancetype)initWithDelegate:(id<QBSShippingAddressListViewControllerDelegate>)delegate {
     self = [self init];
     if (self) {
@@ -85,15 +87,16 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     
     @weakify(self);
     [newAddressButton bk_addEventHandler:^(id sender) {
-        @strongify(self);
+        
         QBSNewShippingAddressViewController *addressVC = [[QBSNewShippingAddressViewController alloc] initWithCompletionAction:^(id obj) {
+            @strongify(self);
             if (obj) {
                 QBSShippingAddress *newAddress = obj;
                 if (self.addresses.count == 0) {
                     newAddress.isDefault = @1;
                 }
                 
-                [self.addresses addObject:obj];
+                [self.addresses addObject:newAddress];
                 [self->_layoutTV insertSections:[NSIndexSet indexSetWithIndex:self.addresses.count-1] withRowAnimation:UITableViewRowAnimationAutomatic];
             }
         }];
