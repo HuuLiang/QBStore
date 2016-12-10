@@ -13,8 +13,11 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.titleLabel.font = [UIFont systemFontOfSize:20];
+        self.titleLabel.font = [UIFont systemFontOfSize:14];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.backgroundColor = [UIColor colorWithHexString:@"#FF206F"];
+        self.titleLabel.layer.cornerRadius = 5;
+        self.titleLabel.clipsToBounds = YES;
         self.imageView.forceRoundCorner = YES;
     }
     return self;

@@ -10,6 +10,11 @@
 		31294B5AFDA0E45286F5CD27 /* libPods-QBStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */; };
 		B32A6FC81DFBADB100637361 /* QBSLayoutViewCtroller.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FC71DFBADB100637361 /* QBSLayoutViewCtroller.m */; };
 		B32A6FCB1DFBAE6C00637361 /* UITableView+Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FCA1DFBAE6C00637361 /* UITableView+Separator.m */; };
+		B32A6FD31DFBDE5800637361 /* mine_header_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B32A6FD21DFBDE5800637361 /* mine_header_background.jpg */; };
+		B32A6FD61DFBE1AD00637361 /* QBSSnatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FD51DFBE1AD00637361 /* QBSSnatchCell.m */; };
+		B32A6FD91DFBF23F00637361 /* QBSOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FD81DFBF23F00637361 /* QBSOrderCell.m */; };
+		B32A6FDC1DFBFAA400637361 /* QBSOrderStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FDB1DFBFAA400637361 /* QBSOrderStatusCell.m */; };
+		B32A6FDF1DFBFCD200637361 /* QBSOrderStatusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FDE1DFBFCD200637361 /* QBSOrderStatusButton.m */; };
 		BC2C103B1DB4D700000D1D99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C103A1DB4D700000D1D99 /* main.m */; };
 		BC2C10461DB4D700000D1D99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC2C10451DB4D700000D1D99 /* Assets.xcassets */; };
 		BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC2C10471DB4D700000D1D99 /* LaunchScreen.storyboard */; };
@@ -184,6 +189,15 @@
 		B32A6FC71DFBADB100637361 /* QBSLayoutViewCtroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSLayoutViewCtroller.m; sourceTree = "<group>"; };
 		B32A6FC91DFBAE6C00637361 /* UITableView+Separator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Separator.h"; sourceTree = "<group>"; };
 		B32A6FCA1DFBAE6C00637361 /* UITableView+Separator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Separator.m"; sourceTree = "<group>"; };
+		B32A6FD21DFBDE5800637361 /* mine_header_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mine_header_background.jpg; sourceTree = "<group>"; };
+		B32A6FD41DFBE1AD00637361 /* QBSSnatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSnatchCell.h; sourceTree = "<group>"; };
+		B32A6FD51DFBE1AD00637361 /* QBSSnatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSnatchCell.m; sourceTree = "<group>"; };
+		B32A6FD71DFBF23F00637361 /* QBSOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderCell.h; sourceTree = "<group>"; };
+		B32A6FD81DFBF23F00637361 /* QBSOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderCell.m; sourceTree = "<group>"; };
+		B32A6FDA1DFBFAA400637361 /* QBSOrderStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderStatusCell.h; sourceTree = "<group>"; };
+		B32A6FDB1DFBFAA400637361 /* QBSOrderStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderStatusCell.m; sourceTree = "<group>"; };
+		B32A6FDD1DFBFCD200637361 /* QBSOrderStatusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderStatusButton.h; sourceTree = "<group>"; };
+		B32A6FDE1DFBFCD200637361 /* QBSOrderStatusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderStatusButton.m; sourceTree = "<group>"; };
 		BC2C10361DB4D700000D1D99 /* QBStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QBStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2C103A1DB4D700000D1D99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC2C10451DB4D700000D1D99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1324,6 +1338,14 @@
 				BC4000B31DC0B33400019EA5 /* QBSMineAvatarView.m */,
 				BC4000B51DC0B59900019EA5 /* QBSMineCell.h */,
 				BC4000B61DC0B59900019EA5 /* QBSMineCell.m */,
+				B32A6FD41DFBE1AD00637361 /* QBSSnatchCell.h */,
+				B32A6FD51DFBE1AD00637361 /* QBSSnatchCell.m */,
+				B32A6FD71DFBF23F00637361 /* QBSOrderCell.h */,
+				B32A6FD81DFBF23F00637361 /* QBSOrderCell.m */,
+				B32A6FDA1DFBFAA400637361 /* QBSOrderStatusCell.h */,
+				B32A6FDB1DFBFAA400637361 /* QBSOrderStatusCell.m */,
+				B32A6FDD1DFBFCD200637361 /* QBSOrderStatusButton.h */,
+				B32A6FDE1DFBFCD200637361 /* QBSOrderStatusButton.m */,
 				BC34E3791DC0C8E500CB1189 /* QBSAvatarButton.h */,
 				BC34E37A1DC0C8E500CB1189 /* QBSAvatarButton.m */,
 				BCF713011DC86FB100A906AF /* QBSTicketCell.h */,
@@ -1357,6 +1379,7 @@
 				BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */,
 				BC4E55CC1DB77FB500793E44 /* profile_background.jpg */,
 				BC4E55CD1DB77FB500793E44 /* pull_refresh.gif */,
+				B32A6FD21DFBDE5800637361 /* mine_header_background.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1425,6 +1448,7 @@
 			files = (
 				BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */,
 				BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */,
+				B32A6FD31DFBDE5800637361 /* mine_header_background.jpg in Resources */,
 				BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */,
 				BC4E55D11DB77FB500793E44 /* pull_refresh.gif in Resources */,
 				BC4135B91DD712E00020C6E1 /* ticket_promption.jpg in Resources */,
@@ -1506,6 +1530,7 @@
 				BCDC0D981DD478C600BC8024 /* QBSCommodityDetailActivityCell.m in Sources */,
 				BC2C109F1DB4DED2000D1D99 /* QBSHUDManager.m in Sources */,
 				BC2C11821DB4F60D000D1D99 /* QBSCommodityComment.m in Sources */,
+				B32A6FDF1DFBFCD200637361 /* QBSOrderStatusButton.m in Sources */,
 				BC4E30091DCA0034001CD8D6 /* QBSTicket.m in Sources */,
 				BC2C109E1DB4DED2000D1D99 /* QBSHttpClient.m in Sources */,
 				BC504CD51DC34B93009D57C8 /* QBSCategoryViewController.m in Sources */,
@@ -1582,6 +1607,7 @@
 				BC2C10E51DB4E073000D1D99 /* QBSUser.m in Sources */,
 				BC2C115C1DB4F481000D1D99 /* QBSCustomerServiceController.m in Sources */,
 				BC2C11D51DB4F73F000D1D99 /* QBSProgressView.m in Sources */,
+				B32A6FDC1DFBFAA400637361 /* QBSOrderStatusCell.m in Sources */,
 				BC2C10761DB4DD0B000D1D99 /* NSError+QBSError.m in Sources */,
 				BC2C11871DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m in Sources */,
 				BC2C11D71DB4F73F000D1D99 /* QBSSortButton.m in Sources */,
@@ -1598,9 +1624,11 @@
 				BC504CD81DC34CAA009D57C8 /* QBSCategoryCell.m in Sources */,
 				BC2C10E61DB4E073000D1D99 /* QBSWeChatUser.m in Sources */,
 				BC2C10781DB4DD0B000D1D99 /* NSObject+BaseRepresentation.m in Sources */,
+				B32A6FD91DFBF23F00637361 /* QBSOrderCell.m in Sources */,
 				BC2C10E71DB4E073000D1D99 /* QBSPhoneTextField.m in Sources */,
 				BC2C11811DB4F60D000D1D99 /* QBSCommodityDetailViewController.m in Sources */,
 				BC2C11211DB4E0D2000D1D99 /* QBSCartButton.m in Sources */,
+				B32A6FD61DFBE1AD00637361 /* QBSSnatchCell.m in Sources */,
 				BC2C11191DB4E0D2000D1D99 /* QBSBanner.m in Sources */,
 				BC2C113B1DB4E11D000D1D99 /* QBSPaymentFooterView.m in Sources */,
 				BC2C12141DB4F79A000D1D99 /* QBSNewShippingAddressCell.m in Sources */,
