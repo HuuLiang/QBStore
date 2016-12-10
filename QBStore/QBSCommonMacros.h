@@ -11,6 +11,8 @@
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kWidth(width)                     kScreenWidth  * width  / 750.
+#define kHeight(height)                   kScreenHeight * height / 1334.
 
 #define SafelyCallBlock(block,...) \
 if (block) block(__VA_ARGS__);

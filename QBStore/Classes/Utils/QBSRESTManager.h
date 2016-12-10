@@ -87,6 +87,9 @@ DeclareSingletonMethod(sharedManager)
 - (void)request_fetchActivityTicketNoWithTicket:(QBSTicket *)ticket completionHandler:(QBSCompletionHandler)completionHandler;
 - (void)request_queryActivityInstructionWithCompletionHandler:(QBSCompletionHandler)completionHandler;
 
+//SnatchTreasure
+- (void)request_fetchSnatchTreasureCommodityWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+
 @end
 
 extern NSString *const kQBSRESTErrorDomain;

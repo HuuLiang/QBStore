@@ -41,6 +41,7 @@ const NSInteger kQBSRESTNetworkErrorCode = -999;
 
 SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
 
+#pragma mark -- Home
 - (void)request_queryHomeBannerWithCompletionHandler:(QBSCompletionHandler)completionHandler {
     [[QBSHttpClient sharedClient] requestURL:@"banner.service"
                                   withParams:@{@"channelNo":QBS_CHANNEL_NO}
@@ -84,6 +85,8 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
     }];
 }
 
+#pragma mark -- Category
+
 - (void)request_queryCategoriesWithCompletionHandler:(QBSCompletionHandler)completionHandler {
     [[QBSHttpClient sharedClient] requestURL:@"chnlList.service"
                                   withParams:@{@"channelNo":QBS_CHANNEL_NO}
@@ -113,6 +116,9 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         [self onResponseWithObject:obj error:error modelClass:[QBSSubCategoryListResponse class] completionHandler:completionHandler];
     }];
 }
+
+
+#pragma mark -- List
 
 - (void)request_queryCommodityListWithColumnId:(NSNumber *)columnId
                                     columnType:(QBSColumnType)columnType
@@ -168,6 +174,9 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
      }];
 }
 
+
+#pragma mark -- Detail
+
 - (void)request_queryCommodityDetailWithCommodityId:(NSNumber *)commodityId
                                            columnId:(NSNumber *)columnId
                                   completionHandler:(QBSCompletionHandler)completionHandler {
@@ -206,6 +215,8 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
     }];
 }
 
+#pragma mark -- Customer Service
+
 - (void)request_queryCustomerServiceWithCompletionHandler:(QBSCompletionHandler)completionHandler {
     [[QBSHttpClient sharedClient] requestURL:@"contact.service"
                                   withParams:@{@"channelNo":QBS_CHANNEL_NO}
@@ -215,6 +226,9 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         [self onResponseWithObject:obj error:error modelClass:[QBSCustomerServiceList class] completionHandler:completionHandler];
     }];
 }
+
+
+#pragma mark -- User
 
 - (void)request_loignWithUser:(QBSUser *)user completionHandler:(QBSCompletionHandler)completionHandler {
     if (![user isValid]) {
@@ -269,6 +283,9 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         [self onResponseWithObject:obj error:error modelClass:[QBSJSONResponse class] completionHandler:completionHandler];
     }];
 }
+
+
+#pragma mark -- Shipping Address
 
 - (void)request_queryShippingProvincesWithCompletionHandler:(QBSCompletionHandler)completionHandler {
     [[QBSHttpClient sharedClient] requestURL:@"order/queryProvince.service"
@@ -427,6 +444,9 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         [self onResponseWithObject:obj error:error modelClass:[QBSJSONResponse class] completionHandler:completionHandler];
     }];
 }
+
+
+#pragma mark -- Order
 
 - (void)request_queryOrdersInPage:(NSUInteger)page withCompletionHandler:(QBSCompletionHandler)completionHandler {
     if (!QBSCurrentUserIsLogin) {
@@ -640,6 +660,9 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
     }];
 }
 
+
+#pragma mark -- Tickets
+
 - (void)request_queryActivityTicketsWithCompletionHandler:(QBSCompletionHandler)completionHandler {
 //    if (!QBSCurrentUserIsLogin) {
 //        NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTUserNotLoginErrorCode errorMessage:@"用户未登录"];
@@ -694,6 +717,16 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         [self onResponseWithObject:obj error:error modelClass:[QBSTicketInstruction class] completionHandler:completionHandler];
     }];
 }
+
+
+#pragma mark -- SnatchTreasure 夺宝模块
+
+- (void)request_fetchSnatchTreasureCommodityWithCompletionHandler:(QBSCompletionHandler)completionHandler {
+    
+}
+
+
+#pragma mark -- CommonFunction
 
 - (void)onResponseWithObject:(id)object
                        error:(NSError *)error
