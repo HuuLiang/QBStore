@@ -575,7 +575,7 @@ NSString * const ID = @"cycleCell";
     
     if (!self.onlyDisplayText && [imagePath isKindOfClass:[NSString class]]) {
         if ([imagePath hasPrefix:@"http"]) {
-            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imagePath] placeholderImage:self.placeholderImage];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imagePath] placeholderImage:self.placeholderImage options:itemIndex == 0 ? SDWebImageHighPriority : 0];
         } else {
             UIImage *image = [UIImage imageNamed:imagePath];
             if (!image) {

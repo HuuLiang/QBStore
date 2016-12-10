@@ -10,6 +10,9 @@
 #import "QBSMineCell.h"
 #import "QBSTableHeaderFooterView.h"
 #import "QBSMineAvatarView.h"
+#import "QBSSnatchCell.h"
+#import "QBSOrderCell.h"
+#import "QBSOrderStatusCell.h"
 
 #import "QBSShippingAddressListViewController.h"
 #import "QBSOrderListViewController.h"
@@ -17,6 +20,7 @@
 #import "QBSCustomerServiceController.h"
 
 typedef NS_ENUM(NSUInteger, QBSMineSection) {
+    QBSSnatchTreasureSection,//夺宝
     QBSMineOrderSection,
     QBSMineActivitySection,
     QBSMineOtherSection,
@@ -25,18 +29,29 @@ typedef NS_ENUM(NSUInteger, QBSMineSection) {
 
 typedef NS_ENUM(NSUInteger, QBSOrderSectionRow) {
     QBSOrderRow,
-    QBSShippingAddressRow,
+    QBOrderStatusRow,
     QBSOrderSectionRowCount
+};
+
+typedef NS_ENUM(NSUInteger, QBSActivateSectionRow) {
+    QBSDeliveryRow,//收货地址
+    QBSActivateRow,//活动专区
+    QBSActivateSetionCount
 };
 
 typedef NS_ENUM(NSUInteger, QBSOtherSectionRow) {
     QBSContactRow,
+    QBUpdateRow,
     QBSAboutRow,
     QBSOtherSectionRowCount
 };
 
 static NSString *const kMineCellReusableIdentifier = @"MineCellReusableIdentifier";
 static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdentifier";
+static NSString *const kSnatchCellIdentifier = @"QBSSnatchCellIdentifier";//夺宝
+static NSString *const kOrderCellIdentifier = @"QBSOrderCellIdentifier";//订单
+static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifier";//订单状态
+
 
 @interface QBSMineViewController () <UITableViewDelegate,UITableViewDataSource>
 {
@@ -62,6 +77,9 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     _layoutTV.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [_layoutTV registerClass:[QBSMineCell class] forCellReuseIdentifier:kMineCellReusableIdentifier];
     [_layoutTV registerClass:[QBSTableHeaderFooterView class] forHeaderFooterViewReuseIdentifier:kHeaderViewReusableIdentifier];
+    [_layoutTV registerClass:[QBSSnatchCell class] forCellReuseIdentifier:kSnatchCellIdentifier];
+    [_layoutTV registerClass:[QBSOrderCell class] forCellReuseIdentifier:kOrderCellIdentifier];
+    [_layoutTV registerClass:[QBSOrderStatusCell class] forCellReuseIdentifier:kOrderStatusCellIdentifier];
     [self.view addSubview:_layoutTV];
     {
         [_layoutTV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,7 +87,7 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
         }];
     }
     
-    _avatarView = [[QBSMineAvatarView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*0.4)];
+    _avatarView = [[QBSMineAvatarView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*0.48)];
     _avatarView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.66];
     _layoutTV.tableHeaderView = _avatarView;
     
@@ -142,31 +160,67 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == QBSMineOrderSection) {
+    if (section == QBSSnatchTreasureSection){
+        return 1;
+    }else if (section == QBSMineOrderSection) {
         return QBSOrderSectionRowCount;
     } else if (section == QBSMineOtherSection) {
         return QBSOtherSectionRowCount;
     } else if (section == QBSMineActivitySection) {
-        return 1;
+        return QBSActivateSetionCount;
     }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QBSMineCell *cell = [tableView dequeueReusableCellWithIdentifier:kMineCellReusableIdentifier forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    QBSMineCell *cell;
+    if (indexPath.section != QBSSnatchTreasureSection && indexPath.section != QBSMineOrderSection) {
+       cell = [tableView dequeueReusableCellWithIdentifier:kMineCellReusableIdentifier forIndexPath:indexPath];
+       cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     
-    if (indexPath.section == QBSMineOrderSection) {
+//    @weakify(self);
+    if (indexPath.section == QBSSnatchTreasureSection) {//夺宝
+        QBSSnatchCell *snatchCell = [tableView dequeueReusableCellWithIdentifier:kSnatchCellIdentifier forIndexPath:indexPath];
+        snatchCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        snatchCell.snatchAction = ^(id sender){
+//            @strongify(self);//点击夺宝
+            
+        };
+        snatchCell.couponAction = ^ (id sender){
+        //            @strongify(self);//点击优惠券
+        
+        };
+        return snatchCell;
+    }else if (indexPath.section == QBSMineOrderSection) {
         if (indexPath.row == QBSOrderRow) {
-            cell.iconImage = [UIImage imageNamed:@"mine_order_icon"];
-            cell.title = @"我的订单";
-        } else if (indexPath.row == QBSShippingAddressRow) {
-            cell.iconImage = [UIImage imageNamed:@"mine_address_icon"];
-            cell.title = @"收货地址";
+            QBSOrderCell *orderCell = [tableView dequeueReusableCellWithIdentifier:kOrderCellIdentifier forIndexPath:indexPath];
+            orderCell.title = @"我的订单";
+            orderCell.subTitle = @"全部订单";
+        return orderCell;
+        }else if (indexPath.row == QBOrderStatusRow){
+            QBSOrderStatusCell *statusCell = [tableView dequeueReusableCellWithIdentifier:kOrderStatusCellIdentifier forIndexPath:indexPath];
+            
+            statusCell.models = @[[QBSorderStatusModel creatOrderStatusModelWithTitle:@"待付款" image:@"mine_ obligation_icon"],
+                                [QBSorderStatusModel creatOrderStatusModelWithTitle:@"待发货" image:@"mine_wait_ shipments_icon"],
+                                [QBSorderStatusModel creatOrderStatusModelWithTitle:@"待收货" image:@"mine_ wait_ receive_icon"],
+                                [QBSorderStatusModel creatOrderStatusModelWithTitle:@"待评价" image:@"mine_wait_ appraise_icon"]];
+            statusCell.orderStatusAction = ^(UIButton *button){
+//                @strongify(self); //点击发货状态
+                
+            };
+            
+            return statusCell;
         }
+        
     } else if (indexPath.section == QBSMineActivitySection) {
+        if (indexPath.row == QBSDeliveryRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_address_icon"];
+            cell.title  = @"收货地址";
+        }else if(indexPath.row == QBSActivateRow){
         cell.iconImage = [UIImage imageNamed:@"mine_activity_icon"];
-        cell.title = @"活动专区";
+            cell.title = @"活动专区";
+        }
     } else if (indexPath.section == QBSMineOtherSection) {
         if (indexPath.row == QBSContactRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_contact_icon"];
@@ -174,6 +228,9 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
         } else if (indexPath.row == QBSAboutRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_about_icon"];
             cell.title = @"关于我们";
+        }else if (indexPath.row == QBUpdateRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_update_icon"];
+            cell.title = @"检查更新";
         }
     }
     return cell;
@@ -188,6 +245,37 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     return 10;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == QBSSnatchTreasureSection) {
+        return MAX(kScreenHeight*0.09, 52);
+    }else if (indexPath.section == QBSMineOrderSection){
+        if (indexPath.row == QBOrderStatusRow) {
+            return MAX(80, kScreenWidth *0.21);
+        }
+    }
+    
+        return MAX(kScreenHeight*0.09, 44);
+    
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == QBSMineOrderSection) {
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [cell setSeparatorInset:UIEdgeInsetsZero];
+        }
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsZero];
+        }
+    }else {
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [cell setSeparatorInset:UIEdgeInsetsMake(0, 12, 0, 0)];
+        }
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsMake(0, 12, 0, 0)];
+        }
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -195,13 +283,16 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
         if (indexPath.row == QBSOrderRow) {
             QBSOrderListViewController *orderListVC = [[QBSOrderListViewController alloc] init];
             [self.navigationController pushViewController:orderListVC animated:YES];
-        } else if (indexPath.row == QBSShippingAddressRow) {
+        }
+        
+    } else if (indexPath.section == QBSMineActivitySection) {
+        if (indexPath.row == QBSDeliveryRow) {
             QBSShippingAddressListViewController *addressListVC = [[QBSShippingAddressListViewController alloc] init];
             [self.navigationController pushViewController:addressListVC animated:YES];
+        }else if (indexPath.row == QBSActivateRow){
+            QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
+            [self.navigationController pushViewController:ticketsVC animated:YES];
         }
-    } else if (indexPath.section == QBSMineActivitySection) {
-        QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
-        [self.navigationController pushViewController:ticketsVC animated:YES];
     } else if (indexPath.section == QBSMineOtherSection) {
         if (indexPath.row == QBSContactRow) {
             QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];

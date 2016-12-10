@@ -13,6 +13,7 @@
 {
     QBSAvatarButton *_avatarButton;
 //    UIButton *_logoutButton;
+    UIImageView *_backImageView;
 }
 @end
 
@@ -21,13 +22,24 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        _backImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"mine_header_background" ofType:@"jpg"]];
+        [self addSubview:_backImageView];
+        
+        {
+        [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self);
+        }];
+            
+        }
+        _backImageView.userInteractionEnabled = YES;
         _avatarButton = [[QBSAvatarButton alloc] init];
-        [self addSubview:_avatarButton];
+        [_backImageView addSubview:_avatarButton];
         {
             [_avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.centerX.equalTo(self);
-                make.centerY.equalTo(self).offset(15);
-                make.width.equalTo(self).multipliedBy(0.2);
+                make.centerX.equalTo(_backImageView);
+                make.centerY.equalTo(_backImageView).offset(15);
+                make.width.equalTo(_backImageView).multipliedBy(0.2);
                 make.height.equalTo(_avatarButton.mas_width).offset(30);
             }];
         }
