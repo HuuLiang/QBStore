@@ -18,7 +18,7 @@
 #import "QBSOrderListViewController.h"
 #import "QBSTicketsViewController.h"
 #import "QBSCustomerServiceController.h"
-#import "QBSCouponViewController.h"//优惠券
+#import "QBSSnatchTreasureViewController.h"
 
 typedef NS_ENUM(NSUInteger, QBSMineSection) {
     QBSSnatchTreasureSection,//夺宝
@@ -180,18 +180,18 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    @weakify(self);
+//    @weakify(self);
     if (indexPath.section == QBSSnatchTreasureSection) {//夺宝
         QBSSnatchCell *snatchCell = [tableView dequeueReusableCellWithIdentifier:kSnatchCellIdentifier forIndexPath:indexPath];
         snatchCell.selectionStyle = UITableViewCellSelectionStyleNone;
         snatchCell.snatchAction = ^(id sender){
 //            @strongify(self);//点击夺宝
+            QBSSnatchTreasureViewController *snatchVC = [[QBSSnatchTreasureViewController alloc] init];
+            [self.navigationController pushViewController:snatchVC animated:YES];
             
         };
         snatchCell.couponAction = ^ (id sender){
-                    @strongify(self);//点击优惠券
-            QBSCouponViewController *couponVC = [[QBSCouponViewController alloc] init];
-            [self.navigationController pushViewController:couponVC animated:YES];
+        //            @strongify(self);//点击优惠券
         
         };
         return snatchCell;

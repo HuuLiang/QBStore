@@ -30,7 +30,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor blueColor];
+        self.backgroundColor = [UIColor colorWithHexString:@"#ffffff"];
+        self.layer.shadowColor = [[UIColor colorWithHexString:@"#000000"] colorWithAlphaComponent:0.3].CGColor;
+        self.layer.shadowOffset = CGSizeMake(0, 0.5);
+        self.layer.shadowRadius = 0.5f;
+        self.layer.shadowOpacity = 0.5f;
+        self.layer.masksToBounds = NO;
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.contentView.layer.cornerRadius].CGPath;
         
         _commodityImgV = [[UIImageView alloc] init];
         [self.contentView addSubview:_commodityImgV];
@@ -66,6 +72,8 @@
         
         _joinButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_joinButton setTitle:@"立即申请" forState:UIControlStateNormal];
+        [_joinButton setTitleColor:[UIColor colorWithHexString:@"#ffffff"] forState:UIControlStateNormal];
+        _joinButton.backgroundColor = [UIColor colorWithHexString:@"#ff206f"];
         _joinButton.titleLabel.font = [UIFont systemFontOfSize:kWidth(32)];
         _joinButton.layer.cornerRadius = kWidth(10);
         _joinButton.layer.masksToBounds = YES;

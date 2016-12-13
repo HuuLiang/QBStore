@@ -10,4 +10,8 @@
 
 @interface QBSSnatchTreasureHeaderView : UICollectionReusableView
 
+@property (nonatomic) NSString *titleStr;
+@property (nonatomic) NSString *timeStr;
+@property (nonatomic) NSString *dateStr;
+
 @end

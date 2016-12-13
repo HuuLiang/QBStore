@@ -183,6 +183,11 @@
 		BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */; };
 		BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF713021DC86FB100A906AF /* QBSTicketCell.m */; };
 		BCF713061DC8823800A906AF /* QBSTicketCard.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF713051DC8823800A906AF /* QBSTicketCard.m */; };
+		EC71C04F1DFE47330043EF06 /* QBSSnatchTreasureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71C0441DFE47330043EF06 /* QBSSnatchTreasureViewController.m */; };
+		EC71C0501DFE47330043EF06 /* QBSSnatchTreasureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71C0471DFE47330043EF06 /* QBSSnatchTreasureModel.m */; };
+		EC71C0511DFE47330043EF06 /* QBSSantchTreasureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71C04A1DFE47330043EF06 /* QBSSantchTreasureCell.m */; };
+		EC71C0521DFE47330043EF06 /* QBSSnatchTreasureFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71C04C1DFE47330043EF06 /* QBSSnatchTreasureFooterView.m */; };
+		EC71C0531DFE47330043EF06 /* QBSSnatchTreasureHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71C04E1DFE47330043EF06 /* QBSSnatchTreasureHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -531,6 +536,16 @@
 		BCF713041DC8823800A906AF /* QBSTicketCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketCard.h; sourceTree = "<group>"; };
 		BCF713051DC8823800A906AF /* QBSTicketCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketCard.m; sourceTree = "<group>"; };
 		C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QBStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC71C0431DFE47330043EF06 /* QBSSnatchTreasureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSnatchTreasureViewController.h; sourceTree = "<group>"; };
+		EC71C0441DFE47330043EF06 /* QBSSnatchTreasureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSnatchTreasureViewController.m; sourceTree = "<group>"; };
+		EC71C0461DFE47330043EF06 /* QBSSnatchTreasureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSnatchTreasureModel.h; sourceTree = "<group>"; };
+		EC71C0471DFE47330043EF06 /* QBSSnatchTreasureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSnatchTreasureModel.m; sourceTree = "<group>"; };
+		EC71C0491DFE47330043EF06 /* QBSSantchTreasureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSantchTreasureCell.h; sourceTree = "<group>"; };
+		EC71C04A1DFE47330043EF06 /* QBSSantchTreasureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSantchTreasureCell.m; sourceTree = "<group>"; };
+		EC71C04B1DFE47330043EF06 /* QBSSnatchTreasureFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSnatchTreasureFooterView.h; sourceTree = "<group>"; };
+		EC71C04C1DFE47330043EF06 /* QBSSnatchTreasureFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSnatchTreasureFooterView.m; sourceTree = "<group>"; };
+		EC71C04D1DFE47330043EF06 /* QBSSnatchTreasureHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSnatchTreasureHeaderView.h; sourceTree = "<group>"; };
+		EC71C04E1DFE47330043EF06 /* QBSSnatchTreasureHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSnatchTreasureHeaderView.m; sourceTree = "<group>"; };
 		F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -784,6 +799,7 @@
 				BC2C115E1DB4F60D000D1D99 /* Commodity */,
 				BC2C11BC1DB4F73F000D1D99 /* List */,
 				BC2C11D81DB4F79A000D1D99 /* Order */,
+				EC71C0411DFE47320043EF06 /* SnatchTreasure */,
 				BC4000AC1DC0A00A00019EA5 /* Mine */,
 				BC2C11B71DB4F6D9000D1D99 /* Debug */,
 			);
@@ -1394,6 +1410,47 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		EC71C0411DFE47320043EF06 /* SnatchTreasure */ = {
+			isa = PBXGroup;
+			children = (
+				EC71C0421DFE47330043EF06 /* Controller */,
+				EC71C0451DFE47330043EF06 /* Model */,
+				EC71C0481DFE47330043EF06 /* View */,
+			);
+			path = SnatchTreasure;
+			sourceTree = "<group>";
+		};
+		EC71C0421DFE47330043EF06 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC71C0431DFE47330043EF06 /* QBSSnatchTreasureViewController.h */,
+				EC71C0441DFE47330043EF06 /* QBSSnatchTreasureViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC71C0451DFE47330043EF06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC71C0461DFE47330043EF06 /* QBSSnatchTreasureModel.h */,
+				EC71C0471DFE47330043EF06 /* QBSSnatchTreasureModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC71C0481DFE47330043EF06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC71C0491DFE47330043EF06 /* QBSSantchTreasureCell.h */,
+				EC71C04A1DFE47330043EF06 /* QBSSantchTreasureCell.m */,
+				EC71C04B1DFE47330043EF06 /* QBSSnatchTreasureFooterView.h */,
+				EC71C04C1DFE47330043EF06 /* QBSSnatchTreasureFooterView.m */,
+				EC71C04D1DFE47330043EF06 /* QBSSnatchTreasureHeaderView.h */,
+				EC71C04E1DFE47330043EF06 /* QBSSnatchTreasureHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1561,6 +1618,8 @@
 				BC2C11851DB4F60D000D1D99 /* QBSCommodityCell.m in Sources */,
 				BC69AF0A1DC7305000BA49F3 /* QBSHomeCommodityCell.m in Sources */,
 				BC2C121A1DB4F79A000D1D99 /* QBSOrderManifestCell.m in Sources */,
+				EC71C0521DFE47330043EF06 /* QBSSnatchTreasureFooterView.m in Sources */,
+				EC71C0511DFE47330043EF06 /* QBSSantchTreasureCell.m in Sources */,
 				BC2C10751DB4DD0B000D1D99 /* NSArray+Utilities.m in Sources */,
 				BC2C11831DB4F60D000D1D99 /* QBSCommodityDetail.m in Sources */,
 				BC2C11801DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.m in Sources */,
@@ -1580,6 +1639,7 @@
 				BC2C11381DB4E11D000D1D99 /* QBSCartViewController.m in Sources */,
 				BC2C11AE1DB4F6A3000D1D99 /* QBSBannerCell.m in Sources */,
 				BC2C12091DB4F79A000D1D99 /* QBSOrderCommentViewController.m in Sources */,
+				EC71C0501DFE47330043EF06 /* QBSSnatchTreasureModel.m in Sources */,
 				BC2C10C31DB4DFA0000D1D99 /* SDCollectionViewCell.m in Sources */,
 				BC2C108C1DB4DE35000D1D99 /* DBTableVersion.m in Sources */,
 				BC2C121D1DB4F79A000D1D99 /* QBSRegionPicker.m in Sources */,
@@ -1638,6 +1698,7 @@
 				B32A6FD91DFBF23F00637361 /* QBSOrderCell.m in Sources */,
 				BC2C10E71DB4E073000D1D99 /* QBSPhoneTextField.m in Sources */,
 				BC2C11811DB4F60D000D1D99 /* QBSCommodityDetailViewController.m in Sources */,
+				EC71C04F1DFE47330043EF06 /* QBSSnatchTreasureViewController.m in Sources */,
 				BC2C11211DB4E0D2000D1D99 /* QBSCartButton.m in Sources */,
 				B32A6FD61DFBE1AD00637361 /* QBSSnatchCell.m in Sources */,
 				BC2C11191DB4E0D2000D1D99 /* QBSBanner.m in Sources */,
@@ -1648,6 +1709,7 @@
 				BC2C10791DB4DD0B000D1D99 /* NSObject+Properties.m in Sources */,
 				BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */,
 				BC2C111D1DB4E0D2000D1D99 /* QBSCommodityTag.m in Sources */,
+				EC71C0531DFE47330043EF06 /* QBSSnatchTreasureHeaderView.m in Sources */,
 				BC2C11181DB4E0D2000D1D99 /* QBSNavigationController.m in Sources */,
 				BC2C10A11DB4DED2000D1D99 /* QBSUIHelper.m in Sources */,
 				BC2C12161DB4F79A000D1D99 /* QBSOrderAddressCell.m in Sources */,
