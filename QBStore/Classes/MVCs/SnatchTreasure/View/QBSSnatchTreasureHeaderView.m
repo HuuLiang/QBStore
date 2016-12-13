@@ -36,7 +36,7 @@
         
         _dateLabel = [[UILabel alloc] init];
         _dateLabel.font = [UIFont systemFontOfSize:kWidth(26)];
-        _dateLabel.textColor = [UIColor colorWithHexString:@"#555555"];
+        _dateLabel.textColor = [UIColor colorWithHexString:@"#000e00"];
         [self addSubview:_dateLabel];
         
         {
@@ -60,6 +60,28 @@
         }
     }
     return self;
+}
+
+- (void)setTitleStr:(NSString *)titleStr {
+    _titleLabel.text = titleStr;
+}
+
+- (void)setTimeStr:(NSString *)timeStr {
+    _timeLabel.text = [NSString stringWithFormat:@"第%@期 开奖日期:",timeStr];
+}
+
+- (void)setDateStr:(NSString *)dateStr {
+    NSDateFormatter *dateFormatterA = [[NSDateFormatter alloc] init];
+    [dateFormatterA setDateFormat:@"yyyyMMddHHmm"];
+    NSDateFormatter *dateFormatterB = [[NSDateFormatter alloc] init];
+    [dateFormatterB setDateFormat:@"MM月dd日HH:mm"];
+    NSString *dateString =  [dateFormatterB stringFromDate:[dateFormatterA dateFromString:dateStr]];
+    NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc] initWithString:dateString];
+    NSRange rangA = [dateString rangeOfString:@"月"];
+    NSRange rangB = [dateString rangeOfString:@"日"];
+    [attriString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#555555"] range:rangA];
+    [attriString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#555555"] range:rangB];
+    _dateLabel.attributedText = attriString;
 }
 
 @end
