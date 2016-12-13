@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31294B5AFDA0E45286F5CD27 /* libPods-QBStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */; };
+		B323BE7A1DFFE5F000AE5CAD /* QBSCouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B323BE791DFFE5EF00AE5CAD /* QBSCouponViewController.m */; };
+		B323BE7D1DFFE61600AE5CAD /* QBSCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B323BE7C1DFFE61600AE5CAD /* QBSCouponCell.m */; };
 		B32A6FC81DFBADB100637361 /* QBSLayoutViewCtroller.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FC71DFBADB100637361 /* QBSLayoutViewCtroller.m */; };
 		B32A6FCB1DFBAE6C00637361 /* UITableView+Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FCA1DFBAE6C00637361 /* UITableView+Separator.m */; };
 		B32A6FD31DFBDE5800637361 /* mine_header_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B32A6FD21DFBDE5800637361 /* mine_header_background.jpg */; };
@@ -185,6 +187,10 @@
 
 /* Begin PBXFileReference section */
 		7E78B62C576C3A581856D757 /* Pods-QBStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.release.xcconfig"; sourceTree = "<group>"; };
+		B323BE781DFFE5EF00AE5CAD /* QBSCouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCouponViewController.h; sourceTree = "<group>"; };
+		B323BE791DFFE5EF00AE5CAD /* QBSCouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCouponViewController.m; sourceTree = "<group>"; };
+		B323BE7B1DFFE61600AE5CAD /* QBSCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCouponCell.h; sourceTree = "<group>"; };
+		B323BE7C1DFFE61600AE5CAD /* QBSCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCouponCell.m; sourceTree = "<group>"; };
 		B32A6FC61DFBADB100637361 /* QBSLayoutViewCtroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSLayoutViewCtroller.h; sourceTree = "<group>"; };
 		B32A6FC71DFBADB100637361 /* QBSLayoutViewCtroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSLayoutViewCtroller.m; sourceTree = "<group>"; };
 		B32A6FC91DFBAE6C00637361 /* UITableView+Separator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Separator.h"; sourceTree = "<group>"; };
@@ -1327,6 +1333,8 @@
 				BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */,
 				BCDC0D9C1DD48F3000BC8024 /* QBSTicketInstructionViewController.h */,
 				BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */,
+				B323BE781DFFE5EF00AE5CAD /* QBSCouponViewController.h */,
+				B323BE791DFFE5EF00AE5CAD /* QBSCouponViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1356,6 +1364,8 @@
 				BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */,
 				BC4135BA1DD713FA0020C6E1 /* QBSTicketsPromptionView.h */,
 				BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */,
+				B323BE7B1DFFE61600AE5CAD /* QBSCouponCell.h */,
+				B323BE7C1DFFE61600AE5CAD /* QBSCouponCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1559,6 +1569,7 @@
 				BC2C10C01DB4DFA0000D1D99 /* TAAnimatedDotView.m in Sources */,
 				BC2C11D61DB4F73F000D1D99 /* QBSSortBar.m in Sources */,
 				BC2C112A1DB4E0D2000D1D99 /* QBSTableHeaderFooterView.m in Sources */,
+				B323BE7D1DFFE61600AE5CAD /* QBSCouponCell.m in Sources */,
 				BC2C11271DB4E0D2000D1D99 /* QBSPaymentSheet.m in Sources */,
 				BC2C11881DB4F60D000D1D99 /* QBSCommodityDetailShoppingBar.m in Sources */,
 				BC2C11511DB4E9B8000D1D99 /* QBSSubCategoryList.m in Sources */,
@@ -1663,6 +1674,7 @@
 				BC2C111E1DB4E0D2000D1D99 /* QBSFeaturedCommodity.m in Sources */,
 				BC2C120D1DB4F79A000D1D99 /* QBSOrderViewController.m in Sources */,
 				BC34E3781DC0C0A200CB1189 /* QBSTabBarController.m in Sources */,
+				B323BE7A1DFFE5F000AE5CAD /* QBSCouponViewController.m in Sources */,
 				BC2C11391DB4E11D000D1D99 /* QBSCartCommodity.m in Sources */,
 				BCF712FD1DC864B700A906AF /* UIImageView+QBWebCache.m in Sources */,
 				BC2C11B61DB4F6A3000D1D99 /* QBSHomeActivityRowCell.m in Sources */,
