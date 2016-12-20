@@ -8,6 +8,8 @@
 
 #import "QBSCouponViewController.h"
 #import "QBSCouponCell.h"
+#import "QBSCouponPopView.h"
+#import "QBSCouponPopViewCtroller.h"
 
 static NSString *const kCouponCellIdentifier = @"qbscouponcell_identifier";
 
@@ -15,10 +17,11 @@ static NSString *const kCouponCellIdentifier = @"qbscouponcell_identifier";
 {
     UITableView *_layoutTableView;
 }
-
+@property (nonatomic,retain) QBSCouponPopViewCtroller *popView;
 @end
 
 @implementation QBSCouponViewController
+DefineLazyPropertyInitialization(QBSCouponPopViewCtroller, popView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +35,13 @@ static NSString *const kCouponCellIdentifier = @"qbscouponcell_identifier";
     [_layoutTableView registerClass:[QBSCouponCell class] forCellReuseIdentifier:kCouponCellIdentifier];
     _layoutTableView.tableFooterView = [UIView new];
     [self.view addSubview:_layoutTableView];
-    
+    [self.popView popCouponViewInView:self.view withTicketPrice:110];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+  
 }
 
 - (void)didReceiveMemoryWarning {
