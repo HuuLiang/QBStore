@@ -249,6 +249,8 @@ DefineLazyPropertyInitialization(NSMutableArray, tagLabels)
     
     [self.tagLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.text = tags[idx];
+        obj.textColor = [UIColor featuredColorWithIndex:idx];
+        obj.layer.borderColor = obj.textColor.CGColor;
     }];
     
     [self setNeedsLayout];
