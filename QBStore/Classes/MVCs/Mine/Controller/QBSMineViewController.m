@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, QBSMineSection) {
     QBSMineOrderSection,
     QBSMineActivitySection,
     QBSMineOtherSection,
+    QBSLastSection = QBSMineOtherSection,
     QBSMineSectionCount
 };
 
@@ -74,9 +75,8 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
     _layoutTV.backgroundColor = self.view.backgroundColor;
     _layoutTV.delegate = self;
     _layoutTV.dataSource = self;
-    _layoutTV.rowHeight = MAX(kScreenHeight*0.09, 44);
-    _layoutTV.sectionFooterHeight = 0;
     _layoutTV.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    _layoutTV.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
     [_layoutTV registerClass:[QBSMineCell class] forCellReuseIdentifier:kMineCellReusableIdentifier];
     [_layoutTV registerClass:[QBSTableHeaderFooterView class] forHeaderFooterViewReuseIdentifier:kHeaderViewReusableIdentifier];
     [_layoutTV registerClass:[QBSSnatchCell class] forCellReuseIdentifier:kSnatchCellIdentifier];
@@ -89,7 +89,7 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
         }];
     }
     
-    _avatarView = [[QBSMineAvatarView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*0.48)];
+    _avatarView = [[QBSMineAvatarView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*0.46)];
     _avatarView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.66];
     _layoutTV.tableHeaderView = _avatarView;
     
@@ -251,35 +251,25 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
     return 10;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == QBSSnatchTreasureSection) {
-        return MAX(kScreenHeight*0.09, 52);
-    }else if (indexPath.section == QBSMineOrderSection){
-        if (indexPath.row == QBOrderStatusRow) {
-            return MAX(80, kScreenWidth *0.21);
-        }
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == QBSLastSection) {
+        return 10;
     }
-    
-        return MAX(kScreenHeight*0.09, 44);
-    
+    return 0.1;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == QBSMineOrderSection) {
-        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-            [cell setSeparatorInset:UIEdgeInsetsZero];
-        }
-        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-            [cell setLayoutMargins:UIEdgeInsetsZero];
-        }
-    }else {
-        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-            [cell setSeparatorInset:UIEdgeInsetsMake(0, 12, 0, 0)];
-        }
-        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-            [cell setLayoutMargins:UIEdgeInsetsMake(0, 12, 0, 0)];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == QBSSnatchTreasureSection) {
+        return MAX(kScreenHeight*0.078, 44);
+    } else if (indexPath.section == QBSMineOrderSection){
+        if (indexPath.row == QBSOrderRow) {
+            return 44;
+        } else if (indexPath.row == QBOrderStatusRow) {
+            return MIN(kScreenHeight*0.146, 88);
         }
     }
+    
+    return MAX(kScreenHeight*0.07, 44);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
