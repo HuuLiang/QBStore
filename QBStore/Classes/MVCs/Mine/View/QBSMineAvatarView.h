@@ -14,6 +14,7 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSURL *imageURL;
 @property (nonatomic,copy) QBSAction avatarAction;
+@property (nonatomic) BOOL showTitleAsButtonStyle;
 
 //@property (nonatomic) BOOL showLogoutButton;
 //@property (nonatomic,copy) QBSAction logoutAction;
