@@ -163,6 +163,7 @@
 		BC4000B01DC0A02F00019EA5 /* QBSMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */; };
 		BC4000B41DC0B33400019EA5 /* QBSMineAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000B31DC0B33400019EA5 /* QBSMineAvatarView.m */; };
 		BC4000B71DC0B59900019EA5 /* QBSMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4000B61DC0B59900019EA5 /* QBSMineCell.m */; };
+		BC4028531E0A836900A173DA /* QBStoreSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4028521E0A836900A173DA /* QBStoreSystem.m */; };
 		BC4135B91DD712E00020C6E1 /* ticket_promption.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4135B81DD712E00020C6E1 /* ticket_promption.jpg */; };
 		BC4135BC1DD713FA0020C6E1 /* QBSTicketsPromptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */; };
 		BC4E30091DCA0034001CD8D6 /* QBSTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E30081DCA0034001CD8D6 /* QBSTicket.m */; };
@@ -502,6 +503,8 @@
 		BC4000B31DC0B33400019EA5 /* QBSMineAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSMineAvatarView.m; sourceTree = "<group>"; };
 		BC4000B51DC0B59900019EA5 /* QBSMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSMineCell.h; sourceTree = "<group>"; };
 		BC4000B61DC0B59900019EA5 /* QBSMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSMineCell.m; sourceTree = "<group>"; };
+		BC4028511E0A836900A173DA /* QBStoreSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBStoreSystem.h; sourceTree = "<group>"; };
+		BC4028521E0A836900A173DA /* QBStoreSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBStoreSystem.m; sourceTree = "<group>"; };
 		BC4135B81DD712E00020C6E1 /* ticket_promption.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ticket_promption.jpg; sourceTree = "<group>"; };
 		BC4135BA1DD713FA0020C6E1 /* QBSTicketsPromptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketsPromptionView.h; sourceTree = "<group>"; };
 		BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketsPromptionView.m; sourceTree = "<group>"; };
@@ -727,6 +730,8 @@
 				BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */,
 				BC2C109A1DB4DED2000D1D99 /* QBSWeChatHelper.h */,
 				BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */,
+				BC4028511E0A836900A173DA /* QBStoreSystem.h */,
+				BC4028521E0A836900A173DA /* QBStoreSystem.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1663,6 +1668,7 @@
 				BC2C11AD1DB4F6A3000D1D99 /* QBSActivityHeaderView.m in Sources */,
 				BC2C107C1DB4DD0B000D1D99 /* UIColor+hexColor.m in Sources */,
 				BC2C107B1DB4DD0B000D1D99 /* UIColor+FeaturedColor.m in Sources */,
+				BC4028531E0A836900A173DA /* QBStoreSystem.m in Sources */,
 				BC2C107D1DB4DD0B000D1D99 /* UIImage+color.m in Sources */,
 				BC2C108B1DB4DE35000D1D99 /* DBPersistence.m in Sources */,
 				BC2C11D21DB4F73F000D1D99 /* QBSCommodityList.m in Sources */,

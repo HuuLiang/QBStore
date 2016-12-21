@@ -30,6 +30,7 @@
 #import "QBSCommonTypes.h"
 #import "QBSCommonFunctions.h"
 #import "QBSConfig.h"
+#import "QBStoreSystem.h"
 
 #import "UIColor+hexColor.h"
 #import "UIColor+FeaturedColor.h"
