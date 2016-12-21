@@ -16,12 +16,12 @@ static const CGFloat kDefaultCellHeight = 100;
 {
     UITableView *_layoutTV;
 }
-@property (nonatomic,retain) NSMutableDictionary<NSIndexPath *, NSNumber *> *cellHeights;
+@property (nonatomic,retain) NSMutableDictionary<NSIndexPath *, UIImage *> *images;
 @end
 
 @implementation QBSCommodityDetailDescriptionViewController
 
-DefineLazyPropertyInitialization(NSMutableDictionary, cellHeights)
+DefineLazyPropertyInitialization(NSMutableDictionary, images)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,18 +46,54 @@ DefineLazyPropertyInitialization(NSMutableDictionary, cellHeights)
 - (void)setImageInfos:(NSArray<QBSCommodityImageInfo *> *)imageInfos {
     _imageInfos = imageInfos;
     
+    UIImage *placeholderImage = [UIImage imageNamed:@"commodity_placeholder_2_1"];
+    NSMutableDictionary<NSIndexPath *, UIImage *> *addedPlaceholderImages = [NSMutableDictionary dictionary];
     for (NSUInteger i = 0; i < imageInfos.count; ++i) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        [self.cellHeights setObject:@(kDefaultCellHeight) forKey:indexPath];
+        [addedPlaceholderImages setObject:placeholderImage forKey:[NSIndexPath indexPathForRow:i inSection:0]];
     }
     
+    [self.images enumerateKeysAndObjectsUsingBlock:^(NSIndexPath * _Nonnull key, UIImage * _Nonnull obj, BOOL * _Nonnull stop) {
+        [addedPlaceholderImages removeObjectForKey:key];
+    }];
+    
+    [self.images addEntriesFromDictionary:addedPlaceholderImages];
     [_layoutTV reloadData];
+    
+    @weakify(self);
+    [imageInfos enumerateObjectsUsingBlock:^(QBSCommodityImageInfo * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:obj.imgUrl]
+                                                        options:0
+                                                       progress:nil
+                                                      completed:^(UIImage *image,
+                                                                  NSError *error,
+                                                                  SDImageCacheType cacheType,
+                                                                  BOOL finished,
+                                                                  NSURL *imageURL)
+        {
+            @strongify(self);
+            if (!self) {
+                return ;
+            }
+            
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
+            
+            if (!image) {
+                image = [UIImage imageNamed:@"commodity_error_load"];
+            }
+            [self.images setObject:image forKey:indexPath];
+            
+            if ([self->_layoutTV cellForRowAtIndexPath:indexPath]) {
+                [self->_layoutTV reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            }
+        }];
+    }];
 }
 
 - (CGFloat)contentHeight {
     __block CGFloat contentHeight = 0;
-    [self.cellHeights enumerateKeysAndObjectsUsingBlock:^(NSIndexPath * _Nonnull key, NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
-        contentHeight += obj.floatValue;
+    [self.images enumerateKeysAndObjectsUsingBlock:^(NSIndexPath * _Nonnull key, UIImage * _Nonnull obj, BOOL * _Nonnull stop) {
+        CGFloat imageHeight = obj.size.width == 0 ? 0 : CGRectGetWidth(self.view.bounds) * obj.size.height / obj.size.width;
+        contentHeight += imageHeight;
     }];
     
     if (contentHeight == 0) {
@@ -88,46 +124,24 @@ DefineLazyPropertyInitialization(NSMutableDictionary, cellHeights)
         cell.backgroundView.clipsToBounds = YES;
     }
     
-    if (indexPath.row < self.imageInfos.count) {
-        @weakify(self);
-        const CGFloat fullWidth = CGRectGetWidth(tableView.bounds);
-        UIImageView *imageView = (UIImageView *)cell.backgroundView;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageInfos[indexPath.row].imgUrl]
-                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
-        {
-            @strongify(self);
-            if (!self) {
-                return ;
-            }
-            
-            if (image) {
-                NSIndexPath *cellIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
-                NSNumber *cellHeight = [self.cellHeights objectForKey:cellIndexPath];
-                const CGFloat newHeight = image.size.width == 0 ? 0 : fullWidth * image.size.height / image.size.width;
-                if (cellHeight.floatValue != newHeight) {
-                    [self.cellHeights setObject:@(newHeight)
-                                         forKey:cellIndexPath];
-                    if ([self->_layoutTV cellForRowAtIndexPath:cellIndexPath]) {
-                        [self->_layoutTV reloadRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationNone];
-                    }
-                    
-                    SafelyCallBlock(self.contentHeightChangedAction, self);
-                }
-                
-            }
-        }];
-    }
-    
+    UIImageView *imageView = (UIImageView *)cell.backgroundView;
+    NSIndexPath *cellIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
+    UIImage *image = self.images[cellIndexPath];
+    imageView.image = image;
+
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    const CGFloat fullWidth = CGRectGetWidth(self.view.bounds);
+    
     NSIndexPath *cellIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
-    NSNumber *cellHeight = self.cellHeights[cellIndexPath];
-    return cellHeight.floatValue;
+    UIImage *image = self.images[cellIndexPath];
+    if (!image || image.size.width == 0) {
+        return 0;
+    }
+    
+    return fullWidth * image.size.height / image.size.width;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kDefaultCellHeight;
-}
 @end
