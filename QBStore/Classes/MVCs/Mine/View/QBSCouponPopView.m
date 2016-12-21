@@ -14,6 +14,7 @@
     UIButton *_closeBtn;
     UIButton *_getTicketBtn;
     UILabel *_priceLabel;
+    UILabel *_titleLabel;
 }
 
 @end
@@ -79,20 +80,20 @@
         [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(_getTicketBtn.mas_top).mas_offset(kWidth(-80));
             make.left.mas_equalTo(_bacImageView).mas_offset(kWidth(122));
-            make.size.mas_equalTo(CGSizeMake(kWidth(175), kWidth(140)));
+            make.size.mas_equalTo(CGSizeMake(kWidth(195), kWidth(140)));
         }];
         
         }
         
-        UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.font = [UIFont systemFontOfSize:kWidth(34)];
-        titleLabel.text = @"新人专享大礼包";
-        titleLabel.textColor = [UIColor blackColor];
-        titleLabel.numberOfLines = 2;
-        titleLabel.textAlignment = NSTextAlignmentLeft;
-        [_bacImageView addSubview:titleLabel];
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.font = [UIFont systemFontOfSize:kWidth(34)];
+        _titleLabel.text = @"新人专享大礼包";
+        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.numberOfLines = 2;
+        _titleLabel.textAlignment = NSTextAlignmentLeft;
+        [_bacImageView addSubview:_titleLabel];
         {
-        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_priceLabel.mas_right).mas_offset(kWidth(10.));
             make.centerY.mas_equalTo(_priceLabel);
 //            make.right.mas_equalTo(_bacImageView).mas_offset(kWidth(-124));
@@ -104,6 +105,10 @@
     return self;
 }
 
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    _titleLabel.text = title;
+}
 
 - (void)setPrice:(NSString *)price {
     _price = price;
@@ -113,5 +118,21 @@
     _priceLabel.attributedText = str;
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *view = [super hitTest:point withEvent:event];
+    
+    if (!view) {
+        return view;
+    }
+    CGRect buttonFrame = _closeBtn.frame;
+    if (CGRectIsEmpty(buttonFrame)) {
+        return view;
+    }
+    CGRect expandedFrame = CGRectInset(buttonFrame, -10, -10);
+    if (CGRectContainsPoint(expandedFrame, point)) {
+        return _closeBtn;
+    }
+    return view;
+}
 
 @end

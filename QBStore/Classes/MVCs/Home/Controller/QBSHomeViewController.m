@@ -30,6 +30,8 @@
 #import "QBSFeaturedCommodity.h"
 #import "QBSCartCommodity.h"
 #import "QBSCommodityTag.h"
+#import "QBSCouponPopModel.h"
+#import "QBSCouponPopViewCtroller.h"
 
 typedef NS_ENUM(NSUInteger, QBSHomeSection) {
     QBSBannerSection,
@@ -75,6 +77,7 @@ static CGFloat kBannerImageScale = 7./3.;
 @property (nonatomic,retain) QBSFeaturedCommodityList *currentActivity;
 
 @property (nonatomic,retain) NSMutableDictionary<NSNumber *,NSDate *> *featuredCommodityEndDates;
+
 @end
 
 @implementation QBSHomeViewController
@@ -88,6 +91,9 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (!QBSCurrentUserIsLogin)
+        [self loadCouponGiftPack];
+    
     self.navigationItem.title = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -119,6 +125,29 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
 }
 
 #pragma mark - Data Loading
+/**
+ 优惠券弹窗
+ */
+- (void)loadCouponGiftPack {
+    @weakify(self);
+    [[QBSRESTManager sharedManager] request_fetchCouponGiftPackPopModelWithCompletionHandler:^(id obj, NSError *error) {
+        @strongify(self);
+        if (!self) {
+            return ;
+        }
+        
+        QBSCouponPopModel *couponModel = obj;
+        QBSConponInfo *info = couponModel.giftPackInfo;
+        
+        if (info.amount) {
+       dispatch_async(dispatch_get_main_queue(), ^{
+           
+           [[[QBSCouponPopViewCtroller alloc] init] popCouponViewInViewCtroller:self withCouponPopModel:info];
+       });
+        }
+    }];
+
+}
 
 - (void)loadBanners {
     @weakify(self);

@@ -89,6 +89,13 @@ DeclareSingletonMethod(sharedManager)
 
 //SnatchTreasure
 - (void)request_fetchSnatchTreasureCommodityWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+//CouponGiftPack 优惠券
+- (void)request_fetchCouponGiftPackPopModelWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+- (void)request_getCouponGiftPackWithGiftPackId:(NSNumber *)giftPackId completetionHandler:(QBSCompletionHandler)completionHandler;
+/**
+ 优惠券列表
+ */
+- (void)request_fetchCouponGiftPackWithCompleteHandler:(QBSCompletionHandler)completeHandler;
 
 @end
 

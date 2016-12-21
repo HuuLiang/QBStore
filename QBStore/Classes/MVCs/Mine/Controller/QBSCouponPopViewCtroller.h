@@ -7,8 +7,9 @@
 //
 
 #import "QBSBaseViewController.h"
+@class QBSConponInfo;
 
 @interface QBSCouponPopViewCtroller : QBSBaseViewController
-- (void)popCouponViewInView:(UIView *)view withTicketPrice:(NSInteger)price;
+- (void)popCouponViewInViewCtroller:(UIViewController *)viewCtroller withCouponPopModel:(QBSConponInfo *)info;
 
 @end

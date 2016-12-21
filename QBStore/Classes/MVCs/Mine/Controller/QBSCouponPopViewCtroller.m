@@ -8,8 +8,12 @@
 
 #import "QBSCouponPopViewCtroller.h"
 #import "QBSCouponPopView.h"
+#import "QBSCouponPopModel.h"
 
 @interface QBSCouponPopViewCtroller ()
+{
+    QBSConponInfo *_couponInfo;
+}
 @property (nonatomic,retain) QBSCouponPopView *popView;
 
 @end
@@ -46,17 +50,38 @@
  */
 - (void)fetchCouponTicketModel{
 //    [_popView beginLoading];
+    if (!QBSCurrentUserIsLogin)
+      [QBSUIHelper presentLoginViewControllerIfNotLoginInViewController:self withCompletionHandler:^(BOOL success) {
+          if (success) {
+              [[QBSRESTManager sharedManager] request_getCouponGiftPackWithGiftPackId:_couponInfo.giftPackId completetionHandler:^(id obj, NSError *error) {
+                  if ([obj isKindOfClass:[NSDictionary class]]) {
+                      NSDictionary *valueDic = obj;
+                      NSString *value = valueDic.allValues.firstObject;
+                      if (value.integerValue == 200) {
+                          [[QBSHUDManager sharedManager] showSuccess:@"领取成功"];
+                      }else if (value.integerValue == 2021) {
+                              [[QBSHUDManager sharedManager] showSuccess:@"您已经领取过"];
+                      }else{//2022 礼包id不合法
+                       [[QBSHUDManager sharedManager] showError:@"领取失败"];
+                      }
+                  }
+              }];
+          }
+      }];
 
 }
 
-- (void)popCouponViewInView:(UIView *)view withTicketPrice:(NSInteger)price{
+- (void)popCouponViewInViewCtroller:(UIViewController *)viewCtroller withCouponPopModel:(QBSConponInfo *)info{
     if (self.view.superview) {
         [self.view removeFromSuperview];
     }
+    _couponInfo = info;
+    [viewCtroller addChildViewController:self];
     self.popView.alpha = 0;
-    [view addSubview:self.popView];
-    [self.popView willMoveToWindow:view.window];
-    self.popView.price = [NSString stringWithFormat:@"%ld",price];
+    [viewCtroller.view addSubview:self.popView];
+    [self.popView willMoveToWindow:viewCtroller.view.window];
+    self.popView.price = [NSString stringWithFormat:@"%ld",info.amount.integerValue/100];
+    self.popView.title = info.name;
     [UIView animateWithDuration:0.5 animations:^{
         self.popView.alpha = 1;
     }];
