@@ -10,4 +10,6 @@
 
 @interface QBSAvatarButton : UIButton
 
+@property (nonatomic) BOOL showTitleAsButtonStyle;  // Default is YES.
+
 @end

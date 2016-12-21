@@ -24,21 +24,20 @@
     if (self) {
         
         _backImageView = [[UIImageView alloc] initWithImage:[UIImage QBS_imageWithResourcePath:@"mine_header_background" ofType:@"jpg"]];
-        [self addSubview:_backImageView];
-        
-        {
-        [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(self);
-        }];
-            
-        }
         _backImageView.userInteractionEnabled = YES;
+        [self addSubview:_backImageView];
+        {
+            [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.mas_equalTo(self);
+            }];
+        }
+        
         _avatarButton = [[QBSAvatarButton alloc] init];
         [_backImageView addSubview:_avatarButton];
         {
             [_avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerX.equalTo(_backImageView);
-                make.centerY.equalTo(_backImageView).offset(15);
+                make.centerY.equalTo(_backImageView);
                 make.width.equalTo(_backImageView).multipliedBy(0.2);
                 make.height.equalTo(_avatarButton.mas_width).offset(30);
             }];
@@ -76,6 +75,14 @@
 - (void)setPlaceholderImage:(UIImage *)placeholderImage {
     _placeholderImage = placeholderImage;
     [_avatarButton setImage:placeholderImage forState:UIControlStateNormal];
+}
+
+- (BOOL)showTitleAsButtonStyle {
+    return _avatarButton.showTitleAsButtonStyle;
+}
+
+- (void)setShowTitleAsButtonStyle:(BOOL)showTitleAsButtonStyle {
+    _avatarButton.showTitleAsButtonStyle = showTitleAsButtonStyle;
 }
 //
 //- (void)setShowLogoutButton:(BOOL)showLogoutButton {

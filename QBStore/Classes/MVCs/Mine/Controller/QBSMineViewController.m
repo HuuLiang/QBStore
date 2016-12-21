@@ -130,9 +130,11 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
         _avatarView.title = [QBSUser currentUser].nickName;
         _avatarView.placeholderImage = [UIImage imageNamed:@"avatar_placeholder"];
         _avatarView.imageURL = [NSURL URLWithString:[QBSUser currentUser].logoUrl];
+        _avatarView.showTitleAsButtonStyle = NO;
     } else {
         _avatarView.placeholderImage = [UIImage imageNamed:@"avatar_placeholder"];
         _avatarView.title = @"点击登录";
+        _avatarView.showTitleAsButtonStyle = YES;
     }
 }
 

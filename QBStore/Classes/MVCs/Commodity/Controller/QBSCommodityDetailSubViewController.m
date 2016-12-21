@@ -154,10 +154,10 @@ static const CGFloat kSegmentedControlHeight = 44;
         }
     }];
     
-    if (currentSection == QBSSegmentedSectionDescription) {
-        QBSCommodityDetailDescriptionViewController *descVC = (QBSCommodityDetailDescriptionViewController *)currentViewController;
-        descVC.imageInfos = self.commodityDetail.detailList;
-    }
+//    if (currentSection == QBSSegmentedSectionDescription) {
+//        QBSCommodityDetailDescriptionViewController *descVC = (QBSCommodityDetailDescriptionViewController *)currentViewController;
+//        descVC.imageInfos = self.commodityDetail.detailList;
+//    }
 }
 
 - (void)setCommodityDetail:(QBSCommodityDetail *)commodityDetail {
