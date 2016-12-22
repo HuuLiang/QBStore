@@ -91,7 +91,7 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (!QBSCurrentUserIsLogin)
+    if (!QBSCurrentUserIsLogin && [[QBStoreSystem sharedSystem]launchSequence] <=3)
         [self loadCouponGiftPack];
     
     self.navigationItem.title = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
