@@ -9,7 +9,7 @@
 #import "QBSCouponViewController.h"
 #import "QBSCouponCell.h"
 #import "QBSCouponPopView.h"
-#import "QBSCouponPopViewCtroller.h"
+#import "QBSCouponGiftPack.h"
 
 static NSString *const kCouponCellIdentifier = @"qbscouponcell_identifier";
 
@@ -17,11 +17,12 @@ static NSString *const kCouponCellIdentifier = @"qbscouponcell_identifier";
 {
     UITableView *_layoutTableView;
 }
-@property (nonatomic,retain) QBSCouponPopViewCtroller *popView;
+
+@property (nonatomic,retain) NSArray <QBSCouponGiftInfo *>*couponInfos;
+
 @end
 
 @implementation QBSCouponViewController
-DefineLazyPropertyInitialization(QBSCouponPopViewCtroller, popView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,14 +36,34 @@ DefineLazyPropertyInitialization(QBSCouponPopViewCtroller, popView)
     [_layoutTableView registerClass:[QBSCouponCell class] forCellReuseIdentifier:kCouponCellIdentifier];
     _layoutTableView.tableFooterView = [UIView new];
     [self.view addSubview:_layoutTableView];
-    [self.popView popCouponViewInView:self.view withTicketPrice:110];
+//    [self.popView popCouponViewInView:self.view withTicketPrice:110];
+    @weakify(self);
+    [_layoutTableView QBS_addPullToRefreshWithHandler:^{
+        @strongify(self);
+        [self loadCouponModel];
+    }];
+    [_layoutTableView QBS_triggerPullToRefresh];
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-  
+- (void)loadCouponModel {
+    @weakify(self);
+    [[QBSRESTManager sharedManager] request_fetchCouponGiftPackWithCompleteHandler:^(id obj, NSError *error) {
+        @strongify(self);
+        if (!self) {
+            return ;
+        }
+        
+        if (obj) {
+            QBSCouponGiftPack *couponModel = obj;
+            self.couponInfos = couponModel.couponList;
+            [self ->_layoutTableView reloadData];
+            [self ->_layoutTableView QBS_endPullToRefresh];
+        }
+    }];
+
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -52,38 +73,34 @@ DefineLazyPropertyInitialization(QBSCouponPopViewCtroller, popView)
 #pragma mark UITableViewDataSource UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.couponInfos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QBSCouponCell *cell = [tableView dequeueReusableCellWithIdentifier:kCouponCellIdentifier forIndexPath:indexPath];
-    if (indexPath.row == 0) {
-        cell.bottomImageType = 0;
-        cell.couponStatus = 0;
-        cell.title = @"棒棒糖新人大礼包";
+    
+    if (indexPath.row < self.couponInfos.count) {
+        QBSCouponCell *cell = [tableView dequeueReusableCellWithIdentifier:kCouponCellIdentifier forIndexPath:indexPath];
+        QBSCouponGiftInfo *info = self.couponInfos[indexPath.row];
+        cell.bottomImageType = info.sts.integerValue;
+        cell.couponStatus = info.sts.integerValue;
+        cell.title = info.name;
         cell.subTitle = @"全场可用";
-        cell.useDeadline = @"2016-12-12--2016-12-30";
-        cell.couponPrice = @"110";
-        cell.satisfyPrice = @"400";
-    }else if(indexPath.row == 1){
-        cell.bottomImageType = 1;
-        cell.couponStatus = 1;
-        cell.title = @"棒棒糖新人大礼包";
-        cell.subTitle = @"全场可用";
-        cell.useDeadline = @"2016-12-12--2016-12-30";
-        cell.couponPrice = @"110";
-        cell.satisfyPrice = @"400";
-    }else {
-        cell.bottomImageType = 2;
-        cell.couponStatus = 2;
-        cell.title = @"棒棒糖新人大礼包";
-        cell.subTitle = @"全场可用";
-        cell.useDeadline = @"2016-12-12--2016-12-30";
-        cell.couponPrice = @"110";
-        cell.satisfyPrice = @"400";
+        cell.useDeadline = [NSString stringWithFormat:@"%@-%@",info.beginDate,info.endDate];
+        cell.couponPrice = [NSString stringWithFormat:@"%ld",info.amount.integerValue/100];
+        cell.satisfyPrice = [NSString stringWithFormat:@"%ld",info.minimalExpense.integerValue/100];
+        return cell;
     }
-    return cell;
+    
+    return nil;
+
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < self.couponInfos.count) {
+        
+    }
+}
+
 
 
 @end

@@ -11,6 +11,7 @@
 
 #import "QBSBanner.h"
 #import "QBSHomeFavourites.h"
+#import "QBSCouponPopModel.h"
 #import "QBSFeaturedCommodity.h"
 #import "QBSCommodityDetail.h"
 #import "QBSCategoryList.h"
@@ -25,6 +26,7 @@
 #import "QBSTicket.h"
 #import "QBSTicketInstruction.h"
 #import "QBSTreasureCommodity.h"
+#import "QBSCouponGiftPack.h"
 
 #define QBS_CHANNEL_NO [QBSConfiguration defaultConfiguration].channelNo
 #define QBS_APP_VERSION [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"]
@@ -729,6 +731,32 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
     }];
 }
 
+#pragma mark -- CouponGiftPack 优惠券
+//优惠券弹窗
+- (void)request_fetchCouponGiftPackPopModelWithCompletionHandler:(QBSCompletionHandler)completionHandler {
+    [[QBSHttpClient sharedClient] requestURL:@"giftPack.service" withParams:nil methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
+        [self onResponseWithObject:obj error:error modelClass:[QBSCouponPopModel class] completionHandler:completionHandler];
+    }];
+
+}
+//领取优惠券
+- (void)requset_getCouponGiftPackWithGiftPackId:(NSNumber *)giftPackId completetionHandler:(QBSCompletionHandler)completionHandler{
+    NSDictionary *params = @{@"userId"      : [QBSUser currentUser].userId,
+                            @"accessToken" : [QBSUser currentUser].accessToken,
+                            @"giftPackId"  : giftPackId.stringValue
+                           };
+    [[QBSHttpClient sharedClient] requestURL:@"recvCoupon.service" withParams:params methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
+        SafelyCallBlock(completionHandler,obj,nil);
+    }];
+}
+//优惠券列表
+- (void)request_fetchCouponGiftPackWithCompleteHandler:(QBSCompletionHandler)completeHandler{
+    NSDictionary *params = @{@"userId" : [QBSUser currentUser].userId ? : @"",
+                             @"accessToken" : [QBSUser currentUser].accessToken ? : @""};
+    [[QBSHttpClient sharedClient] requestURL:@"myCoupon.service" withParams:params methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
+        [self onResponseWithObject:obj error:error modelClass:[QBSCouponGiftPack class] completionHandler:completeHandler];
+    }];
+}
 
 #pragma mark -- SnatchTreasure 夺宝模块
 

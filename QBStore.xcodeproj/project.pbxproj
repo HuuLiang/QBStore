@@ -17,6 +17,8 @@
 		B32A6FD91DFBF23F00637361 /* QBSOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FD81DFBF23F00637361 /* QBSOrderCell.m */; };
 		B32A6FDC1DFBFAA400637361 /* QBSOrderStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FDB1DFBFAA400637361 /* QBSOrderStatusCell.m */; };
 		B32A6FDF1DFBFCD200637361 /* QBSOrderStatusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B32A6FDE1DFBFCD200637361 /* QBSOrderStatusButton.m */; };
+		B3608F601E0A4BA7003777A2 /* QBSCouponPopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3608F5F1E0A4BA7003777A2 /* QBSCouponPopModel.m */; };
+		B3608F631E0A706B003777A2 /* QBSCouponGiftPack.m in Sources */ = {isa = PBXBuildFile; fileRef = B3608F621E0A706B003777A2 /* QBSCouponGiftPack.m */; };
 		B367FECD1E07AC750032A926 /* QBSCouponPopViewCtroller.m in Sources */ = {isa = PBXBuildFile; fileRef = B367FECC1E07AC750032A926 /* QBSCouponPopViewCtroller.m */; };
 		B3A76CB11E07805A003E698D /* QBSCouponPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A76CB01E07805A003E698D /* QBSCouponPopView.m */; };
 		BC2C103B1DB4D700000D1D99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C103A1DB4D700000D1D99 /* main.m */; };
@@ -213,6 +215,10 @@
 		B32A6FDB1DFBFAA400637361 /* QBSOrderStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderStatusCell.m; sourceTree = "<group>"; };
 		B32A6FDD1DFBFCD200637361 /* QBSOrderStatusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSOrderStatusButton.h; sourceTree = "<group>"; };
 		B32A6FDE1DFBFCD200637361 /* QBSOrderStatusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderStatusButton.m; sourceTree = "<group>"; };
+		B3608F5E1E0A4BA7003777A2 /* QBSCouponPopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCouponPopModel.h; sourceTree = "<group>"; };
+		B3608F5F1E0A4BA7003777A2 /* QBSCouponPopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCouponPopModel.m; sourceTree = "<group>"; };
+		B3608F611E0A706B003777A2 /* QBSCouponGiftPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCouponGiftPack.h; sourceTree = "<group>"; };
+		B3608F621E0A706B003777A2 /* QBSCouponGiftPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCouponGiftPack.m; sourceTree = "<group>"; };
 		B367FECB1E07AC750032A926 /* QBSCouponPopViewCtroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCouponPopViewCtroller.h; sourceTree = "<group>"; };
 		B367FECC1E07AC750032A926 /* QBSCouponPopViewCtroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCouponPopViewCtroller.m; sourceTree = "<group>"; };
 		B3A76CAF1E07805A003E698D /* QBSCouponPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCouponPopView.h; sourceTree = "<group>"; };
@@ -1140,6 +1146,8 @@
 				BC2C11921DB4F6A3000D1D99 /* QBSHomeFavourites.m */,
 				BC2C11931DB4F6A3000D1D99 /* QBSHomeGroup.h */,
 				BC2C11941DB4F6A3000D1D99 /* QBSHomeGroup.m */,
+				B3608F5E1E0A4BA7003777A2 /* QBSCouponPopModel.h */,
+				B3608F5F1E0A4BA7003777A2 /* QBSCouponPopModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1413,6 +1421,8 @@
 				BC4E30081DCA0034001CD8D6 /* QBSTicket.m */,
 				BCDC0D991DD48EAC00BC8024 /* QBSTicketInstruction.h */,
 				BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */,
+				B3608F611E0A706B003777A2 /* QBSCouponGiftPack.h */,
+				B3608F621E0A706B003777A2 /* QBSCouponGiftPack.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1506,7 +1516,7 @@
 					BC2C10351DB4D700000D1D99 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7VHT3KAS56;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1643,6 +1653,7 @@
 				BC2C11831DB4F60D000D1D99 /* QBSCommodityDetail.m in Sources */,
 				BC2C11801DB4F60D000D1D99 /* QBSCommodityDetailSubViewController.m in Sources */,
 				BC2C11251DB4E0D2000D1D99 /* QBSGridSheet.m in Sources */,
+				B3608F631E0A706B003777A2 /* QBSCouponGiftPack.m in Sources */,
 				BC2C120F1DB4F79A000D1D99 /* QBSOrder.m in Sources */,
 				BC2C10C01DB4DFA0000D1D99 /* TAAnimatedDotView.m in Sources */,
 				BC2C11D61DB4F73F000D1D99 /* QBSSortBar.m in Sources */,
@@ -1700,6 +1711,7 @@
 				BC2C10E51DB4E073000D1D99 /* QBSUser.m in Sources */,
 				BC2C115C1DB4F481000D1D99 /* QBSCustomerServiceController.m in Sources */,
 				BC2C11D51DB4F73F000D1D99 /* QBSProgressView.m in Sources */,
+				B3608F601E0A4BA7003777A2 /* QBSCouponPopModel.m in Sources */,
 				B32A6FDC1DFBFAA400637361 /* QBSOrderStatusCell.m in Sources */,
 				BC2C10761DB4DD0B000D1D99 /* NSError+QBSError.m in Sources */,
 				BC2C11871DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m in Sources */,
@@ -1886,7 +1898,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7VHT3KAS56;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1902,8 +1914,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qbstore.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77fe5406-fd4f-469b-bbe1-7b2d92d71374";
-				PROVISIONING_PROFILE_SPECIFIER = QBStoreSDKDevProvisioningProfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1914,8 +1926,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 7VHT3KAS56;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1931,8 +1943,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qbstore.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e9ed9fff-fa9e-4050-97d0-153ef193cf0b";
-				PROVISIONING_PROFILE_SPECIFIER = QBStoreSDKProvisioningProfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
