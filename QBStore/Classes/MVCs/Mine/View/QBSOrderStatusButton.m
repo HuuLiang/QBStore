@@ -15,6 +15,9 @@
     if (self) {
         self.titleLabel.font = [UIFont systemFontOfSize:13];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        
+        [self setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:0.5 alpha:0.5]] forState:UIControlStateHighlighted];
+
 //        self.titleLabel.backgroundColor = [UIColor redColor];
 //        self.titleLabel.layer.cornerRadius = 5;
 //        self.titleLabel.clipsToBounds = YES;

@@ -22,6 +22,11 @@
 @property (nonatomic,retain) NSArray<QBSCommodityImageInfo *> *displayList;
 @property (nonatomic,retain) NSArray<QBSCommodity *> *guessCommodityList;
 
+@property (nonatomic) NSString *applyUri;
+@property (nonatomic) NSNumber *indianaLeftTime;
+@property (nonatomic) NSNumber *numLimited;
+@property (nonatomic) NSNumber *numParticipants;
+
 @end
 
 @interface QBSCommodityServiceMark : NSObject

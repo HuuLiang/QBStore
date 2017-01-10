@@ -46,6 +46,7 @@ DeclareSingletonMethod(sharedManager)
 // Detail
 - (void)request_queryCommodityDetailWithCommodityId:(NSNumber *)commodityId
                                            columnId:(NSNumber *)columnId
+                                         treasureId:(NSNumber *)treasureId
                                   completionHandler:(QBSCompletionHandler)completionHandler;
 
 - (void)request_queryCommodityCommentWithCommodityId:(NSNumber *)commodityId
@@ -88,7 +89,7 @@ DeclareSingletonMethod(sharedManager)
 - (void)request_queryActivityInstructionWithCompletionHandler:(QBSCompletionHandler)completionHandler;
 
 //SnatchTreasure
-- (void)request_fetchSnatchTreasureCommodityWithCompletionHandler:(QBSCompletionHandler)completionHandler;
+- (void)request_fetchSnatchTreasureCommoditiesWithCompletionHandler:(QBSCompletionHandler)completionHandler;
 
 @end
 

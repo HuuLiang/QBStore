@@ -182,6 +182,7 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
     @weakify(self);
     [[QBSRESTManager sharedManager] request_queryCommodityDetailWithCommodityId:self.commodityId
                                                                        columnId:self.columnId
+                                                                     treasureId:nil
                                                               completionHandler:^(id obj, NSError *error)
     {
         @strongify(self);

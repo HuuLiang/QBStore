@@ -1,5 +1,5 @@
 //
-//  QBSSnatchTreasureViewController.h
+//  QBSSnatchTreasureListViewController.h
 //  QBStore
 //
 //  Created by Liang on 2016/12/10.
@@ -8,6 +8,6 @@
 
 #import "QBSBaseViewController.h"
 
-@interface QBSSnatchTreasureViewController : QBSBaseViewController
+@interface QBSSnatchTreasureListViewController : QBSBaseViewController
 
 @end

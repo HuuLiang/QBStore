@@ -2,16 +2,15 @@
 //  QBSSnatchTreasureHeaderView.h
 //  QBStore
 //
-//  Created by Liang on 2016/12/10.
+//  Created by Sean Yue on 2016/12/23.
 //  Copyright © 2016年 iqu8. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "QBSTableHeaderFooterView.h"
 
-@interface QBSSnatchTreasureHeaderView : UICollectionReusableView
+@interface QBSSnatchTreasureHeaderView : QBSTableHeaderFooterView
 
-@property (nonatomic) NSString *titleStr;
-@property (nonatomic) NSString *timeStr;
-@property (nonatomic) NSString *dateStr;
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSString *subtitle;
 
 @end

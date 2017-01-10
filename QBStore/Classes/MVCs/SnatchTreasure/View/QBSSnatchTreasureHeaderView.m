@@ -2,7 +2,7 @@
 //  QBSSnatchTreasureHeaderView.m
 //  QBStore
 //
-//  Created by Liang on 2016/12/10.
+//  Created by Sean Yue on 2016/12/23.
 //  Copyright © 2016年 iqu8. All rights reserved.
 //
 
@@ -11,77 +11,48 @@
 @interface QBSSnatchTreasureHeaderView ()
 {
     UILabel *_titleLabel;
-    
-    UILabel *_timeLabel;
-    UILabel *_dateLabel;
+    UILabel *_subtitleLabel;
 }
 @end
 
 @implementation QBSSnatchTreasureHeaderView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
-        
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont systemFontOfSize:kWidth(32)];
-        _titleLabel.textColor = [UIColor colorWithHexString:@"#ff206f"];
+        _titleLabel.font = kMediumBoldFont;
+        _titleLabel.textColor = [UIColor colorWithHexString:@"#FF206F"];
         [self addSubview:_titleLabel];
-        
-        _timeLabel = [[UILabel alloc] init];
-        _timeLabel.textColor = [UIColor colorWithHexString:@"#555555"];
-        _timeLabel.font = [UIFont systemFontOfSize:kWidth(26)];
-        [self addSubview:_timeLabel];
-        
-        _dateLabel = [[UILabel alloc] init];
-        _dateLabel.font = [UIFont systemFontOfSize:kWidth(26)];
-        _dateLabel.textColor = [UIColor colorWithHexString:@"#000e00"];
-        [self addSubview:_dateLabel];
-        
         {
             [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self).offset(15);
                 make.centerY.equalTo(self);
-                make.left.equalTo(self).offset(kWidth(20));
-                make.height.mas_equalTo(kWidth(32));
             }];
-            
-            [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        }
+        
+        _subtitleLabel = [[UILabel alloc] init];
+        _subtitleLabel.textColor = [UIColor colorWithHexString:@"#555555"];
+        _subtitleLabel.font = kSmallFont;
+        [self addSubview:_subtitleLabel];
+        {
+            [_subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(self).offset(-15);
                 make.centerY.equalTo(self);
-                make.left.equalTo(_titleLabel.mas_right).offset(kWidth(144));
-                make.height.mas_equalTo(kWidth(28));
-            }];
-            
-            [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.centerY.equalTo(self);
-                make.left.equalTo(_timeLabel.mas_right);
-                make.height.mas_equalTo(kWidth(28));
             }];
         }
     }
     return self;
 }
 
-- (void)setTitleStr:(NSString *)titleStr {
-    _titleLabel.text = titleStr;
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    _titleLabel.text = title;
 }
 
-- (void)setTimeStr:(NSString *)timeStr {
-    _timeLabel.text = [NSString stringWithFormat:@"第%@期 开奖日期:",timeStr];
-}
-
-- (void)setDateStr:(NSString *)dateStr {
-    NSDateFormatter *dateFormatterA = [[NSDateFormatter alloc] init];
-    [dateFormatterA setDateFormat:@"yyyyMMddHHmm"];
-    NSDateFormatter *dateFormatterB = [[NSDateFormatter alloc] init];
-    [dateFormatterB setDateFormat:@"MM月dd日HH:mm"];
-    NSString *dateString =  [dateFormatterB stringFromDate:[dateFormatterA dateFromString:dateStr]];
-    NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc] initWithString:dateString];
-    NSRange rangA = [dateString rangeOfString:@"月"];
-    NSRange rangB = [dateString rangeOfString:@"日"];
-    [attriString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#555555"] range:rangA];
-    [attriString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#555555"] range:rangB];
-    _dateLabel.attributedText = attriString;
+- (void)setSubtitle:(NSString *)subtitle {
+    _subtitle = subtitle;
+    _subtitleLabel.text = subtitle;
 }
 
 @end

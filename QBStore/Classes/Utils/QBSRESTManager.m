@@ -24,8 +24,11 @@
 #import "QBSOrderCommodity.h"
 #import "QBSTicket.h"
 #import "QBSTicketInstruction.h"
+#import "QBSTreasureCommodity.h"
 
 #define QBS_CHANNEL_NO [QBSConfiguration defaultConfiguration].channelNo
+#define QBS_APP_VERSION [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"]
+
 #define kDefaultHttpMethod QBSHttpMethodPOST
 
 NSString *const kQBSRESTErrorDomain = @"com.qbstore.errordomain.rest";
@@ -179,6 +182,7 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
 
 - (void)request_queryCommodityDetailWithCommodityId:(NSNumber *)commodityId
                                            columnId:(NSNumber *)columnId
+                                         treasureId:(NSNumber *)treasureId
                                   completionHandler:(QBSCompletionHandler)completionHandler {
     if (!commodityId) {
         NSError *error = [NSError errorWithDomain:kQBSRESTErrorDomain code:kQBSRESTParameterErrorCode errorMessage:@"请求参数为空"];
@@ -186,8 +190,12 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         return ;
     }
     
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:commodityId forKey:@"commodityId"];
+    [params safelySetObject:columnId forKey:@"columnId"];
+    [params safelySetObject:treasureId forKey:@"indianaId"];
+    
     [[QBSHttpClient sharedClient] requestURL:@"comDtl.service"
-                                  withParams:columnId ? NSDictionaryOfVariableBindings(commodityId,columnId) : NSDictionaryOfVariableBindings(commodityId)
+                                  withParams:params
                                   methodType:kDefaultHttpMethod
                            completionHandler:^(id obj, NSError *error)
     {
@@ -239,6 +247,9 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:user.userType forKey:@"userType"];
+    [params setObject:QBS_CHANNEL_NO forKey:@"channelNo"];
+    [params setObject:QBS_APP_VERSION forKey:@"pv"];
+    
     if ([user.userType isEqualToString:kQBSUserTypeNormal]) {
         [params setObject:user.mobile forKey:@"mobile"];
         [params safelySetObject:user.veriCode forKey:@"verCode"];
@@ -721,8 +732,11 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
 
 #pragma mark -- SnatchTreasure 夺宝模块
 
-- (void)request_fetchSnatchTreasureCommodityWithCompletionHandler:(QBSCompletionHandler)completionHandler {
-    
+- (void)request_fetchSnatchTreasureCommoditiesWithCompletionHandler:(QBSCompletionHandler)completionHandler {
+    NSDictionary *params = @{@"channelNo":QBS_CHANNEL_NO};
+    [[QBSHttpClient sharedClient] requestURL:@"indiana.service" withParams:params methodType:kDefaultHttpMethod completionHandler:^(id obj, NSError *error) {
+        [self onResponseWithObject:obj error:error modelClass:[QBSTreasureCommodityListResponse class] completionHandler:completionHandler];
+    }];
 }
 
 

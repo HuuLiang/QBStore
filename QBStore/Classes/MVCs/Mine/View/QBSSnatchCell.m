@@ -26,6 +26,7 @@
         [_snatchButton setTitle:@"我的夺宝" forState:UIControlStateNormal];
         [_snatchButton setImage:[UIImage imageNamed:@"mine_snatch_icon"] forState:UIControlStateNormal];
         [_snatchButton setTitleColor:[UIColor colorWithHexString:@"#222222"] forState:UIControlStateNormal];
+        [_snatchButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:0.5 alpha:0.5]] forState:UIControlStateHighlighted];
         [self addSubview:_snatchButton];
         {
         [_snatchButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,6 +58,7 @@
         [_couponButton setTitle:@"优惠券" forState:UIControlStateNormal];
         [_couponButton setImage:[UIImage imageNamed:@"mine_ coupon_icon"] forState:UIControlStateNormal];
         [_couponButton setTitleColor:[UIColor colorWithHexString:@"#222222"] forState:UIControlStateNormal];
+        [_couponButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:0.5 alpha:0.5]] forState:UIControlStateHighlighted];
         [self addSubview:_couponButton];
         {
         [_couponButton mas_makeConstraints:^(MASConstraintMaker *make) {

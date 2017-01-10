@@ -478,7 +478,7 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
             [items addObject:[QBSHomeActivityItem itemWithImageURL:[NSURL URLWithString:obj.imgUrl]
                                                              price:obj.currentPrice.floatValue/100
                                                      originalPrice:obj.originalPrice.floatValue/100
-                                                            tagURL:[NSURL URLWithString:obj.tagsImgUrl]]];
+                                                            tagURL:[NSURL URLWithString:obj.tagImgUrl]]];
         }];
         cell.items = items;
         

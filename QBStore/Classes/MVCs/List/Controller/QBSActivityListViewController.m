@@ -242,7 +242,7 @@ DefineLazyPropertyInitialization(NSMutableArray, commodities)
         cell.currentPrice = commodity.currentPrice.floatValue / 100;
         cell.originalPrice = commodity.originalPrice.floatValue / 100;
         cell.soldPercent = commodity.soldBase.unsignedIntegerValue;
-        cell.tagURL = [NSURL URLWithString:commodity.tagsImgUrl];
+        cell.tagURL = [NSURL URLWithString:commodity.tagImgUrl];
         
         @weakify(self);
         cell.buyAction = ^(id obj) {
