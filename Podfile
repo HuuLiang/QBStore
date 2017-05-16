@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://git.coding.net/seanyue/QBPodRepo.git'
 platform :ios, '7.0'
 
 target 'QBStore' do
@@ -16,4 +18,6 @@ target 'QBStore' do
     pod 'SVProgressHUD', '~> 2.0.3'
     pod 'TPKeyboardAvoiding', '~> 1.3'
     pod 'UITextView+Placeholder', '~> 1.2.0'
+    pod 'QBPayment', :subspecs => ['IappPay','YiPay']
+    
 end

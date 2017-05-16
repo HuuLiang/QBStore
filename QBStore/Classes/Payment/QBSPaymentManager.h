@@ -18,6 +18,7 @@ DeclareSingletonMethod(sharedManager)
 
 - (void)setup;
 - (void)handleOpenURL:(NSURL *)url;
+- (void)applicationWillEnterForeground:(UIApplication *)application;
 - (void)payForOrder:(QBSOrder *)order withCompletionHandler:(QBSPaymentCompletionHandler)completionHandler;
 
 @end

@@ -51,9 +51,9 @@
     
     [QBSConfiguration defaultConfiguration].baseURL = kQBSRESTBaseURL;
     [QBSConfiguration defaultConfiguration].channelNo = kQBSChannelNo;
-    [QBSConfiguration defaultConfiguration].paymentBaseURL = kQBSPaymentBaseURL;
+//    [QBSConfiguration defaultConfiguration].paymentBaseURL = kQBSPaymentBaseURL;
     [QBSConfiguration defaultConfiguration].RESTAppId = kQBSRESTAppId;
-    [QBSConfiguration defaultConfiguration].paymentRESTVersion = @(kQBSPaymentPv.integerValue);
+//    [QBSConfiguration defaultConfiguration].paymentRESTVersion = @(kQBSPaymentPv.integerValue);
     
     [[QBSWeChatHelper sharedHelper] registerAppId:kQBSWeChatAppId secrect:kQBSWeChatSecret];
     [[QBSRESTManager sharedManager] request_queryCustomerServiceWithCompletionHandler:^(id obj, NSError *error) {

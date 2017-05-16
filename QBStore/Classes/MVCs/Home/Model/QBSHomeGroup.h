@@ -17,5 +17,6 @@
 @property (nonatomic) NSString *rmdImgUrl;
 @property (nonatomic) NSNumber *rmdType;
 @property (nonatomic) NSString *viceName;
+@property (nonatomic) NSString *wapUrl;
 
 @end

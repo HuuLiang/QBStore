@@ -29,14 +29,14 @@ NSString *const kQBSHttpClientArgErrorDomain = @"com.qbstore.errordomain.arg";
     return _sharedClient;
 }
 
-+ (instancetype)paymentClient {
-    static QBSHttpClient *_paymentClient;
-    static dispatch_once_t _paymentOnceToken;
-    dispatch_once(&_paymentOnceToken, ^{
-        _paymentClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:[QBSConfiguration defaultConfiguration].paymentBaseURL]];
-    });
-    return _paymentClient;
-}
+//+ (instancetype)paymentClient {
+//    static QBSHttpClient *_paymentClient;
+//    static dispatch_once_t _paymentOnceToken;
+//    dispatch_once(&_paymentOnceToken, ^{
+//        _paymentClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:[QBSConfiguration defaultConfiguration].paymentBaseURL]];
+//    });
+//    return _paymentClient;
+//}
 
 - (instancetype)initWithBaseURL:(NSURL *)baseURL {
     self = [self init];

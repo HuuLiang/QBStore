@@ -11,7 +11,7 @@
 @interface QBSCategoryCell ()
 {
     UIImageView *_thumbImageView;
-    UIView *_maskView;
+//    UIView *_maskView;
     UILabel *_titleLabel;
 }
 @end
@@ -30,23 +30,25 @@
             }];
         }
         
-        _maskView = [[UIView alloc] init];
-        _maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
-        [_thumbImageView addSubview:_maskView];
-        {
-            [_maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(_thumbImageView);
-            }];
-        }
+//        _maskView = [[UIView alloc] init];
+//        _maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+//        [_thumbImageView addSubview:_maskView];
+//        {
+//            [_maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.left.right.bottom.equalTo(_thumbImageView);
+//                make.height.mas_equalTo(44);
+//            }];
+//        }
         
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.textColor = [UIColor whiteColor];
-        _titleLabel.font = kHugeBoldFont;
-        _titleLabel.numberOfLines = 2;
+        _titleLabel.textColor = [UIColor colorWithHexString:@"#333333"];
+        _titleLabel.font = kExtraBigFont;
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_titleLabel];
         {
             [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.center.equalTo(self);
+                make.left.right.bottom.equalTo(self);
+                make.height.mas_equalTo(50);
             }];
         }
     }

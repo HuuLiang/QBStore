@@ -98,8 +98,8 @@ static NSString *const kTicketShortcutItemType = @"com.qbstoresdk.app.ticket";
         self.selectedIndex = 2;
     } else if ([shortcutItemType isEqualToString:kOrderShortcutItemType]) {
         [_mineViewController showOrderListViewController];
-    } else if ([shortcutItemType isEqualToString:kTicketShortcutItemType]) {
-        [_mineViewController showTicketViewController];
+//    } else if ([shortcutItemType isEqualToString:kTicketShortcutItemType]) {
+//        [_mineViewController showTicketViewController];
     } else {
         return NO;
     }

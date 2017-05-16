@@ -9,9 +9,10 @@
 #ifndef QBSConfig_h
 #define QBSConfig_h
 
-static NSString *const kQBSChannelNo = @"BBT_IOS_00000001";
+static NSString *const kQBSChannelNo = @"BSS_IOS_00000001";
 static NSString *const kQBSRESTAppId = @"QUBA_3000";
-static NSString *const kQBSPaymentPv = @"100";
+static NSString *const kQBSPaymentPv = @"223";
+static NSString *const kQBSPaymentURLScheme = @"comqbstoreapp_paymenturlscheme";
 
 static NSString *const kQBSRESTBaseURL = @"http://funmall.rdgongcheng.cn/funmall/";//@"http://120.24.252.114/funmall/";
 static NSString *const kQBSPaymentBaseURL = @"http://paycenter.ayyygs.com/paycenter/";

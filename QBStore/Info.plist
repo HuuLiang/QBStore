@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
-	<string>棒棒堂</string>
+	<string>勃士生</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx4eaaab09e1c6105b</string>
+				<string>comqbstoreapp_paymenturlscheme</string>
 			</array>
 		</dict>
 		<dict>
@@ -33,18 +33,22 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>comqbstoresdkiapppayurlscheme</string>
+				<string>wx4eaaab09e1c6105b</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FFL_APPID</key>
+	<string>com.gjlixkl.hklcc</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>alipay</string>
 		<string>wechat</string>
 		<string>mqq</string>
 		<string>weixin</string>
+		<string>alipayqr</string>
+		<string>alipays</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -70,14 +74,6 @@
 			<string>购物车</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.qbstoresdk.app.cart</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>mine_activity_icon</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>活动礼券</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.qbstoresdk.app.ticket</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

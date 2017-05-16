@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, QBSHttpMethodType) {
 @interface QBSHttpClient : NSObject
 
 DeclareSingletonMethod(sharedClient)
-DeclareSingletonMethod(paymentClient)
+//DeclareSingletonMethod(paymentClient)
 
 - (void)requestURL:(NSString *)urlPath
         withParams:(id)params

@@ -13,12 +13,11 @@
 
 #import "QBSShippingAddressListViewController.h"
 #import "QBSOrderListViewController.h"
-#import "QBSTicketsViewController.h"
 #import "QBSCustomerServiceController.h"
 
 typedef NS_ENUM(NSUInteger, QBSMineSection) {
     QBSMineOrderSection,
-    QBSMineActivitySection,
+//    QBSMineActivitySection,
     QBSMineOtherSection,
     QBSMineSectionCount
 };
@@ -57,7 +56,7 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     _layoutTV.backgroundColor = self.view.backgroundColor;
     _layoutTV.delegate = self;
     _layoutTV.dataSource = self;
-    _layoutTV.rowHeight = MAX(kScreenHeight*0.09, 44);
+    _layoutTV.rowHeight = MAX(kScreenHeight*0.075, 44);
     _layoutTV.sectionFooterHeight = 0;
     _layoutTV.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [_layoutTV registerClass:[QBSMineCell class] forCellReuseIdentifier:kMineCellReusableIdentifier];
@@ -123,12 +122,12 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
     [self.navigationController pushViewController:orderListVC animated:YES];
 }
 
-- (void)showTicketViewController {
-    self.tabBarController.selectedViewController = self.navigationController;
-    
-    QBSTicketsViewController *ticketVC = [[QBSTicketsViewController alloc] init];
-    [self.navigationController pushViewController:ticketVC animated:YES];
-}
+//- (void)showTicketViewController {
+//    self.tabBarController.selectedViewController = self.navigationController;
+//    
+//    QBSTicketsViewController *ticketVC = [[QBSTicketsViewController alloc] init];
+//    [self.navigationController pushViewController:ticketVC animated:YES];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -146,8 +145,8 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
         return QBSOrderSectionRowCount;
     } else if (section == QBSMineOtherSection) {
         return QBSOtherSectionRowCount;
-    } else if (section == QBSMineActivitySection) {
-        return 1;
+//    } else if (section == QBSMineActivitySection) {
+//        return 1;
     }
     return 0;
 }
@@ -164,9 +163,9 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
             cell.iconImage = [UIImage imageNamed:@"mine_address_icon"];
             cell.title = @"收货地址";
         }
-    } else if (indexPath.section == QBSMineActivitySection) {
-        cell.iconImage = [UIImage imageNamed:@"mine_activity_icon"];
-        cell.title = @"活动专区";
+//    } else if (indexPath.section == QBSMineActivitySection) {
+//        cell.iconImage = [UIImage imageNamed:@"mine_activity_icon"];
+//        cell.title = @"活动专区";
     } else if (indexPath.section == QBSMineOtherSection) {
         if (indexPath.row == QBSContactRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_contact_icon"];
@@ -199,9 +198,9 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
             QBSShippingAddressListViewController *addressListVC = [[QBSShippingAddressListViewController alloc] init];
             [self.navigationController pushViewController:addressListVC animated:YES];
         }
-    } else if (indexPath.section == QBSMineActivitySection) {
-        QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
-        [self.navigationController pushViewController:ticketsVC animated:YES];
+//    } else if (indexPath.section == QBSMineActivitySection) {
+//        QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
+//        [self.navigationController pushViewController:ticketsVC animated:YES];
     } else if (indexPath.section == QBSMineOtherSection) {
         if (indexPath.row == QBSContactRow) {
             QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];
