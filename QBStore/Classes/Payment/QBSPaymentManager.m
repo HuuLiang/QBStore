@@ -31,7 +31,7 @@ SynthesizeSingletonMethod(sharedManager, QBSPaymentManager)
     
     [[QBPaymentManager sharedManager] registerPaymentWithAppId:kQBSRESTAppId
                                                      paymentPv:@(kQBSPaymentPv.integerValue)
-                                                     channelNo:kQBSChannelNo
+                                                     channelNo:[QBSConfiguration defaultConfiguration].channelNo
                                                      urlScheme:kQBSPaymentURLScheme
                                                  defaultConfig:defaultConfig];
 }
@@ -60,10 +60,12 @@ SynthesizeSingletonMethod(sharedManager, QBSPaymentManager)
         return ;
     }
     
+    NSString *appName = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
+    
     QBOrderInfo *orderInfo = [[QBOrderInfo alloc] init];
     orderInfo.orderId = order.orderNo;
     orderInfo.orderPrice = order.totalPrice.unsignedIntegerValue;
-    orderInfo.orderDescription = [NSString stringWithFormat:@"棒棒堂-订单号：%@", order.orderNo];
+    orderInfo.orderDescription = [NSString stringWithFormat:@"%@-订单号：%@", appName, order.orderNo];
     orderInfo.payType = payType.unsignedIntegerValue;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -72,7 +74,7 @@ SynthesizeSingletonMethod(sharedManager, QBSPaymentManager)
     orderInfo.userId = order.userId;
     orderInfo.currentPayPointType = 0;
     orderInfo.targetPayPointType = 1;
-    orderInfo.reservedData = [NSString stringWithFormat:@"%@$%@", kQBSRESTAppId, kQBSChannelNo];
+    orderInfo.reservedData = [NSString stringWithFormat:@"%@$%@", kQBSRESTAppId, [QBSConfiguration defaultConfiguration].channelNo];
 
     [[QBPaymentManager sharedManager] startPaymentWithOrderInfo:orderInfo contentInfo:nil beginAction:nil completionHandler:^(QBPayResult payResult, QBPaymentInfo *paymentInfo) {
         

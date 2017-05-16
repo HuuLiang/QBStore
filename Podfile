@@ -18,6 +18,6 @@ target 'QBStore' do
     pod 'SVProgressHUD', '~> 2.0.3'
     pod 'TPKeyboardAvoiding', '~> 1.3'
     pod 'UITextView+Placeholder', '~> 1.2.0'
-    pod 'QBPayment', :subspecs => ['IappPay','YiPay']
+    pod 'QBPayment', :subspecs => ['IappPay','YiPay', 'WJPay']
     
 end

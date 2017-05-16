@@ -9,7 +9,6 @@
 #ifndef QBSConfig_h
 #define QBSConfig_h
 
-static NSString *const kQBSChannelNo = @"BSS_IOS_00000001";
 static NSString *const kQBSRESTAppId = @"QUBA_3000";
 static NSString *const kQBSPaymentPv = @"223";
 static NSString *const kQBSPaymentURLScheme = @"comqbstoreapp_paymenturlscheme";

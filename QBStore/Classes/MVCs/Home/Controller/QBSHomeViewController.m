@@ -115,7 +115,9 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
     }];
     [_layoutCV QBS_triggerPullToRefresh];
     
-    
+    [self.navigationController.navigationBar bk_whenTouches:1 tapped:5 handler:^{
+        [[QBSHUDManager sharedManager] showInfo:[NSString stringWithFormat:@"ChannelNo:%@\nPaymentPv:%@", [QBSConfiguration defaultConfiguration].channelNo, kQBSPaymentPv]];
+    }];
 }
 
 #pragma mark - Data Loading

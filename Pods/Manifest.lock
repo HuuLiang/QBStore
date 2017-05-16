@@ -62,6 +62,10 @@ PODS:
     - QBPayment/CorePay
     - QBPayment/CoreUI
     - XMLReader-Arc (~> 1.1)
+  - QBPayment/WJPay (127):
+    - QBPayment/Core
+    - QBPayment/CoreUI
+    - QBPayment/WFTPay
   - QBPayment/YiPay (127):
     - QBPayment/Core
     - QBPayment/CorePay
@@ -87,6 +91,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
   - ODRefreshControl (~> 1.2)
   - QBPayment/IappPay
+  - QBPayment/WJPay
   - QBPayment/YiPay
   - SDWebImage (~> 3.7.6)
   - SVProgressHUD (~> 2.0.3)
@@ -116,6 +121,6 @@ SPEC CHECKSUMS:
   WZLBadge: 16c08aa0a645e2591690f21cbcb410a3d878c7ac
   XMLReader-Arc: 7832c527346fc26511fd6c05ebcee18008c34d6d
 
-PODFILE CHECKSUM: 99a94c7ee6d85232f3de02e99ef8e1c7ce772f1d
+PODFILE CHECKSUM: 4b9a39822b77f0e6e95a0fceb55a8e6f2232b6ee
 
 COCOAPODS: 1.2.1

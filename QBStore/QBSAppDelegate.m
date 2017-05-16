@@ -47,10 +47,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self setupMobStatisticsWithChannelNo:kQBSChannelNo];
+    [self setupMobStatisticsWithChannelNo:[QBSConfiguration defaultConfiguration].channelNo];
     
     [QBSConfiguration defaultConfiguration].baseURL = kQBSRESTBaseURL;
-    [QBSConfiguration defaultConfiguration].channelNo = kQBSChannelNo;
 //    [QBSConfiguration defaultConfiguration].paymentBaseURL = kQBSPaymentBaseURL;
     [QBSConfiguration defaultConfiguration].RESTAppId = kQBSRESTAppId;
 //    [QBSConfiguration defaultConfiguration].paymentRESTVersion = @(kQBSPaymentPv.integerValue);
