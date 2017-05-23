@@ -10,7 +10,7 @@
 #import "QBSCategoryViewController.h"
 #import "QBSCommodityDetailViewController.h"
 #import "QBSCommodityListViewController.h"
-#import "QBSTicketsViewController.h"
+#import "QBSWebViewController.h"
 #import "QBSUser.h"
 
 @interface QBSBaseViewController ()
@@ -53,6 +53,8 @@
                                  columnType:(QBSColumnType)columnType
                                      isLeaf:(BOOL)isLeaf
                                       relId:(NSNumber *)relId
+                                    relName:(NSString *)relName
+                                     relUrl:(NSURL *)relUrl
 {
     if (recmType == QBSRecommendTypeCommodity) {
         QBSCommodityDetailViewController *detailVC = [[QBSCommodityDetailViewController alloc] initWithCommodityId:relId columnId:nil];
@@ -65,9 +67,10 @@
             QBSCategoryViewController *catVC = [[QBSCategoryViewController alloc] init];
             [self.navigationController pushViewController:catVC animated:YES];
         }
-    } else if (recmType == QBSRecommendTypeTicket) {
-        QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
-        [self.navigationController pushViewController:ticketsVC animated:YES];
+    } else if (recmType == QBSRecommendTypeZhengPin) {
+        QBSWebViewController *webVC = [[QBSWebViewController alloc] initWithURL:relUrl];
+        webVC.title = relName;
+        [self.navigationController pushViewController:webVC animated:YES];
     }
 }
 

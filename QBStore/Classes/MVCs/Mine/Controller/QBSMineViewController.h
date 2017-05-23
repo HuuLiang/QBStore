@@ -11,6 +11,6 @@
 @interface QBSMineViewController : QBSBaseViewController
 
 - (void)showOrderListViewController;
-- (void)showTicketViewController;
+//- (void)showTicketViewController;
 
 @end

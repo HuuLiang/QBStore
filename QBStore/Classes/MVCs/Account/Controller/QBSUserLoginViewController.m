@@ -14,6 +14,9 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import "QBSSMSVerificationViewController.h"
 
+#import "QBSNavigationController.h"
+#import "QBSWebViewController.h"
+
 static const CGFloat kNumberOfPhoneText = 11;
 
 @interface QBSUserLoginViewController () <UITextFieldDelegate>
@@ -21,6 +24,7 @@ static const CGFloat kNumberOfPhoneText = 11;
     TPKeyboardAvoidingScrollView *_scrollView;
     QBSPhoneTextField *_phoneTextField;
     UILabel *_promptLabel;
+    UIButton *_agreementButton;
 }
 @end
 
@@ -77,6 +81,23 @@ static const CGFloat kNumberOfPhoneText = 11;
         }];
     }
     
+    _agreementButton = [[UIButton alloc] init];
+    _agreementButton.titleLabel.font = kSmallFont;
+    _agreementButton.titleLabel.numberOfLines = 2;
+    _agreementButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:@"确认登录即表示您已经同意以下协议\n" attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [attrString appendAttributedString:[[NSAttributedString alloc] initWithString:@"《勃士生用户协议》" attributes:@{NSUnderlineStyleAttributeName:@1, NSUnderlineColorAttributeName:[UIColor redColor], NSForegroundColorAttributeName:[UIColor redColor]}]];
+    
+    [_agreementButton setAttributedTitle:attrString forState:UIControlStateNormal];
+    [_agreementButton addTarget:self action:@selector(onAgreement) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:_agreementButton];
+    {
+        [_agreementButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_scrollView);
+            make.top.equalTo(_promptLabel.mas_bottom);
+        }];
+    }
+
     UIButton *okButton = [[UIButton alloc] init];
     [okButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#FF206F"]] forState:UIControlStateNormal];
     [okButton setTitle:@"确认" forState:UIControlStateNormal];
@@ -89,7 +110,7 @@ static const CGFloat kNumberOfPhoneText = 11;
     {
         [okButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(_scrollView);
-            make.top.equalTo(_promptLabel.mas_bottom).offset(10);
+            make.top.equalTo(_agreementButton.mas_bottom).offset(10);
             make.width.equalTo(_phoneTextField);
             make.height.mas_equalTo(44);
         }];
@@ -124,6 +145,19 @@ static const CGFloat kNumberOfPhoneText = 11;
         @strongify(self);
         [self->_phoneTextField resignFirstResponder];
     }];
+}
+
+- (void)onAgreement {
+    @weakify(self);
+    QBSWebViewController *webVC = [[QBSWebViewController alloc] initWithURL:[NSURL URLWithString:[kQBSRESTBaseURL stringByAppendingString:kQBSUserAgreementURL]]];
+    webVC.title = @"用户协议";
+    webVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"关闭" style:UIBarButtonItemStylePlain handler:^(id sender) {
+        @strongify(self);
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    QBSNavigationController *nav = [[QBSNavigationController alloc] initWithRootViewController:webVC];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (UIImage *)backgroundImage {

@@ -15,7 +15,9 @@
 - (void)pushViewControllerWithRecommendType:(QBSRecommendType)recmType
                                  columnType:(QBSColumnType)columnType
                                      isLeaf:(BOOL)isLeaf
-                                      relId:(NSNumber *)relId;
+                                      relId:(NSNumber *)relId
+                                    relName:(NSString *)relName
+                                     relUrl:(NSURL *)relUrl;
 
 - (BOOL)isViewControllerDependsOnUserLogin;
 

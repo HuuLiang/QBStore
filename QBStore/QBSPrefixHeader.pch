@@ -22,9 +22,9 @@
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
 #import <Aspects.h>
+#import <QBDefines.h>
 
 #import "SDCycleScrollView.h"
-#import "RACEXTScope.h"
 
 #import "QBSCommonMacros.h"
 #import "QBSCommonTypes.h"

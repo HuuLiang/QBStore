@@ -16,15 +16,16 @@
 
 #import "QBSShippingAddressListViewController.h"
 #import "QBSOrderListViewController.h"
-#import "QBSTicketsViewController.h"
 #import "QBSCustomerServiceController.h"
 #import "QBSSnatchTreasureListViewController.h"
 #import "QBSCouponViewController.h"
 
+#import "QBSWebViewController.h"
+
 typedef NS_ENUM(NSUInteger, QBSMineSection) {
     QBSSnatchTreasureSection,//夺宝
     QBSMineOrderSection,
-    QBSMineActivitySection,
+//    QBSMineActivitySection,
     QBSMineOtherSection,
     QBSLastSection = QBSMineOtherSection,
     QBSMineSectionCount
@@ -43,6 +44,7 @@ typedef NS_ENUM(NSUInteger, QBSActivateSectionRow) {
 };
 
 typedef NS_ENUM(NSUInteger, QBSOtherSectionRow) {
+    QBSAgreementRow,
     QBSContactRow,
     QBUpdateRow,
     QBSAboutRow,
@@ -75,6 +77,8 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
     _layoutTV.backgroundColor = self.view.backgroundColor;
     _layoutTV.delegate = self;
     _layoutTV.dataSource = self;
+    _layoutTV.rowHeight = MAX(kScreenHeight*0.075, 44);
+    _layoutTV.sectionFooterHeight = 0;
     _layoutTV.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _layoutTV.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
     [_layoutTV registerClass:[QBSMineCell class] forCellReuseIdentifier:kMineCellReusableIdentifier];
@@ -145,12 +149,12 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
     [self.navigationController pushViewController:orderListVC animated:YES];
 }
 
-- (void)showTicketViewController {
-    self.tabBarController.selectedViewController = self.navigationController;
-    
-    QBSTicketsViewController *ticketVC = [[QBSTicketsViewController alloc] init];
-    [self.navigationController pushViewController:ticketVC animated:YES];
-}
+//- (void)showTicketViewController {
+//    self.tabBarController.selectedViewController = self.navigationController;
+//    
+//    QBSTicketsViewController *ticketVC = [[QBSTicketsViewController alloc] init];
+//    [self.navigationController pushViewController:ticketVC animated:YES];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -170,8 +174,8 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
         return QBSOrderSectionRowCount;
     } else if (section == QBSMineOtherSection) {
         return QBSOtherSectionRowCount;
-    } else if (section == QBSMineActivitySection) {
-        return QBSActivateSetionCount;
+//    } else if (section == QBSMineActivitySection) {
+//        return 1;
     }
     return 0;
 }
@@ -225,12 +229,15 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
         if (indexPath.row == QBSDeliveryRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_address_icon"];
             cell.title  = @"收货地址";
-        }else if(indexPath.row == QBSActivateRow){
-        cell.iconImage = [UIImage imageNamed:@"mine_activity_icon"];
-            cell.title = @"活动专区";
+ //       }else if(indexPath.row == QBSActivateRow){
+ //       cell.iconImage = [UIImage imageNamed:@"mine_activity_icon"];
+ //           cell.title = @"活动专区";
         }
     } else if (indexPath.section == QBSMineOtherSection) {
-        if (indexPath.row == QBSContactRow) {
+        if (indexPath.row == QBSAgreementRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_agreement_icon"];
+            cell.title = @"用户协议";
+        } else if (indexPath.row == QBSContactRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_contact_icon"];
             cell.title = @"联系客服";
         } else if (indexPath.row == QBSAboutRow) {
@@ -292,7 +299,11 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
             [self.navigationController pushViewController:ticketsVC animated:YES];
         }
     } else if (indexPath.section == QBSMineOtherSection) {
-        if (indexPath.row == QBSContactRow) {
+        if (indexPath.row == QBSAgreementRow) {
+            QBSWebViewController *webVC = [[QBSWebViewController alloc] initWithURL:[NSURL URLWithString:[kQBSRESTBaseURL stringByAppendingString:kQBSUserAgreementURL]]];
+            webVC.title = @"用户协议";
+            [self.navigationController pushViewController:webVC animated:YES];
+        } else if (indexPath.row == QBSContactRow) {
             QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];
             [csController showInView:self.view.window];
         } else if (indexPath.row == QBSAboutRow) {

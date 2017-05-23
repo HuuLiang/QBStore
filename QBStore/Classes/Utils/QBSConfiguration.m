@@ -9,6 +9,7 @@
 #import "QBSConfiguration.h"
 
 @implementation QBSConfiguration
+@synthesize channelNo = _channelNo;
 
 + (instancetype)defaultConfiguration {
     static QBSConfiguration *_defaultConfiguration;
@@ -17,5 +18,16 @@
         _defaultConfiguration = [[self alloc] init];
     });
     return _defaultConfiguration;
+}
+
+- (NSString *)channelNo {
+    if (_channelNo) {
+        return _channelNo;
+    }
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ChannelNo" ofType:@"plist"];
+    NSDictionary *channelDic = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+    _channelNo = channelDic[@"ChannelNo"];
+    return _channelNo;
 }
 @end

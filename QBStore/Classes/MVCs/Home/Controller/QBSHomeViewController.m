@@ -121,7 +121,9 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
     }];
     [_layoutCV QBS_triggerPullToRefresh];
     
-    
+    [self.navigationController.navigationBar bk_whenTouches:1 tapped:5 handler:^{
+        [[QBSHUDManager sharedManager] showInfo:[NSString stringWithFormat:@"ChannelNo:%@\nPaymentPv:%@", [QBSConfiguration defaultConfiguration].channelNo, kQBSPaymentPv]];
+    }];
 }
 
 #pragma mark - Data Loading
@@ -480,7 +482,9 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
             [self pushViewControllerWithRecommendType:banner.bannerType.unsignedIntegerValue
                                            columnType:banner.columnType.unsignedIntegerValue
                                                isLeaf:banner.isLeaf.boolValue
-                                                relId:banner.relId];
+                                                relId:banner.relId
+                                              relName:nil
+                                               relUrl:nil];
         };
         cell.imageURLStrings = urlStrings;
         return cell;
@@ -718,7 +722,9 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
             [self pushViewControllerWithRecommendType:group.rmdType.unsignedIntegerValue
                                            columnType:group.columnType.unsignedIntegerValue
                                                isLeaf:group.isLeaf.boolValue
-                                                relId:group.relId];
+                                                relId:group.relId
+                                              relName:group.name
+                                               relUrl:[NSURL URLWithString:group.wapUrl]];
         }
     } else if (IsHomeSectionIndexEqualsToSectionType(indexPath.section, QBSFeaturedCommoditySection)) {
         if (indexPath.item < self.featuredCommodity.count) {
@@ -727,12 +733,16 @@ DefineLazyPropertyInitialization(NSMutableDictionary, featuredCommodityEndDates)
                 [self pushViewControllerWithRecommendType:QBSRecommendTypeColumn
                                                columnType:commodity.data.columnType.unsignedIntegerValue
                                                    isLeaf:commodity.data.isLeaf.boolValue
-                                                    relId:commodity.data.columnId];
+                                                    relId:commodity.data.columnId
+                                                  relName:nil
+                                                   relUrl:nil];
             } else if (commodity.rmdType.unsignedIntegerValue == QBSFeaturedTypeRecommendationCommodity) {
                 [self pushViewControllerWithRecommendType:QBSRecommendTypeCommodity
                                                columnType:commodity.data.columnType.unsignedIntegerValue
                                                    isLeaf:commodity.data.isLeaf.boolValue
-                                                    relId:commodity.data.commodityId];
+                                                    relId:commodity.data.commodityId
+                                                  relName:nil
+                                                   relUrl:nil];
             }
         }
     }

@@ -13,7 +13,7 @@
 @property (nonatomic) NSString *baseURL;
 @property (nonatomic) NSString *paymentBaseURL;
 
-@property (nonatomic) NSString *channelNo;
+@property (nonatomic,readonly) NSString *channelNo;
 @property (nonatomic) NSString *RESTAppId;
 @property (nonatomic) NSNumber *paymentRESTVersion;
 

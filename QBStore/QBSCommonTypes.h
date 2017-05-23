@@ -32,7 +32,10 @@ typedef NS_ENUM(NSUInteger, QBSRecommendType) {
     QBSRecommendTypeColumn,
     QBSRecommendTypeCommodity,
     QBSRecommendTypeTag,
-    QBSRecommendTypeTicket
+    QBSRecommendTypeTicket,
+    QBSRecommendTypeDuoBao,
+    QBSRecommendTypeZhengPin,
+    QBSRecommendTypeSexZone
 };
 
 typedef NS_ENUM(NSUInteger, QBSColumnType) {

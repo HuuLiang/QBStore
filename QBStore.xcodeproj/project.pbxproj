@@ -48,7 +48,6 @@
 		BC2C10A01DB4DED2000D1D99 /* QBSRESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10971DB4DED2000D1D99 /* QBSRESTManager.m */; };
 		BC2C10A11DB4DED2000D1D99 /* QBSUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */; };
 		BC2C10A21DB4DED2000D1D99 /* QBSWeChatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */; };
-		BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */; };
 		BC2C10A91DB4DF20000D1D99 /* QBSPaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */; };
 		BC2C10BE1DB4DFA0000D1D99 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10AD1DB4DFA0000D1D99 /* MZTimerLabel.m */; };
 		BC2C10BF1DB4DFA0000D1D99 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C10B11DB4DFA0000D1D99 /* TAAbstractDotView.m */; };
@@ -149,13 +148,7 @@
 		BC2C121B1DB4F79A000D1D99 /* QBSOrderPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12031DB4F79A000D1D99 /* QBSOrderPaymentCell.m */; };
 		BC2C121C1DB4F79A000D1D99 /* QBSOrderTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */; };
 		BC2C121D1DB4F79A000D1D99 /* QBSRegionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */; };
-		BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */; };
-		BC2C122F1DB4F8DD000D1D99 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */; };
-		BC2C12301DB4F8DD000D1D99 /* IapppayAlphaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */; };
-		BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */; };
 		BC2C12321DB4F8DD000D1D99 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */; };
-		BC2C12331DB4F8DD000D1D99 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */; };
-		BC2C12341DB4F8DD000D1D99 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC2C122A1DB4F8DD000D1D99 /* README.txt */; };
 		BC2C12371DB4FD3C000D1D99 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12361DB4FD3C000D1D99 /* libz.tbd */; };
 		BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C12381DB4FD4C000D1D99 /* libc++.tbd */; };
 		BC2C123B1DB4FD5D000D1D99 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C123A1DB4FD5D000D1D99 /* CoreTelephony.framework */; };
@@ -171,7 +164,6 @@
 		BC4028501E0A7ED200A173DA /* QBSTreasureCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40284F1E0A7ED200A173DA /* QBSTreasureCommodity.m */; };
 		BC4028531E0A836900A173DA /* QBStoreSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4028521E0A836900A173DA /* QBStoreSystem.m */; };
 		BC4135B91DD712E00020C6E1 /* ticket_promption.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4135B81DD712E00020C6E1 /* ticket_promption.jpg */; };
-		BC4135BC1DD713FA0020C6E1 /* QBSTicketsPromptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */; };
 		BC4E30091DCA0034001CD8D6 /* QBSTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4E30081DCA0034001CD8D6 /* QBSTicket.m */; };
 		BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CA1DB77FB500793E44 /* login_background.jpg */; };
 		BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC4E55CB1DB77FB500793E44 /* paging_refresh.gif */; };
@@ -180,20 +172,18 @@
 		BC504CD51DC34B93009D57C8 /* QBSCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC504CD41DC34B93009D57C8 /* QBSCategoryViewController.m */; };
 		BC504CD81DC34CAA009D57C8 /* QBSCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC504CD71DC34CAA009D57C8 /* QBSCategoryCell.m */; };
 		BC504CDB1DC35821009D57C8 /* QBSPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC504CDA1DC35821009D57C8 /* QBSPlaceholderView.m */; };
+		BC609B421ECAA84F00379571 /* QBSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC609B411ECAA84F00379571 /* QBSWebViewController.m */; };
 		BC69AF0A1DC7305000BA49F3 /* QBSHomeCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF091DC7305000BA49F3 /* QBSHomeCommodityCell.m */; };
 		BC69AF0F1DC740C100BA49F3 /* QBSFavouritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */; };
 		BC69AF101DC740C100BA49F3 /* QBSFavouritesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */; };
 		BC72DA621DCED11100FC2A60 /* QBSTicketAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */; };
 		BC7AB9041E0D330500179FE9 /* QBSSnatchTreasureHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7AB9031E0D330500179FE9 /* QBSSnatchTreasureHeaderView.m */; };
 		BC7AB9071E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7AB9061E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.m */; };
+		BC6E3BA11ECAE74F0082F221 /* ChannelNo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC6E3BA01ECAE74F0082F221 /* ChannelNo.plist */; };
 		BC9C5D951DD5DFA700BBD823 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9C5D941DD5DFA700BBD823 /* NSDate+Utilities.m */; };
 		BCDC0D981DD478C600BC8024 /* QBSCommodityDetailActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */; };
 		BCDC0D9B1DD48EAC00BC8024 /* QBSTicketInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */; };
-		BCDC0D9E1DD48F3000BC8024 /* QBSTicketInstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */; };
 		BCF712FD1DC864B700A906AF /* UIImageView+QBWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF712FC1DC864B700A906AF /* UIImageView+QBWebCache.m */; };
-		BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */; };
-		BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF713021DC86FB100A906AF /* QBSTicketCell.m */; };
-		BCF713061DC8823800A906AF /* QBSTicketCard.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF713051DC8823800A906AF /* QBSTicketCard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -283,8 +273,6 @@
 		BC2C10991DB4DED2000D1D99 /* QBSUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSUIHelper.m; sourceTree = "<group>"; };
 		BC2C109A1DB4DED2000D1D99 /* QBSWeChatHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSWeChatHelper.h; sourceTree = "<group>"; };
 		BC2C109B1DB4DED2000D1D99 /* QBSWeChatHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSWeChatHelper.m; sourceTree = "<group>"; };
-		BC2C10A41DB4DF20000D1D99 /* IappPayMananger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IappPayMananger.h; sourceTree = "<group>"; };
-		BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IappPayMananger.m; sourceTree = "<group>"; };
 		BC2C10A61DB4DF20000D1D99 /* QBSPaymentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPaymentManager.h; sourceTree = "<group>"; };
 		BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPaymentManager.m; sourceTree = "<group>"; };
 		BC2C10AC1DB4DFA0000D1D99 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
@@ -485,16 +473,7 @@
 		BC2C12051DB4F79A000D1D99 /* QBSOrderTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSOrderTitleCell.m; sourceTree = "<group>"; };
 		BC2C12061DB4F79A000D1D99 /* QBSRegionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSRegionPicker.h; sourceTree = "<group>"; };
 		BC2C12071DB4F79A000D1D99 /* QBSRegionPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSRegionPicker.m; sourceTree = "<group>"; };
-		BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IapppayAlphaKit.framework; sourceTree = "<group>"; };
-		BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IapppayAlphaResource.bundle; sourceTree = "<group>"; };
 		BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
-		BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		BC2C122A1DB4F8DD000D1D99 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		BC2C122B1DB4F8DD000D1D99 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		BC2C122C1DB4F8DD000D1D99 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		BC2C122D1DB4F8DD000D1D99 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		BC2C12351DB4FA5D000D1D99 /* QBSConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBSConfig.h; sourceTree = "<group>"; };
 		BC2C12361DB4FD3C000D1D99 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BC2C12381DB4FD4C000D1D99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -521,8 +500,6 @@
 		BC4028511E0A836900A173DA /* QBStoreSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBStoreSystem.h; sourceTree = "<group>"; };
 		BC4028521E0A836900A173DA /* QBStoreSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBStoreSystem.m; sourceTree = "<group>"; };
 		BC4135B81DD712E00020C6E1 /* ticket_promption.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ticket_promption.jpg; sourceTree = "<group>"; };
-		BC4135BA1DD713FA0020C6E1 /* QBSTicketsPromptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketsPromptionView.h; sourceTree = "<group>"; };
-		BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketsPromptionView.m; sourceTree = "<group>"; };
 		BC4E30071DCA0034001CD8D6 /* QBSTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicket.h; sourceTree = "<group>"; };
 		BC4E30081DCA0034001CD8D6 /* QBSTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicket.m; sourceTree = "<group>"; };
 		BC4E55CA1DB77FB500793E44 /* login_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_background.jpg; sourceTree = "<group>"; };
@@ -535,6 +512,8 @@
 		BC504CD71DC34CAA009D57C8 /* QBSCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCategoryCell.m; sourceTree = "<group>"; };
 		BC504CD91DC35821009D57C8 /* QBSPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSPlaceholderView.h; sourceTree = "<group>"; };
 		BC504CDA1DC35821009D57C8 /* QBSPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSPlaceholderView.m; sourceTree = "<group>"; };
+		BC609B401ECAA84F00379571 /* QBSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSWebViewController.h; sourceTree = "<group>"; };
+		BC609B411ECAA84F00379571 /* QBSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSWebViewController.m; sourceTree = "<group>"; };
 		BC69AF081DC7305000BA49F3 /* QBSHomeCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSHomeCommodityCell.h; sourceTree = "<group>"; };
 		BC69AF091DC7305000BA49F3 /* QBSHomeCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSHomeCommodityCell.m; sourceTree = "<group>"; };
 		BC69AF0B1DC740C100BA49F3 /* QBSFavouritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFavouritesCell.h; sourceTree = "<group>"; };
@@ -547,22 +526,15 @@
 		BC7AB9031E0D330500179FE9 /* QBSSnatchTreasureHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSnatchTreasureHeaderView.m; sourceTree = "<group>"; };
 		BC7AB9051E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTreasureCommodityDetailViewController.h; sourceTree = "<group>"; };
 		BC7AB9061E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTreasureCommodityDetailViewController.m; sourceTree = "<group>"; };
+		BC6E3BA01ECAE74F0082F221 /* ChannelNo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChannelNo.plist; sourceTree = "<group>"; };
 		BC9C5D931DD5DFA700BBD823 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		BC9C5D941DD5DFA700BBD823 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		BCDC0D961DD478C600BC8024 /* QBSCommodityDetailActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailActivityCell.h; sourceTree = "<group>"; };
 		BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSCommodityDetailActivityCell.m; sourceTree = "<group>"; };
 		BCDC0D991DD48EAC00BC8024 /* QBSTicketInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketInstruction.h; sourceTree = "<group>"; };
 		BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketInstruction.m; sourceTree = "<group>"; };
-		BCDC0D9C1DD48F3000BC8024 /* QBSTicketInstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketInstructionViewController.h; sourceTree = "<group>"; };
-		BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketInstructionViewController.m; sourceTree = "<group>"; };
 		BCF712FB1DC864B700A906AF /* UIImageView+QBWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+QBWebCache.h"; sourceTree = "<group>"; };
 		BCF712FC1DC864B700A906AF /* UIImageView+QBWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+QBWebCache.m"; sourceTree = "<group>"; };
-		BCF712FE1DC86B7100A906AF /* QBSTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketsViewController.h; sourceTree = "<group>"; };
-		BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketsViewController.m; sourceTree = "<group>"; };
-		BCF713011DC86FB100A906AF /* QBSTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketCell.h; sourceTree = "<group>"; };
-		BCF713021DC86FB100A906AF /* QBSTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketCell.m; sourceTree = "<group>"; };
-		BCF713041DC8823800A906AF /* QBSTicketCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketCard.h; sourceTree = "<group>"; };
-		BCF713051DC8823800A906AF /* QBSTicketCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketCard.m; sourceTree = "<group>"; };
 		C2E970AA3D0E0A40AB3B1951 /* libPods-QBStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QBStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D37C9805088EF2E517D537 /* Pods-QBStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QBStore/Pods-QBStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -577,10 +549,7 @@
 				BC2C12391DB4FD4C000D1D99 /* libc++.tbd in Frameworks */,
 				BC2C12371DB4FD3C000D1D99 /* libz.tbd in Frameworks */,
 				31294B5AFDA0E45286F5CD27 /* libPods-QBStore.a in Frameworks */,
-				BC2C12301DB4F8DD000D1D99 /* IapppayAlphaKit.framework in Frameworks */,
 				BC2C12321DB4F8DD000D1D99 /* UMMobClick.framework in Frameworks */,
-				BC2C122F1DB4F8DD000D1D99 /* AlipaySDK.framework in Frameworks */,
-				BC2C12331DB4F8DD000D1D99 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				BC2C104A1DB4D700000D1D99 /* Info.plist */,
+				BC6E3BA01ECAE74F0082F221 /* ChannelNo.plist */,
 				BC2C103A1DB4D700000D1D99 /* main.m */,
 				BC2C10531DB4D931000D1D99 /* QBSPrefixHeader.pch */,
 				BC2C10541DB4DBA4000D1D99 /* QBSCommonTypes.h */,
@@ -748,8 +718,6 @@
 		BC2C10A31DB4DF20000D1D99 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				BC2C10A41DB4DF20000D1D99 /* IappPayMananger.h */,
-				BC2C10A51DB4DF20000D1D99 /* IappPayMananger.m */,
 				BC2C10A61DB4DF20000D1D99 /* QBSPaymentManager.h */,
 				BC2C10A71DB4DF20000D1D99 /* QBSPaymentManager.m */,
 			);
@@ -759,10 +727,7 @@
 		BC2C10AA1DB4DFA0000D1D99 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				BC2C12201DB4F8DD000D1D99 /* AlipaySDK */,
-				BC2C12231DB4F8DD000D1D99 /* IapppaySDK */,
 				BC2C12261DB4F8DD000D1D99 /* UMMobClick */,
-				BC2C12281DB4F8DD000D1D99 /* WeChatSDK */,
 				BC2C10AB1DB4DFA0000D1D99 /* MZTimerLabel */,
 				BC2C10AE1DB4DFA0000D1D99 /* SDCycleScrollView */,
 			);
@@ -896,6 +861,8 @@
 				BC2C10EE1DB4E0D2000D1D99 /* QBSNavigationController.m */,
 				BC34E3761DC0C0A200CB1189 /* QBSTabBarController.h */,
 				BC34E3771DC0C0A200CB1189 /* QBSTabBarController.m */,
+				BC609B401ECAA84F00379571 /* QBSWebViewController.h */,
+				BC609B411ECAA84F00379571 /* QBSWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1314,42 +1281,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		BC2C12201DB4F8DD000D1D99 /* AlipaySDK */ = {
-			isa = PBXGroup;
-			children = (
-				BC2C12211DB4F8DD000D1D99 /* AlipaySDK.bundle */,
-				BC2C12221DB4F8DD000D1D99 /* AlipaySDK.framework */,
-			);
-			path = AlipaySDK;
-			sourceTree = "<group>";
-		};
-		BC2C12231DB4F8DD000D1D99 /* IapppaySDK */ = {
-			isa = PBXGroup;
-			children = (
-				BC2C12241DB4F8DD000D1D99 /* IapppayAlphaKit.framework */,
-				BC2C12251DB4F8DD000D1D99 /* IapppayAlphaResource.bundle */,
-			);
-			path = IapppaySDK;
-			sourceTree = "<group>";
-		};
 		BC2C12261DB4F8DD000D1D99 /* UMMobClick */ = {
 			isa = PBXGroup;
 			children = (
 				BC2C12271DB4F8DD000D1D99 /* UMMobClick.framework */,
 			);
 			path = UMMobClick;
-			sourceTree = "<group>";
-		};
-		BC2C12281DB4F8DD000D1D99 /* WeChatSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BC2C12291DB4F8DD000D1D99 /* libWeChatSDK.a */,
-				BC2C122A1DB4F8DD000D1D99 /* README.txt */,
-				BC2C122B1DB4F8DD000D1D99 /* WechatAuthSDK.h */,
-				BC2C122C1DB4F8DD000D1D99 /* WXApi.h */,
-				BC2C122D1DB4F8DD000D1D99 /* WXApiObject.h */,
-			);
-			path = WeChatSDK;
 			sourceTree = "<group>";
 		};
 		BC4000AC1DC0A00A00019EA5 /* Mine */ = {
@@ -1515,8 +1452,8 @@
 				TargetAttributes = {
 					BC2C10351DB4D700000D1D99 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 7VHT3KAS56;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = BTTZYVST3G;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1543,17 +1480,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC2C12311DB4F8DD000D1D99 /* IapppayAlphaResource.bundle in Resources */,
 				BC4E55CE1DB77FB500793E44 /* login_background.jpg in Resources */,
 				B32A6FD31DFBDE5800637361 /* mine_header_background.jpg in Resources */,
 				BC2C10491DB4D700000D1D99 /* LaunchScreen.storyboard in Resources */,
 				BC4E55D11DB77FB500793E44 /* pull_refresh.gif in Resources */,
 				BC4135B91DD712E00020C6E1 /* ticket_promption.jpg in Resources */,
-				BC2C122E1DB4F8DD000D1D99 /* AlipaySDK.bundle in Resources */,
 				BC4E55CF1DB77FB500793E44 /* paging_refresh.gif in Resources */,
 				BC4E55D01DB77FB500793E44 /* profile_background.jpg in Resources */,
-				BC2C12341DB4F8DD000D1D99 /* README.txt in Resources */,
 				BC2C10461DB4D700000D1D99 /* Assets.xcassets in Resources */,
+				BC6E3BA11ECAE74F0082F221 /* ChannelNo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1572,7 +1507,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		969E589317CFE3B5DC8BB40A /* [CP] Copy Pods Resources */ = {
@@ -1636,7 +1571,6 @@
 				BC2C11861DB4F60D000D1D99 /* QBSCommodityCommentCell.m in Sources */,
 				BC2C11221DB4E0D2000D1D99 /* QBSCollectionHeaderFooterView.m in Sources */,
 				BC2C109D1DB4DED2000D1D99 /* QBSErrorHandler.m in Sources */,
-				BCF713061DC8823800A906AF /* QBSTicketCard.m in Sources */,
 				BC4000B71DC0B59900019EA5 /* QBSMineCell.m in Sources */,
 				BC2C10BE1DB4DFA0000D1D99 /* MZTimerLabel.m in Sources */,
 				BC2C10A91DB4DF20000D1D99 /* QBSPaymentManager.m in Sources */,
@@ -1716,7 +1650,6 @@
 				BC2C10761DB4DD0B000D1D99 /* NSError+QBSError.m in Sources */,
 				BC2C11871DB4F60D000D1D99 /* QBSCommodityDetailServiceMarkRowCell.m in Sources */,
 				BC2C11D71DB4F73F000D1D99 /* QBSSortButton.m in Sources */,
-				BC72DA621DCED11100FC2A60 /* QBSTicketAppCell.m in Sources */,
 				BC2C11B41DB4F6A3000D1D99 /* QBSFeaturedTypeCell.m in Sources */,
 				BC2C10A21DB4DED2000D1D99 /* QBSWeChatHelper.m in Sources */,
 				BC2C109C1DB4DED2000D1D99 /* QBSConfiguration.m in Sources */,
@@ -1740,12 +1673,11 @@
 				BC2C113B1DB4E11D000D1D99 /* QBSPaymentFooterView.m in Sources */,
 				BC2C12141DB4F79A000D1D99 /* QBSNewShippingAddressCell.m in Sources */,
 				BC2C117F1DB4F60D000D1D99 /* QBSCommodityDetailDescriptionViewController.m in Sources */,
-				BC4135BC1DD713FA0020C6E1 /* QBSTicketsPromptionView.m in Sources */,
 				BC2C10791DB4DD0B000D1D99 /* NSObject+Properties.m in Sources */,
-				BCF713001DC86B7100A906AF /* QBSTicketsViewController.m in Sources */,
 				BC2C111D1DB4E0D2000D1D99 /* QBSCommodityTag.m in Sources */,
 				BC2C11181DB4E0D2000D1D99 /* QBSNavigationController.m in Sources */,
 				BC2C10A11DB4DED2000D1D99 /* QBSUIHelper.m in Sources */,
+				BC609B421ECAA84F00379571 /* QBSWebViewController.m in Sources */,
 				BC2C12161DB4F79A000D1D99 /* QBSOrderAddressCell.m in Sources */,
 				BC2C10C51DB4DFA0000D1D99 /* UIView+SDExtension.m in Sources */,
 				BC2C11D11DB4F73F000D1D99 /* QBSCommodityListViewController.m in Sources */,
@@ -1762,7 +1694,6 @@
 				B367FECD1E07AC750032A926 /* QBSCouponPopViewCtroller.m in Sources */,
 				BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */,
 				BC2C10811DB4DD0B000D1D99 /* UIView+RoundCorner.m in Sources */,
-				BC2C10A81DB4DF20000D1D99 /* IappPayMananger.m in Sources */,
 				BCDC0D9E1DD48F3000BC8024 /* QBSTicketInstructionViewController.m in Sources */,
 				BC3004E71E0BC4840044D442 /* QBSSnatchTreasureListViewController.m in Sources */,
 				BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */,
@@ -1897,8 +1828,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = BTTZYVST3G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1912,10 +1843,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qbstore.sdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8af92b6d-52df-4880-ba8b-a6e56227f9d2";
+				PROVISIONING_PROFILE_SPECIFIER = BossenAppStoreProvisioningProfile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1926,8 +1857,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = BTTZYVST3G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1941,10 +1872,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qbstore.sdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8af92b6d-52df-4880-ba8b-a6e56227f9d2";
+				PROVISIONING_PROFILE_SPECIFIER = BossenAppStoreProvisioningProfile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
