@@ -15,6 +15,8 @@
 #import "QBSOrderListViewController.h"
 #import "QBSCustomerServiceController.h"
 
+#import "QBSWebViewController.h"
+
 typedef NS_ENUM(NSUInteger, QBSMineSection) {
     QBSMineOrderSection,
 //    QBSMineActivitySection,
@@ -29,6 +31,7 @@ typedef NS_ENUM(NSUInteger, QBSOrderSectionRow) {
 };
 
 typedef NS_ENUM(NSUInteger, QBSOtherSectionRow) {
+    QBSAgreementRow,
     QBSContactRow,
     QBSAboutRow,
     QBSOtherSectionRowCount
@@ -167,7 +170,10 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
 //        cell.iconImage = [UIImage imageNamed:@"mine_activity_icon"];
 //        cell.title = @"活动专区";
     } else if (indexPath.section == QBSMineOtherSection) {
-        if (indexPath.row == QBSContactRow) {
+        if (indexPath.row == QBSAgreementRow) {
+            cell.iconImage = [UIImage imageNamed:@"mine_agreement_icon"];
+            cell.title = @"用户协议";
+        } else if (indexPath.row == QBSContactRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_contact_icon"];
             cell.title = @"联系客服";
         } else if (indexPath.row == QBSAboutRow) {
@@ -202,7 +208,11 @@ static NSString *const kHeaderViewReusableIdentifier = @"HeaderViewReusableIdent
 //        QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
 //        [self.navigationController pushViewController:ticketsVC animated:YES];
     } else if (indexPath.section == QBSMineOtherSection) {
-        if (indexPath.row == QBSContactRow) {
+        if (indexPath.row == QBSAgreementRow) {
+            QBSWebViewController *webVC = [[QBSWebViewController alloc] initWithURL:[NSURL URLWithString:[kQBSRESTBaseURL stringByAppendingString:kQBSUserAgreementURL]]];
+            webVC.title = @"用户协议";
+            [self.navigationController pushViewController:webVC animated:YES];
+        } else if (indexPath.row == QBSContactRow) {
             QBSCustomerServiceController *csController = [[QBSCustomerServiceController alloc] init];
             [csController showInView:self.view.window];
         } else if (indexPath.row == QBSAboutRow) {

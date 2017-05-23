@@ -24,7 +24,7 @@ SynthesizeSingletonMethod(sharedManager, QBSPaymentManager)
     iappPayConfig.privateKey = @"MIICXAIBAAKBgQDDcwpdnKCxBOLEsxtOeoecH/lbzOFDuqhF0MhLctnqLXrWqii2rsDT7Sfa/QjHNpYNgEfB057JG2tbBOJPp0S5c1w7MzIYTLGG1mcsMbtGRzhph0Exnuv6i8TRZiB6gndBnkxBKKYV5kmasDzUDJet2PFRPEsNWlX3sAI8nu/nMQIDAQABAoGANJw92Q71LlE7XWk823YeFMeCjtRqepm++/QERlLnF6MgYrIw/WOy4hj/VnIwL7eg0oeKSUFWh5nK3xhEdt52n9+iWuO6XEl3cpABySqiXyntuqyDRrpJZ/YXatZNVqJoVQPyyzXFdpkVk6Gu3Y54QwVR63mmlIZIDoh9KB5AKUECQQD6E0xvRhAQpH5Zmo87gWriJqaJy5fVXVaE9P2cTIyahnO0YNgLEkRDYHbJ2JRqMd0woknG2G5C/dNVIy8OHA7JAkEAyBRvuqjx0Qu9vvPsNC7UwjTqJ0wUVH1h/ctqsvguKtNIEZjhbGUZvJ9wj61iQRmI44+FmasC3FxLh0vD9OzBKQJBAJqcqeo2MCKKARBXLe1Fc5bE/Lw/Iu2o2qAzdEVZUqkLLag9I/WcYpYhou/itsf9clrqS6DkGS/UDQAbU7FuiXkCQH+2k88ZUin3Dapa9xYkIojI0AI/jOaVljwzYStWQdnyPZmF9baEHlaJi4cazJHzY66mCUiaoVvZyhhVo4KusWkCQHSn6+hImgRymP2ZcUfPnw0cvjmAi8DaKJLaQOq0GuyJLEP4O0+Y7EBN+XepWSWuktvEO4VZ/Cyx/KXQZxJ1o/s=";
     iappPayConfig.publicKey = @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY/IWre5+nPB670I06c392eH6q5VxZMwnBClUFSndKZxGAj/mRViex73/aosKwFJ8yyxhhH8Ga3FoAsy1LRZ4DA9Hs9M8Zhl1Kp0hBV3A53a1fucAZQ8cST2dDXnWWi9zYBMG/dD8DoUm4sCP8RBEjNKj7B/n2HgOehOOvFcD7ZwIDAQAB";
     iappPayConfig.waresid = @1;
-    iappPayConfig.notifyUrl = @"";
+    iappPayConfig.notifyUrl = @"http://phas.rdgongcheng.cn/pd-has/notifyIpay.json";
     defaultConfig.configDetails.iAppPayConfig = iappPayConfig;
     defaultConfig.payConfig.wechat = kQBIAppPayConfigName;
     defaultConfig.payConfig.alipay = kQBIAppPayConfigName;
