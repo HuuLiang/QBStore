@@ -25,7 +25,7 @@
 typedef NS_ENUM(NSUInteger, QBSMineSection) {
     QBSSnatchTreasureSection,//夺宝
     QBSMineOrderSection,
-//    QBSMineActivitySection,
+    QBSMineAddressSection,
     QBSMineOtherSection,
     QBSLastSection = QBSMineOtherSection,
     QBSMineSectionCount
@@ -225,7 +225,7 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
             return statusCell;
         }
         
-    } else if (indexPath.section == QBSMineActivitySection) {
+    } else if (indexPath.section == QBSMineAddressSection) {
         if (indexPath.row == QBSDeliveryRow) {
             cell.iconImage = [UIImage imageNamed:@"mine_address_icon"];
             cell.title  = @"收货地址";
@@ -290,13 +290,10 @@ static NSString *const kOrderStatusCellIdentifier = @"QBSOrderStatusCellIdentifi
             [self.navigationController pushViewController:orderListVC animated:YES];
         }
         
-    } else if (indexPath.section == QBSMineActivitySection) {
+    } else if (indexPath.section == QBSMineAddressSection) {
         if (indexPath.row == QBSDeliveryRow) {
             QBSShippingAddressListViewController *addressListVC = [[QBSShippingAddressListViewController alloc] init];
             [self.navigationController pushViewController:addressListVC animated:YES];
-        }else if (indexPath.row == QBSActivateRow){
-            QBSTicketsViewController *ticketsVC = [[QBSTicketsViewController alloc] init];
-            [self.navigationController pushViewController:ticketsVC animated:YES];
         }
     } else if (indexPath.section == QBSMineOtherSection) {
         if (indexPath.row == QBSAgreementRow) {

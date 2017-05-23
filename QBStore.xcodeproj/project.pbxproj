@@ -176,10 +176,9 @@
 		BC69AF0A1DC7305000BA49F3 /* QBSHomeCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF091DC7305000BA49F3 /* QBSHomeCommodityCell.m */; };
 		BC69AF0F1DC740C100BA49F3 /* QBSFavouritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */; };
 		BC69AF101DC740C100BA49F3 /* QBSFavouritesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */; };
-		BC72DA621DCED11100FC2A60 /* QBSTicketAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */; };
+		BC6E3BA11ECAE74F0082F221 /* ChannelNo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC6E3BA01ECAE74F0082F221 /* ChannelNo.plist */; };
 		BC7AB9041E0D330500179FE9 /* QBSSnatchTreasureHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7AB9031E0D330500179FE9 /* QBSSnatchTreasureHeaderView.m */; };
 		BC7AB9071E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7AB9061E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.m */; };
-		BC6E3BA11ECAE74F0082F221 /* ChannelNo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC6E3BA01ECAE74F0082F221 /* ChannelNo.plist */; };
 		BC9C5D951DD5DFA700BBD823 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9C5D941DD5DFA700BBD823 /* NSDate+Utilities.m */; };
 		BCDC0D981DD478C600BC8024 /* QBSCommodityDetailActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D971DD478C600BC8024 /* QBSCommodityDetailActivityCell.m */; };
 		BCDC0D9B1DD48EAC00BC8024 /* QBSTicketInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDC0D9A1DD48EAC00BC8024 /* QBSTicketInstruction.m */; };
@@ -520,13 +519,13 @@
 		BC69AF0C1DC740C100BA49F3 /* QBSFavouritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesCell.m; sourceTree = "<group>"; };
 		BC69AF0D1DC740C100BA49F3 /* QBSFavouritesHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSFavouritesHeaderView.h; sourceTree = "<group>"; };
 		BC69AF0E1DC740C100BA49F3 /* QBSFavouritesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSFavouritesHeaderView.m; sourceTree = "<group>"; };
+		BC6E3BA01ECAE74F0082F221 /* ChannelNo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChannelNo.plist; sourceTree = "<group>"; };
 		BC72DA601DCED11100FC2A60 /* QBSTicketAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTicketAppCell.h; sourceTree = "<group>"; };
 		BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTicketAppCell.m; sourceTree = "<group>"; };
 		BC7AB9021E0D330500179FE9 /* QBSSnatchTreasureHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSSnatchTreasureHeaderView.h; sourceTree = "<group>"; };
 		BC7AB9031E0D330500179FE9 /* QBSSnatchTreasureHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSSnatchTreasureHeaderView.m; sourceTree = "<group>"; };
 		BC7AB9051E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSTreasureCommodityDetailViewController.h; sourceTree = "<group>"; };
 		BC7AB9061E0D47B200179FE9 /* QBSTreasureCommodityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSTreasureCommodityDetailViewController.m; sourceTree = "<group>"; };
-		BC6E3BA01ECAE74F0082F221 /* ChannelNo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChannelNo.plist; sourceTree = "<group>"; };
 		BC9C5D931DD5DFA700BBD823 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		BC9C5D941DD5DFA700BBD823 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		BCDC0D961DD478C600BC8024 /* QBSCommodityDetailActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSCommodityDetailActivityCell.h; sourceTree = "<group>"; };
@@ -1304,10 +1303,6 @@
 			children = (
 				BC4000AE1DC0A02F00019EA5 /* QBSMineViewController.h */,
 				BC4000AF1DC0A02F00019EA5 /* QBSMineViewController.m */,
-				BCF712FE1DC86B7100A906AF /* QBSTicketsViewController.h */,
-				BCF712FF1DC86B7100A906AF /* QBSTicketsViewController.m */,
-				BCDC0D9C1DD48F3000BC8024 /* QBSTicketInstructionViewController.h */,
-				BCDC0D9D1DD48F3000BC8024 /* QBSTicketInstructionViewController.m */,
 				B323BE781DFFE5EF00AE5CAD /* QBSCouponViewController.h */,
 				B323BE791DFFE5EF00AE5CAD /* QBSCouponViewController.m */,
 				B367FECB1E07AC750032A926 /* QBSCouponPopViewCtroller.h */,
@@ -1335,14 +1330,8 @@
 				B32A6FDE1DFBFCD200637361 /* QBSOrderStatusButton.m */,
 				BC34E3791DC0C8E500CB1189 /* QBSAvatarButton.h */,
 				BC34E37A1DC0C8E500CB1189 /* QBSAvatarButton.m */,
-				BCF713011DC86FB100A906AF /* QBSTicketCell.h */,
-				BCF713021DC86FB100A906AF /* QBSTicketCell.m */,
-				BCF713041DC8823800A906AF /* QBSTicketCard.h */,
-				BCF713051DC8823800A906AF /* QBSTicketCard.m */,
 				BC72DA601DCED11100FC2A60 /* QBSTicketAppCell.h */,
 				BC72DA611DCED11100FC2A60 /* QBSTicketAppCell.m */,
-				BC4135BA1DD713FA0020C6E1 /* QBSTicketsPromptionView.h */,
-				BC4135BB1DD713FA0020C6E1 /* QBSTicketsPromptionView.m */,
 				B323BE7B1DFFE61600AE5CAD /* QBSCouponCell.h */,
 				B323BE7C1DFFE61600AE5CAD /* QBSCouponCell.m */,
 				B3A76CAF1E07805A003E698D /* QBSCouponPopView.h */,
@@ -1452,7 +1441,7 @@
 				TargetAttributes = {
 					BC2C10351DB4D700000D1D99 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = BTTZYVST3G;
+						DevelopmentTeam = EJWN6VS5WE;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1692,9 +1681,7 @@
 				BC2C11231DB4E0D2000D1D99 /* QBSCollectionViewCell.m in Sources */,
 				BC2C111A1DB4E0D2000D1D99 /* QBSCategory.m in Sources */,
 				B367FECD1E07AC750032A926 /* QBSCouponPopViewCtroller.m in Sources */,
-				BCF713031DC86FB100A906AF /* QBSTicketCell.m in Sources */,
 				BC2C10811DB4DD0B000D1D99 /* UIView+RoundCorner.m in Sources */,
-				BCDC0D9E1DD48F3000BC8024 /* QBSTicketInstructionViewController.m in Sources */,
 				BC3004E71E0BC4840044D442 /* QBSSnatchTreasureListViewController.m in Sources */,
 				BC2C11AC1DB4F6A3000D1D99 /* QBSHomeGroup.m in Sources */,
 				BC2C112B1DB4E0D2000D1D99 /* QBSTableViewCell.m in Sources */,
@@ -1828,8 +1815,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = BTTZYVST3G;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = EJWN6VS5WE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1843,10 +1830,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.apps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8af92b6d-52df-4880-ba8b-a6e56227f9d2";
-				PROVISIONING_PROFILE_SPECIFIER = BossenAppStoreProvisioningProfile;
+				PROVISIONING_PROFILE = "9602cac5-b1eb-404c-a513-6f2fa723c317";
+				PROVISIONING_PROFILE_SPECIFIER = BossenDevProvisioningProfile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1858,7 +1845,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = BTTZYVST3G;
+				DEVELOPMENT_TEAM = EJWN6VS5WE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1872,10 +1859,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.apps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8af92b6d-52df-4880-ba8b-a6e56227f9d2";
-				PROVISIONING_PROFILE_SPECIFIER = BossenAppStoreProvisioningProfile;
+				PROVISIONING_PROFILE = "bd7d86d7-de84-46d8-b01a-72582b789bc6";
+				PROVISIONING_PROFILE_SPECIFIER = BossenInHouseProvisioningProfile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
