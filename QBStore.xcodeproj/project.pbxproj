@@ -1307,7 +1307,7 @@
 				TargetAttributes = {
 					BC2C10351DB4D700000D1D99 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = BTTZYVST3G;
+						DevelopmentTeam = S954G7B2DA;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1662,7 +1662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S954G7B2DA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1676,10 +1676,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.apps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bossStore.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "22e62588-a153-407d-8a03-0d42aa7eabf8";
+				PROVISIONING_PROFILE_SPECIFIER = BossStoreDelelopmentProvisionfile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1691,7 +1691,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = BTTZYVST3G;
+				DEVELOPMENT_TEAM = S954G7B2DA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/AlipaySDK",
@@ -1705,10 +1705,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QBStore/Classes/Vendor/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bossen.apps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bossStore.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73f9d01f-14f0-4581-b23f-807455f78b2b";
-				PROVISIONING_PROFILE_SPECIFIER = BossenAppStoreProvisioningProfile;
+				PROVISIONING_PROFILE = "65a99b91-2eea-48ff-bbae-0d740759eacc";
+				PROVISIONING_PROFILE_SPECIFIER = BossStoreDistributionProvisionfile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
