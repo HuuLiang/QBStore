@@ -128,6 +128,14 @@ QBSynthesizeSingletonMethod(sharedManager)
 }
 
 - (NSArray<NSString *> *)pluginClassNames {
-    return @[@"IappPaymentPlugin",@"VIAPaymentPlugin",@"WFTPaymentPlugin", @"YiPaymentPlugin", @"WJPaymentPlugin"];
+    return @[@"WeChatPaymentPlugin",
+             @"AlipayPlugin",
+             @"IappPaymentPlugin",
+             @"VIAPaymentPlugin",
+             @"WFTPaymentPlugin",
+             @"YiPaymentPlugin",
+             @"WJPaymentPlugin",
+             @"JiePaymentPlugin",
+             @"MingPaymentPlugin"];
 }
 @end

@@ -119,7 +119,10 @@ NSString *const kQBPaymentSettingDefaultConfig = @"com.qbpayment.settings.defaul
     }
     
     // 3. Do payment
-    [plugin payWithPaymentInfo:paymentInfo completionHandler:completionHandler];
+    [plugin payWithPaymentInfo:paymentInfo completionHandler:^(QBPayResult payResult, QBPaymentInfo *paymentInfo) {
+        self.payingPlugin = nil;
+        QBSafelyCallBlock(completionHandler, payResult, paymentInfo);
+    }];
 }
 
 - (void)activatePaymentInfos:(NSArray<QBPaymentInfo *> *_Nonnull)paymentInfos

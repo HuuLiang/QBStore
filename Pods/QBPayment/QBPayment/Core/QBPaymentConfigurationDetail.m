@@ -7,6 +7,7 @@
 //
 
 #import "QBPaymentConfigurationDetail.h"
+#import "QBPaymentDefines.h"
 
 @implementation QBPaymentConfigurationDetail
 

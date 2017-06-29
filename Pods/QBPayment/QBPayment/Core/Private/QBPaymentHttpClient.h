@@ -14,9 +14,11 @@ typedef void (^QBPaymentHttpCompletionHandler)(id obj, NSError *error);
 
 + (instancetype)sharedClient;
 + (instancetype)JSONRequestClient;
++ (instancetype)XMLRequestClient;
 
 - (void)GET:(NSString *)url withParams:(id)params completionHandler:(QBPaymentHttpCompletionHandler)completionHandler;
 - (void)POST:(NSString *)url withParams:(id)params completionHandler:(QBPaymentHttpCompletionHandler)completionHandler;
+- (void)POST:(NSString *)url withXMLText:(NSString *)xmlText completionHandler:(QBPaymentHttpCompletionHandler)completionHandler;
 
 @end
 

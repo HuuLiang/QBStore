@@ -34,6 +34,8 @@
 @interface QBPaymentPlugin (SubclassingHooks)
 
 - (void)pluginDidLoad;
+- (void)pluginDidSetPaymentConfiguration:(NSDictionary *)paymentConfiguration;
+
 - (void)payWithPaymentInfo:(QBPaymentInfo *)paymentInfo completionHandler:(QBPaymentCompletionHandler)completionHandler;
 
 - (void)handleOpenURL:(NSURL *)url;

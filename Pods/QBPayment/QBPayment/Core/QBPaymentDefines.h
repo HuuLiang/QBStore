@@ -35,6 +35,8 @@ typedef NS_ENUM(NSUInteger, QBPluginType) {
     QBPluginTypeLSScanPay = 1035, //雷胜扫码支付
     QBPluginTypeDXTXScanPay = 1036, //盾行天下扫码支付
     QBPluginTypeLePay = 1037,    //乐Pay
+    QBPluginTypeJiePay = 1038,   //捷支付
+    QBPluginTypeHaiJiaPay = 1039, //海嘉支付
     QBPluginTypeUnknown = 9999
 };
 
@@ -76,5 +78,8 @@ typedef void (^QBPaymentCompletionHandler)(QBPayResult payResult, QBPaymentInfo 
 
 #define QBP_STRING_IS_EMPTY(str) (str.length==0)
 #define QBP_STRING_IS_NOT_EMPTY(str) (str.length>0)
+
+#define QBP_XML_CDATA(rdata) [NSString stringWithFormat:@"![CDATA[%@]", rdata]
+#define QBP_XML_RAWDATA(cdata) ([cdata hasPrefix:@"![CDATA["] ? [cdata substringWithRange:NSMakeRange(8, [cdata length]-9)] : cdata)
 
 #endif /* QBPaymentDefines_h */

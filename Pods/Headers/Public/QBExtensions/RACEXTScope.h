@@ -1,0 +1,1 @@
+../../../QBExtensions/QBExtensions/Core/Foundation/RACEXTScope.h

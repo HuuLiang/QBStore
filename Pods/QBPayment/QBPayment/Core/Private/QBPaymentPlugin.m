@@ -28,7 +28,14 @@
     return _pluginName;
 }
 
+- (void)setPaymentConfiguration:(NSDictionary *)paymentConfiguration {
+    _paymentConfiguration = paymentConfiguration;
+    
+    [self pluginDidSetPaymentConfiguration:paymentConfiguration];
+}
+
 - (void)pluginDidLoad {}
+- (void)pluginDidSetPaymentConfiguration:(NSDictionary *)paymentConfiguration {}
 
 - (void)payWithPaymentInfo:(QBPaymentInfo *)paymentInfo completionHandler:(QBPaymentCompletionHandler)completionHandler {
     self.paymentInfo = paymentInfo;

@@ -1,0 +1,1 @@
+../../../QBPayment/QBPayment/CorePay/WeChatSDK/WXApiObject.h
