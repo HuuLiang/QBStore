@@ -1,1 +1,0 @@
-../../../../QBPayment/QBPayment/Plugins/IappPay/SDK/IapppayAlphaKit.framework/Headers/IapppayAlphaOrderUtils.h

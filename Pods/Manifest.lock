@@ -48,6 +48,10 @@ PODS:
     - MJRefresh (~> 3.1.12)
   - QBPayment/Alipay (203):
     - OpenSSL (~> 1.0.208)
+  - QBPayment/AlipayPlugin (203):
+    - QBPayment/Alipay
+    - QBPayment/Core
+    - QBPayment/CoreUI
   - QBPayment/Core (203):
     - AFNetworking (~> 3.1.0)
     - MBProgressHUD (~> 0.9.2)
@@ -55,18 +59,12 @@ PODS:
   - QBPayment/CoreUI (203):
     - MBProgressHUD (~> 0.9.2)
     - QBExtensions (~> 0.0.6)
-  - QBPayment/IappPay (203):
-    - QBPayment/Alipay
-    - QBPayment/Core
-    - QBPayment/WeChatPay
   - QBPayment/WeChatPay (203)
-  - QBPayment/WFTPay (203):
+  - QBPayment/WeChatPayPlugin (203):
     - QBPayment/Core
     - QBPayment/CoreUI
     - QBPayment/WeChatPay
-    - XMLReader-Arc (~> 1.1)
-  - QBPayment/YiPay (203):
-    - QBPayment/WFTPay
+    - XMLDictionary (~> 1.4.1)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
@@ -74,7 +72,7 @@ PODS:
   - TPKeyboardAvoiding (1.3.1)
   - UITextView+Placeholder (1.2.0)
   - WZLBadge (1.2.6)
-  - XMLReader-Arc (1.1)
+  - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.1.0)
@@ -86,8 +84,8 @@ DEPENDENCIES:
   - Masonry (~> 1.0.1)
   - MJRefresh (~> 3.1.12)
   - ODRefreshControl (~> 1.2)
-  - QBPayment/IappPay
-  - QBPayment/YiPay
+  - QBPayment/AlipayPlugin
+  - QBPayment/WeChatPayPlugin
   - SDWebImage (~> 3.7.6)
   - SVProgressHUD (~> 2.0.3)
   - TPKeyboardAvoiding (~> 1.3)
@@ -113,8 +111,8 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
   WZLBadge: 9ec779dcfd94c825518b395e8315fccaabff1bfa
-  XMLReader-Arc: 7832c527346fc26511fd6c05ebcee18008c34d6d
+  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 99a94c7ee6d85232f3de02e99ef8e1c7ce772f1d
+PODFILE CHECKSUM: 78e9c0381449a7b67759e279b361bf23d4f658bf
 
 COCOAPODS: 1.2.1
