@@ -46,21 +46,21 @@ PODS:
   - QBExtensions/Core (0.0.14)
   - QBExtensions/Refresh (0.0.14):
     - MJRefresh (~> 3.1.12)
-  - QBPayment/Alipay (203):
+  - QBPayment/Alipay (205):
     - OpenSSL (~> 1.0.208)
-  - QBPayment/AlipayPlugin (203):
+  - QBPayment/AlipayPlugin (205):
     - QBPayment/Alipay
     - QBPayment/Core
     - QBPayment/CoreUI
-  - QBPayment/Core (203):
+  - QBPayment/Core (205):
     - AFNetworking (~> 3.1.0)
     - MBProgressHUD (~> 0.9.2)
     - QBExtensions (~> 0.0.6)
-  - QBPayment/CoreUI (203):
+  - QBPayment/CoreUI (205):
     - MBProgressHUD (~> 0.9.2)
     - QBExtensions (~> 0.0.6)
-  - QBPayment/WeChatPay (203)
-  - QBPayment/WeChatPayPlugin (203):
+  - QBPayment/WeChatPay (205)
+  - QBPayment/WeChatPayPlugin (205):
     - QBPayment/Core
     - QBPayment/CoreUI
     - QBPayment/WeChatPay
@@ -105,7 +105,7 @@ SPEC CHECKSUMS:
   ODRefreshControl: 907e6149d72dde488d5917ccfabee5bd8d711a20
   OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
   QBExtensions: e3f8621b440faec724e811fb7966ae8665706d0c
-  QBPayment: 53bfb262ac39febeb097175f9c15fc15e366f506
+  QBPayment: 6686a0d744af2055bdcf42cf834002009ee2eb1b
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852

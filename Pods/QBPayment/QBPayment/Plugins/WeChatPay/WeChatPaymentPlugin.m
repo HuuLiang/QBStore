@@ -48,7 +48,7 @@ static NSString *const kOrderQueryUrl = @"https://api.mch.weixin.qq.com/pay/orde
     self.signKey = @"201hdaldie999900djw01dl458575580";//paymentConfiguration[@"signKey"];
     self.notifyUrl = paymentConfiguration[@"notifyUrl"];
     
-    [WXApi registerApp:self.appId];
+//    [WXApi registerApp:self.appId];
 }
 
 - (void)payWithPaymentInfo:(QBPaymentInfo *)paymentInfo completionHandler:(QBPaymentCompletionHandler)completionHandler {
@@ -113,6 +113,7 @@ static NSString *const kOrderQueryUrl = @"https://api.mch.weixin.qq.com/pay/orde
         payReq.sign = [self sign:signDic];
         payReq.package = @"Sign=WXPay";
         
+        [WXApi registerApp:self.appId];
         BOOL success = [WXApi sendReq:payReq];
         if (!success) {
             QBLog(@"‼️WeChatPay fails to invoke payment‼️")
@@ -183,21 +184,20 @@ static NSString *const kOrderQueryUrl = @"https://api.mch.weixin.qq.com/pay/orde
         {
             [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].delegate.window animated:YES];
             @strongify(self);
-            if (error) {
-                QBLog(@"WeChatPay: error to query order with order id: %@", self.paymentInfo.orderId);
-                QBSafelyCallBlock(self.paymentCompletionHandler, QBPayResultFailure, self.paymentInfo);
-            } else if (obj) {
+            
+            QBPayResult payResult = QBPayResultFailure;
+            if (obj) {
                 NSDictionary *response = [NSDictionary dictionaryWithXMLData:obj];
                 if ([response[@"return_code"] isEqualToString:@"SUCCESS"]
                     && [response[@"result_code"] isEqualToString:@"SUCCESS"]
                     && [response[@"trade_state"] isEqualToString:@"SUCCESS"]) {
-                    QBLog(@"WeChatPay: paid successfully!");
-                    QBSafelyCallBlock(self.paymentCompletionHandler, QBPayResultSuccess, self.paymentInfo);
-                } else {
-                    QBLog(@"WeChatPay: fail to query order with trade state: %@", response[@"trade_state"]);
-                    QBSafelyCallBlock(self.paymentCompletionHandler, QBPayResultFailure, self.paymentInfo);
+                    payResult = QBPayResultSuccess;
                 }
             }
+            
+            QBLog(@"WeChatPay paid with result: %@", payResult == QBPayResultSuccess ? @"SUCCESS":@"FAILURE");
+            [[self class] commitPayment:self.paymentInfo withResult:payResult];
+            QBSafelyCallBlock(self.paymentCompletionHandler, payResult, self.paymentInfo);
             
             self.paymentInfo = nil;
             self.paymentCompletionHandler = nil;

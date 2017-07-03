@@ -132,8 +132,11 @@
         payResult = QBPayResultSuccess;
     }
     
-    QBSafelyCallBlock(self.paymentCompletionHandler, payResult, self.paymentInfo);
-    
+    if (self.paymentInfo) {
+        [[self class] commitPayment:self.paymentInfo withResult:payResult];
+        QBSafelyCallBlock(self.paymentCompletionHandler, payResult, self.paymentInfo);
+    }
+
     self.paymentCompletionHandler = nil;
     self.paymentInfo = nil;
 }
