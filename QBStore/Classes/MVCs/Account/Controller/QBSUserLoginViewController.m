@@ -194,6 +194,7 @@ static const CGFloat kNumberOfPhoneText = 11;
 }
 
 - (void)onWeChatLogin {
+    [[QBSWeChatHelper sharedHelper] registerAppId:kQBSWeChatAppId secrect:kQBSWeChatSecret];
     @weakify(self);
     [[QBSWeChatHelper sharedHelper] loginInViewController:self withCompletionHandler:^(id obj, NSError *error) {
         @strongify(self);

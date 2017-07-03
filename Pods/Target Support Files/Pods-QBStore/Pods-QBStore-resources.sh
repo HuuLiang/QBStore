@@ -82,15 +82,11 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "QBPayment/QBPayment/CorePay/AlipaySDK/AlipaySDK.bundle"
-  install_resource "QBPayment/QBPayment/Plugins/IappPay/SDK/IapppayAlphaResource.bundle"
-  install_resource "QBPayment/QBPayment/Plugins/WFTPay/SDK/SPaySDKResource.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "QBPayment/QBPayment/CorePay/AlipaySDK/AlipaySDK.bundle"
-  install_resource "QBPayment/QBPayment/Plugins/IappPay/SDK/IapppayAlphaResource.bundle"
-  install_resource "QBPayment/QBPayment/Plugins/WFTPay/SDK/SPaySDKResource.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 

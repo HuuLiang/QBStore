@@ -79,7 +79,7 @@ typedef void (^QBPaymentCompletionHandler)(QBPayResult payResult, QBPaymentInfo 
 #define QBP_STRING_IS_EMPTY(str) (str.length==0)
 #define QBP_STRING_IS_NOT_EMPTY(str) (str.length>0)
 
-#define QBP_XML_CDATA(rdata) [NSString stringWithFormat:@"![CDATA[%@]", rdata]
-#define QBP_XML_RAWDATA(cdata) ([cdata hasPrefix:@"![CDATA["] ? [cdata substringWithRange:NSMakeRange(8, [cdata length]-9)] : cdata)
+#define QBP_XML_CDATA(rdata) [NSString stringWithFormat:@"<![CDATA[%@]]>", rdata]
+#define QBP_XML_RAWDATA(cdata) ([cdata hasPrefix:@"<![CDATA["] ? [cdata substringWithRange:NSMakeRange(9, [cdata length]-12)] : cdata)
 
 #endif /* QBPaymentDefines_h */
