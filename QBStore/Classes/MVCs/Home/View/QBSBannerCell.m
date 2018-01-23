@@ -81,4 +81,5 @@
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     SafelyCallBlock(self.selectionAction, index, self);
 }
+
 @end

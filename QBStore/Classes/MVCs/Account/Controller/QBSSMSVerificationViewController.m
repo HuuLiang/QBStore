@@ -185,7 +185,9 @@ DefineLazyPropertyInitialization(NSMutableArray, veriCodes)
             [veriCode appendString:obj.text];
         }
     }];
-    
+    if (veriCode.length < 4) {
+        veriCodeIsCompleted = NO;
+    }
     if (!veriCodeIsCompleted) {
         [[QBSHUDManager sharedManager] showError:@"验证码未输全"];
         return ;

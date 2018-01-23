@@ -705,6 +705,7 @@ SynthesizeSingletonMethod(sharedManager, QBSRESTManager)
         SafelyCallBlock(completionHandler, object, error);
     } else {
         NSParameterAssert([modelClass isSubclassOfClass:[QBSJSONResponse class]]);
+    
         QBSJSONResponse *instance = [modelClass objectFromDictionary:object];
         if (![instance success]) {
             if ([instance userShouldReLogin]) {

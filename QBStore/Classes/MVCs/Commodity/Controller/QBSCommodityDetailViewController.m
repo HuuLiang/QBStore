@@ -242,6 +242,7 @@ static const void *kBannerCellSelectedImageAnimatingAssociatedKey = &kBannerCell
         @strongify(self);
         if (self) {
             [self->_layoutCV.collectionViewLayout invalidateLayout];
+//            [self->_layoutCV reloadData];
         }
     };
     return _subViewController;
